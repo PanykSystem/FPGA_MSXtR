@@ -1,0 +1,24 @@
+SPI_CLK は PICO側が出す
+
+FPGA → PICO の要求
+	FPGA(VDP) が FPGA_SPI_INTR = L にする
+		↓
+	PICO が 1byte の READYコマンドを送ってくる
+		↓
+	FPGA がデータを送る
+		↓
+	FPGA(VDP) が FPGA_SPI_INTR = H にする
+
+PICO → FPGA の要求
+	PICO が SPI_CS_N = L にする
+		↓
+	PICO が 1byte の REQUESTコマンドを送ってくる
+		↓
+	PICO がデータを送る
+		↓
+	PICO が SPI_CS_N = H にする
+
+衝突した場合
+	かならず、最初の 1byte は READY か REQUEST なので、そこから PICO がどちらの方向だと
+	認識しているのか判断する。
+	マイコンは、FPGA_SPI_INTR = L をトリガーに割り込みを発生させて、受信処理をする。
