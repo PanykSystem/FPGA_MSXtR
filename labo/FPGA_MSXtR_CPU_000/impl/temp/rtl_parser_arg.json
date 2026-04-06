@@ -1,0 +1,37 @@
+{
+ "Device" : "GW2AR-18",
+ "Files" : [
+  {
+   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/gowin_rpll/gowin_rpll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/gowin_rpll/gowin_rpll2.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/gowin_rpll/gowin_rpll3.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/uart/ip_uart.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/uart/uart.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 20000,
+ "ResultFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/impl/temp/rtl_parser.result",
+ "Top" : "fpga_msxtr",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

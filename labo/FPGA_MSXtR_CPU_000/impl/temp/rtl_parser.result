@@ -1,0 +1,54 @@
+[
+ {
+  "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v",
+  "InstLine" : 24,
+  "InstName" : "fpga_msxtr",
+  "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "fpga_msxtr",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v",
+    "InstLine" : 63,
+    "InstName" : "u_pll",
+    "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v",
+    "InstLine" : 69,
+    "InstName" : "u_pll2",
+    "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/gowin_rpll/gowin_rpll2.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_rPLL2"
+   },
+   {
+    "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v",
+    "InstLine" : 74,
+    "InstName" : "u_pll3",
+    "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/gowin_rpll/gowin_rpll3.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_rPLL3"
+   },
+   {
+    "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v",
+    "InstLine" : 217,
+    "InstName" : "u_uart",
+    "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/uart/uart.v",
+    "ModuleLine" : 27,
+    "ModuleName" : "uart",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/uart/uart.v",
+      "InstLine" : 149,
+      "InstName" : "u_uart",
+      "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/uart/ip_uart.v",
+      "ModuleLine" : 27,
+      "ModuleName" : "ip_uart"
+     }
+    ]
+   }
+  ]
+ }
+]
