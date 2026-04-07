@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="fpga_msxtr" Register="38" Alu="21" Lut="32" T_Register="79(38)" T_Alu="21(21)" T_Lut="71(32)">
+<Module name="fpga_msxtr" Register="38" Alu="21" Lut="32" T_Register="79(38)" T_Alu="21(21)" T_Lut="72(32)">
  <SubModule name="u_pll"/>
- <SubModule name="u_uart" Register="16" Lut="4" T_Register="41(16)" T_Lut="39(4)">
+ <SubModule name="u_uart" Register="16" Lut="5" T_Register="41(16)" T_Lut="40(5)">
   <SubModule name="u_uart" Register="25" Lut="35" T_Register="25(25)" T_Lut="35(35)"/>
  </SubModule>
 </Module>

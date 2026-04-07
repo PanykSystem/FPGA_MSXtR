@@ -11,7 +11,7 @@ Compiling module 'Gowin_rPLL'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_
 Compiling module 'Gowin_rPLL2'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\gowin_rpll\gowin_rpll2.v":9)
 Compiling module 'Gowin_rPLL3'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\gowin_rpll\gowin_rpll3.v":9)
 Compiling module 'uart'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\uart\uart.v":27)
-Compiling module 'ip_uart(clk_freq=27.0)'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\uart\ip_uart.v":27)
+Compiling module 'ip_uart'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\uart\ip_uart.v":27)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\uart\ip_uart.v":69)
 NOTE  (EX0101) : Current top module is "fpga_msxtr"
 [5%] Running netlist conversion ...

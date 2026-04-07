@@ -69,7 +69,7 @@ module uart #(
 		else if( bus_uart_cs && bus_valid && bus_write && !ff_busy && ff_ready1 ) begin
 			ff_uart_valid	<= 1'b1;
 		end
-		else begin
+		else if( !ff_ready1 ) begin
 			ff_uart_valid	<= 1'b0;
 		end
 	end

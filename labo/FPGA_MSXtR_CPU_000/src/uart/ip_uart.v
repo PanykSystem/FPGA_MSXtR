@@ -25,7 +25,7 @@
 // -----------------------------------------------------------------------------
 
 module ip_uart #(
-	parameter		clk_freq	= 42.95454,
+	parameter		clk_freq	= 27.0,
 	parameter		uart_freq	= 115200
 ) (
 	input			reset_n,
@@ -37,7 +37,7 @@ module ip_uart #(
 	output			uart_tx
 );
 	localparam	uart_cycle		= $rtoi( clk_freq * 1000000.0 / uart_freq );
-	localparam	uart_count_max	= uart_cycle;
+	localparam	uart_count_max	= uart_cycle - 1;
 
 	localparam	ST_IDLE			= 4'd0;
 	localparam	ST_PRE_START	= 4'd1;

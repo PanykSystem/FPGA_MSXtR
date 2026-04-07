@@ -1,7 +1,7 @@
 //
 //Written by GowinSynthesis
 //Tool Version "V1.9.11.02 (64-bit)"
-//Mon Apr  6 22:35:09 2026
+//Wed Apr  8 06:01:26 2026
 
 //Source file index table:
 //file0 "\D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_000/src/FPGA_MSXtR.v"
@@ -102,6 +102,7 @@ wire n132_6;
 wire n122_6;
 wire n47_6;
 wire n45_6;
+wire n20_10;
 wire n19_10;
 wire n17_10;
 wire n13_10;
@@ -115,11 +116,10 @@ wire n46_7;
 wire n13_11;
 wire n46_9;
 wire n49_9;
-wire n51_8;
+wire n52_8;
 wire n91_6;
 wire n192_7;
 wire n55_5;
-wire n21_11;
 wire [9:0] ff_uart_count;
 wire [3:0] ff_state;
 wire [9:1] ff_data;
@@ -246,6 +246,12 @@ defparam n47_s1.INIT=16'hFBF4;
     .I3(ff_uart_count[7]) 
 );
 defparam n45_s1.INIT=16'hFBF4;
+  LUT2 n20_s4 (
+    .F(n20_10),
+    .I0(ff_uart_count[0]),
+    .I1(ff_uart_count[1]) 
+);
+defparam n20_s4.INIT=4'h9;
   LUT3 n19_s4 (
     .F(n19_10),
     .I0(ff_uart_count[0]),
@@ -342,14 +348,13 @@ defparam n46_s3.INIT=16'h4FF4;
     .I3(n49_7) 
 );
 defparam n49_s3.INIT=16'h4FF4;
-  LUT4 n51_s2 (
-    .F(n51_8),
+  LUT3 n52_s2 (
+    .F(n52_8),
     .I0(n133_7),
     .I1(ff_uart_valid1),
-    .I2(ff_uart_count[0]),
-    .I3(ff_uart_count[1]) 
+    .I2(ff_uart_count[0]) 
 );
-defparam n51_s2.INIT=16'hF44F;
+defparam n52_s2.INIT=8'h4F;
   LUT4 n91_s2 (
     .F(n91_6),
     .I0(n192_4),
@@ -410,15 +415,15 @@ defparam n192_s3.INIT=16'hBAFF;
 );
   DFFR ff_uart_count_1_s0 (
     .Q(ff_uart_count[1]),
-    .D(n51_8),
+    .D(n20_10),
     .CLK(clk27m_d),
-    .RESET(n55_5) 
+    .RESET(n192_7) 
 );
   DFFR ff_uart_count_0_s0 (
     .Q(ff_uart_count[0]),
-    .D(n21_11),
+    .D(n52_8),
     .CLK(clk27m_d),
-    .RESET(n192_7) 
+    .RESET(n55_5) 
 );
   DFFR ff_uart_count_9_s0 (
     .Q(ff_uart_count[9]),
@@ -550,10 +555,6 @@ defparam ff_ready_s1.INIT=1'b1;
     .O(n55_5),
     .I(ff_reset_n1) 
 );
-  INV n21_s5 (
-    .O(n21_11),
-    .I(ff_uart_count[0]) 
-);
   VCC VCC_cZ (
     .V(VCC)
 );
@@ -563,28 +564,28 @@ defparam ff_ready_s1.INIT=1'b1;
 endmodule /* ip_uart */
 module uart (
   clk42m,
-  n104_10,
   w_msx_reset_n,
   clk27m_d,
   ff_valid,
+  n104_10,
   ff_wdata,
   w_bus_uart_ready,
   led_d
 )
 ;
 input clk42m;
-input n104_10;
 input w_msx_reset_n;
 input clk27m_d;
 input ff_valid;
+input n104_10;
 input [6:0] ff_wdata;
 output w_bus_uart_ready;
 output [5:5] led_d;
-wire n117_4;
-wire n69_3;
-wire n32_5;
-wire n40_6;
-wire ff_uart_valid;
+wire n119_4;
+wire n34_5;
+wire n42_6;
+wire n71_6;
+wire n71_8;
 wire ff_busy;
 wire ff_reset_n0;
 wire ff_reset_n1;
@@ -592,93 +593,96 @@ wire ff_uart_valid0;
 wire ff_uart_valid1;
 wire ff_ready0;
 wire ff_ready1;
+wire ff_uart_valid;
 wire w_ready;
 wire [6:0] ff_bus_wdata;
 wire VCC;
 wire GND;
-  LUT3 n117_s1 (
-    .F(n117_4),
+  LUT3 n119_s1 (
+    .F(n119_4),
     .I0(ff_ready1),
     .I1(ff_busy),
     .I2(w_msx_reset_n) 
 );
-defparam n117_s1.INIT=8'h4F;
-  LUT3 n69_s0 (
-    .F(n69_3),
-    .I0(ff_busy),
-    .I1(ff_valid),
-    .I2(ff_ready1) 
-);
-defparam n69_s0.INIT=8'h40;
-  LUT3 n32_s1 (
-    .F(n32_5),
+defparam n119_s1.INIT=8'h4F;
+  LUT3 n34_s1 (
+    .F(n34_5),
     .I0(ff_valid),
     .I1(w_bus_uart_ready),
     .I2(ff_ready1) 
 );
-defparam n32_s1.INIT=8'h80;
-  LUT4 n40_s2 (
-    .F(n40_6),
+defparam n34_s1.INIT=8'h80;
+  LUT4 n42_s2 (
+    .F(n42_6),
     .I0(ff_ready1),
     .I1(ff_valid),
     .I2(ff_busy),
     .I3(w_bus_uart_ready) 
 );
-defparam n40_s2.INIT=16'hF30A;
-  DFFR ff_uart_valid_s0 (
-    .Q(ff_uart_valid),
-    .D(n69_3),
-    .CLK(clk42m),
-    .RESET(n104_10) 
+defparam n42_s2.INIT=16'hF30A;
+  LUT4 n71_s2 (
+    .F(n71_6),
+    .I0(ff_busy),
+    .I1(ff_valid),
+    .I2(ff_uart_valid),
+    .I3(ff_ready1) 
 );
+defparam n71_s2.INIT=16'hF400;
+  LUT3 n71_s3 (
+    .F(n71_8),
+    .I0(ff_busy),
+    .I1(ff_ready1),
+    .I2(ff_valid) 
+);
+defparam n71_s3.INIT=8'h40;
   DFFRE ff_busy_s0 (
     .Q(ff_busy),
     .D(VCC),
     .CLK(clk42m),
-    .CE(n32_5),
-    .RESET(n117_4) 
+    .CE(n34_5),
+    .RESET(n119_4) 
 );
   DFFE ff_bus_wdata_6_s0 (
     .Q(ff_bus_wdata[6]),
     .D(ff_wdata[6]),
     .CLK(clk42m),
-    .CE(n69_3) 
+    .CE(n71_8) 
 );
   DFFE ff_bus_wdata_5_s0 (
     .Q(ff_bus_wdata[5]),
     .D(ff_wdata[5]),
     .CLK(clk42m),
-    .CE(n69_3) 
+    .CE(n71_8) 
 );
   DFFE ff_bus_wdata_4_s0 (
     .Q(ff_bus_wdata[4]),
     .D(ff_wdata[4]),
     .CLK(clk42m),
-    .CE(n69_3) 
+    .CE(n71_8) 
 );
   DFFE ff_bus_wdata_3_s0 (
     .Q(ff_bus_wdata[3]),
     .D(ff_wdata[3]),
     .CLK(clk42m),
-    .CE(n69_3) 
+    .CE(n71_8) 
 );
   DFFE ff_bus_wdata_2_s0 (
     .Q(ff_bus_wdata[2]),
     .D(ff_wdata[2]),
     .CLK(clk42m),
-    .CE(n69_3) 
+    .CE(n71_8) 
 );
   DFFE ff_bus_wdata_1_s0 (
     .Q(ff_bus_wdata[1]),
     .D(ff_wdata[1]),
     .CLK(clk42m),
-    .CE(n69_3) 
+    .CE(n71_8) 
 );
   DFFE ff_bus_wdata_0_s0 (
     .Q(ff_bus_wdata[0]),
     .D(ff_wdata[0]),
     .CLK(clk42m),
-    .CE(n69_3) 
+    .CE(n71_8) 
 );
   DFF ff_reset_n0_s0 (
     .Q(ff_reset_n0),
@@ -712,11 +716,18 @@ defparam n40_s2.INIT=16'hF30A;
 );
   DFFS ff_ready_s6 (
     .Q(w_bus_uart_ready),
-    .D(n40_6),
+    .D(n42_6),
     .CLK(clk42m),
     .SET(n104_10) 
 );
 defparam ff_ready_s6.INIT=1'b1;
+  DFFR ff_uart_valid_s5 (
+    .Q(ff_uart_valid),
+    .D(n71_6),
+    .CLK(clk42m),
+    .RESET(n104_10) 
+);
+defparam ff_uart_valid_s5.INIT=1'b0;
   ip_uart u_uart_0 (
     .clk27m_d(clk27m_d),
     .ff_uart_valid1(ff_uart_valid1),
@@ -1662,10 +1673,10 @@ defparam n37_s.ALU_MODE=0;
 );
   uart u_uart (
     .clk42m(clk42m),
-    .n104_10(n104_10),
     .w_msx_reset_n(w_msx_reset_n),
     .clk27m_d(clk27m_d),
     .ff_valid(ff_valid),
+    .n104_10(n104_10),
     .ff_wdata(ff_wdata[6:0]),
     .w_bus_uart_ready(w_bus_uart_ready),
     .led_d(led_d_0[5])
