@@ -65,6 +65,7 @@ module bootrom (
 			ff_rom_q_en		<= 1'b1;
 		end
 		else begin
+			ff_rom_q		<= 8'd0;
 			ff_rom_q_en		<= 1'b0;
 		end
 	end
