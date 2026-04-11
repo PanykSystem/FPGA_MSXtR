@@ -7,7 +7,8 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
-WARN  (TA1132) :  'clk27m' was determined to be a clock but was not created.
+WARN  (TA1117) : Can't calculate clocks' relationship between: "u_pll/rpll_inst/CLKOUTD.default_gen_clk" and "clk27m"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "clk27m" and "u_pll/rpll_inst/CLKOUTD.default_gen_clk"
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
@@ -28,5 +29,5 @@ Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\impl\pnr
 Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\impl\pnr\FPGA_MSXtR.rpt.html" completed
 Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\impl\pnr\FPGA_MSXtR.rpt.txt" completed
 Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\impl\pnr\FPGA_MSXtR.tr.html" completed
-Thu Apr  9 22:06:53 2026
+Sat Apr 11 09:26:12 2026
 

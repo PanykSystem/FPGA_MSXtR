@@ -43,7 +43,8 @@ module s2026a (
 	input			z80_wr_n,
 	input			z80_busak_n,
 	input	[15:0]	z80_a,
-	inout	[7:0]	z80_d,
+	input	[7:0]	z80_wdata,
+	output	[7:0]	z80_rdata,
 	output			bus_m1,
 	output			bus_io,
 	output			bus_write,
@@ -126,6 +127,25 @@ module s2026a (
 	reg				ff_bus_valid;
 	reg		[7:0]	ff_bus_rdata;
 	reg				ff_bus_rdata_en;
+	wire			w_uart_cs;
+	wire			w_bootrom_cs;
+	wire			w_mapper_cs;
+	wire			w_mapper_io_cs;
+	wire			w_secondary_slot0_cs;
+	wire			w_secondary_slot3_cs;
+	wire			w_ppi_cs;
+	wire			w_rtc_cs;
+	wire			w_vdp_cs;
+	wire			w_cartridge_cs;
+	wire			w_ssg_cs;
+	wire			w_opll_cs;
+	wire			w_kanji_cs;
+	wire			w_megarom1_cs;
+	wire			w_megarom2_cs;
+	wire			w_s2026_cs;
+	wire			w_s2026_meegarom_cs;
+	wire			w_indicator_cs;
+	wire			w_sysctl_cs;
 	reg				ff_uart_cs;
 	reg				ff_bootrom_cs;
 	reg				ff_mapper_cs;
@@ -227,7 +247,7 @@ module s2026a (
 	// ---------------------------------------------------------
 	//	CPU select instance
 	// ---------------------------------------------------------
-	wire	w_cpu_change_req	= ff_s2026_cs && w_bus_write && w_bus_address[1:0] == 2'd1 && ff_register_index == 4'd6;
+	wire	w_cpu_change_req	= w_s2026_cs && w_bus_write && w_bus_address[1:0] == 2'd1 && ff_register_index == 4'd6;
 	wire	w_cpu_change_target	= w_bus_wdata[5];
 
 	s2026a_cpu_select u_cpu_select (
@@ -240,7 +260,8 @@ module s2026a (
 		.z80_wr_n			( z80_wr_n				),
 		.z80_busak_n		( z80_busak_n			),
 		.z80_a				( z80_a					),
-		.z80_d				( z80_d					),
+		.z80_wdata			( z80_wdata				),
+		.z80_rdata			( z80_rdata				),
 		.z80_busrq_n		( z80_busrq_n			),
 		.cpu_change_req		( w_cpu_change_req		),
 		.cpu_change_target	( w_cpu_change_target	),
@@ -282,33 +303,52 @@ module s2026a (
 	// ---------------------------------------------------------
 	//	Chip select
 	// ---------------------------------------------------------
+	assign w_uart_cs				= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'h10 ));
+	assign w_bootrom_cs				= (w_bus_mem &&  ff_bootrom_mode);
+//	assign w_mapper_cs				= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd3) && (w_secondary_slot3 == 2'd0));
+//	assign w_mapper_io_cs			= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hFC ));
+//	assign w_secondary_slot0_cs		= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd0));
+//	assign w_secondary_slot3_cs		= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd3));
+//	assign w_ppi_cs					= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hA8 ));
+//	assign w_rtc_cs					= (w_bus_io  && ( {w_bus_address[7:1], 1'd0} == 8'hB4 ));
+//	assign w_vdp_cs					= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h98 ));
+//	assign w_cartridge_cs			= (w_bus_mem && !ff_bootrom_mode && ((!megarom1_en && w_primary_slot == 2'd1) || (!megarom2_en && w_primary_slot == 2'd2)));
+//	assign w_ssg_cs					= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hA0 ));
+//	assign w_opll_cs				= (w_bus_io  && ( {w_bus_address[7:1], 1'd0} == 8'h7C ));
+//	assign w_kanji_cs				= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hD8 ));
+//	assign w_megarom1_cs			= (w_bus_mem && !ff_bootrom_mode && megarom1_en && (w_primary_slot == 2'd1));
+//	assign w_megarom2_cs			= (w_bus_mem && !ff_bootrom_mode && megarom2_en && (w_primary_slot == 2'd2));
+	assign w_s2026_cs				= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hE4 ));
+//	assign w_s2026_meegarom_cs		= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd3) && (w_secondary_slot3 == 2'd3));
+//	assign w_indicator_cs			= (w_bus_io  && (  w_bus_address[7:0]        == 8'hA7 ));
+	assign w_sysctl_cs				= (w_bus_io  && ( {w_bus_address[7:1], 1'd0} == 8'hF4 ));
+
 	always @( posedge clk ) begin
 		if( w_bus_valid ) begin
-			ff_uart_cs				<= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'h10 ));
-			ff_bootrom_cs			<= (w_bus_mem &&  ff_bootrom_mode);
-//			ff_mapper_cs			<= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd3) && (w_secondary_slot3 == 2'd0));
-//			ff_mapper_io_cs			<= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hFC ));
-//			ff_secondary_slot0_cs	<= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd0));
-//			ff_secondary_slot3_cs	<= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd3));
-//			ff_ppi_cs				<= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hA8 ));
-//			ff_rtc_cs				<= (w_bus_io  && ( {w_bus_address[7:1], 1'd0} == 8'hB4 ));
-//			ff_vdp_cs				<= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h98 ));
-//			ff_cartridge_cs			<= (w_bus_mem && !ff_bootrom_mode && ((!megarom1_en && w_primary_slot == 2'd1) || (!megarom2_en && w_primary_slot == 2'd2)));
-//			ff_ssg_cs				<= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hA0 ));
-//			ff_opll_cs				<= (w_bus_io  && ( {w_bus_address[7:1], 1'd0} == 8'h7C ));
-//			ff_kanji_cs				<= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hD8 ));
-//			ff_megarom1_cs			<= (w_bus_mem && !ff_bootrom_mode && megarom1_en && (w_primary_slot == 2'd1));
-//			ff_megarom2_cs			<= (w_bus_mem && !ff_bootrom_mode && megarom2_en && (w_primary_slot == 2'd2));
-			ff_s2026_cs				<= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hE4 ));
-//			ff_s2026_meegarom_cs	<= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd3) && (w_secondary_slot3 == 2'd3));
-//			ff_indicator_cs			<= (w_bus_io  && (  w_bus_address[7:0]        == 8'hA7 ));
-			ff_sysctl_cs			<= (w_bus_io  && ( {w_bus_address[7:1], 1'd0} == 8'hF4 ));
-
+			ff_uart_cs				<= w_uart_cs;
+			ff_bootrom_cs			<= w_bootrom_cs;
+//			ff_mapper_cs			<= w_mapper_cs;
+//			ff_mapper_io_cs			<= w_mapper_io_cs;
+//			ff_secondary_slot0_cs	<= w_secondary_slot0_cs;
+//			ff_secondary_slot3_cs	<= w_secondary_slot3_cs;
+//			ff_ppi_cs				<= w_ppi_cs;
+//			ff_rtc_cs				<= w_rtc_cs;
+//			ff_vdp_cs				<= w_vdp_cs;
+//			ff_cartridge_cs			<= w_cartridge_cs;
+//			ff_ssg_cs				<= w_ssg_cs;
+//			ff_opll_cs				<= w_opll_cs;
+//			ff_kanji_cs				<= w_kanji_cs;
+//			ff_megarom1_cs			<= w_megarom1_cs;
+//			ff_megarom2_cs			<= w_megarom2_cs;
+//			ff_s2026_cs				<= w_s2026_cs;
+//			ff_s2026_meegarom_cs	<= w_s2026_meegarom_cs;
+//			ff_indicator_cs			<= w_indicator_cs;
+//			ff_sysctl_cs			<= w_sysctl_cs;
 			ff_bus_write			<= w_bus_write;
+			ff_bus_m1				<= w_bus_m1;
+			ff_bus_io				<= w_bus_io;
 		end
 
-		ff_bus_m1				<= w_bus_m1;
-		ff_bus_io				<= w_bus_io;
 		ff_bus_valid			<= w_bus_valid;
 	end
 
@@ -380,7 +420,7 @@ module s2026a (
 //			ff_bus_rdata	<= w_megaemu2_rdata;
 //			ff_bus_rdata_en	<= 1'b1;
 //		end
-//		else if( ff_s2026_cs && w_bus_valid && !w_bus_write ) begin
+//		else if( w_s2026_cs && w_bus_valid && !w_bus_write ) begin
 //			ff_bus_rdata	<= w_rdata;
 //			ff_bus_rdata_en	<= 1'b1;
 //		end
@@ -404,17 +444,17 @@ module s2026a (
 	// ---------------------------------------------------------
 	//	Wait / Ready
 	// ---------------------------------------------------------
-	assign w_bus_ready	= (!ff_uart_cs           | bus_uart_ready      ) &
-						  (!ff_bootrom_cs        | bus_bootrom_ready   );
-//						  (!ff_mapper_io_cs      | w_mapper_ready      ) &
-//						  (!ff_ppi_cs            | w_ppi_ready         ) &
-//						  (!ff_rtc_cs            | bus_rtc_ready       ) &
-//						  (!ff_cartridge_cs      | bus_cartridge_ready ) &
-//						  (!ff_ssg_cs            | bus_ssg_ready       ) &
-//						  (!ff_kanji_cs          | w_kanjirom_ready    ) &
-//						  (!ff_s2026_meegarom_cs | w_megarom_ready     ) &
-//						  (!ff_megarom1_cs       | w_megaemu1_ready    ) &
-//						  (!ff_megarom2_cs       | w_megaemu2_ready    );
+	assign w_bus_ready	= (!w_uart_cs           | bus_uart_ready      ) &
+						  (!w_bootrom_cs        | bus_bootrom_ready   );
+//						  (!w_mapper_io_cs      | w_mapper_ready      ) &
+//						  (!w_ppi_cs            | w_ppi_ready         ) &
+//						  (!w_rtc_cs            | bus_rtc_ready       ) &
+//						  (!w_cartridge_cs      | bus_cartridge_ready ) &
+//						  (!w_ssg_cs            | bus_ssg_ready       ) &
+//						  (!w_kanji_cs          | w_kanjirom_ready    ) &
+//						  (!w_s2026_meegarom_cs | w_megarom_ready     ) &
+//						  (!w_megarom1_cs       | w_megaemu1_ready    ) &
+//						  (!w_megarom2_cs       | w_megaemu2_ready    );
 	assign w_cpu_pause	= w_bus_valid & ~w_bus_ready;
 
 	//--------------------------------------------------------------
@@ -471,11 +511,10 @@ module s2026a (
 	//--------------------------------------------------------------
 	//	reset_n freerun counter
 	//--------------------------------------------------------------
-	assign w_counter_reset	= ( ff_s2026_cs && (w_bus_address[1:0] == 2'd2) && w_bus_write && ff_bus_valid ) ? 1'b1 : 1'b0;
+	assign w_counter_reset	= ( w_s2026_cs && (w_bus_address[1:0] == 2'd2) && w_bus_write && ff_bus_valid ) ? 1'b1 : 1'b0;
 
 	//--------------------------------------------------------------
 	//	3.911usec generator for System Timer
-	//		10.738635MHz : 42���� = 85.90908MHz : 336����
 	//--------------------------------------------------------------
 	assign w_3_911usec = ( ff_div_counter == 9'd0 ) ? 1'b1 : 1'b0;
 
@@ -524,7 +563,7 @@ module s2026a (
 			ff_register_index <= 4'd0;
 		end
 		else begin
-			if( ff_s2026_cs && w_bus_write && w_bus_address[1:0] == 2'd0 ) begin
+			if( w_s2026_cs && w_bus_write && w_bus_address[1:0] == 2'd0 ) begin
 				ff_register_index <= w_bus_wdata[3:0];
 			end
 			else begin
@@ -538,7 +577,7 @@ module s2026a (
 			ff_rom_mode			<= 1'b1;
 		end
 		else begin
-			if( ff_s2026_cs && w_bus_write && w_bus_address[1:0] == 2'd1 ) begin
+			if( w_s2026_cs && w_bus_write && w_bus_address[1:0] == 2'd1 ) begin
 				case( ff_register_index )
 				4'd6:
 					ff_rom_mode				<= w_bus_wdata[6];
@@ -559,10 +598,10 @@ module s2026a (
 			ff_f4	<= 8'd0;
 			ff_f5	<= 2'd0;
 		end
-		else if( ff_sysctl_cs && w_bus_write && w_bus_address[0] == 1'b0 ) begin
+		else if( w_sysctl_cs && w_bus_write && w_bus_address[0] == 1'b0 ) begin
 			ff_f4	<= w_bus_wdata;
 		end
-		else if( ff_sysctl_cs && w_bus_write && w_bus_address[0] == 1'b1 ) begin
+		else if( w_sysctl_cs && w_bus_write && w_bus_address[0] == 1'b1 ) begin
 			ff_f5	<= w_bus_wdata[1:0];
 		end
 	end

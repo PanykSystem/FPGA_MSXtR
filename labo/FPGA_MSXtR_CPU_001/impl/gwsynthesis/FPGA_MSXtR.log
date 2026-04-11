@@ -13,8 +13,8 @@ Analyzing Verilog file 'D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001
 Analyzing Verilog file 'D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\gowin_rpll\gowin_rpll2.v'
 Analyzing Verilog file 'D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\gowin_rpll\gowin_rpll3.v'
 Analyzing Verilog file 'D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v'
-Undeclared symbol 'kanji1_en', assumed default net type 'wire'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v":570)
-Undeclared symbol 'kanji2_en', assumed default net type 'wire'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v":571)
+Undeclared symbol 'kanji1_en', assumed default net type 'wire'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v":609)
+Undeclared symbol 'kanji2_en', assumed default net type 'wire'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v":610)
 Analyzing Verilog file 'D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a_cpu_select.v'
 Analyzing Verilog file 'D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\uart\ip_uart.v'
 Analyzing Verilog file 'D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\uart\uart.v'
@@ -35,7 +35,7 @@ Compiling module 'cz80_registers'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MS
 WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\cz80\cz80.v":1011)
 Compiling module 's2026a'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v":34)
 Compiling module 's2026a_cpu_select'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a_cpu_select.v":34)
-WARN  (EX1998) : Net 'ff_switch' does not have a driver("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v":119)
+WARN  (EX1998) : Net 'ff_switch' does not have a driver("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\s2026a\s2026a.v":120)
 Compiling module 'bootrom'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\bootrom\bootrom.v":34)
 Extracting RAM for identifier 'ff_ram'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\bootrom\bootrom.v":46)
 Compiling module 'uart'("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\uart\uart.v":27)
@@ -59,8 +59,8 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "Gowin_rPLL2" instantiated to "u_pll2" is swept in optimizing("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\FPGA_MSXtR.v":115)
-WARN  (NL0002) : The module "Gowin_rPLL3" instantiated to "u_pll3" is swept in optimizing("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\FPGA_MSXtR.v":120)
+WARN  (NL0002) : The module "Gowin_rPLL2" instantiated to "u_pll2" is swept in optimizing("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\FPGA_MSXtR.v":116)
+WARN  (NL0002) : The module "Gowin_rPLL3" instantiated to "u_pll3" is swept in optimizing("D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\FPGA_MSXtR.v":121)
 [95%] Generate netlist file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\impl\gwsynthesis\FPGA_MSXtR.vg" completed
 [100%] Generate report file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\impl\gwsynthesis\FPGA_MSXtR_syn.rpt.html" completed
 GowinSynthesis finish

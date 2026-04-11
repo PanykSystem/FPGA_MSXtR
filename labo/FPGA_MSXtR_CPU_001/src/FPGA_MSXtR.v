@@ -69,7 +69,8 @@ module fpga_msxtr (
 	wire 			w_z80_halt_n;
 	wire 			w_z80_busak_n;
 	wire	[15:0]	w_z80_a;
-	wire	[7:0]	w_z80_d;
+	wire	[7:0]	w_z80_wdata;
+	wire	[7:0]	w_z80_rdata;
 	wire			w_processor_mode;
 	wire			w_bus_m1;
 	wire			w_bus_io;
@@ -174,7 +175,7 @@ module fpga_msxtr (
 	//	Legasy compatible CPU core
 	cz80_inst u_z80 (
 		.reset_n				( w_msx_reset_n				),
-		.clk_n					( clk42m					),
+		.clk					( clk42m					),
 		.enable					( w_3_579m					),
 		.wait_n					( w_wait_n					),
 		.int_n					( w_int_n					),
@@ -189,7 +190,8 @@ module fpga_msxtr (
 		.halt_n					( 							),
 		.busak_n				( w_z80_busak_n				),
 		.a						( w_z80_a					),
-		.d						( w_z80_d					)
+		.wdata					( w_z80_wdata				),
+		.rdata					( w_z80_rdata				)
 	);
 
 	assign w_int_n = 1'b1;
@@ -209,7 +211,8 @@ module fpga_msxtr (
 		.z80_wr_n				( w_z80_wr_n				),
 		.z80_busak_n			( w_z80_busak_n				),
 		.z80_a					( w_z80_a					),
-		.z80_d					( w_z80_d					),
+		.z80_wdata				( w_z80_wdata				),
+		.z80_rdata				( w_z80_rdata				),
 		.bus_bootrom_cs			( w_bus_bootrom_cs			),
 		.bus_bootrom_rdata		( w_bus_bootrom_rdata		),
 		.bus_bootrom_rdata_en	( w_bus_bootrom_rdata_en	),

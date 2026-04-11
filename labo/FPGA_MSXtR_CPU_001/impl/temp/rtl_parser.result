@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
-    "InstLine" : 106,
+    "InstLine" : 107,
     "InstName" : "u_pll",
     "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll.v",
     "ModuleLine" : 9,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
-    "InstLine" : 112,
+    "InstLine" : 113,
     "InstName" : "u_pll2",
     "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll2.v",
     "ModuleLine" : 9,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
-    "InstLine" : 117,
+    "InstLine" : 118,
     "InstName" : "u_pll3",
     "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll3.v",
     "ModuleLine" : 9,
@@ -33,7 +33,7 @@
    },
    {
     "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
-    "InstLine" : 175,
+    "InstLine" : 176,
     "InstName" : "u_z80",
     "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_inst.v",
     "ModuleLine" : 63,
@@ -41,7 +41,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_inst.v",
-      "InstLine" : 132,
+      "InstLine" : 114,
       "InstName" : "u_cz80",
       "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80.v",
       "ModuleLine" : 63,
@@ -77,7 +77,7 @@
    },
    {
     "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
-    "InstLine" : 200,
+    "InstLine" : 202,
     "InstName" : "u_s2026a",
     "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/s2026a/s2026a.v",
     "ModuleLine" : 34,
@@ -85,7 +85,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/s2026a/s2026a.v",
-      "InstLine" : 233,
+      "InstLine" : 253,
       "InstName" : "u_cpu_select",
       "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/s2026a/s2026a_cpu_select.v",
       "ModuleLine" : 34,
@@ -95,7 +95,7 @@
    },
    {
     "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
-    "InstLine" : 232,
+    "InstLine" : 235,
     "InstName" : "u_bootrom",
     "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/bootrom/bootrom.v",
     "ModuleLine" : 34,
@@ -103,7 +103,7 @@
    },
    {
     "InstFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
-    "InstLine" : 250,
+    "InstLine" : 253,
     "InstName" : "u_uart",
     "ModuleFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/uart/uart.v",
     "ModuleLine" : 27,

@@ -3,6 +3,7 @@
 -pn GW2AR-LV18QN88C8/I7
 -cst D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\FPGA_MSXtR.cst
 -cfg D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\impl\pnr\device.cfg
+-sdc D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_001\src\FPGA_MSXtR.sdc
 -bit
 -tr
 -ph

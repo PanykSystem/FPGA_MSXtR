@@ -42,7 +42,8 @@ module s2026a_cpu_select (
 	input			z80_wr_n,
 	input			z80_busak_n,
 	input	[15:0]	z80_a,
-	inout	[7:0]	z80_d,
+	input	[7:0]	z80_wdata,
+	output	[7:0]	z80_rdata,
 	output			z80_busrq_n,
 	//	CPU change control
 	input			cpu_change_req,
@@ -69,6 +70,7 @@ module s2026a_cpu_select (
 	reg		[1:0]	ff_cpu_change_state = 2'b01;
 	reg				ff_timing;
 
+	reg		[15:0]	ff_bus_address_pre;
 	reg		[15:0]	ff_bus_address;
 	reg				ff_m1_n;
 	reg				ff_mreq_n;
@@ -81,23 +83,23 @@ module s2026a_cpu_select (
 	reg				ff_bus_io;
 	reg				ff_bus_mem;
 	reg				ff_bus_write;
-	reg				ff_bus_request;
 	reg				ff_bus_valid;
 	reg		[7:0]	ff_bus_wdata;
 	wire			w_read_valid;
 	wire			w_write_valid;
 	reg				ff_read_valid;
+	wire			w_valid;
 
 	// ---------------------------------------------------------
 	//	Address / Control MUX
 	// ---------------------------------------------------------
 	always @( posedge clk ) begin
-		ff_bus_address	<= z80_a;
-		ff_m1_n			<= z80_m1_n;
-		ff_mreq_n		<= z80_mreq_n;
-		ff_iorq_n		<= z80_iorq_n;
-		ff_rd_n			<= z80_rd_n;
-		ff_wr_n			<= z80_wr_n;
+		ff_bus_address_pre	<= z80_a;
+		ff_m1_n				<= z80_m1_n;
+		ff_mreq_n			<= z80_mreq_n;
+		ff_iorq_n			<= z80_iorq_n;
+		ff_rd_n				<= z80_rd_n;
+		ff_wr_n				<= z80_wr_n;
 	end
 
 	// ---------------------------------------------------------
@@ -105,31 +107,55 @@ module s2026a_cpu_select (
 	// ---------------------------------------------------------
 	always @( posedge clk ) begin
 		if( !z80_wr_n  ) begin
-			ff_wdata		<= z80_d;
+			ff_wdata		<= z80_wdata;
 		end
 	end
 
 	// ---------------------------------------------------------
-	//	BUS signal
+	//	Valid/Ready protocol へ乗り換え
 	// ---------------------------------------------------------
-	assign w_read_valid		= (~z80_iorq_n | ~z80_mreq_n) &  ff_rd_n & ~z80_rd_n;
-	assign w_write_valid	= (~ff_iorq_n  | ~ff_mreq_n ) & ~ff_wr_n &  z80_wr_n;
+	always @( posedge clk ) begin
+		if( !reset_n ) begin
+			ff_bus_m1		<= 1'b0;
+			ff_bus_io		<= 1'b0;
+			ff_bus_mem		<= 1'b0;
+			ff_bus_write	<= 1'b0;
+			ff_bus_wdata	<= 1'b0;
+		end
+		else if( !ff_bus_valid && w_valid ) begin
+			ff_bus_m1		<= ~ff_m1_n;
+			ff_bus_io		<= ~ff_iorq_n;
+			ff_bus_mem		<= ~ff_mreq_n;
+			ff_bus_write	<= ~ff_wr_n;
+			ff_bus_wdata	<= ff_wdata;
+		end
+	end
 
 	always @( posedge clk ) begin
-		ff_bus_m1		<= ~ff_m1_n;
-		ff_bus_io		<= ~ff_iorq_n;
-		ff_bus_mem		<= ~ff_mreq_n;
-		ff_bus_write	<= ~ff_wr_n;
-		ff_bus_wdata	<= ff_wdata;
-		ff_read_valid	<= w_read_valid;
+		if( !reset_n ) begin
+			ff_read_valid	<= 1'b0;
+		end
+		else begin
+			ff_read_valid	<= w_read_valid;
+		end
 	end
+
+	//	read は rd_n の立下り
+	assign w_read_valid		= (~z80_iorq_n | ~z80_mreq_n) &  ff_rd_n & ~z80_rd_n;
+	//	write は wr_n の立ち上がり
+	assign w_write_valid	= (~ff_iorq_n  | ~ff_mreq_n ) & ~ff_wr_n &  z80_wr_n;
+	//	read または write が発生
+	assign w_valid			= ff_read_valid | w_write_valid;
 
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_bus_valid	<= 1'b0;
 		end
 		else if( !ff_bus_valid ) begin
-			ff_bus_valid	<= ff_read_valid | w_write_valid;
+			if( w_valid ) begin
+				ff_bus_valid	<= 1'b1;
+				ff_bus_address	<= ff_bus_address_pre;
+			end
 		end
 		else if( bus_ready ) begin
 			ff_bus_valid	<= 1'b0;
@@ -139,12 +165,12 @@ module s2026a_cpu_select (
 	// ---------------------------------------------------------
 	//	CPU data bus tristate
 	// ---------------------------------------------------------
-	assign z80_d	= (!z80_rd_n ) ? rdata : 8'hZZ;
+	assign z80_rdata		= rdata;
 
 	// ---------------------------------------------------------
 	//	Output assignments
 	// ---------------------------------------------------------
-	assign wait_n			= ~(ff_bus_valid & ~bus_ready);
+	assign wait_n			= ~(cpu_pause | (ff_bus_valid & ~bus_ready));
 	assign z80_busrq_n		= 1'b1;
 	assign processor_mode	= 1'b1;
 
