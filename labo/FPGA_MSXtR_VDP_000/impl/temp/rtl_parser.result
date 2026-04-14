@@ -1,0 +1,54 @@
+[
+ {
+  "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/FPGA_MSXtR.v",
+  "InstLine" : 24,
+  "InstName" : "fpga_msxtr",
+  "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/FPGA_MSXtR.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "fpga_msxtr",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/FPGA_MSXtR.v",
+    "InstLine" : 85,
+    "InstName" : "u_pll",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/FPGA_MSXtR.v",
+    "InstLine" : 91,
+    "InstName" : "u_pll2",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/gowin_rpll/gowin_rpll2.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_rPLL2"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/FPGA_MSXtR.v",
+    "InstLine" : 96,
+    "InstName" : "u_pll3",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/gowin_rpll/gowin_rpll3.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_rPLL3"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/FPGA_MSXtR.v",
+    "InstLine" : 239,
+    "InstName" : "u_uart",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/uart/uart.v",
+    "ModuleLine" : 27,
+    "ModuleName" : "uart",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/uart/uart.v",
+      "InstLine" : 149,
+      "InstName" : "u_uart",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_000/src/uart/ip_uart.v",
+      "ModuleLine" : 27,
+      "ModuleName" : "ip_uart"
+     }
+    ]
+   }
+  ]
+ }
+]
