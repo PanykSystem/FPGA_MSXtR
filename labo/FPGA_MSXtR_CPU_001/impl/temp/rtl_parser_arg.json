@@ -2,59 +2,59 @@
  "Device" : "GW2AR-18",
  "Files" : [
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/FPGA_MSXtR.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/bootrom/bootrom.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/bootrom/bootrom.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_alu.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_alu.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_inst.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_inst.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_mcode.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_mcode.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_reg.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/cz80/cz80_reg.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll2.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll2.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll3.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/gowin_rpll/gowin_rpll3.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/s2026a/s2026a.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/s2026a/s2026a.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/s2026a/s2026a_cpu_select.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/s2026a/s2026a_cpu_select.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/uart/ip_uart.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/uart/ip_uart.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/uart/uart.v",
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/src/uart/uart.v",
    "Type" : "verilog"
   }
  ],
@@ -62,7 +62,7 @@
 
  ],
  "LoopLimit" : 20000,
- "ResultFile" : "D:/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/impl/temp/rtl_parser.result",
+ "ResultFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_001/impl/temp/rtl_parser.result",
  "Top" : "fpga_msxtr",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"

@@ -1,7 +1,7 @@
 	12'h000:		ff_rom_q <= 8'hf3;
 	12'h001:		ff_rom_q <= 8'h31;
-	12'h002:		ff_rom_q <= 8'h00;
-	12'h003:		ff_rom_q <= 8'h20;
+	12'h002:		ff_rom_q <= 8'hfe;
+	12'h003:		ff_rom_q <= 8'h1f;
 	12'h004:		ff_rom_q <= 8'hdb;
 	12'h005:		ff_rom_q <= 8'h10;
 	12'h006:		ff_rom_q <= 8'he6;
