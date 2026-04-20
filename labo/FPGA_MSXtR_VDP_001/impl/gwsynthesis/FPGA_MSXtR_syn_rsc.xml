@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="fpga_msxtr" Register="41" Alu="24" Lut="32" T_Register="82(41)" T_Alu="24(24)" T_Lut="73(32)">
+ <SubModule name="u_pll"/>
+ <SubModule name="u_uart" Register="16" Lut="5" T_Register="41(16)" T_Lut="41(5)">
+  <SubModule name="u_uart" Register="25" Lut="36" T_Register="25(25)" T_Lut="36(36)"/>
+ </SubModule>
+</Module>
