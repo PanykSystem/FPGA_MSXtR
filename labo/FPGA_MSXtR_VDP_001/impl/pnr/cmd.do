@@ -1,14 +1,15 @@
--d C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\impl\gwsynthesis\FPGA_MSXtR.vg
+-d C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\impl\gwsynthesis\FPGA_MSXtR.vg
 -p GW2AR-18-QFN88-8
 -pn GW2AR-LV18QN88C8/I7
--cst C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\FPGA_MSXtR.cst
--cfg C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\impl\pnr\device.cfg
--sdc C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\FPGA_MSXtR.sdc
+-cst C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\FPGA_MSXtR.cst
+-cfg C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\impl\pnr\device.cfg
+-sdc C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\FPGA_MSXtR.sdc
 -bit
 -tr
 -ph
 -timing
 -cst_error
+-convert_sdp32_36_to_sdp16_18
 -place_option 0
 -route_option 0
 -clock_route_order 0

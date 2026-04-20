@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v",
-    "InstLine" : 85,
+    "InstLine" : 113,
     "InstName" : "u_pll",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_rpll/gowin_rpll.v",
     "ModuleLine" : 10,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v",
-    "InstLine" : 91,
+    "InstLine" : 119,
     "InstName" : "u_pll2",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_rpll/gowin_rpll2.v",
     "ModuleLine" : 9,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v",
-    "InstLine" : 96,
+    "InstLine" : 124,
     "InstName" : "u_pll3",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_rpll/gowin_rpll3.v",
     "ModuleLine" : 9,
@@ -33,7 +33,95 @@
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v",
-    "InstLine" : 239,
+    "InstLine" : 173,
+    "InstName" : "u_z80",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_inst.v",
+    "ModuleLine" : 63,
+    "ModuleName" : "cz80_inst",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_inst.v",
+      "InstLine" : 116,
+      "InstName" : "u_cz80",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
+      "ModuleLine" : 63,
+      "ModuleName" : "cz80",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
+        "InstLine" : 237,
+        "InstName" : "u_mcode",
+        "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_mcode.v",
+        "ModuleLine" : 63,
+        "ModuleName" : "cz80_mcode"
+       },
+       {
+        "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
+        "InstLine" : 296,
+        "InstName" : "u_alu",
+        "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_alu.v",
+        "ModuleLine" : 63,
+        "ModuleName" : "cz80_alu"
+       },
+       {
+        "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
+        "InstLine" : 784,
+        "InstName" : "u_regs",
+        "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_reg.v",
+        "ModuleLine" : 55,
+        "ModuleName" : "cz80_registers"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v",
+    "InstLine" : 199,
+    "InstName" : "u_s2026a",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/s2026a/s2026a.v",
+    "ModuleLine" : 34,
+    "ModuleName" : "s2026a",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/s2026a/s2026a.v",
+      "InstLine" : 105,
+      "InstName" : "u_cpu_select",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/s2026a/s2026a_cpu_select.v",
+      "ModuleLine" : 34,
+      "ModuleName" : "s2026a_cpu_select"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v",
+    "InstLine" : 231,
+    "InstName" : "u_bootrom",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/bootrom.v",
+    "ModuleLine" : 34,
+    "ModuleName" : "bootrom",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/bootrom.v",
+      "InstLine" : 61,
+      "InstName" : "u_rom",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/rom.v",
+      "ModuleLine" : 34,
+      "ModuleName" : "rom"
+     },
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/bootrom.v",
+      "InstLine" : 74,
+      "InstName" : "u_ram",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_sp/gowin_sp.v",
+      "ModuleLine" : 9,
+      "ModuleName" : "Gowin_SP"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v",
+    "InstLine" : 249,
     "InstName" : "u_uart",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/uart/uart.v",
     "ModuleLine" : 27,
@@ -46,76 +134,6 @@
       "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/uart/ip_uart.v",
       "ModuleLine" : 27,
       "ModuleName" : "ip_uart"
-     }
-    ]
-   }
-  ]
- },
- {
-  "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/bootrom.v",
-  "InstLine" : 34,
-  "InstName" : "bootrom",
-  "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/bootrom.v",
-  "ModuleLine" : 34,
-  "ModuleName" : "bootrom",
-  "SubInsts" : [
-   {
-    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/bootrom.v",
-    "InstLine" : 61,
-    "InstName" : "u_rom",
-    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/rom.v",
-    "ModuleLine" : 34,
-    "ModuleName" : "rom"
-   },
-   {
-    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/bootrom/bootrom.v",
-    "InstLine" : 74,
-    "InstName" : "u_ram",
-    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_sp/gowin_sp.v",
-    "ModuleLine" : 9,
-    "ModuleName" : "Gowin_SP"
-   }
-  ]
- },
- {
-  "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_inst.v",
-  "InstLine" : 63,
-  "InstName" : "cz80_inst",
-  "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_inst.v",
-  "ModuleLine" : 63,
-  "ModuleName" : "cz80_inst",
-  "SubInsts" : [
-   {
-    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_inst.v",
-    "InstLine" : 116,
-    "InstName" : "u_cz80",
-    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
-    "ModuleLine" : 63,
-    "ModuleName" : "cz80",
-    "SubInsts" : [
-     {
-      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
-      "InstLine" : 237,
-      "InstName" : "u_mcode",
-      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_mcode.v",
-      "ModuleLine" : 63,
-      "ModuleName" : "cz80_mcode"
-     },
-     {
-      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
-      "InstLine" : 296,
-      "InstName" : "u_alu",
-      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_alu.v",
-      "ModuleLine" : 63,
-      "ModuleName" : "cz80_alu"
-     },
-     {
-      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80.v",
-      "InstLine" : 784,
-      "InstName" : "u_regs",
-      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/cz80/cz80_reg.v",
-      "ModuleLine" : 55,
-      "ModuleName" : "cz80_registers"
      }
     ]
    }

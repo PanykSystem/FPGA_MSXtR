@@ -79,6 +79,34 @@ module fpga_msxtr (
 	wire			w_bus_uart_rdata_en;
 	wire			w_bus_uart_ready;
 
+	wire			w_int_p;
+
+	wire 			w_z80_m1;
+	wire 			w_z80_mreq;
+	wire 			w_z80_iorq;
+	wire 			w_z80_rd;
+	wire 			w_z80_wr;
+	wire 			w_z80_rfsh;
+	wire	[15:0]	w_z80_a;
+	wire	[7:0]	w_z80_wdata;
+	wire	[7:0]	w_z80_rdata;
+	wire			w_z80_active;
+	wire			w_bus_m1;
+	wire			w_bus_io;
+	wire			w_bus_write;
+	wire			w_bus_valid;
+	wire	[7:0]	w_bus_wdata;
+	wire	[15:0]	w_bus_address;
+
+	wire			w_bus_bootrom_cs;
+	wire	[7:0]	w_bus_bootrom_rdata;
+	wire			w_bus_bootrom_rdata_en;
+	wire			w_bus_bootrom_ready;
+	wire			w_bus_uart_cs;
+	wire	[7:0]	w_bus_uart_rdata;
+	wire			w_bus_uart_rdata_en;
+	wire			w_bus_uart_ready;
+
 	// --------------------------------------------------------------------
 	//	clock
 	// --------------------------------------------------------------------
@@ -138,98 +166,80 @@ module fpga_msxtr (
 	assign w_msx_reset_n = (ff_reset_cnt == 4'b1111) ? 1'b1: 1'b0;
 
 	// --------------------------------------------------------------------
-	//	TEST LOGIC
+	//	Z80 core
 	// --------------------------------------------------------------------
-	reg		[2:0]	ff_state;
-	reg		[7:0]	ff_wdata;
-	reg				ff_valid;
 
-	always @( posedge clk42m ) begin
-		if( !w_msx_reset_n ) begin
-			ff_state <= 3'd0;
-			ff_wdata <= "-";
-			ff_valid <= 1'b0;
-		end
-		else begin
-			case( ff_state )
-			3'd0: begin
-				if( button[0] == 1'b1 ) begin
-					ff_state <= ff_state + 3'd1;
-				end
-			end
-			3'd1: begin
-				if( button[0] == 1'b0 ) begin
-					ff_state <= ff_state + 3'd1;
-				end
-			end
-			3'd2: begin
-				if( ff_valid && w_bus_uart_ready ) begin
-					ff_wdata <= "T";
-					ff_state <= ff_state + 3'd1;
-					ff_valid <= 1'b0;
-				end
-				else begin
-					ff_valid <= 1'b1;
-				end
-			end
-			3'd3: begin
-				if( ff_valid && w_bus_uart_ready ) begin
-					ff_wdata <= "E";
-					ff_state <= ff_state + 3'd1;
-					ff_valid <= 1'b0;
-				end
-				else begin
-					ff_valid <= 1'b1;
-				end
-			end
-			3'd4: begin
-				if( ff_valid && w_bus_uart_ready ) begin
-					ff_wdata <= "S";
-					ff_state <= ff_state + 3'd1;
-					ff_valid <= 1'b0;
-				end
-				else begin
-					ff_valid <= 1'b1;
-				end
-			end
-			3'd5: begin
-				if( ff_valid && w_bus_uart_ready ) begin
-					ff_wdata <= "T";
-					ff_state <= ff_state + 3'd1;
-					ff_valid <= 1'b0;
-				end
-				else begin
-					ff_valid <= 1'b1;
-				end
-			end
-			3'd6: begin
-				if( ff_valid && w_bus_uart_ready ) begin
-					ff_wdata <= " ";
-					ff_state <= ff_state + 3'd1;
-					ff_valid <= 1'b0;
-				end
-				else begin
-					ff_valid <= 1'b1;
-				end
-			end
-			3'd7: begin
-				if( ff_valid && w_bus_uart_ready ) begin
-					ff_wdata <= " ";
-					ff_state <= 'd0;
-					ff_valid <= 1'b0;
-				end
-				else begin
-					ff_valid <= 1'b1;
-				end
-			end
-			default: begin
-				ff_wdata <= " ";
-				ff_state <= 'd0;
-				ff_valid <= 1'b0;
-			end
-			endcase
-		end
-	end
+	//	Legasy compatible CPU core
+	cz80_inst u_z80 (
+		.reset_n				( w_msx_reset_n				),
+		.clk					( clk42m					),
+		.enable					( w_z80_active				),
+		.wait_p					( 1'b0						),
+		.int_p					( w_int_p					),
+		.nmi_n					( 1'b1						),
+		.busrq					( 1'b0						),
+		.m1						( w_z80_m1					),
+		.mreq					( w_z80_mreq				),
+		.iorq					( w_z80_iorq				),
+		.rd						( w_z80_rd					),
+		.wr						( w_z80_wr					),
+		.rfsh					( w_z80_rfsh				),
+		.halt_n					( 							),
+		.busak					( 							),
+		.a						( w_z80_a					),
+		.wdata					( w_z80_wdata				),
+		.rdata					( w_z80_rdata				)
+	);
+
+	assign w_int_p			= 1'b0;
+
+	// --------------------------------------------------------------------
+	//	System Controller
+	// --------------------------------------------------------------------
+	s2026a u_s2026a (
+		.reset_n				( w_msx_reset_n				),
+		.clk					( clk42m					),
+		.enable_z80				( w_3_579m					),
+		.z80_m1					( w_z80_m1					),
+		.z80_mreq				( w_z80_mreq				),
+		.z80_iorq				( w_z80_iorq				),
+		.z80_rd					( w_z80_rd					),
+		.z80_wr					( w_z80_wr					),
+		.z80_a					( w_z80_a					),
+		.z80_wdata				( w_z80_wdata				),
+		.z80_rdata				( w_z80_rdata				),
+		.bus_bootrom_cs			( w_bus_bootrom_cs			),
+		.bus_bootrom_rdata		( w_bus_bootrom_rdata		),
+		.bus_bootrom_rdata_en	( w_bus_bootrom_rdata_en	),
+		.bus_bootrom_ready		( w_bus_bootrom_ready		),
+		.bus_uart_cs			( w_bus_uart_cs				),
+		.bus_uart_rdata			( w_bus_uart_rdata			),
+		.bus_uart_rdata_en		( w_bus_uart_rdata_en		),
+		.bus_uart_ready			( w_bus_uart_ready			),
+		.bus_m1					( w_bus_m1					),
+		.bus_io					( w_bus_io					),
+		.bus_write				( w_bus_write				),
+		.bus_valid				( w_bus_valid				),
+		.bus_wdata				( w_bus_wdata				),
+		.bus_address			( w_bus_address				),
+		.z80_active				( w_z80_active				)
+	);
+
+	// --------------------------------------------------------------------
+	//	BOOT ROM
+	// --------------------------------------------------------------------
+	bootrom u_bootrom (
+		.reset_n				( w_msx_reset_n				),
+		.clk					( clk42m					),
+		.bootrom_cs				( w_bus_bootrom_cs			),
+		.bus_write				( w_bus_write				),
+		.bus_valid				( w_bus_valid				),
+		.bus_wdata				( w_bus_wdata				),
+		.bus_address			( w_bus_address				),
+		.bus_rdata				( w_bus_bootrom_rdata		),
+		.bus_rdata_en			( w_bus_bootrom_rdata_en	),
+		.bus_ready				( w_bus_bootrom_ready		)
+	);
 
 	// --------------------------------------------------------------------
 	//	UART
@@ -240,11 +250,11 @@ module fpga_msxtr (
 		.reset_n				( w_msx_reset_n				),
 		.clk					( clk42m					),
 		.clk_uart				( clk27m					),
-		.bus_uart_cs			( 1'b1						),
-		.bus_valid				( ff_valid					),
-		.bus_write				( 1'b1						),
+		.bus_uart_cs			( w_bus_uart_cs				),
+		.bus_valid				( w_bus_valid				),
+		.bus_write				( w_bus_write				),
 		.bus_ready				( w_bus_uart_ready			),
-		.bus_wdata				( ff_wdata					),
+		.bus_wdata				( w_bus_wdata				),
 		.bus_rdata				( w_bus_uart_rdata			),
 		.bus_rdata_en			( w_bus_uart_rdata_en		),
 		.uart_tx				( w_uart_tx					),

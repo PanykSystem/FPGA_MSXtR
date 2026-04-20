@@ -61,19 +61,19 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\impl\gwsynthesis\FPGA_MSXtR.vg</td>
+<td>C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\impl\gwsynthesis\FPGA_MSXtR.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\FPGA_MSXtR.cst</td>
+<td>C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\FPGA_MSXtR.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
-<td>C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\FPGA_MSXtR.sdc</td>
+<td>C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\FPGA_MSXtR.sdc</td>
 </tr>
 <tr>
 <td class="label">Tool Version</td>
-<td>V1.9.12.02_SP2 (64-bit)</td>
+<td>V1.9.11.02 (64-bit)</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -85,12 +85,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sat Apr 18 12:57:18 2026
+<td>Tue Apr 21 07:06:18 2026
 </td>
 </tr>
 <tr>
 <td class="label">Legal Announcement</td>
-<td>Copyright (C)2014-2026 Gowin Semiconductor Corporation. All rights reserved.</td>
+<td>Copyright (C)2014-2025 Gowin Semiconductor Corporation. All rights reserved.</td>
 </tr>
 </table>
 <h2><a name="Configure_Info">Configure Information:</a></h2>
@@ -157,7 +157,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Total Power (mW)</td>
-<td>133.581</td>
+<td>135.466</td>
 </tr>
 <tr>
 <td class="label">Quiescent Power (mW)</td>
@@ -165,14 +165,14 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Dynamic Power (mW)</td>
-<td>10.781</td>
+<td>12.666</td>
 </tr>
 </table>
 <h2><a name="Thermal_Info">Thermal Information:</a></h2>
 <table class="summary_table">
 <tr>
 <td class="label">Junction Temperature</td>
-<td>28.986</td>
+<td>29.042</td>
 </tr>
 <tr>
 <td class="label">Theta JA</td>
@@ -180,7 +180,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Max Allowed Ambient Temperature</td>
-<td>81.014</td>
+<td>80.958</td>
 </tr>
 </table>
 <h2><a name="Supply_Summary">Supply Information:</a></h2>
@@ -195,23 +195,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>VCC</td>
 <td>1.000</td>
-<td>9.339</td>
+<td>11.114</td>
 <td>70.000</td>
-<td>79.339</td>
+<td>81.114</td>
 </tr>
 <tr>
 <td>VCCX</td>
 <td>3.300</td>
-<td>0.218</td>
+<td>0.235</td>
 <td>15.000</td>
-<td>50.221</td>
+<td>50.276</td>
 </tr>
 <tr>
 <td>VCCIO33</td>
 <td>3.300</td>
-<td>0.218</td>
+<td>0.235</td>
 <td>1.000</td>
-<td>4.021</td>
+<td>4.076</td>
 </tr>
 </table>
 <h1><a name="Detail">Power Details</a></h1>
@@ -225,15 +225,21 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Logic</td>
-<td>0.122</td>
+<td>1.324</td>
 <td>NA</td>
-<td>4.804</td>
+<td>5.329</td>
 </tr>
 <tr>
 <td>IO</td>
-<td>12.059
-<td>10.396
-<td>1.540
+<td>12.245
+<td>10.455
+<td>1.643
+</tr>
+<tr>
+<td>BSRAM</td>
+<td>0.549
+<td>NA</td>
+<td>NA</td>
 </tr>
 <tr>
 <td>PLL</td>
@@ -251,20 +257,60 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>fpga_msxtr</td>
-<td>9.108</td>
-<td>9.108(9.006)</td>
+<td>10.859</td>
+<td>10.859(10.762)</td>
+<tr>
+<td>fpga_msxtr/u_bootrom/</td>
+<td>0.666</td>
+<td>0.666(0.663)</td>
+<tr>
+<td>fpga_msxtr/u_bootrom/u_ram/</td>
+<td>0.549</td>
+<td>0.549(0.000)</td>
+<tr>
+<td>fpga_msxtr/u_bootrom/u_rom/</td>
+<td>0.114</td>
+<td>0.114(0.000)</td>
 <tr>
 <td>fpga_msxtr/u_pll/</td>
 <td>8.986</td>
 <td>8.986(0.000)</td>
 <tr>
-<td>fpga_msxtr/u_uart/</td>
+<td>fpga_msxtr/u_s2026a/</td>
+<td>0.029</td>
+<td>0.029(0.019)</td>
+<tr>
+<td>fpga_msxtr/u_s2026a/u_cpu_select/</td>
 <td>0.019</td>
-<td>0.019(0.014)</td>
+<td>0.019(0.000)</td>
+<tr>
+<td>fpga_msxtr/u_uart/</td>
+<td>0.022</td>
+<td>0.022(0.014)</td>
 <tr>
 <td>fpga_msxtr/u_uart/u_uart_0/</td>
 <td>0.014</td>
 <td>0.014(0.000)</td>
+<tr>
+<td>fpga_msxtr/u_z80/</td>
+<td>1.060</td>
+<td>1.060(1.042)</td>
+<tr>
+<td>fpga_msxtr/u_z80/u_cz80/</td>
+<td>1.042</td>
+<td>1.042(0.286)</td>
+<tr>
+<td>fpga_msxtr/u_z80/u_cz80/u_alu/</td>
+<td>0.037</td>
+<td>0.037(0.000)</td>
+<tr>
+<td>fpga_msxtr/u_z80/u_cz80/u_mcode/</td>
+<td>0.088</td>
+<td>0.088(0.000)</td>
+<tr>
+<td>fpga_msxtr/u_z80/u_cz80/u_regs/</td>
+<td>0.161</td>
+<td>0.161(0.000)</td>
 </table>
 <h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
 <table class="detail_table">
@@ -276,12 +322,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>u_pll/rpll_inst/CLKOUTD.default_gen_clk</td>
 <td>42.954</td>
-<td>0.116</td>
+<td>1.873</td>
 </tr>
 <tr>
 <td>clk27m</td>
 <td>27.000</td>
-<td>0.015</td>
+<td>0.017</td>
 </tr>
 <tr>
 <td>clk14m</td>

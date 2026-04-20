@@ -34,10 +34,6 @@
 
 UART				:= 0x10
 BUTTON				:= 0x10
-S2026_REG_IDX		:= 0xE4
-S2026_REG_VAL		:= 0xE5
-S2026_FR_TIMER_L	:= 0xE6
-S2026_FR_TIMER_H	:= 0xE7
 
 				org		0x0000
 ; ----------------------------------------------------------------------------
@@ -95,19 +91,10 @@ wait_release_button:
 ; ----------------------------------------------------------------------------
 ;	Send prompt message
 ; ----------------------------------------------------------------------------
-				ld		a, 6
-				out		[S2026_REG_IDX], a
-				in		a, [S2026_REG_VAL]
-				and		a, 0b0010_0000			; bit5: 0=R800, 1=Z80
-				jr		z, r800_message
 				ld		de, s_z80_message
-				jr		skip
-	r800_message:
-				ld		de, s_r800_message
-	skip:
 				call	puts
 				; puts "*"
-				ld		b, 10
+				ld		b, 30
 	loop:
 				ld		de, asterisk
 				call	puts
@@ -124,16 +111,6 @@ wait_release_button:
 				djnz	loop
 				ld		de, crlf
 				call	puts
-; ----------------------------------------------------------------------------
-;	Change CPU
-; ----------------------------------------------------------------------------
-				ld		a, 6
-				out		[S2026_REG_IDX], a
-				in		a, [S2026_REG_VAL]
-				xor		a, 0b0010_0000			; bit5: 0=R800, 1=Z80
-				out		[S2026_REG_VAL], a
-				nop
-				nop
 				jp		wait_press_button
 
 ; ----------------------------------------------------------------------------
@@ -214,9 +191,7 @@ put_hex::
 ;	work area
 ; ----------------------------------------------------------------------------
 s_z80_message:
-				db		"THIS IS Z80", 0x0D, 0x0A, 0
-s_r800_message:
-				db		"THIS IS R800", 0x0D, 0x0A, 0
+				db		"Hello, world!! I'm cz80, yeah!!", 0x0D, 0x0A, 0
 asterisk:
 				db		"*", 0
 crlf:
