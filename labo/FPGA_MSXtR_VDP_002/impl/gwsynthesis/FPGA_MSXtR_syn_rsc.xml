@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="fpga_msxtr" Register="34" Alu="24" Lut="22" T_Register="503(34)" T_Alu="104(24)" T_Lut="2090(22)" T_Bsram="1(0)">
+ <SubModule name="u_pll"/>
+ <SubModule name="u_z80" Register="18" Lut="31" T_Register="351(18)" T_Alu="80(0)" T_Lut="1719(31)">
+  <SubModule name="u_cz80" Register="205" Alu="69" Lut="1158" T_Register="333(205)" T_Alu="80(69)" T_Lut="1688(1158)">
+   <SubModule name="u_mcode" Lut="207" T_Lut="207(207)"/>
+   <SubModule name="u_alu" Alu="11" Lut="11" T_Alu="11(11)" T_Lut="11(11)"/>
+   <SubModule name="u_regs" Register="128" Lut="312" T_Register="128(128)" T_Lut="312(312)"/>
+  </SubModule>
+ </SubModule>
+ <SubModule name="u_s2026a" Register="12" Lut="16" T_Register="63(12)" T_Lut="34(16)">
+  <SubModule name="u_cpu_select" Register="51" Lut="18" T_Register="51(51)" T_Lut="18(18)"/>
+ </SubModule>
+ <SubModule name="u_bootrom" Register="2" Lut="6" T_Register="10(2)" T_Lut="271(6)" T_Bsram="1(0)">
+  <SubModule name="u_rom" Register="8" Lut="265" T_Register="8(8)" T_Lut="265(265)"/>
+  <SubModule name="u_ram" Bsram="1" T_Bsram="1(1)"/>
+ </SubModule>
+ <SubModule name="u_uart" Register="20" Lut="8" T_Register="45(20)" T_Lut="44(8)">
+  <SubModule name="u_uart" Register="25" Lut="36" T_Register="25(25)" T_Lut="36(36)"/>
+ </SubModule>
+</Module>
