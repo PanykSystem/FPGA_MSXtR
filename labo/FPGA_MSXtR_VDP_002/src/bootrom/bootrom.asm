@@ -34,6 +34,11 @@
 
 UART				:= 0x10
 BUTTON				:= 0x10
+VDP_PORT0			:= 0x98
+VDP_PORT1			:= 0x99
+VDP_PORT2			:= 0x9A
+VDP_PORT3			:= 0x9B
+VDP_PORT4			:= 0x9C
 
 				org		0x0000
 ; ----------------------------------------------------------------------------
@@ -43,160 +48,155 @@ BUTTON				:= 0x10
 				ld		sp, 8192 - 2
 
 ; ----------------------------------------------------------------------------
-;	Wait press the button
+;	INITIALIZE SCREEN MODE
 ; ----------------------------------------------------------------------------
-wait_press_button:
-				in		a, [BUTTON]
-				and		a, 1
-				jr		z, wait_press_button
-wait_release_button:
-				in		a, [BUTTON]
-				and		a, 1
-				jr		nz, wait_release_button
-
-; ----------------------------------------------------------------------------
-;	SRAM TEST
-; ----------------------------------------------------------------------------
-;				ld		bc, 0x1000		; RAM TOP ADDRESS
-;	loop_address:
-;				ld		l, c
-;				ld		h, b
-;				jp		put_hex
-;	ret_address1:
-;				xor		a, a
-;	loop_data:
-;				ld		[hl], a
-;				cp		a, [hl]
-;				jp		nz, fail
-;				inc		a
-;				jr		nz, loop_data
-;	ok:
-;				ld		hl, ret_address2
-;				ld		de, s_ok
-;				jp		puts
-;	fail:
-;				ld		hl, ret_address2
-;				ld		de, s_fail
-;				jp		puts
-;	ret_address2:
-;				inc		bc
-;				ld		a, c
-;				cp		a, 0x00
-;				jr		nz, loop_address
-;				ld		a, b
-;				cp		a, 0x20
-;				jr		nz, loop_address
-;				halt
-
-; ----------------------------------------------------------------------------
-;	Send prompt message
-; ----------------------------------------------------------------------------
-				ld		de, s_z80_message
-				call	puts
-				; puts "*"
-				ld		b, 30
+				scope	set_screen1
+set_screen1::
+				ld		hl, vdp_registers
+				ld		c, VDP_PORT1
 	loop:
-				ld		de, asterisk
-				call	puts
-				ld		hl, 65000
-	wait_loop:
-				nop
-				nop
-				nop
-				nop
-				dec		hl
-				ld		a, l
-				or		a, h
-				jr		nz, wait_loop
-				djnz	loop
-				ld		de, crlf
-				call	puts
-				jp		wait_press_button
+				ld		a, [hl]
+				inc		a
+				jr		z, exit_loop
+				dec		a
+				or		a, 0x80
+				inc		hl
+				ld		b, [hl]
+				inc		hl
+				out		[c], b
+				out		[c], a
+				jr		loop
+	exit_loop:
+				endscope
 
 ; ----------------------------------------------------------------------------
-;	Puts message
-;	input:
-;		de .... message address (ZERO terminated)
-;		hl .... return address
-;	break:
-;		af, de
+;	SETUP VRAM
 ; ----------------------------------------------------------------------------
-				scope	puts
-puts::
-				ld		a, [de]
-				inc		de
-				or		a, a
-				jp		z, _skip
-				out		[UART], a
-				jr		puts
-	_skip:
+				scope	setup_vram
+setup_vram::
+				; set font data
+				ld		hl, font_data
+				ld		de, 0x0000 + 0x20 * 8
+				ld		bc, (0x80-0x20) * 8
+				call	write_vram_block
+				; set others
+				ld		hl, 0x1800
+				ld		de, 0x4000-0x1800
+				ld		b, 0
+				call	fill_vram
+				; set sprite attribute
+				ld		hl, 0x1C00
+				ld		de, 32 * 4
+				ld		b, 208
+				call	fill_vram
+				; set color
+				ld		hl, 0x2000
+				ld		de, 32
+				ld		b, 0xF4
+				call	fill_vram
+				endscope
+
+; ----------------------------------------------------------------------------
+;	MAIN LOOP
+; ----------------------------------------------------------------------------
+				scope	main
+main::
+				halt
+				endscope
+
+; ----------------------------------------------------------------------------
+;	FILL VRAM
+;	input:
+;		hl .... target VRAM address
+;		de .... length
+;		b ..... fill data
+;	break:
+;		hl, bc, de, af
+; ----------------------------------------------------------------------------
+				scope	fill_vram
+fill_vram::
+				ld		c, VDP_PORT1
+				ld		a, l
+				out		[c], a
+				ld		a, h
+				and		a, 0x3F
+				or		a, 0x40
+				out		[c], a
+				dec		c
+	loop:
+				out		[c], b
+				dec		de
+				ld		a, e
+				or		a, d
+				jr		nz, loop
 				ret
 				endscope
 
 ; ----------------------------------------------------------------------------
+;	WRITE VRAM BLOCK
 ;	input:
-;		hl .... hex number
+;		hl .... target CPU MEMORY address
+;		de .... target VRAM address
+;		bc .... length
 ;	break:
-;		af, de, hl
+;		hl, bc, de, af
 ; ----------------------------------------------------------------------------
-				scope	put_hex
-put_hex::
-				ld		a, h
-				rrca
-				rrca
-				rrca
-				rrca
-				and		a, 0x0F
-				add		a, '0'
-				cp		a, '9' + 1
-				jr		c, skip1
-				add		a, 'A' - '0' - 10
-	skip1:
-				out		[UART], a
-
-				ld		a, h
-				and		a, 0x0F
-				add		a, '0'
-				cp		a, '9' + 1
-				jr		c, skip2
-				add		a, 'A' - '0' - 10
-	skip2:
-				out		[UART], a
-
-				ld		a, l
-				rrca
-				rrca
-				rrca
-				rrca
-				and		a, 0x0F
-				add		a, '0'
-				cp		a, '9' + 1
-				jr		c, skip3
-				add		a, 'A' - '0' - 10
-	skip3:
-				out		[UART], a
-
-				ld		a, l
-				and		a, 0x0F
-				add		a, '0'
-				cp		a, '9' + 1
-				jr		c, skip4
-				add		a, 'A' - '0' - 10
-	skip4:
-				out		[UART], a
+				scope	write_vram_block
+write_vram_block::
+				ld		a, e
+				out		[VDP_PORT1], a
+				ld		a, d
+				and		a, 0x3F
+				or		a, 0x40
+				out		[VDP_PORT1], a
+	loop:
+				ld		a, [hl]
+				inc		hl
+				out		[VDP_PORT0], a
+				dec		bc
+				ld		a, c
+				or		a, b
+				jr		nz, loop
 				ret
 				endscope
 
 ; ----------------------------------------------------------------------------
-;	work area
+;	REGISTERS
 ; ----------------------------------------------------------------------------
-s_z80_message:
-				db		"Hello, world!! I'm cz80, yeah!!", 0x0D, 0x0A, 0
-asterisk:
-				db		"*", 0
-crlf:
-				db		0x0D, 0x0A, 0
-s_ok:
-				db		"-OK", 0x0D, 0x0A, 0
-s_fail:
-				db		"-FAILED", 0x0D, 0x0A, 0
+vdp_registers::
+				; mode registers
+				db		0 , 0x00
+				db		1 , 0x40
+				db		8 , 0x08
+				db		9 , 0x00
+				db		20, 0x00
+				db		21, 0x3b
+				db		22, 0x05
+				; table base registers
+				db		2 , 0x06
+				db		3 , 0x80
+				db		10, 0x00
+				db		4 , 0x00
+				db		5 , 0x36
+				db		11, 0x00
+				db		6 , 0x07
+				; color registers
+				db		7 , 0x07
+				db		12, 0x07
+				db		13, 0x07
+				; display registers
+				db		18, 0x00
+				db		19, 0x00
+				db		23, 0x00
+				; access registers
+				db		14, 0x00
+				db		15, 0x00
+				db		16, 0x00
+				db		17, 0x1c
+				; v9958 registers
+				db		25, 0x00
+				db		26, 0x00
+				db		27, 0x00
+				; terminator
+				db		255
+				include	"zg6x8_font.asm"

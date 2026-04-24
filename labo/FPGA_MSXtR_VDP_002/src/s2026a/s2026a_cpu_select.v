@@ -35,6 +35,7 @@ module s2026a_cpu_select (
 	input			reset_n,
 	input			clk,
 	input			enable_z80,
+	input			sdram_init_busy,
 	//	Z80 I/F
 	input			z80_m1,
 	input			z80_mreq,
@@ -65,12 +66,7 @@ module s2026a_cpu_select (
 	reg				ff_z80_active;
 	reg				ff_timing;
 
-	reg		[15:0]	ff_bus_address_pre;
 	reg		[15:0]	ff_bus_address;
-	reg				ff_m1;
-	reg				ff_mreq;
-	reg				ff_iorq;
-	reg				ff_wr;
 	reg		[7:0]	ff_wdata;
 
 	reg				ff_bus_m1;
@@ -79,10 +75,8 @@ module s2026a_cpu_select (
 	reg				ff_bus_write;
 	reg				ff_bus_valid;
 	reg		[7:0]	ff_bus_wdata;
-	wire			w_read_valid;
-	wire			w_write_valid;
-	reg				ff_read_valid;
-	wire			w_valid;
+	reg				ff_pre_valid;
+	reg				ff_valid;
 	reg 			ff_enable;
 	wire 			w_wait_p;
 	reg 			ff_request;
@@ -90,14 +84,6 @@ module s2026a_cpu_select (
 	// ---------------------------------------------------------
 	//	Address / Control MUX
 	// ---------------------------------------------------------
-	always @( posedge clk ) begin
-		ff_bus_address_pre	<= z80_a;
-		ff_m1				<= z80_m1;
-		ff_mreq				<= z80_mreq;
-		ff_iorq				<= z80_iorq;
-		ff_wr				<= z80_wr;
-	end
-
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_enable	<= 1'b0;
@@ -128,57 +114,63 @@ module s2026a_cpu_select (
 			ff_bus_io		<= 1'b0;
 			ff_bus_mem		<= 1'b0;
 			ff_bus_write	<= 1'b0;
-			ff_bus_wdata	<= 1'b0;
 		end
-		else if( !ff_bus_valid && w_valid ) begin
-			ff_bus_m1		<= ff_m1;
-			ff_bus_io		<= ff_iorq;
-			ff_bus_mem		<= ff_mreq;
-			ff_bus_write	<= ff_wr;
-			ff_bus_wdata	<= ff_wdata;
+		else if( enable_z80 ) begin
+			ff_bus_m1		<= z80_m1;
+			ff_bus_io		<= z80_iorq;
+			ff_bus_mem		<= z80_mreq;
+			ff_bus_write	<= z80_wr;
 		end
 	end
 
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
-			ff_read_valid	<= 1'b0;
+			ff_pre_valid	<= 1'b0;
+			ff_valid		<= 1'b0;
 		end
-		else begin
-			ff_read_valid	<= w_read_valid;
+		else if( !ff_request ) begin
+			ff_pre_valid	<=  (z80_iorq | z80_mreq) & z80_wr & enable_z80;
+			ff_valid		<= ((z80_iorq | z80_mreq) & z80_rd & enable_z80) | ff_pre_valid;
+		end
+		else if( !z80_iorq && !z80_mreq ) begin
+			ff_pre_valid	<= 1'b0;
+			ff_valid		<= 1'b0;
 		end
 	end
 
-	//	read は rd_n の立ち下がりで検出
-	assign w_read_valid		= (z80_iorq  | z80_mreq ) & z80_rd;
-	//	write は wr_n の立ち上がりで検出
-	assign w_write_valid	= (ff_iorq | ff_mreq ) & ff_wr & !z80_iorq  & !z80_mreq;
-	//	read または write を検出
-	assign w_valid			= ff_read_valid | w_write_valid;
+	always @( posedge clk ) begin
+		if( !reset_n ) begin
+			ff_request	<= 1'b0;
+		end
+		else if( !ff_request &&  ff_valid ) begin
+			ff_request	<= 1'b1;
+		end
+		else if(  ff_request && !ff_valid ) begin
+			ff_request	<= 1'b0;
+		end
+	end
+
+	always @( posedge clk ) begin
+		if( !reset_n ) begin
+			ff_bus_wdata	<= 8'd0;
+		end
+		else if( ff_pre_valid ) begin
+			ff_bus_wdata	<= z80_wdata;
+		end
+	end
 
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_bus_valid	<= 1'b0;
 		end
 		else if( !ff_bus_valid && !ff_request ) begin
-			if( w_valid ) begin
+			if( ff_valid ) begin
 				ff_bus_valid	<= 1'b1;
-				ff_bus_address	<= ff_bus_address_pre;
+				ff_bus_address	<= z80_a;
 			end
 		end
 		else if( bus_ready ) begin
 			ff_bus_valid	<= 1'b0;
-		end
-	end
-
-	always @( posedge clk ) begin
-		if( !reset_n ) begin
-			ff_request	<= 1'b0;
-		end
-		else if( w_valid && !ff_request ) begin
-			ff_request	<= 1'b1;
-		end
-		else if( !w_valid ) begin
-			ff_request	<= 1'b0;
 		end
 	end
 
@@ -189,13 +181,9 @@ module s2026a_cpu_select (
 
 	// ---------------------------------------------------------
 	//	CPU change state machine
-	//		00: R800
-	//		01: Z80
-	//		10: Z80 --> R800 changing
-	//		11: R800--> Z80 changing
 	// ---------------------------------------------------------
 	always @( posedge clk ) begin
-		ff_z80_active		<= 1'b1;
+		ff_z80_active		<= ~sdram_init_busy;
 	end
 
 	// ---------------------------------------------------------

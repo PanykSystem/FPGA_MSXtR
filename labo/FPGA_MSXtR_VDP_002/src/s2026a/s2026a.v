@@ -35,6 +35,7 @@ module s2026a (
 	input			reset_n,
 	input			clk,
 	input			enable_z80,
+	input			sdram_init_busy,
 	input			z80_m1,
 	input			z80_mreq,
 	input			z80_iorq,
@@ -76,19 +77,13 @@ module s2026a (
 	reg				ff_bus_rdata_en;
 	wire			w_uart_cs;
 	wire			w_bootrom_cs;
-	wire			w_indicator_cs;
 	wire			w_sysctl_cs;
 	wire			w_vdp_cs;
 	reg				ff_uart_cs;
 	reg				ff_bootrom_cs;
-	reg				ff_indicator_cs;
-	reg				ff_sysctl_cs;
 	reg				ff_vdp_cs;
 	reg		[7:0]	ff_f4;
 	reg		[1:0]	ff_f5;
-	wire			w_3_911usec;
-	wire			w_counter_reset;
-	wire	[ 7:0]	w_register_read;
 	wire			w_bus_ready;
 	wire			w_cpu_pause;
 
@@ -100,10 +95,6 @@ module s2026a (
 	wire			w_bus_write;
 	wire			w_bus_valid;
 	wire	[7:0]	w_bus_wdata;
-	wire			w_processor_mode;
-
-	wire	[7:0]	w_s2026_rdata;
-	wire			w_s2026_ready;
 
 	// ---------------------------------------------------------
 	//	CPU select instance
@@ -112,6 +103,7 @@ module s2026a (
 		.reset_n			( reset_n				),
 		.clk				( clk					),
 		.enable_z80			( enable_z80			),
+		.sdram_init_busy	( sdram_init_busy		),
 		.z80_m1				( z80_m1				),
 		.z80_mreq			( z80_mreq				),
 		.z80_iorq			( z80_iorq				),
@@ -162,6 +154,7 @@ module s2026a (
 		if( !reset_n ) begin
 			ff_uart_cs				<= 1'b0;
 			ff_bootrom_cs			<= 1'b0;
+			ff_vdp_cs				<= 1'b0;
 			ff_bus_write			<= 1'b0;
 			ff_bus_m1				<= 1'b0;
 			ff_bus_io				<= 1'b0;
@@ -169,6 +162,7 @@ module s2026a (
 		else if( w_bus_valid ) begin
 			ff_uart_cs				<= w_uart_cs;
 			ff_bootrom_cs			<= w_bootrom_cs;
+			ff_vdp_cs				<= w_vdp_cs;
 			ff_bus_write			<= w_bus_write;
 			ff_bus_m1				<= w_bus_m1;
 			ff_bus_io				<= w_bus_io;

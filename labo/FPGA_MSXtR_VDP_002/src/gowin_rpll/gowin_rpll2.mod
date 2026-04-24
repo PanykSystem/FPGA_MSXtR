@@ -7,7 +7,7 @@
 
 -mod_name Gowin_rPLL2
 -file_name gowin_rpll2
--path D:/github/HRA_product/FPGA_MSXtR/fpga/FPGA_MSXtR/src/gowin_rpll/
+-path C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_002/src/gowin_rpll/
 -type PLL
 -rPll true
 -file_type vlg
@@ -15,13 +15,13 @@
 -dyn_idiv_sel false
 -idiv_sel 1
 -dyn_fbdiv_sel false
--fbdiv_sel 18
+-fbdiv_sel 5
 -dyn_odiv_sel false
 -odiv_sel 4
 -dyn_da_en true
 -rst_sig false
 -rst_sig_p false
--fclkin 14.318
+-fclkin 42.954
 -clkfb_sel 0
 -en_lock false
 -clkout_bypass false

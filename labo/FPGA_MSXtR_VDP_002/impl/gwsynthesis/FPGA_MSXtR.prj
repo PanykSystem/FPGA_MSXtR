@@ -12,19 +12,24 @@
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\cz80\cz80_inst.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\cz80\cz80_mcode.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\cz80\cz80_reg.v" type="verilog"/>
+        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\debugger\ip_debugger.v" type="verilog"/>
+        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\dvi_tx\dvi_tx.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\gowin_rpll\gowin_rpll.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\gowin_rpll\gowin_rpll2.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\gowin_rpll\gowin_rpll3.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\gowin_sp\gowin_sp.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\s2026a\s2026a.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\s2026a\s2026a_cpu_select.v" type="verilog"/>
+        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\sdram\ip_sdram_tangnano20k_c.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\uart\ip_uart.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\uart\uart.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_color_palette.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_color_palette_ram.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_command.v" type="verilog"/>
+        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_command_cache.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_cpu_interface.v" type="verilog"/>
+        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_sprite_divide_table.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_sprite_info_collect.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_sprite_makeup_pixel.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_sprite_select_visible_planes.v" type="verilog"/>
@@ -39,12 +44,7 @@
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_video_out_bilinear.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_video_ram_line_buffer.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_vram_interface.v" type="verilog"/>
-        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_command_cache.v" type="verilog"/>
-        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\v9968\vdp_sprite_divide_table.v" type="verilog"/>
-        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\dvi_tx\dvi_tx.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\ws2812_led\ip_ws2812_led.v" type="verilog"/>
-        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\debugger\ip_debugger.v" type="verilog"/>
-        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\sdram\ip_sdram_tangnano20k_c.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

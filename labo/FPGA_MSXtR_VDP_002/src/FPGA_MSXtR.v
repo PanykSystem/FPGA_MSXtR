@@ -71,8 +71,7 @@ module fpga_msxtr (
 );
 	wire			clk42m;
 	wire 			clk85m;
-	wire			clk135m;
-	wire			clk257m;
+	wire 			clk215m;
 	reg		[3:0]	ff_reset_cnt = 4'd0;
 	wire			w_msx_reset_n;
 	reg		[3:0]	ff_3_579m = 4'd0;
@@ -155,12 +154,7 @@ module fpga_msxtr (
 
 	Gowin_rPLL2 u_pll2 (
 		.clkout					( clk257m					),		//	output clkout	257.72724MHz
-		.clkin					( clk14m					)		//	input clkin		14.31818MHz
-	);
-
-	Gowin_rPLL3 u_pll3 (
-		.clkout					( clk135m					),		//	output clkout	135MHz
-		.clkin					( clk27m					)		//	input clkin		27MHz
+		.clkin					( clk42m					)		//	input clkin		42.95454MHz
 	);
 
 	always @( posedge clk42m ) begin
@@ -237,6 +231,7 @@ module fpga_msxtr (
 		.reset_n				( w_msx_reset_n				),
 		.clk					( clk85m					),
 		.enable_z80				( w_3_579m					),
+		.sdram_init_busy		( w_sdram_init_busy			),
 		.z80_m1					( w_z80_m1					),
 		.z80_mreq				( w_z80_mreq				),
 		.z80_iorq				( w_z80_iorq				),
@@ -271,7 +266,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 	bootrom u_bootrom (
 		.reset_n				( w_msx_reset_n				),
-		.clk					( clk42m					),
+		.clk					( clk85m					),
 		.bootrom_cs				( w_bus_bootrom_cs			),
 		.bus_write				( w_bus_write				),
 		.bus_valid				( w_bus_valid				),
@@ -309,7 +304,7 @@ module fpga_msxtr (
 	//	V9968 clone
 	// --------------------------------------------------------------------
 	vdp u_v9968 (
-		.reset_n				( reset_n					),
+		.reset_n				( w_msx_reset_n				),
 		.clk					( clk85m					),
 		.initial_busy			( w_sdram_init_busy			),
 		.bus_address			( w_bus_address[2:0]		),
@@ -353,7 +348,7 @@ module fpga_msxtr (
 	//	HDMI
 	// --------------------------------------------------------------------
 	DVI_TX_Top u_dvi (
-		.I_rst_n				( reset_n2					),		//input I_rst_n
+		.I_rst_n				( w_msx_reset_n				),		//input I_rst_n
 		.I_serial_clk			( clk215m					),		//input I_serial_clk
 		.I_rgb_clk				( clk42m					),		//input I_rgb_clk
 		.I_rgb_vs				( w_video_vs				),		//input I_rgb_vs
@@ -374,7 +369,7 @@ module fpga_msxtr (
 	ip_sdram #(
 		.FREQ					( 85_909_080				)		//	Hz
 	) u_sdram (
-		.reset_n				( reset_n					),
+		.reset_n				( w_msx_reset_n				),
 		.clk					( clk85m					),		//	85.90908MHz
 		.clk_sdram				( clk85m_n					),
 		.sdram_init_busy		( w_sdram_init_busy			),
@@ -402,7 +397,7 @@ module fpga_msxtr (
 	//	Debug用 LED
 	// --------------------------------------------------------------------
 	ip_ws2812_led u_led (
-		.reset_n				( reset_n					),
+		.reset_n				( w_msx_reset_n				),
 		.clk					( clk85m					),
 		.wr						( w_wr						),
 		.sending				( w_sending					),
@@ -416,7 +411,7 @@ module fpga_msxtr (
 	//	Debugger
 	// --------------------------------------------------------------------
 	ip_debugger u_debugger (
-		.reset_n				( reset_n					),
+		.reset_n				( w_msx_reset_n				),
 		.clk					( clk85m					),
 		.pulse0					( w_pulse0					),
 		.pulse1					( w_pulse1					),

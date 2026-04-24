@@ -4,7 +4,7 @@
 //Tool Version: V1.9.11.02 (64-bit)
 //Part Number: GW2AR-LV18QN88C8/I7
 //Device: GW2AR-18
-//Created Time: Wed Mar  4 19:14:07 2026
+//Created Time: Fri Apr 24 20:30:56 2026
 
 module Gowin_rPLL2 (clkout, clkin);
 
@@ -37,11 +37,11 @@ rPLL rpll_inst (
     .FDLY({gw_gnd,gw_gnd,gw_gnd,gw_gnd})
 );
 
-defparam rpll_inst.FCLKIN = "14.318";
+defparam rpll_inst.FCLKIN = "42.954";
 defparam rpll_inst.DYN_IDIV_SEL = "false";
 defparam rpll_inst.IDIV_SEL = 0;
 defparam rpll_inst.DYN_FBDIV_SEL = "false";
-defparam rpll_inst.FBDIV_SEL = 17;
+defparam rpll_inst.FBDIV_SEL = 4;
 defparam rpll_inst.DYN_ODIV_SEL = "false";
 defparam rpll_inst.ODIV_SEL = 4;
 defparam rpll_inst.PSDA_SEL = "0000";

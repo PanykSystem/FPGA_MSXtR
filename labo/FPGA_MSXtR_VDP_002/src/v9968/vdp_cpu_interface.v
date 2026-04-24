@@ -164,10 +164,9 @@ module vdp_cpu_interface (
 );
 	localparam	[4:0]	c_v9958id			= 5'b00010;
 	localparam	[4:0]	c_v9968id			= 5'b00011;
-	reg					ff_bus_cs;
 	reg					ff_bus_write;
-	reg					ff_bus_valid;
-	reg					ff_bus_ready;
+	reg					ff_bus_request;
+	reg					ff_bus_accept;
 	reg		[7:0]		ff_bus_wdata;
 	reg		[7:0]		ff_status_register;
 
@@ -285,7 +284,6 @@ module vdp_cpu_interface (
 	// --------------------------------------------------------------------
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
-			ff_bus_cs		<= 1'b0;
 			ff_bus_write	<= 1'b0;
 			ff_bus_wdata	<= 1'b0;
 			ff_port0		<= 1'b0;
@@ -293,11 +291,9 @@ module vdp_cpu_interface (
 			ff_port2		<= 1'b0;
 			ff_port3		<= 1'b0;
 			ff_port4		<= 1'b0;
-			ff_bus_valid	<= 1'b0;
-			ff_bus_ready	<= 1'b1;
+			ff_bus_request	<= 1'b0;
 		end
-		else if( bus_valid && ff_bus_ready ) begin
-			ff_bus_cs		<= bus_cs;
+		else if( bus_cs && bus_valid && ~ff_busy ) begin
 			ff_bus_write	<= bus_write;
 			ff_bus_wdata	<= bus_wdata;
 			ff_port0		<= (!bus_address[2] && !bus_address[1] && !bus_address[0]);
@@ -305,19 +301,32 @@ module vdp_cpu_interface (
 			ff_port2		<= (!bus_address[2] &&  bus_address[1] && !bus_address[0]);
 			ff_port3		<= (!bus_address[2] &&  bus_address[1] &&  bus_address[0]);
 			ff_port4		<= ( bus_address[2] && !bus_address[1] && !bus_address[0]);
-			ff_bus_valid	<= 1'b1;
-			ff_bus_ready	<= 1'b0;
+			ff_bus_request	<= 1'b1;
 		end
 		else begin
-			ff_bus_valid	<= 1'b0;
-			ff_bus_ready	<= bus_cs;
+			ff_bus_request	<= 1'b0;
 		end
 	end
 
-	assign bus_ready	= ff_bus_ready & ~ff_busy;
+	assign bus_ready	= ~ff_busy;
 
-	assign w_write		= ff_bus_valid &  ff_bus_write & ~ff_busy;
-	assign w_read		= ff_bus_valid & ~ff_bus_write & ~ff_busy;
+	assign w_write		= ff_bus_request & ~ff_bus_accept &  ff_bus_write & ~ff_busy;
+	assign w_read		= ff_bus_request & ~ff_bus_accept & ~ff_bus_write & ~ff_busy;
+
+	always @( posedge clk ) begin
+		if( !reset_n ) begin
+			ff_bus_accept	<= 1'b0;
+		end
+		else if( !ff_bus_accept && ff_bus_request && !ff_busy ) begin
+			ff_bus_accept	<= 1'b1;
+		end
+		else if( !ff_bus_request ) begin
+			ff_bus_accept	<= 1'b0;
+		end
+		else begin
+			//	hold
+		end
+	end
 
 	// --------------------------------------------------------------------
 	//	VRAM Read/Write access

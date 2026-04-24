@@ -101,12 +101,10 @@ module tb;
 		dipsw = 1'b0;
 
 		repeat(5000) @(posedge clk14m);
-		repeat( 3 ) begin
-			button = 2'd1;
-			repeat(1000) @(posedge clk14m);
-			button = 2'd0;
-			repeat(10000) @(posedge clk14m);
+		while( u_dut.u_z80.halt_n ) begin
+			@( posedge clk14m );
 		end
+		repeat(100) @(posedge clk14m);
 		$finish;
 	end
 endmodule
