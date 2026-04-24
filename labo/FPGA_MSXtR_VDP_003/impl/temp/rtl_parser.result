@@ -1,0 +1,180 @@
+[
+ {
+  "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+  "InstLine" : 24,
+  "InstName" : "tangnano20k_hdmi_labo",
+  "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "tangnano20k_hdmi_labo",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 120,
+    "InstName" : "u_pll",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 126,
+    "InstName" : "your_instance_name",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/gowin_rpll2/gowin_rpll2.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL2"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 131,
+    "InstName" : "u_clkdiv",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/gowin_clkdiv/gowin_clkdiv.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_CLKDIV"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 164,
+    "InstName" : "u_z80",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80_inst.v",
+    "ModuleLine" : 63,
+    "ModuleName" : "cz80_inst",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80_inst.v",
+      "InstLine" : 132,
+      "InstName" : "u_cz80",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80.v",
+      "ModuleLine" : 63,
+      "ModuleName" : "cz80",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80.v",
+        "InstLine" : 237,
+        "InstName" : "u_mcode",
+        "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80_mcode.v",
+        "ModuleLine" : 63,
+        "ModuleName" : "cz80_mcode"
+       },
+       {
+        "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80.v",
+        "InstLine" : 296,
+        "InstName" : "u_alu",
+        "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80_alu.v",
+        "ModuleLine" : 63,
+        "ModuleName" : "cz80_alu"
+       },
+       {
+        "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80.v",
+        "InstLine" : 784,
+        "InstName" : "u_regs",
+        "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/cz80/cz80_reg.v",
+        "ModuleLine" : 55,
+        "ModuleName" : "cz80_registers"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 213,
+    "InstName" : "u_gpio",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/gpio/ip_gpio.v",
+    "ModuleLine" : 27,
+    "ModuleName" : "ip_gpio"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 230,
+    "InstName" : "u_rom",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/rom/ip_rom.v",
+    "ModuleLine" : 5,
+    "ModuleName" : "ip_rom"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 244,
+    "InstName" : "u_ram",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/ram/ip_ram.v",
+    "ModuleLine" : 5,
+    "ModuleName" : "ip_ram"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 260,
+    "InstName" : "u_video",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_video.v",
+    "ModuleLine" : 27,
+    "ModuleName" : "ip_video",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_video.v",
+      "InstLine" : 492,
+      "InstName" : "u_line_buffer_even",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_line_buffer.v",
+      "ModuleLine" : 27,
+      "ModuleName" : "ip_line_buffer"
+     },
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_video.v",
+      "InstLine" : 500,
+      "InstName" : "u_line_buffer_odd",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_line_buffer.v",
+      "ModuleLine" : 27,
+      "ModuleName" : "ip_line_buffer"
+     },
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_video.v",
+      "InstLine" : 523,
+      "InstName" : "u_palette_r",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_palette.v",
+      "ModuleLine" : 27,
+      "ModuleName" : "ip_palette"
+     },
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_video.v",
+      "InstLine" : 531,
+      "InstName" : "u_palette_g",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_palette.v",
+      "ModuleLine" : 27,
+      "ModuleName" : "ip_palette"
+     },
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_video.v",
+      "InstLine" : 539,
+      "InstName" : "u_palette_b",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/video/ip_palette.v",
+      "ModuleLine" : 27,
+      "ModuleName" : "ip_palette"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 288,
+    "InstName" : "u_dvi",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/dvi_tx/dvi_tx.v",
+    "ModuleLine" : 1070,
+    "ModuleName" : "DVI_TX_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/dvi_tx/dvi_tx.v",
+      "InstLine" : 1101,
+      "InstName" : "rgb2dvi_inst",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/dvi_tx/dvi_tx.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "~rgb2dvi.DVI_TX_Top"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/tangnano20k_hdmi_labo.v",
+    "InstLine" : 307,
+    "InstName" : "u_sdram",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_003/src/sdram/ip_sdram_tangnano20k_c.v",
+    "ModuleLine" : 57,
+    "ModuleName" : "ip_sdram"
+   }
+  ]
+ }
+]
