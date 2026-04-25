@@ -118,7 +118,7 @@ module tangnano20k_hdmi_labo (
 	assign w_hdmi_reset_n	= ff_reset_n;	// & pll_lock;
 
 	Gowin_rPLL u_pll (
-		.clkout			( clk_serial		),		//	output clkout	214.77MHz
+		.clkout			( clk_serial		),		//	output clkout	214.7727MHz
 		.lock			( pll_lock			),
 		.clkin			( clk14m			)		//	input clkin		14.31818MHz
 	);
@@ -129,8 +129,8 @@ module tangnano20k_hdmi_labo (
 	);
 
 	Gowin_CLKDIV u_clkdiv (
-		.clkout			( clk_pixel			),		//	output clkout	42.954MHz
-		.hclkin			( clk_serial		),		//	input hclkin	214.77MHz
+		.clkout			( clk_pixel			),		//	output clkout	42.95454MHz
+		.hclkin			( clk_serial		),		//	input hclkin	214.7727MHz
 		.resetn			( 1'b1				)		//	input resetn
 	);
 

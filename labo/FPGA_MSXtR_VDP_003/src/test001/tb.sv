@@ -25,10 +25,12 @@
 // -----------------------------------------------------------------------------
 
 module tb ();
-	localparam	clk_base	= 1_000_000_000/371_250;	//	ps
+	localparam	clk27m_base	= 1_000_000.0/27.0;		//	ps
+	localparam	clk14m_base	= 1_000_000.0/14.31818;	//	ps
 	int				test_no;
 
-	reg				clk;				//	clk27m		PIN04_SYS_CLK		(27MHz)
+	reg				clk27m;				//	clk27m		PIN04_SYS_CLK		(27MHz)
+	reg				clk14m;				//	clk14m							(14.31818MHz)
 	reg		[1:0]	button;				//	button[0]	PIN88_MODE0_KEY1
 										//	button[1]	PIN87_MODE1_KEY2
 	//	HDMI
@@ -52,8 +54,10 @@ module tb ();
 	//	DUT
 	// --------------------------------------------------------------------
 	tangnano20k_hdmi_labo u_dut (
-		.clk27m				( clk				),
+		.clk27m				( clk27m			),
+		.clk14m				( clk14m			),
 		.button				( button			),
+		.led				(					),
 		.tmds_clk_n			( tmds_clk_n		),
 		.tmds_clk_p			( tmds_clk_p		),
 		.tmds_d_n			( tmds_d_n			),
@@ -87,26 +91,31 @@ module tb ();
 	// --------------------------------------------------------------------
 	//	clock
 	// --------------------------------------------------------------------
-	always #(clk_base/2) begin
-		clk <= ~clk;				//	371.25MHz
+	always #(clk27m_base/2) begin
+		clk27m <= ~clk27m;
+	end
+
+	always #(clk14m_base/2) begin
+		clk14m <= ~clk14m;
 	end
 
 	// --------------------------------------------------------------------
 	//	Test bench
 	// --------------------------------------------------------------------
 	initial begin
-		clk				= 1;
+		clk27m			= 1;
+		clk14m			= 1;
 		button			= 0;
-		repeat( 100 ) @( posedge clk );
+		repeat( 100 ) @( posedge clk27m );
 		#300us
 		button			= 1;
-		repeat( 100000 ) @( posedge clk );
+		repeat( 100000 ) @( posedge clk27m );
 		button			= 0;
-		repeat( 100000 ) @( posedge clk );
+		repeat( 100000 ) @( posedge clk27m );
 		button			= 1;
-		repeat( 100000 ) @( posedge clk );
+		repeat( 100000 ) @( posedge clk27m );
 		button			= 0;
-		repeat( 100000 ) @( posedge clk );
+		repeat( 100000 ) @( posedge clk27m );
 		$finish;
 	end
 endmodule

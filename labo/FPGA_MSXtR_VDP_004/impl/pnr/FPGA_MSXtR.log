@@ -1,0 +1,37 @@
+Reading netlist file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\impl\gwsynthesis\FPGA_MSXtR.vg"
+Parsing netlist file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\impl\gwsynthesis\FPGA_MSXtR.vg" completed
+WARN  (PA1003) : Invalid parameterized value 'GW2AR-18C'(DEVICE) specified for instance 'u_pll/rpll_inst'
+WARN  (PA1003) : Invalid parameterized value 'GW2AR-18C'(DEVICE) specified for instance 'u_pll2/rpll_inst'
+Processing netlist completed
+Reading constraint file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\src\FPGA_MSXtR.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1132) :  'u_clkdiv/clkdiv_inst/CLKOUT.default_gen_clk' was determined to be a clock but was not created.
+WARN  (TA1117) : Can't calculate clocks' relationship between: "u_clkdiv/clkdiv_inst/CLKOUT.default_gen_clk" and "clk27m"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "u_pll2/rpll_inst/CLKOUT.default_gen_clk" and "clk27m"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "clk27m" and "u_pll2/rpll_inst/CLKOUT.default_gen_clk"
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'clk14m_d' by the specified constraint. And then it may lead to the excessive delay or skew
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'clk27m_d' by the specified constraint. And then it may lead to the excessive delay or skew
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\impl\pnr\FPGA_MSXtR.power.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\impl\pnr\FPGA_MSXtR.pin.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\impl\pnr\FPGA_MSXtR.rpt.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\impl\pnr\FPGA_MSXtR.rpt.txt" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_004\impl\pnr\FPGA_MSXtR.tr.html" completed
+Sat Apr 25 21:30:21 2026
+
