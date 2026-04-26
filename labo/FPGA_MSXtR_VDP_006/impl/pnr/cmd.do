@@ -1,0 +1,18 @@
+-d C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_006\impl\gwsynthesis\tangnano20k_vdp_cartridge.vg
+-p GW2AR-18C-QFN88-8
+-pn GW2AR-LV18QN88C8/I7
+-cst C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_006\src\tangnano20k_vdp_cartridge.cst
+-cfg C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_006\impl\pnr\device.cfg
+-sdc C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_006\src\tangnano20k_vdp_cartridge.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 2
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 80
+-global_freq 14.320
