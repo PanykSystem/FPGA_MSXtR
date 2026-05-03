@@ -9,7 +9,11 @@
 work
 *.wlf
 *.vcd
+ikascc
+ikaopll
+ikaopm
 log.txt
+sn76489_audio.vhd
 *.rom
 romimage_*.h
 transcript
