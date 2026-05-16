@@ -137,3 +137,582 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-30 19:58:35.500
 !MESSAGE port: 
+!SESSION 2026-05-13 06:12:13.839 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-13 06:12:27.738
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-13 06:12:34.658
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:12:35.698
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:12:35.698
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-13 06:12:48.134
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (607 sources, 319 headers) in 13.1 sec: 46,606 declarations; 369,531 references; 52 unresolved inclusions; 287 syntax errors; 15,384 unresolved names (3.6%)
+!SESSION 2026-05-13 06:31:29.050 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-13 06:31:32.544
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-13 06:31:37.797
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:31:39.562
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:31:39.563
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-13 06:31:45.290
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (607 sources, 319 headers) in 7.09 sec: 46,606 declarations; 369,531 references; 52 unresolved inclusions; 287 syntax errors; 15,384 unresolved names (3.6%)
+!SESSION 2026-05-13 06:39:31.802 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-13 06:39:35.164
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-13 06:39:40.931
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:39:42.514
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:39:42.515
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-13 06:39:42.966
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 86 headers) in 1.58 sec: 5,350 declarations; 30,880 references; 0 unresolved inclusions; 2 syntax errors; 3 unresolved names (0.0083%)
+!SESSION 2026-05-13 06:50:23.990 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-13 06:50:27.461
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-13 06:50:33.095
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:50:34.963
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 06:50:34.964
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-13 06:50:35.284
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (32 sources, 111 headers) in 1.84 sec: 8,447 declarations; 43,788 references; 0 unresolved inclusions; 2 syntax errors; 3 unresolved names (0.0057%)
+!SESSION 2026-05-13 21:34:58.581 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-13 21:35:11.221
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-13 21:35:17.462
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:35:19.396
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:35:19.397
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-13 21:35:19.826
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (20 sources, 84 headers) in 1.97 sec: 4,559 declarations; 20,596 references; 1 unresolved inclusions; 1 syntax errors; 38 unresolved names (0.15%)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2026-05-13 21:35:34.629
+!MESSAGE Ignored L/MSXtR_Portable_Keyboard/Drivers/STM32G0xx_HAL_Driver/stm32g0xx_hal_i2c.c from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2026-05-13 21:35:34.630
+!MESSAGE Ignored L/MSXtR_Portable_Keyboard/Drivers/STM32G0xx_HAL_Driver/stm32g0xx_hal_i2c_ex.c from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2026-05-13 21:35:52.616
+!MESSAGE Ignored L/MSXtR_Portable_Keyboard/Drivers/STM32G0xx_HAL_Driver/stm32g0xx_hal_i2c.c from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2026-05-13 21:35:52.617
+!MESSAGE Ignored L/MSXtR_Portable_Keyboard/Drivers/STM32G0xx_HAL_Driver/stm32g0xx_hal_i2c_ex.c from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2026-05-13 21:36:33.019
+!MESSAGE Ignored L/MSXtR_Portable_Keyboard/Drivers/STM32G0xx_HAL_Driver/stm32g0xx_hal_i2c.c from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2026-05-13 21:36:33.019
+!MESSAGE Ignored L/MSXtR_Portable_Keyboard/Drivers/STM32G0xx_HAL_Driver/stm32g0xx_hal_i2c_ex.c from Makefile generation (invalid resource)
+!SESSION 2026-05-13 21:37:59.033 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-13 21:38:02.054
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-13 21:38:07.244
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-13 21:38:08.715
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 85 headers) in 1.15 sec: 5,242 declarations; 30,466 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0056%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:38:09.619
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:38:09.620
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:40:08.512
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM13
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:40:08.513
+!MESSAGE port: COM13
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:40:22.414
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:40:22.415
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:40:53.402
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM13
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:40:53.403
+!MESSAGE port: COM13
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:17.418
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:17.419
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:23.422
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM13
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:23.422
+!MESSAGE port: COM13
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:34.380
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:34.380
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:36.432
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM13
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:36.433
+!MESSAGE port: COM13
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:39.362
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:39.362
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:41.483
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM13
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:41:41.483
+!MESSAGE port: COM13
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2026-05-13 21:42:30.545
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:335)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-05-13 21:42:30.545
+!MESSAGE Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 0
+java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:44:03.387
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:44:03.388
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:44:07.459
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM13
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:44:07.459
+!MESSAGE port: COM13
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2026-05-13 21:44:08.845
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:337)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-05-13 21:44:08.846
+!MESSAGE Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 0
+java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2026-05-13 21:44:30.527
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:335)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-05-13 21:44:30.527
+!MESSAGE Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 0
+java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:45:18.416
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:45:18.417
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:46:12.439
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM14
+COM15
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:46:12.440
+!MESSAGE port: COM14
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:46:12.441
+!MESSAGE port: COM15
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2026-05-13 21:46:41.315
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:335)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-05-13 21:46:41.315
+!MESSAGE Failed to execute MI command:
+target remote localhost:61234
+
+Error message from debugger back end:
+could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+!STACK 0
+java.lang.Exception: could not connect (error 138): \212ù\202É\220Ú\221±\202³\202ê\202Ä\202¢\202é\203h\203\211\203C\203u\217ã\202Ì\203f\203B\203\214\203N\203g\203\212\202É\203h\203\211\203C\203u\202ð\220Ú\221±\202µ\202æ\202¤\202Æ\202µ\202Ü\202µ\202½\201B
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:57:25.428
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:57:25.429
+!MESSAGE port: 
+!SESSION 2026-05-13 21:58:31.352 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-13 21:58:34.419
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-13 21:58:39.785
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:58:40.932
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-13 21:58:40.932
+!MESSAGE port: 
+!SESSION 2026-05-14 06:34:10.216 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-14 06:34:13.792
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-14 06:34:19.200
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-14 06:34:21.051
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 85 headers) in 1.48 sec: 5,242 declarations; 30,496 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0056%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:34:21.356
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM14
+COM15
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:34:21.357
+!MESSAGE port: COM14
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:34:21.357
+!MESSAGE port: COM15
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:36:09.887
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:36:09.887
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:36:17.851
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM14
+COM15
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:36:17.851
+!MESSAGE port: COM14
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 06:36:17.853
+!MESSAGE port: COM15
+!SESSION 2026-05-14 18:20:10.055 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-14 18:20:23.527
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-14 18:20:30.938
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 18:20:33.067
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 18:20:33.068
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-14 18:20:33.472
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 86 headers) in 2.06 sec: 5,333 declarations; 30,936 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)
+!SESSION 2026-05-14 23:15:58.073 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-14 23:16:10.181
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-14 23:16:18.555
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 23:16:20.061
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-14 23:16:20.062
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-14 23:16:20.985
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 86 headers) in 2.05 sec: 5,334 declarations; 30,893 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)
+!SESSION 2026-05-16 05:58:57.154 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-16 05:59:13.607
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-16 05:59:24.939
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-16 05:59:26.951
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-16 05:59:26.952
+!MESSAGE port: 
+!SESSION 2026-05-16 21:44:17.423 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-16 21:44:30.608
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-16 21:44:37.951
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-16 21:44:39.100
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM14
+COM15
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-16 21:44:39.101
+!MESSAGE port: COM14
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-16 21:44:39.102
+!MESSAGE port: COM15
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-16 21:44:40.464
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 86 headers) in 2.06 sec: 5,336 declarations; 30,946 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-16 21:45:50.720
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 86 headers) in 0.986 sec: 5,336 declarations; 30,946 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)

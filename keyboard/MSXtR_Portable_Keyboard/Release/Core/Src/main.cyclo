@@ -1,0 +1,8 @@
+../Core/Src/main.c:141:6:SystemClock_Config	3
+../Core/Src/main.c:89:5:main	5
+../Core/Src/main.c:296:6:HAL_I2C_AddrCallback	2
+../Core/Src/main.c:313:6:HAL_I2C_SlaveRxCpltCallback	2
+../Core/Src/main.c:326:6:HAL_I2C_SlaveTxCpltCallback	1
+../Core/Src/main.c:331:6:HAL_I2C_ListenCpltCallback	1
+../Core/Src/main.c:340:6:Error_Handler	1
+../Core/Src/main.c:351:6:SysTick_Handler	1
