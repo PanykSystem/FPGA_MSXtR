@@ -96,7 +96,7 @@
           ""
         ],
         [
-          "silk_overlap|223130667|113960819|319b981f-2dac-4aff-9df5-0dcbeb259a5d|9b8dbe9f-4735-4e4b-acce-f0f3a54b29c8",
+          "silk_overlap|222225905|113960819|319b981f-2dac-4aff-9df5-0dcbeb259a5d|9b8dbe9f-4735-4e4b-acce-f0f3a54b29c8",
           ""
         ]
       ],
@@ -119,7 +119,7 @@
         "footprint": "error",
         "footprint_filters_mismatch": "ignore",
         "footprint_symbol_mismatch": "warning",
-        "footprint_type_mismatch": "ignore",
+        "footprint_type_mismatch": "warning",
         "hole_clearance": "error",
         "hole_to_hole": "warning",
         "holes_co_located": "warning",
