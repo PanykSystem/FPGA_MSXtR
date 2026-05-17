@@ -72,5 +72,11 @@
 /******************************************************************************/
 
 /* USER CODE BEGIN 1 */
+extern I2C_HandleTypeDef hi2c2;
 
+void I2C2_3_IRQHandler(void)
+{
+  HAL_I2C_EV_IRQHandler(&hi2c2);
+  HAL_I2C_ER_IRQHandler(&hi2c2);
+}
 /* USER CODE END 1 */

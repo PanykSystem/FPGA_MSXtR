@@ -286,9 +286,9 @@ static void MX_GPIO_Init(void)
 	HAL_GPIO_Init(MENU_GPIO_Port, &GPIO_InitStruct);
 
 	/* USER CODE BEGIN MX_GPIO_Init_2 */
-	HAL_GPIO_WritePin( LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET );
-	HAL_GPIO_WritePin( LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET );
-	HAL_GPIO_WritePin( LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin( LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin( LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin( LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET );
 	/* USER CODE END MX_GPIO_Init_2 */
 }
 
@@ -313,9 +313,14 @@ void HAL_I2C_AddrCallback( I2C_HandleTypeDef *hi2c, uint8_t TransferDirection, u
 // 受信完了時に呼ばれる
 void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c) {
 	uint8_t data = rx_buffer[0];
-	HAL_GPIO_WritePin( LED0_GPIO_Port, LED0_Pin, (data & 0x01) ? GPIO_PIN_RESET : GPIO_PIN_SET );
-	HAL_GPIO_WritePin( LED1_GPIO_Port, LED1_Pin, (data & 0x02) ? GPIO_PIN_RESET : GPIO_PIN_SET );
-	HAL_GPIO_WritePin( LED2_GPIO_Port, LED2_Pin, (data & 0x04) ? GPIO_PIN_RESET : GPIO_PIN_SET );
+	// HAL_GPIO_WritePin( LED0_GPIO_Port, LED0_Pin, (data & 0x01) ? GPIO_PIN_RESET : GPIO_PIN_SET );
+	// HAL_GPIO_WritePin( LED1_GPIO_Port, LED1_Pin, (data & 0x02) ? GPIO_PIN_RESET : GPIO_PIN_SET );
+	// HAL_GPIO_WritePin( LED2_GPIO_Port, LED2_Pin, (data & 0x04) ? GPIO_PIN_RESET : GPIO_PIN_SET );
+
+	//	★デバッグ
+	HAL_GPIO_WritePin( LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET );
+	HAL_GPIO_WritePin( LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET );
+	HAL_GPIO_WritePin( LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET );
 
 	// msx_key_matrix の内容を tx_buffer に格納（次のマスター読み出しで返す）
 	for( int i = 0; i < 12; i++ ) {
@@ -335,7 +340,7 @@ void HAL_I2C_ListenCpltCallback( I2C_HandleTypeDef *hi2c ) {
 
 void SysTick_Handler( void ) {
 	HAL_IncTick();
-	HAL_SYSTICK_IRQHandler();
+	//HAL_SYSTICK_IRQHandler();
 }
 /* USER CODE END 4 */
 
