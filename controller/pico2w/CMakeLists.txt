@@ -13,10 +13,11 @@ pico_sdk_init()
 # Additional sections specific to the fpga_msxtr_controller
 add_executable(fpga_msxtr_controller
     fpga_msxtr_controller.c
+    keyboard.c
 )
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(fpga_msxtr_controller pico_stdlib hardware_i2c)
+target_link_libraries(fpga_msxtr_controller pico_stdlib hardware_i2c hardware_spi pico_multicore)
 
 # enable usb output, disable uart output
 pico_enable_stdio_usb(fpga_msxtr_controller 1)

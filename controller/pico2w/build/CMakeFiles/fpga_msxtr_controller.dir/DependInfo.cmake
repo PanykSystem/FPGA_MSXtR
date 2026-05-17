@@ -46,6 +46,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "LIB_PICO_MALLOC=1"
   "LIB_PICO_MEM_OPS=1"
   "LIB_PICO_MEM_OPS_COMPILER=1"
+  "LIB_PICO_MULTICORE=1"
   "LIB_PICO_NEWLIB_INTERFACE=1"
   "LIB_PICO_PLATFORM=1"
   "LIB_PICO_PLATFORM_COMMON=1"
@@ -146,11 +147,13 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/boot_stage2/include"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/include"
+  "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/fpga_msxtr_controller.c" "CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o.d"
+  "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/keyboard.c" "CMakeFiles/fpga_msxtr_controller.dir/keyboard.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/keyboard.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o.d"
@@ -188,6 +191,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/i2c.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/irq.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/irq.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/irq.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c.o.d"
+  "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/ticks.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o.d"
@@ -207,6 +211,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/flash.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/flash.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/flash.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_math.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_math.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_math.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o.d"
+  "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/panic.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o.d"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_printf/printf.c" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_printf/printf.c.o" "gcc" "CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_printf/printf.c.o.d"

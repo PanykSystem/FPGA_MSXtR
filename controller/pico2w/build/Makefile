@@ -231,6 +231,30 @@ fpga_msxtr_controller.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.s
 .PHONY : fpga_msxtr_controller.c.s
 
+keyboard.o: keyboard.c.o
+.PHONY : keyboard.o
+
+# target to build an object file
+keyboard.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/keyboard.c.o
+.PHONY : keyboard.c.o
+
+keyboard.i: keyboard.c.i
+.PHONY : keyboard.i
+
+# target to preprocess a source file
+keyboard.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/keyboard.c.i
+.PHONY : keyboard.c.i
+
+keyboard.s: keyboard.c.s
+.PHONY : keyboard.s
+
+# target to generate assembly for a file
+keyboard.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/keyboard.c.s
+.PHONY : keyboard.c.s
+
 mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o
 .PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o
 
@@ -1127,6 +1151,30 @@ mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 .PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.o: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.o
+
+# target to build an object file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
+
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.i: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.i
+
+# target to preprocess a source file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.s: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.s
+
+# target to generate assembly for a file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+
 mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.o: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
 .PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.o
 
@@ -1679,6 +1727,30 @@ mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/mall
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s
 .PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s
 
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.o: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.o
+
+# target to build an object file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.i: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.i
+
+# target to preprocess a source file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.s: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.s
+
+# target to generate assembly for a file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+
 mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.o: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.c.o
 .PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.o
 
@@ -2033,6 +2105,9 @@ help:
 	@echo "... fpga_msxtr_controller.o"
 	@echo "... fpga_msxtr_controller.i"
 	@echo "... fpga_msxtr_controller.s"
+	@echo "... keyboard.o"
+	@echo "... keyboard.i"
+	@echo "... keyboard.s"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
@@ -2145,6 +2220,9 @@ help:
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.o"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.i"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.s"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.o"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.i"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.s"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.o"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.i"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.s"
@@ -2214,6 +2292,9 @@ help:
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.o"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.i"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.s"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.o"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.i"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.s"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.o"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.i"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.s"

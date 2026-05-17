@@ -63,6 +63,18 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/include/pico/multicore.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/i2c.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/i2c.h
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/i2c.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/keyboard.h

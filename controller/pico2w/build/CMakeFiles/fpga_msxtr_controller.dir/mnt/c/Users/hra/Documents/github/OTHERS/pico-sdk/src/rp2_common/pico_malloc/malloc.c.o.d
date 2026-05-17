@@ -32,4 +32,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/include/pico/malloc.h
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/include/pico/malloc.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h
