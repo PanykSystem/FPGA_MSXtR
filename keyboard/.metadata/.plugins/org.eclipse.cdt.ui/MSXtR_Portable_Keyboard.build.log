@@ -1,20 +1,10 @@
-08:10:10 **** Incremental Build of configuration Debug for project MSXtR_Portable_Keyboard ****
+10:39:58 **** Incremental Build of configuration Debug for project MSXtR_Portable_Keyboard ****
 make -j16 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B0xx -c -I../Core/Inc -IC:/Users/hra/STM32Cube/Repository/STM32Cube_FW_G0_V1.6.3/Drivers/STM32G0xx_HAL_Driver/Inc -IC:/Users/hra/STM32Cube/Repository/STM32Cube_FW_G0_V1.6.3/Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -IC:/Users/hra/STM32Cube/Repository/STM32Cube_FW_G0_V1.6.3/Drivers/CMSIS/Device/ST/STM32G0xx/Include -IC:/Users/hra/STM32Cube/Repository/STM32Cube_FW_G0_V1.6.3/Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:69:12: warning: 'rx_length' defined but not used [-Wunused-variable]
-   69 | static int rx_length = 0;
-      |            ^~~~~~~~~
-arm-none-eabi-gcc -o "MSXtR_Portable_Keyboard.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\STM32G0B0CETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MSXtR_Portable_Keyboard.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: MSXtR_Portable_Keyboard.elf
- 
 arm-none-eabi-size  MSXtR_Portable_Keyboard.elf 
-arm-none-eabi-objdump -h -S MSXtR_Portable_Keyboard.elf  > "MSXtR_Portable_Keyboard.list"
    text	   data	    bss	    dec	    hex	filename
-  14876	    104	   1720	  16700	   413c	MSXtR_Portable_Keyboard.elf
+  14984	    104	   1720	  16808	   41a8	MSXtR_Portable_Keyboard.elf
 Finished building: default.size.stdout
  
-Finished building: MSXtR_Portable_Keyboard.list
- 
 
-08:10:10 Build Finished. 0 errors, 1 warnings. (took 553ms)
+10:39:58 Build Finished. 0 errors, 0 warnings. (took 143ms)
 

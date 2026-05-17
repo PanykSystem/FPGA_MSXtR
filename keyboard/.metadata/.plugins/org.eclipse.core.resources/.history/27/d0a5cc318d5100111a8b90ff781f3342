@@ -79,16 +79,7 @@ static void MX_I2C2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-static void update_keymatrix( void ) {
-	int y;
 
-	for( y = 0; y < 11; y++ ) {
-		HAL_GPIO_WritePin( GPIOB, gpio_y[y], GPIO_PIN_RESET );
-		msx_key_matrix[y] = LL_GPIO_ReadInputPort( GPIOA ) & 0xFF;
-		HAL_GPIO_WritePin( GPIOB, gpio_y[y], GPIO_PIN_SET );
-	}
-	msx_key_matrix[11] = 0xFE | HAL_GPIO_ReadPin( MENU_GPIO_Port, MENU_Pin );
-}
 /* USER CODE END 0 */
 
 /**
@@ -99,6 +90,7 @@ int main(void)
 {
 
 	/* USER CODE BEGIN 1 */
+	int y;
 	/* USER CODE END 1 */
 
 	/* MCU Configuration--------------------------------------------------------*/
@@ -131,7 +123,12 @@ int main(void)
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
-		HAL_Delay( 1000 );
+		for( y = 0; y < 11; y++ ) {
+			HAL_GPIO_WritePin( GPIOB, gpio_y[y], GPIO_PIN_RESET );
+			msx_key_matrix[y] = LL_GPIO_ReadInputPort( GPIOA ) & 0xFF;
+			HAL_GPIO_WritePin( GPIOB, gpio_y[y], GPIO_PIN_SET );
+		}
+		HAL_Delay( 4 );
 	}
 	/* USER CODE END 3 */
 }
@@ -319,9 +316,6 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c) {
 	HAL_GPIO_WritePin( LED0_GPIO_Port, LED0_Pin, (data & 0x01) ? GPIO_PIN_RESET : GPIO_PIN_SET );
 	HAL_GPIO_WritePin( LED1_GPIO_Port, LED1_Pin, (data & 0x02) ? GPIO_PIN_RESET : GPIO_PIN_SET );
 	HAL_GPIO_WritePin( LED2_GPIO_Port, LED2_Pin, (data & 0x04) ? GPIO_PIN_RESET : GPIO_PIN_SET );
-
-	// msx_key_matrix を更新
-	update_keymatrix();
 
 	// msx_key_matrix の内容を tx_buffer に格納（次のマスター読み出しで返す）
 	for( int i = 0; i < 12; i++ ) {
