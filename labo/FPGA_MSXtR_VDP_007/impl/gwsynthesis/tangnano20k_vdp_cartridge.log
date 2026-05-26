@@ -5,21 +5,13 @@ Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\lab
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\gowin_clkdiv\gowin_clkdiv.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\gowin_rpll\gowin_rpll.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\gowin_rpll2\gowin_rpll2.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\ram\ip_ram.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a.v'
-Undeclared symbol 'w_s2026_ready', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a.v":209)
-Undeclared symbol 'kanji1_en', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a.v":248)
-Undeclared symbol 'kanji2_en', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a.v":249)
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a_cpu_select.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026b\s2026b.v'
+Undeclared symbol 'w_bus_ready', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026b\s2026b.v":99)
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026b\s2026b_cpu_select.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\sdram\ip_sdram_tangnano20k_c.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\spi\ip_spi.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\spi\spi.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v'
-Undeclared symbol 'slot_wait', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":155)
-Undeclared symbol 'oe_n', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":156)
-Undeclared symbol 'w_bus_rdata', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":219)
-Undeclared symbol 'w_bus_rdata_en', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":220)
-Undeclared symbol 'w_bus_ready', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":221)
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\uart\ip_uart.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\uart\uart.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\v9968\vdp.v'
 Undeclared symbol 'w_vram_interleave', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\v9968\vdp.v":343)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\v9968\vdp_color_palette.v'
@@ -49,12 +41,10 @@ Compiling module 'tangnano20k_vdp_cartridge'("C:\Users\hra\Documents\github\HRA_
 Compiling module 'Gowin_rPLL'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\gowin_rpll\gowin_rpll.v":10)
 Compiling module 'Gowin_rPLL2'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\gowin_rpll2\gowin_rpll2.v":10)
 Compiling module 'Gowin_CLKDIV'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\gowin_clkdiv\gowin_clkdiv.v":10)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 1("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":219)
-Compiling module 's2026a'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a.v":34)
-Compiling module 's2026a_cpu_select'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a_cpu_select.v":34)
-Compiling module 'uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\uart\uart.v":27)
-Compiling module 'ip_uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\uart\ip_uart.v":27)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\uart\ip_uart.v":69)
+Compiling module 'ip_spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\spi\ip_spi.v":34)
+Compiling module 'spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\spi\spi.v":34)
+Compiling module 's2026b'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026b\s2026b.v":34)
+Compiling module 's2026b_cpu_select'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026b\s2026b_cpu_select.v":34)
 Compiling module 'vdp'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\v9968\vdp.v":58)
 Compiling module 'vdp_cpu_interface'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\v9968\vdp_cpu_interface.v":58)
 Compiling module 'vdp_timing_control'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\v9968\vdp_timing_control.v":57)
@@ -87,24 +77,18 @@ Compiling module 'ip_sdram'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXt
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 15("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\sdram\ip_sdram_tangnano20k_c.v":285)
 Compiling module 'ip_ws2812_led'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\ws2812_led\ip_ws2812_led.v":57)
 Compiling module 'ip_debugger'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\debugger\ip_debugger.v":57)
-WARN  (EX1998) : Net 'w_bus_bootrom_rdata[7]' does not have a driver("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":108)
-WARN  (EX1998) : Net 'w_bus_bootrom_rdata_en' does not have a driver("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":109)
-WARN  (EX1998) : Net 'w_bus_bootrom_ready' does not have a driver("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":110)
 NOTE  (EX0101) : Current top module is "tangnano20k_vdp_cartridge"
 WARN  (EX0211) : The output port "vdp_so_clk" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":30)
 WARN  (EX0211) : The output port "vdp_so[1]" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":31)
 WARN  (EX0211) : The output port "vdp_so[0]" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":31)
-WARN  (EX0211) : The output port "spi_miso" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":38)
-WARN  (EX0211) : The output port "spi_intr" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":39)
 WARN  (EX0211) : The output port "pa_en" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":41)
 WARN  (EX0211) : The output port "intr" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":46)
+WARN  (EX0211) : The output port "uart_tx" of module "tangnano20k_vdp_cartridge" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":50)
 [5%] Running netlist conversion ...
+WARN  (CV0016) : Input clk27m is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":25)
 WARN  (CV0018) : Input button[1] is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":27)
 WARN  (CV0016) : Input vdp_si_clk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":32)
 WARN  (CV0016) : Input vdp_si is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":33)
-WARN  (CV0016) : Input spi_cs_n is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":35)
-WARN  (CV0016) : Input spi_clk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":36)
-WARN  (CV0016) : Input spi_mosi is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":37)
 WARN  (CV0016) : Input i2s_bclk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":42)
 WARN  (CV0016) : Input i2s_lrck is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":43)
 WARN  (CV0016) : Input i2s_din is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":44)
@@ -123,10 +107,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "s2026a" instantiated to "u_s2026a" is swept in optimizing("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\tangnano20k_vdp_cartridge.v":274)
-WARN  (NL0002) : The module "s2026a_cpu_select" instantiated to "u_cpu_select" is swept in optimizing("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\s2026a\s2026a.v":127)
-WARN  (NL0002) : The module "vdp_sprite_divide_table" instantiated to "u_divide_table" is swept in optimizing("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\src\v9968\vdp_timing_control_sprite.v":324)
 [95%] Generate netlist file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\impl\gwsynthesis\tangnano20k_vdp_cartridge.vg" completed
-WARN  (CK3000) : Can't calculate clocks' relationship between: "u_pll2/rpll_inst/CLKOUT.default_gen_clk" and "clk27m"
 [100%] Generate report file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_007\impl\gwsynthesis\tangnano20k_vdp_cartridge_syn.rpt.html" completed
 GowinSynthesis finish

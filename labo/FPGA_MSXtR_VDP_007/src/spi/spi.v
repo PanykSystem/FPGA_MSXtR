@@ -120,7 +120,7 @@ module spi (
 		end
 	end
 
-	assign w_done_pulse = ff_spi_mosi_data_en1 & ~ff_spi_mosi_data_en;
+	assign w_done_pulse = ff_spi_mosi_data_en1 ^ ff_spi_mosi_data_en;
 
 	//	clk_serial domain crossing registers
 	reg 			ff_request_ms0;

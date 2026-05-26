@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/no_os_fatfs-populate"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/no_os_fatfs-populate.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/no_os_fatfs-populate-complete.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-build.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-configure.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-download.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-install.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-patch.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-test.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"no_os_fatfs-populate"
+		],
+		"name" : "no_os_fatfs-populate"
+	}
+}

@@ -76,43 +76,40 @@ module tangnano20k_vdp_cartridge (
 	wire			clk85m_n;			//	85.90908MHz (180deg phase shift)
 	wire			clk215m;			//	214.7727MHz
 
-	reg		[3:0]	ff_3_579m = 4'd0;
-	wire			w_3_579m;
 	reg		[24:0]	ff_counter;
 	reg				ff_led;
-	wire			w_int_p;
 
 	reg				ff_reset_n0 = 1'b0;
 	reg				ff_reset_n1 = 1'b0;
 	reg				ff_reset_n2 = 1'b0;
 	wire			reset_n;
 
-	wire 			w_z80_m1;
-	wire 			w_z80_mreq;
-	wire 			w_z80_iorq;
-	wire 			w_z80_rd;
-	wire 			w_z80_wr;
-	wire 			w_z80_rfsh;
-	wire	[15:0]	w_z80_a;
-	wire	[7:0]	w_z80_wdata;
-	wire	[7:0]	w_z80_rdata;
-	wire			w_z80_active;
-	wire			w_bus_m1;
-	wire			w_bus_io;
 	wire			w_bus_write;
 	wire			w_bus_valid;
 	wire	[7:0]	w_bus_wdata;
 	wire	[15:0]	w_bus_address;
 
-	wire			w_bus_bootrom_cs;
-	wire	[7:0]	w_bus_bootrom_rdata;
-	wire			w_bus_bootrom_rdata_en;
-	wire			w_bus_bootrom_ready;
+	wire			bus_ctrl0_io;
+	wire			bus_ctrl0_write;
+	wire			bus_ctrl0_valid;
+	wire			bus_ctrl0_ready;
+	wire	[7:0]	bus_ctrl0_wdata;
+	wire	[15:0]	bus_ctrl0_address;
+	wire	[7:0]	bus_ctrl0_rdata;
+	wire			bus_ctrl0_rdata_en;
 
-	wire			w_bus_uart_cs;
-	wire	[7:0]	w_bus_uart_rdata;
-	wire			w_bus_uart_rdata_en;
-	wire			w_bus_uart_ready;
+	wire			bus_ctrl1_io;
+	wire			bus_ctrl1_write;
+	wire			bus_ctrl1_valid;
+	wire			bus_ctrl1_ready;
+	wire	[7:0]	bus_ctrl1_wdata;
+	wire	[15:0]	bus_ctrl1_address;
+	wire	[7:0]	bus_ctrl1_rdata;
+	wire			bus_ctrl1_rdata_en;
+
+	wire	[7:0]	w_bus_rdata;
+	wire			w_bus_rdata_en;
+	wire			w_bus_ready;
 
 	wire			w_bus_vdp_cs;
 	wire			w_bus_vdp_ready;
@@ -152,9 +149,6 @@ module tangnano20k_vdp_cartridge (
 	wire	[7:0]	w_blue;
 	wire			w_int_n;
 
-	assign slot_wait		= w_sdram_init_busy;
-	assign oe_n				= 1'b0;
-
 	always @( posedge clk85m ) begin
 		ff_reset_n0		<= 1'b1;
 		ff_reset_n1		<= ff_reset_n0;
@@ -187,20 +181,6 @@ module tangnano20k_vdp_cartridge (
 
 	always @( posedge clk42m ) begin
 		if( !reset_n ) begin
-			ff_3_579m <= 4'd0;
-		end
-		else if( w_3_579m ) begin
-			ff_3_579m <= 4'd0;
-		end
-		else begin
-			ff_3_579m <= ff_3_579m + 4'd1;
-		end
-	end
-
-	assign w_3_579m	= (ff_3_579m == 4'd11) ? 1'b1: 1'b0;
-
-	always @( posedge clk42m ) begin
-		if( !reset_n ) begin
 			ff_counter <= 25'd14318180;
 			ff_led <= 1'b0;
 		end
@@ -213,93 +193,80 @@ module tangnano20k_vdp_cartridge (
 		end
 	end
 
+	assign led		= ff_led;
+
 	// --------------------------------------------------------------------
 	//	Access interface
 	// --------------------------------------------------------------------
+	assign bus_ctrl0_io			= 1'b0;
+	assign bus_ctrl0_write		= 1'b1;
+	assign bus_ctrl0_valid		= 1'b0;
+	assign bus_ctrl0_wdata		= 8'd0;
+	assign bus_ctrl0_address	= 16'd0;
+
 	assign w_bus_rdata		= ( w_bus_vdp_rdata_en		) ? w_bus_vdp_rdata: 8'hFF;
 	assign w_bus_rdata_en	= w_bus_vdp_rdata_en;
 	assign w_bus_ready		= w_bus_vdp_ready;
 
 	// --------------------------------------------------------------------
-	//	Z80 core
+	//	Controller connection
 	// --------------------------------------------------------------------
-
-	//	Legasy compatible CPU core
-	assign w_z80_m1			= 1'b0;
-	assign w_z80_mreq		= 1'b0;
-	assign w_z80_iorq		= 1'b0;
-	assign w_z80_rd			= 1'b0;
-	assign w_z80_wr			= 1'b0;
-	assign w_z80_rfsh		= 1'b0;
-	assign w_z80_a			= 16'd0;
-	assign w_z80_wdata		= 8'd0;
-
-	assign w_int_p			= ~w_int_n;
+	ip_spi u_controller_spi (
+		.reset_n				( reset_n					),
+		.clk					( clk85m					),
+		.clk_serial				( clk215m					),
+		.bus_io					( bus_ctrl1_io				),
+		.bus_write				( bus_ctrl1_write			),
+		.bus_valid				( bus_ctrl1_valid			),
+		.bus_ready				( bus_ctrl1_ready			),
+		.bus_wdata				( bus_ctrl1_wdata			),
+		.bus_address			( bus_ctrl1_address			),
+		.bus_rdata				( bus_ctrl1_rdata			),
+		.bus_rdata_en			( bus_ctrl1_rdata_en		),
+		.spi_cs_n				( spi_cs_n					),
+		.spi_clk				( spi_clk					),
+		.spi_mosi				( spi_mosi					),
+		.spi_miso				( spi_miso					),
+		.spi_intr				( spi_intr					)
+	);
 
 	// --------------------------------------------------------------------
 	//	System Controller
 	// --------------------------------------------------------------------
-	s2026a u_s2026a (
+	s2026b u_s2026b (
 		.reset_n				( reset_n					),
 		.clk					( clk85m					),
-		.enable_z80				( w_3_579m					),
 		.sdram_init_busy		( w_sdram_init_busy			),
-		.z80_m1					( w_z80_m1					),
-		.z80_mreq				( w_z80_mreq				),
-		.z80_iorq				( w_z80_iorq				),
-		.z80_rd					( w_z80_rd					),
-		.z80_wr					( w_z80_wr					),
-		.z80_a					( w_z80_a					),
-		.z80_wdata				( w_z80_wdata				),
-		.z80_rdata				( w_z80_rdata				),
-		.bus_bootrom_cs			( w_bus_bootrom_cs			),
-		.bus_bootrom_rdata		( w_bus_bootrom_rdata		),
-		.bus_bootrom_rdata_en	( w_bus_bootrom_rdata_en	),
-		.bus_bootrom_ready		( w_bus_bootrom_ready		),
-		.bus_uart_cs			( w_bus_uart_cs				),
-		.bus_uart_rdata			( w_bus_uart_rdata			),
-		.bus_uart_rdata_en		( w_bus_uart_rdata_en		),
-		.bus_uart_ready			( w_bus_uart_ready			),
-		.bus_vdp_cs				( w_bus_vdp_cs				),
-		.bus_vdp_rdata			( w_bus_vdp_rdata			),
-		.bus_vdp_rdata_en		( w_bus_vdp_rdata_en		),
-		.bus_vdp_ready			( w_bus_vdp_ready			),
-		.bus_m1					( w_bus_m1					),
-		.bus_io					( w_bus_io					),
+		.bus_ctrl0_io			( bus_ctrl0_io				),
+		.bus_ctrl0_write		( bus_ctrl0_write			),
+		.bus_ctrl0_valid		( bus_ctrl0_valid			),
+		.bus_ctrl0_ready		( bus_ctrl0_ready			),
+		.bus_ctrl0_wdata		( bus_ctrl0_wdata			),
+		.bus_ctrl0_address		( bus_ctrl0_address			),
+		.bus_ctrl0_rdata		( bus_ctrl0_rdata			),
+		.bus_ctrl0_rdata_en		( bus_ctrl0_rdata_en		),
+		.bus_ctrl1_io			( bus_ctrl1_io				),
+		.bus_ctrl1_write		( bus_ctrl1_write			),
+		.bus_ctrl1_valid		( bus_ctrl1_valid			),
+		.bus_ctrl1_ready		( bus_ctrl1_ready			),
+		.bus_ctrl1_wdata		( bus_ctrl1_wdata			),
+		.bus_ctrl1_address		( bus_ctrl1_address			),
+		.bus_ctrl1_rdata		( bus_ctrl1_rdata			),
+		.bus_ctrl1_rdata_en		( bus_ctrl1_rdata_en		),
 		.bus_write				( w_bus_write				),
 		.bus_valid				( w_bus_valid				),
 		.bus_wdata				( w_bus_wdata				),
 		.bus_address			( w_bus_address				),
-		.z80_active				( w_z80_active				)
+		.bus_vdp_cs				( w_bus_vdp_cs				),
+		.bus_vdp_rdata			( w_bus_vdp_rdata			),
+		.bus_vdp_rdata_en		( w_bus_vdp_rdata_en		),
+		.bus_vdp_ready			( w_bus_vdp_ready			)
 	);
 
 	// --------------------------------------------------------------------
-	//	UART
+	//	V9968
 	// --------------------------------------------------------------------
-	wire			w_uart_tx;
-
-	uart u_uart (
-		.reset_n				( reset_n					),
-		.clk					( clk85m					),
-		.clk_uart				( clk27m					),
-		.bus_uart_cs			( w_bus_uart_cs				),
-		.bus_valid				( w_bus_valid				),
-		.bus_write				( w_bus_write				),
-		.bus_ready				( w_bus_uart_ready			),
-		.bus_wdata				( w_bus_wdata				),
-		.bus_rdata				( w_bus_uart_rdata			),
-		.bus_rdata_en			( w_bus_uart_rdata_en		),
-		.uart_tx				( w_uart_tx					),
-		.button					( button					)
-	);
-
-	assign uart_tx	= w_uart_tx;
-	assign led		= ff_led;
-
-	// --------------------------------------------------------------------
-	//	V9958 clone
-	// --------------------------------------------------------------------
-	vdp u_v9958 (
+	vdp u_v9968 (
 		.reset_n			( reset_n					),
 		.clk				( clk85m					),
 		.initial_busy		( w_sdram_init_busy			),
@@ -390,7 +357,7 @@ module tangnano20k_vdp_cartridge (
 	);
 
 	// --------------------------------------------------------------------
-	//	Debug—p LED
+	//	Debugï¿½p LED
 	// --------------------------------------------------------------------
 	ip_ws2812_led u_led (
 		.reset_n			( reset_n					),

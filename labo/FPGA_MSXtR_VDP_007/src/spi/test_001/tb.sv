@@ -344,6 +344,88 @@ module tb ();
 		repeat( 10 ) @( posedge clk );
 
 		// ================================================================
+		//	Test 4: Multi-byte receive (3 bytes within one CS assertion)
+		//	  Drive 0x11, 0x22, 0x33 on MOSI while CS stays low.
+		//	  (a) Each byte must set spi_rdata to the correct value.
+		//	  (b) spi_rdata_en must pulse exactly once per byte.
+		// ================================================================
+		test_no = 4;
+		$display( "------------------------------------------------------------" );
+		$display( "[TEST %0d] Multi-byte RX (3 bytes, CS held low): 0x11 / 0x22 / 0x33", test_no );
+
+		spi_cs_n = 1'b0;
+		repeat( 3 ) @( posedge clk );
+
+		//	---- Byte 1: 0x11 ----
+		begin
+			reg	[7:0]	miso_data;
+			int			en_before;
+			en_before = rdata_en_count;
+			spi_transfer( 1'b0, 8'h00, 8'h11, miso_data );
+			if ( spi_rdata === 8'h11 ) begin
+				$display( "[TEST %0d] PASS: Byte1 spi_rdata = 0x%02X  (expected 0x11)", test_no, spi_rdata );
+				pass_count = pass_count + 1;
+			end else begin
+				$display( "[TEST %0d] FAIL: Byte1 spi_rdata = 0x%02X  (expected 0x11)", test_no, spi_rdata );
+				fail_count = fail_count + 1;
+			end
+			if ( rdata_en_count === en_before + 1 ) begin
+				$display( "[TEST %0d] PASS: Byte1 spi_rdata_en pulsed once (count=%0d)", test_no, rdata_en_count );
+				pass_count = pass_count + 1;
+			end else begin
+				$display( "[TEST %0d] FAIL: Byte1 spi_rdata_en pulse count unexpected (before=%0d after=%0d)", test_no, en_before, rdata_en_count );
+				fail_count = fail_count + 1;
+			end
+		end
+
+		//	---- Byte 2: 0x22 ----
+		begin
+			reg	[7:0]	miso_data;
+			int			en_before;
+			en_before = rdata_en_count;
+			spi_transfer( 1'b0, 8'h00, 8'h22, miso_data );
+			if ( spi_rdata === 8'h22 ) begin
+				$display( "[TEST %0d] PASS: Byte2 spi_rdata = 0x%02X  (expected 0x22)", test_no, spi_rdata );
+				pass_count = pass_count + 1;
+			end else begin
+				$display( "[TEST %0d] FAIL: Byte2 spi_rdata = 0x%02X  (expected 0x22)", test_no, spi_rdata );
+				fail_count = fail_count + 1;
+			end
+			if ( rdata_en_count === en_before + 1 ) begin
+				$display( "[TEST %0d] PASS: Byte2 spi_rdata_en pulsed once (count=%0d)", test_no, rdata_en_count );
+				pass_count = pass_count + 1;
+			end else begin
+				$display( "[TEST %0d] FAIL: Byte2 spi_rdata_en pulse count unexpected (before=%0d after=%0d)", test_no, en_before, rdata_en_count );
+				fail_count = fail_count + 1;
+			end
+		end
+
+		//	---- Byte 3: 0x33 ----
+		begin
+			reg	[7:0]	miso_data;
+			int			en_before;
+			en_before = rdata_en_count;
+			spi_transfer( 1'b0, 8'h00, 8'h33, miso_data );
+			if ( spi_rdata === 8'h33 ) begin
+				$display( "[TEST %0d] PASS: Byte3 spi_rdata = 0x%02X  (expected 0x33)", test_no, spi_rdata );
+				pass_count = pass_count + 1;
+			end else begin
+				$display( "[TEST %0d] FAIL: Byte3 spi_rdata = 0x%02X  (expected 0x33)", test_no, spi_rdata );
+				fail_count = fail_count + 1;
+			end
+			if ( rdata_en_count === en_before + 1 ) begin
+				$display( "[TEST %0d] PASS: Byte3 spi_rdata_en pulsed once (count=%0d)", test_no, rdata_en_count );
+				pass_count = pass_count + 1;
+			end else begin
+				$display( "[TEST %0d] FAIL: Byte3 spi_rdata_en pulse count unexpected (before=%0d after=%0d)", test_no, en_before, rdata_en_count );
+				fail_count = fail_count + 1;
+			end
+		end
+
+		spi_cs_n = 1'b1;
+		repeat( 10 ) @( posedge clk );
+
+		// ================================================================
 		//	Summary
 		// ================================================================
 		$display( "============================================================" );

@@ -211,3 +211,5 @@
 /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/pico-sdk/src/rp2_common/pico_stdlib/CMakeFiles/rebuild_cache.dir
 /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/pico-sdk/docs/CMakeFiles/edit_cache.dir
 /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/pico-sdk/docs/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-build/CMakeFiles/rebuild_cache.dir

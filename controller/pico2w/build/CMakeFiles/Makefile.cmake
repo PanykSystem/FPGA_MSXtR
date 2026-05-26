@@ -12,12 +12,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
+  "_deps/no_os_fatfs-src/FatFs_SPI/CMakeLists.txt"
   "_deps/picotool/picotoolConfig.cmake"
   "_deps/picotool/picotoolConfigVersion.cmake"
   "_deps/picotool/picotoolTargets-release.cmake"
   "_deps/picotool/picotoolTargets.cmake"
   "pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp/pioasmBuild-mkdirs.cmake"
   "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/pico_sdk_import.cmake"
+  "/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/rtc_stub.c"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/CMakeLists.txt"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/cmake/Platform/PICO.cmake"
   "/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/cmake/generic_board.cmake"
@@ -168,7 +170,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/ExternalProject/mkdirs.cmake.in"
   "/usr/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake"
   "/usr/share/cmake-3.28/Modules/FetchContent.cmake"
+  "/usr/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in"
   "/usr/share/cmake-3.28/Modules/FindDoxygen.cmake"
+  "/usr/share/cmake-3.28/Modules/FindGit.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.28/Modules/FindPython/Support.cmake"
@@ -184,6 +188,8 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "_deps/no_os_fatfs-subbuild/CMakeLists.txt"
+  "_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "generated/pico_base/pico/version.h"
   "generated/pico_base/pico/config_autogen.h"
@@ -298,6 +304,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "pico-sdk/src/rp2_common/pico_stdio/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/src/rp2_common/pico_stdlib/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/docs/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "_deps/no_os_fatfs-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

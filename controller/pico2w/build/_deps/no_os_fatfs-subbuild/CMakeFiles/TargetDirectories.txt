@@ -1,0 +1,3 @@
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/no_os_fatfs-populate.dir
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/edit_cache.dir
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/rebuild_cache.dir

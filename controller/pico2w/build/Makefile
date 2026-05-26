@@ -207,6 +207,318 @@ pico_status_led_ws2812_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/build
 .PHONY : pico_status_led_ws2812_pio_h/fast
 
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.o: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.i: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.s: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.o: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.i: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.s: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.o: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.i: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.s: _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.o: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.i: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.s: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.o: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.i: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.s: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.o: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.i: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.s: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.o: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.i: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.s: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.o: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.i: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.s: _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.o: _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.i: _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.s: _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.o: _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.i: _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.s: _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/glue.o: _deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/glue.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/glue.i: _deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/glue.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/glue.s: _deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/glue.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.o: _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.i: _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.s: _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c.s
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.o: _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.o
+
+# target to build an object file
+_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.o
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.o
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.i: _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.i
+
+# target to preprocess a source file
+_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.i
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.i
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.s: _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.s
+
+# target to generate assembly for a file
+_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.s
+.PHONY : _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c.s
+
 fpga_msxtr_controller.o: fpga_msxtr_controller.c.o
 .PHONY : fpga_msxtr_controller.o
 
@@ -230,6 +542,30 @@ fpga_msxtr_controller.s: fpga_msxtr_controller.c.s
 fpga_msxtr_controller.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.s
 .PHONY : fpga_msxtr_controller.c.s
+
+hw_config.o: hw_config.c.o
+.PHONY : hw_config.o
+
+# target to build an object file
+hw_config.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/hw_config.c.o
+.PHONY : hw_config.c.o
+
+hw_config.i: hw_config.c.i
+.PHONY : hw_config.i
+
+# target to preprocess a source file
+hw_config.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/hw_config.c.i
+.PHONY : hw_config.c.i
+
+hw_config.s: hw_config.c.s
+.PHONY : hw_config.s
+
+# target to generate assembly for a file
+hw_config.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/hw_config.c.s
+.PHONY : hw_config.c.s
 
 keyboard.o: keyboard.c.o
 .PHONY : keyboard.o
@@ -1022,6 +1358,30 @@ mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider
 mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.c.s
 .PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.c.s
+
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.o: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.o
+
+# target to build an object file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
+
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.i: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.i
+
+# target to preprocess a source file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
+
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.s: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.s
+
+# target to generate assembly for a file
+mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fpga_msxtr_controller.dir/build.make CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
+.PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
 
 mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.o: mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 .PHONY : mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.o
@@ -2102,9 +2462,51 @@ help:
 	@echo "... bs2_default"
 	@echo "... bs2_default_library"
 	@echo "... fpga_msxtr_controller"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/glue.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/glue.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/glue.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.s"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.o"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.i"
+	@echo "... _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.s"
 	@echo "... fpga_msxtr_controller.o"
 	@echo "... fpga_msxtr_controller.i"
 	@echo "... fpga_msxtr_controller.s"
+	@echo "... hw_config.o"
+	@echo "... hw_config.i"
+	@echo "... hw_config.s"
 	@echo "... keyboard.o"
 	@echo "... keyboard.i"
 	@echo "... keyboard.s"
@@ -2204,6 +2606,9 @@ help:
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.o"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.i"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.s"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.o"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.i"
+	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.s"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.o"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.i"
 	@echo "... mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.s"

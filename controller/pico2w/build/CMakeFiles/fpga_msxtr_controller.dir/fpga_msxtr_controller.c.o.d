@@ -77,4 +77,13 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.h \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/hw_config.h \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.h \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
  /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/keyboard.h
