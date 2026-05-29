@@ -1,22 +1,16 @@
-CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_msxtr_controller.c \
- /usr/include/newlib/stdio.h /usr/include/newlib/_ansi.h \
- /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
- /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
- /usr/include/newlib/sys/features.h /usr/include/newlib/sys/cdefs.h \
- /usr/include/newlib/machine/_default_types.h \
- /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
- /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdarg.h \
- /usr/include/newlib/sys/reent.h /usr/include/newlib/_ansi.h \
- /usr/include/newlib/sys/_types.h /usr/include/newlib/machine/_types.h \
- /usr/include/newlib/sys/lock.h /usr/include/newlib/sys/stdio.h \
+CMakeFiles/fpga_msxtr_controller.dir/fpga_uart.c.o: \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_uart.c \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
- /usr/include/newlib/assert.h \
+ /usr/include/newlib/assert.h /usr/include/newlib/_ansi.h \
+ /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
+ /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
+ /usr/include/newlib/sys/features.h \
  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h \
+ /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
  /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/generated/pico_base/pico/version.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
  /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/generated/pico_base/pico/config_autogen.h \
@@ -25,6 +19,8 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+ /usr/include/newlib/sys/cdefs.h \
+ /usr/include/newlib/machine/_default_types.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -33,6 +29,7 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+ /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdarg.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
@@ -60,29 +57,8 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/include/pico/multicore.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/hw_config.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/keyboard.h \
  /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/vdp_control.h \
  /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_uart.h
