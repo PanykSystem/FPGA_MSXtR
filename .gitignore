@@ -19,5 +19,4 @@ romimage_*.h
 transcript
 .vs
 .vscode
-controller/pico2w/build/_deps/no_os_fatfs-src
-controller/pico2w/build/_deps/no_os_fatfs-src
+no_os_fatfs-src
