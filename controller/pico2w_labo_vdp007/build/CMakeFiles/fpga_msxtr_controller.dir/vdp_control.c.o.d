@@ -1,10 +1,10 @@
-CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c.o: \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c \
- /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
+CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/vdp_control.c \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
+ /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
  /usr/include/newlib/assert.h /usr/include/newlib/_ansi.h \
  /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
  /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
@@ -57,25 +57,7 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/s
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/include/my_debug.h \
- /usr/include/newlib/stdio.h /usr/include/newlib/sys/reent.h \
- /usr/include/newlib/_ansi.h /usr/include/newlib/sys/_types.h \
- /usr/include/newlib/machine/_types.h /usr/include/newlib/sys/lock.h \
- /usr/include/newlib/sys/stdio.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/hw_config.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.h \
- /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
- /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h
+ /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
+ /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/vdp_control.h
