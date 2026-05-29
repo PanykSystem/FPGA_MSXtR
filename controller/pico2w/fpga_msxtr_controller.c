@@ -20,8 +20,7 @@
 #define SPI0_CSN_PIN  5
 #define SPI0_SCK_PIN  6
 #define SPI0_TX_PIN	  7
-//#define SPI0_BAUDRATE (1000 * 1000)	 // 1 MHz
-#define SPI0_BAUDRATE (100 * 1000)	 // 100 kHz
+#define SPI0_BAUDRATE (20000 * 1000)	 // 20 MHz
 
 // SPI1 (SDカード) -- ピン設定は hw_config.c で管理
 // RX=8, CSN=9, SCK=10, TX=11, BAUDRATE=12.5MHz (no-OS-FatFS ライブラリが初期化)
