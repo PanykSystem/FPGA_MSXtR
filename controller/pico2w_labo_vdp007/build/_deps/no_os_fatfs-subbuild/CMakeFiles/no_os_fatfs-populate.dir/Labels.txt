@@ -1,0 +1,14 @@
+# Target labels
+ no_os_fatfs-populate
+# Source files and their labels
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/no_os_fatfs-populate
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/no_os_fatfs-populate.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/CMakeFiles/no_os_fatfs-populate-complete.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-build.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-configure.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-download.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-install.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-mkdir.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-patch.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-test.rule
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/src/no_os_fatfs-populate-stamp/no_os_fatfs-populate-update.rule

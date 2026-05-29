@@ -219,7 +219,7 @@ module tangnano20k_vdp_cartridge (
 	ip_spi u_controller_spi (
 		.reset_n				( reset_n					),
 		.clk					( clk85m					),
-		.clk_serial				( clk85m					),
+		.clk_serial				( clk215m					),
 		.bus_io					( bus_ctrl1_io				),
 		.bus_write				( bus_ctrl1_write			),
 		.bus_valid				( bus_ctrl1_valid			),

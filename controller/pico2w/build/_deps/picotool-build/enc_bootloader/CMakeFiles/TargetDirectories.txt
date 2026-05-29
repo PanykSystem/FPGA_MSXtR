@@ -1,2 +1,0 @@
-/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-build/enc_bootloader/CMakeFiles/edit_cache.dir
-/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-build/enc_bootloader/CMakeFiles/rebuild_cache.dir
