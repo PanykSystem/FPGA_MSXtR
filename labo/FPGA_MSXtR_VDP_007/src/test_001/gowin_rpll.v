@@ -17,7 +17,7 @@ module Gowin_rPLL (
 	reg		r_clkoutd	= 0;
 
 	//	214.7727MHz
-	always #(1_000_000_000_000.0 / 214_772_700.0 / 2.0)  r_clkout  = ~r_clkout;
+	always #(1_000_000_000.0 / 214_772_700.0 / 2.0)  r_clkout  = ~r_clkout;
 
 	assign clkout	= r_clkout;
 	assign clkoutd	= r_clkoutd;
@@ -35,8 +35,8 @@ module Gowin_rPLL2 (
 );
 	reg		r_clkout = 0;
 
-	//	257.72724MHz: period = 3.880ns, half = 1.940ns = 1940ps
-	always #(1_000_000_000_000.0 / 257_727_240.0 / 2.0) begin
+	//	85.90908MHz
+	always #(1_000_000_000.0 / 85_909_080.0 / 2.0) begin
 		r_clkout = ~r_clkout;
 	end
 

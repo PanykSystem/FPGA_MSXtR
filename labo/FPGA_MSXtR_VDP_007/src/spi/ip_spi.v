@@ -57,7 +57,12 @@ module ip_spi (
 	localparam		ST_2OPERANDS	= 3'd3;
 	localparam		ST_1OPERAND		= 3'd4;
 	localparam		ST_DO			= 3'd5;
+	reg				ff_spi_cs_n_pre;
+	reg				ff_spi_cs_n;
 	reg		[2:0]	ff_state;
+	reg		[7:0]	ff_spi_wdata;
+	reg				ff_spi_write;
+	reg				ff_spi_valid;
 	wire			spi_ready;
 	wire	[7:0]	spi_rdata;
 	wire			spi_rdata_en;
@@ -65,6 +70,17 @@ module ip_spi (
 	reg		[7:0]	ff_bus_wdata;
 	reg				ff_bus_io;
 	reg				ff_bus_valid;
+
+	always @( posedge clk ) begin
+		if( !reset_n ) begin
+			ff_spi_cs_n_pre <= 1'b1;
+			ff_spi_cs_n     <= 1'b1;
+		end
+		else begin
+			ff_spi_cs_n_pre <= spi_cs_n;
+			ff_spi_cs_n     <= ff_spi_cs_n_pre;
+		end
+	end
 
 	// ---------------------------------------------------------
 	//	State machine
@@ -76,20 +92,39 @@ module ip_spi (
 			ff_bus_wdata	<= 8'd0;
 			ff_bus_io		<= 1'b0;
 			ff_bus_valid	<= 1'b0;
+			ff_spi_wdata	<= 8'd0;
+			ff_spi_write	<= 1'b0;
+			ff_spi_valid	<= 1'b0;
 		end
 		else if( ff_state == ST_DO ) begin
 			if( bus_ready ) begin
 				ff_bus_valid	<= 1'b0;
-				ff_state		<= spi_cs_n ? ST_IDLE: ST_COMMAND;
+				if( ff_spi_cs_n ) begin
+					ff_state <= ST_IDLE;
+				end
+				else begin
+					ff_state		<= ST_COMMAND;
+					ff_spi_valid	<= 1'b1;
+					ff_spi_write	<= 1'b0;
+				end
 			end
 		end
-		else if( spi_cs_n ) begin
-			ff_state <= ST_IDLE;
+		else if( ff_spi_cs_n ) begin
+			ff_state		<= ST_IDLE;
+			ff_spi_valid	<= 1'b0;
+			ff_bus_valid	<= 1'b0;
+		end
+		else if( ff_spi_valid ) begin
+			if( spi_ready ) begin
+				ff_spi_valid	<= 1'b0;
+			end
 		end
 		else begin
 			case( ff_state )
 			ST_IDLE: begin
-				ff_state <= ST_COMMAND;
+				ff_state		<= ST_COMMAND;
+				ff_spi_valid	<= 1'b1;
+				ff_spi_write	<= 1'b0;
 			end
 			// -------------------------------------------------
 			// COMMAND:
@@ -99,8 +134,10 @@ module ip_spi (
 				if( spi_rdata_en ) begin
 					case( spi_rdata )
 					8'h01: begin
-						ff_state	<= ST_2OPERANDS;
-						ff_bus_io	<= 1'b1;
+						ff_state		<= ST_2OPERANDS;
+						ff_bus_io		<= 1'b1;
+						ff_spi_valid	<= 1'b1;
+						ff_spi_write	<= 1'b0;
 					end
 					default: begin
 						// unknown command --> ignore
@@ -115,12 +152,16 @@ module ip_spi (
 				if( spi_rdata_en ) begin
 					ff_bus_address[15:8]	<= spi_rdata;
 					ff_state				<= ST_2OPERANDS;
+					ff_spi_valid			<= 1'b1;
+					ff_spi_write			<= 1'b0;
 				end
 			end
 			ST_2OPERANDS: begin
 				if( spi_rdata_en ) begin
 					ff_bus_address[ 7:0]	<= spi_rdata;
 					ff_state				<= ST_1OPERAND;
+					ff_spi_valid			<= 1'b1;
+					ff_spi_write			<= 1'b0;
 				end
 			end
 			ST_1OPERAND: begin
@@ -145,10 +186,10 @@ module ip_spi (
 	.reset_n		( reset_n		),
 	.clk			( clk			),
 	.clk_serial		( clk_serial	),
-	.spi_valid		( 1'b0			),
+	.spi_valid		( ff_spi_valid	),
 	.spi_ready		( spi_ready		),
-	.spi_write		( 1'b0			),
-	.spi_wdata		( 8'd0			),
+	.spi_write		( ff_spi_write	),
+	.spi_wdata		( ff_spi_wdata	),
 	.spi_rdata		( spi_rdata		),
 	.spi_rdata_en	( spi_rdata_en	),
 	.spi_cs_n		( spi_cs_n		),

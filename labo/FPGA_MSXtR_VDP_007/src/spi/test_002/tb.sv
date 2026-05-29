@@ -204,7 +204,7 @@ module tb ();
 
 			//	Assert CS
 			spi_cs_n = 1'b0;
-			repeat( 3 ) @( posedge clk );
+			repeat( 20 ) @( posedge clk );
 
 			//	Byte 1: command byte → ip_spi: ST_COMMAND → ST_2OPERANDS
 			$display( "[TEST %0d]   Sending command byte 0x01 ...", test_no );
@@ -277,7 +277,7 @@ module tb ();
 			cnt_before = bus_valid_count;
 
 			spi_cs_n = 1'b0;
-			repeat( 3 ) @( posedge clk );
+			repeat( 20 ) @( posedge clk );
 
 			$display( "[TEST %0d]   Sending command byte 0x01 ...", test_no );
 			spi_send_byte( 8'h01 );
@@ -311,7 +311,7 @@ module tb ();
 			cnt_before = bus_valid_count;
 
 			spi_cs_n = 1'b0;
-			repeat( 3 ) @( posedge clk );
+			repeat( 20 ) @( posedge clk );
 
 			$display( "[TEST %0d]   Sending unknown command byte 0x55 ...", test_no );
 			spi_send_byte( 8'h55 );
@@ -353,7 +353,7 @@ module tb ();
 			cnt_before = bus_valid_count;		//	should be 0 after reset
 
 			spi_cs_n = 1'b0;
-			repeat( 3 ) @( posedge clk );
+			repeat( 20 ) @( posedge clk );
 
 			$display( "[TEST %0d]   Sending command byte 0x01 ...", test_no );
 			spi_send_byte( 8'h01 );

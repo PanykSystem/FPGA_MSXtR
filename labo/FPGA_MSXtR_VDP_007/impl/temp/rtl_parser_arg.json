@@ -46,6 +46,14 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_007/src/uart/ip_uart.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_007/src/uart/uart.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_007/src/v9968/vdp.v",
    "Type" : "verilog"
   },

@@ -116,6 +116,11 @@ module tangnano20k_vdp_cartridge (
 	wire	[7:0]	w_bus_vdp_rdata;
 	wire			w_bus_vdp_rdata_en;
 
+	wire			w_bus_uart_cs;
+	wire			w_bus_uart_ready;
+	wire	[7:0]	w_bus_uart_rdata;
+	wire			w_bus_uart_rdata_en;
+
 	wire			w_sdram_init_busy;
 
 	wire	[22:2]	w_sdram_address;
@@ -214,7 +219,7 @@ module tangnano20k_vdp_cartridge (
 	ip_spi u_controller_spi (
 		.reset_n				( reset_n					),
 		.clk					( clk85m					),
-		.clk_serial				( clk215m					),
+		.clk_serial				( clk85m					),
 		.bus_io					( bus_ctrl1_io				),
 		.bus_write				( bus_ctrl1_write			),
 		.bus_valid				( bus_ctrl1_valid			),
@@ -260,7 +265,11 @@ module tangnano20k_vdp_cartridge (
 		.bus_vdp_cs				( w_bus_vdp_cs				),
 		.bus_vdp_rdata			( w_bus_vdp_rdata			),
 		.bus_vdp_rdata_en		( w_bus_vdp_rdata_en		),
-		.bus_vdp_ready			( w_bus_vdp_ready			)
+		.bus_vdp_ready			( w_bus_vdp_ready			),
+		.bus_uart_cs			( w_bus_uart_cs				),
+		.bus_uart_rdata			( w_bus_uart_rdata			),
+		.bus_uart_rdata_en		( w_bus_uart_rdata_en		),
+		.bus_uart_ready			( w_bus_uart_ready			)
 	);
 
 	// --------------------------------------------------------------------
@@ -306,6 +315,26 @@ module tangnano20k_vdp_cartridge (
 	);
 
 	assign w_sdram_address[22:18]	= 5'd0;
+
+	// --------------------------------------------------------------------
+	//	UART
+	// --------------------------------------------------------------------
+	uart #(
+		.clk_uart_mhz		( 27.0						)
+	) u_uart (
+		.reset_n			( reset_n					),
+		.clk				( clk85m					),
+		.clk_uart			( clk27m					),
+		.bus_uart_cs		( w_bus_uart_cs				),
+		.bus_valid			( w_bus_valid				),
+		.bus_write			( w_bus_write				),
+		.bus_ready			( w_bus_uart_ready			),
+		.bus_wdata			( w_bus_wdata				),
+		.bus_rdata			( w_bus_uart_rdata			),
+		.bus_rdata_en		( w_bus_uart_rdata_en		),
+		.uart_tx			( uart_tx					),
+		.button				( button					)
+	);
 
 	// --------------------------------------------------------------------
 	//	HDMI

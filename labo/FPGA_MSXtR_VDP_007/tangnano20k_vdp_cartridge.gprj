@@ -16,6 +16,8 @@
         <File path="src/spi/ip_spi.v" type="file.verilog" enable="1"/>
         <File path="src/spi/spi.v" type="file.verilog" enable="1"/>
         <File path="src/tangnano20k_vdp_cartridge.v" type="file.verilog" enable="1"/>
+        <File path="src/uart/ip_uart.v" type="file.verilog" enable="1"/>
+        <File path="src/uart/uart.v" type="file.verilog" enable="1"/>
         <File path="src/v9968/vdp.v" type="file.verilog" enable="1"/>
         <File path="src/v9968/vdp_color_palette.v" type="file.verilog" enable="1"/>
         <File path="src/v9968/vdp_color_palette_ram.v" type="file.verilog" enable="1"/>

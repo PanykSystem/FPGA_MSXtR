@@ -20,15 +20,15 @@
 //	from, out of or in connection with the Software or the use or other dealings 
 //	in the Software.
 // -----------------------------------------------------------------------------
-//	Description:
-//		SPI slave 1-byte transmit (MISO) and 1-byte receive (MOSI) test
+//	説明:
+//		SPIスレーブの1バイト送信（MISO）と1バイト受信（MOSI）のテスト
 //
-//	DUT edge-detection note (naming in spi.v is reversed from convention):
-//		w_spi_clk_falling_edge  fires on actual SPI RISING  edge -> shifts MISO
-//		w_spi_clk_rising_edge   fires on actual SPI FALLING edge -> samples MOSI
-//	Master behaviour:
-//		- Sample MISO during low phase (before rising edge)
-//		- Drive  MOSI before rising edge; DUT latches it on the falling edge
+//	DUTエッジ検出についての注記（spi.v 内の命名は一般的な慣例と逆になっている）:
+//		w_spi_clk_falling_edge は実際のSPIの立ち上がりエッジで発火 -> MISOをシフト出力
+//		w_spi_clk_rising_edge  は実際のSPIの立ち下がりエッジで発火 -> MOSIをサンプリング
+//	マスターの動作:
+//		- 立ち下がりフェーズ中（立ち上がりエッジの前）にMISOをサンプリングする
+//		- 立ち上がりエッジの前にMOSIを駆動する。DUTは立ち下がりエッジでラッチする
 // -----------------------------------------------------------------------------
 
 `timescale 1ns/1ps
@@ -99,14 +99,14 @@ module tb ();
 	);
 
 	// --------------------------------------------------------------------
-	//	Task: spi_transfer
-	//	  do_write = 1 (TX): spi_write=1, loads tx_data into MISO shift-reg.
-	//	  do_write = 0 (RX): spi_write=0, MISO outputs 0 (no TX load).
-	//	  Always clocks 8 SPI cycles and captures MISO / drives MOSI.
-	//	  spi_rdata_en is expected to pulse only when do_write=0 (RX).
+	//	タスク: spi_transfer
+	//	  do_write = 1 (TX): spi_write=1、tx_dataをMISOシフトレジスタにロードする。
+	//	  do_write = 0 (RX): spi_write=0、MISOは0を出力する（TXロードなし）。
+	//	  常に8SPIサイクルをクロックし、MISOをキャプチャ / MOSIを駆動する。
+	//	  spi_rdata_en は do_write=0 (RX) のときのみパルスを出力することが期待される。
 	//
-	//	Precondition : spi_cs_n = 0, spi_ready = 1
-	//	Postcondition: spi_rdata holds the 8 received MOSI bits
+	//	事前条件 : spi_cs_n = 0, spi_ready = 1
+	//	事後条件 : spi_rdata に受信した8ビットのMOSIデータが格納される
 	// --------------------------------------------------------------------
 	task automatic spi_transfer(
 		input			do_write,		//	1=TX (spi_write=1), 0=RX (spi_write=0)
@@ -322,26 +322,57 @@ module tb ();
 
 		repeat( 5 ) @( posedge clk );
 
-		//	---- (d) Recovery: full transfer after abort ----
-		$display( "[TEST %0d] Recovery: full transfer TX=0x5A / RX=0xA5 after abort", test_no );
-		spi_cs_n = 1'b0;
-		repeat( 3 ) @( posedge clk );
+		//	---- (d) Recovery: TX transfer after abort (MISO check) ----
+        //	DUT は TX と RX を同時には行わないため、TX と RX を別々に転送する
+        $display( "[TEST %0d] Recovery: TX=0x5A after abort", test_no );
+        spi_cs_n = 1'b0;
+        repeat( 3 ) @( posedge clk );
 
-		begin
-			reg [7:0] miso_data;
-			//	do_write=1: recovery TX+RX simultaneously
-			spi_transfer( 1'b1, 8'h5A, 8'hA5, miso_data );
-			if ( miso_data === 8'h5A && spi_rdata === 8'hA5 ) begin
-				$display( "[TEST %0d] PASS: Recovery MISO=0x%02X (exp 0x5A)  spi_rdata=0x%02X (exp 0xA5)", test_no, miso_data, spi_rdata );
-				pass_count = pass_count + 1;
-			end else begin
-				$display( "[TEST %0d] FAIL: Recovery MISO=0x%02X (exp 0x5A)  spi_rdata=0x%02X (exp 0xA5)", test_no, miso_data, spi_rdata );
-				fail_count = fail_count + 1;
-			end
-		end
+        begin
+            reg [7:0] miso_data;
+            //	do_write=1: TX のみ。MISO 出力を確認する
+            spi_transfer( 1'b1, 8'h5A, 8'h00, miso_data );
+            if ( miso_data === 8'h5A ) begin
+                $display( "[TEST %0d] PASS: Recovery TX MISO=0x%02X  (exp 0x5A)", test_no, miso_data );
+                pass_count = pass_count + 1;
+            end else begin
+                $display( "[TEST %0d] FAIL: Recovery TX MISO=0x%02X  (exp 0x5A)", test_no, miso_data );
+                fail_count = fail_count + 1;
+            end
+        end
 
-		spi_cs_n = 1'b1;
-		repeat( 10 ) @( posedge clk );
+        spi_cs_n = 1'b1;
+        repeat( 10 ) @( posedge clk );
+
+        //	---- (e) Recovery: RX transfer after abort (spi_rdata check) ----
+        $display( "[TEST %0d] Recovery: RX=0xA5 after abort", test_no );
+        spi_cs_n = 1'b0;
+        repeat( 3 ) @( posedge clk );
+
+        begin
+            reg [7:0] miso_data;
+            int en_before;
+            en_before = rdata_en_count;
+            //	do_write=0: RX のみ。spi_rdata と spi_rdata_en を確認する
+            spi_transfer( 1'b0, 8'h00, 8'hA5, miso_data );
+            if ( spi_rdata === 8'hA5 ) begin
+                $display( "[TEST %0d] PASS: Recovery RX spi_rdata=0x%02X  (exp 0xA5)", test_no, spi_rdata );
+                pass_count = pass_count + 1;
+            end else begin
+                $display( "[TEST %0d] FAIL: Recovery RX spi_rdata=0x%02X  (exp 0xA5)", test_no, spi_rdata );
+                fail_count = fail_count + 1;
+            end
+            if ( rdata_en_count === en_before + 1 ) begin
+                $display( "[TEST %0d] PASS: Recovery RX spi_rdata_en pulsed once (count=%0d)", test_no, rdata_en_count );
+                pass_count = pass_count + 1;
+            end else begin
+                $display( "[TEST %0d] FAIL: Recovery RX spi_rdata_en pulse count unexpected (before=%0d after=%0d)", test_no, en_before, rdata_en_count );
+                fail_count = fail_count + 1;
+            end
+        end
+
+        spi_cs_n = 1'b1;
+        repeat( 10 ) @( posedge clk );
 
 		// ================================================================
 		//	Test 4: Multi-byte receive (3 bytes within one CS assertion)

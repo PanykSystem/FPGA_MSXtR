@@ -58,9 +58,14 @@ module s2026b (
 	output			bus_vdp_cs,
 	input	[7:0]	bus_vdp_rdata,
 	input			bus_vdp_rdata_en,
-	input			bus_vdp_ready
+	input			bus_vdp_ready,
+	output			bus_uart_cs,
+	input	[7:0]	bus_uart_rdata,
+	input			bus_uart_rdata_en,
+	input			bus_uart_ready
 );
 	wire			w_vdp_cs;
+	wire			w_uart_cs;
 
 	//	CPU select outputs
 	wire	[15:0]	w_bus_address;
@@ -108,12 +113,17 @@ module s2026b (
 	//	Chip select
 	// ---------------------------------------------------------
 	assign w_vdp_cs			= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h98 ));
+	assign w_uart_cs		= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h10 ));
 
 	always @( posedge clk ) begin
 		if( w_vdp_cs && bus_vdp_rdata_en ) begin
 			ff_bus_rdata		<= bus_vdp_rdata;
 			ff_bus_rdata_en		<= 1'b1;
-		end 
+		end
+		else if( w_uart_cs && bus_uart_rdata_en ) begin
+			ff_bus_rdata		<= bus_uart_rdata;
+			ff_bus_rdata_en		<= 1'b1;
+		end
 		else begin
 			ff_bus_rdata		<= 8'h00;
 			ff_bus_rdata_en		<= 1'b0;
@@ -123,12 +133,14 @@ module s2026b (
 	// ---------------------------------------------------------
 	//	Wait / Ready
 	// ---------------------------------------------------------
-	assign w_bus_ready		= w_vdp_cs ? bus_vdp_ready : 1'b1;
+	assign w_bus_ready		= w_vdp_cs  ? bus_vdp_ready  :
+							w_uart_cs ? bus_uart_ready : 1'b1;
 
 	//--------------------------------------------------------------
 	//	out assignment
 	//--------------------------------------------------------------
 	assign bus_vdp_cs		= w_vdp_cs;
+	assign bus_uart_cs		= w_uart_cs;
 	assign bus_write		= w_bus_write;
 	assign bus_valid		= w_bus_valid;
 	assign bus_wdata		= w_bus_wdata;
