@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/usr/bin/cmake;-P;/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/tmp/no_os_fatfs-populate-gitclone.cmake
-source_dir=/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/no_os_fatfs-src
-work_dir=/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps
+command=/usr/bin/cmake;-P;/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-subbuild/no_os_fatfs-populate-prefix/tmp/no_os_fatfs-populate-gitclone.cmake
+source_dir=/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/no_os_fatfs-src
+work_dir=/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps
 repository=https://github.com/carlk3/no-OS-FatFS-SD-SPI-RPi-Pico.git
 remote=origin
 init_submodules=TRUE

@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DMBEDTLS_CONFIG_FILE=\"picotool_mbedtls_config.h\"
 
-C_INCLUDES = -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/lib/include -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/mbedtls/include
+C_INCLUDES = -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/lib/include -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/mbedtls/include
 
 C_FLAGS = -O3 -DNDEBUG
 

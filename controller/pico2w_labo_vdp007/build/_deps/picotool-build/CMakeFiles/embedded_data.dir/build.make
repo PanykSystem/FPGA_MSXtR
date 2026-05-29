@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src
+CMAKE_SOURCE_DIR = /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-build
+CMAKE_BINARY_DIR = /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-build
 
 # Utility rule file for embedded_data.
 
@@ -68,13 +68,13 @@ CMakeFiles/embedded_data: xip_ram_perms_elf.h
 CMakeFiles/embedded_data: flash_id_bin.h
 
 flash_id_bin.h: flash_id
-	/usr/bin/cmake -D BINARY_FILE= -D OUTPUT_NAME=flash_id_bin -P /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/cmake/binh.cmake
+	/usr/bin/cmake -D BINARY_FILE= -D OUTPUT_NAME=flash_id_bin -P /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/cmake/binh.cmake
 
 rp2350.rom.h:
-	/usr/bin/cmake -D BINARY_FILE=/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/bootrom.end.bin -D OUTPUT_NAME=rp2350.rom -P /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/cmake/binh.cmake
+	/usr/bin/cmake -D BINARY_FILE=/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/bootrom.end.bin -D OUTPUT_NAME=rp2350.rom -P /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/cmake/binh.cmake
 
-xip_ram_perms_elf.h: /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/xip_ram_perms
-	/usr/bin/cmake -D BINARY_FILE= -D OUTPUT_NAME=xip_ram_perms_elf -P /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/cmake/binh.cmake
+xip_ram_perms_elf.h: /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/xip_ram_perms
+	/usr/bin/cmake -D BINARY_FILE= -D OUTPUT_NAME=xip_ram_perms_elf -P /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/cmake/binh.cmake
 
 embedded_data: CMakeFiles/embedded_data
 embedded_data: flash_id_bin.h
@@ -92,6 +92,6 @@ CMakeFiles/embedded_data.dir/clean:
 .PHONY : CMakeFiles/embedded_data.dir/clean
 
 CMakeFiles/embedded_data.dir/depend:
-	cd /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-build /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-build /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-build/CMakeFiles/embedded_data.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-build /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-build /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-build/CMakeFiles/embedded_data.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/embedded_data.dir/depend
 

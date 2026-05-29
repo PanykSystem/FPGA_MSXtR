@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = -DHAS_MBEDTLS=1 -DMBEDTLS_CONFIG_FILE=\"picotool_mbedtls_config.h\" -DNO_PICO_PLATFORM=1
 
-C_INCLUDES = -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/bintool -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/lib/include -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/elf -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/errors -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/mbedtls/include -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picobin_headers/include
+C_INCLUDES = -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/bintool -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/lib/include -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/elf -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/errors -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/mbedtls/include -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picobin_headers/include
 
 C_FLAGS = -O3 -DNDEBUG
 
 CXX_DEFINES = -DHAS_MBEDTLS=1 -DMBEDTLS_CONFIG_FILE=\"picotool_mbedtls_config.h\" -DNO_PICO_PLATFORM=1
 
-CXX_INCLUDES = -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/bintool -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/lib/include -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/elf -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w/build/_deps/picotool-src/errors -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/mbedtls/include -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picobin_headers/include
+CXX_INCLUDES = -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/bintool -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/lib/include -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/elf -I/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/build/_deps/picotool-src/errors -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/mbedtls/include -isystem /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picobin_headers/include
 
 CXX_FLAGS = -O3 -DNDEBUG -std=gnu++14
 
