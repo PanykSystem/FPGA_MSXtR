@@ -7,5 +7,5 @@
 	setx PICO_SDK_PATH={SDKパス}
 
 # ビルド
-	cmake --build build --target hello_world
+	cmake --build build --target fpga_msxtr_controller
 	cmake -S . -B build -DPICO_BOARD=pico2_w

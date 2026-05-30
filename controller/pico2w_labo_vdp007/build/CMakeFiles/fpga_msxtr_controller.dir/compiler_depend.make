@@ -86,7 +86,7 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/s
   _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -96,34 +96,37 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/s
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -168,7 +171,7 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/s
   _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -178,34 +181,37 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/s
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -248,7 +254,7 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/s
   _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -259,38 +265,41 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/s
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
@@ -374,7 +383,7 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.
   _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -384,34 +393,37 @@ CMakeFiles/fpga_msxtr_controller.dir/_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c.
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -476,7 +488,7 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: /mnt/c/Users/hra
   /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_uart.h \
   /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/keyboard.h \
   /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/vdp_control.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -489,40 +501,43 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_msxtr_controller.c.o: /mnt/c/Users/hra
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/i2c.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/i2c.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
@@ -563,7 +578,7 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_uart.c.o: /mnt/c/Users/hra/Documents/g
   generated/pico_base/pico/version.h \
   /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_uart.h \
   /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/vdp_control.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -571,34 +586,37 @@ CMakeFiles/fpga_msxtr_controller.dir/fpga_uart.c.o: /mnt/c/Users/hra/Documents/g
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
@@ -632,7 +650,7 @@ CMakeFiles/fpga_msxtr_controller.dir/hw_config.c.o: /mnt/c/Users/hra/Documents/g
   _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -642,34 +660,37 @@ CMakeFiles/fpga_msxtr_controller.dir/hw_config.c.o: /mnt/c/Users/hra/Documents/g
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -696,23 +717,25 @@ CMakeFiles/fpga_msxtr_controller.dir/keyboard.c.o: /mnt/c/Users/hra/Documents/gi
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
   /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/keyboard.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/i2c.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/i2c.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
@@ -740,16 +763,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -790,7 +813,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -801,13 +824,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -852,16 +877,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -890,16 +915,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -928,16 +953,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -966,16 +991,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -1004,16 +1029,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -1042,16 +1067,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -1080,16 +1105,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -1118,16 +1143,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -1167,7 +1192,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1178,13 +1203,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1229,16 +1256,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -1274,7 +1301,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1285,13 +1312,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1351,7 +1380,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1362,13 +1391,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1428,7 +1459,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1439,13 +1470,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1499,7 +1532,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1510,23 +1543,25 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb_dpram.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/usb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb_dpram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
@@ -1578,29 +1613,31 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_verify.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb_dpram.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/usb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb_dpram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
@@ -1662,7 +1699,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1673,13 +1710,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1721,17 +1760,19 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/claim.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/claim.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1756,7 +1797,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/critical_section.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/critical_section.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1765,13 +1806,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1797,7 +1840,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/lock_core.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/lock_core.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1805,13 +1848,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1837,7 +1882,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/mutex.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/mutex.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1846,13 +1891,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1880,7 +1927,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/sem.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/sem.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1889,13 +1936,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -1921,7 +1970,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/time.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/time.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1933,27 +1982,30 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
@@ -1988,7 +2040,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/timeout_helper.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/timeout_helper.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -1996,13 +2048,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/timeout_helper.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
@@ -2026,17 +2080,17 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/datetime.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/datetime.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/include/pico/util/datetime.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -2054,7 +2108,6 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/include/newlib/machine/time.h \
   /usr/include/newlib/machine/types.h \
   /usr/include/newlib/newlib.h \
-  /usr/include/newlib/stdio.h \
   /usr/include/newlib/sys/_locale.h \
   /usr/include/newlib/sys/_pthreadtypes.h \
   /usr/include/newlib/sys/_sigset.h \
@@ -2069,12 +2122,10 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/include/newlib/sys/reent.h \
   /usr/include/newlib/sys/sched.h \
   /usr/include/newlib/sys/select.h \
-  /usr/include/newlib/sys/stdio.h \
   /usr/include/newlib/sys/time.h \
   /usr/include/newlib/sys/timespec.h \
   /usr/include/newlib/sys/types.h \
   /usr/include/newlib/time.h \
-  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdarg.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
@@ -2082,17 +2133,17 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/pheap.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/pheap.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/include/pico/util/pheap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -2124,7 +2175,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/queue.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/queue.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -2133,13 +2184,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/include/pico/util/queue.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -2173,20 +2226,22 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
 
-CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/platform.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/platform.c \
+CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/platform.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/platform.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sysinfo.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sysinfo.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
@@ -2209,18 +2264,25 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -2243,38 +2305,73 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/clocks.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pll.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pll.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pll.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/include/hardware/pll.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
+  /usr/include/newlib/_ansi.h \
+  /usr/include/newlib/_newlib_version.h \
+  /usr/include/newlib/assert.h \
+  /usr/include/newlib/machine/_default_types.h \
+  /usr/include/newlib/machine/ieeefp.h \
+  /usr/include/newlib/newlib.h \
+  /usr/include/newlib/sys/cdefs.h \
+  /usr/include/newlib/sys/config.h \
+  /usr/include/newlib/sys/features.h \
+  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
+  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
+  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
+
+CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.c \
+  generated/pico_base/pico/config_autogen.h \
+  generated/pico_base/pico/version.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/include/hardware/divider.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -2295,22 +2392,24 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
@@ -2343,27 +2442,32 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_qspi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_qspi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/ssi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_qspi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_qspi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/ssi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/otp_data.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_qspi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/qmi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_qspi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/qmi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xip_cache/include/hardware/xip_cache.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h \
@@ -2397,31 +2501,34 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/gpio.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
@@ -2445,7 +2552,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_i2c/i2c.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -2453,20 +2560,22 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/timeout_helper.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/i2c.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/i2c.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
@@ -2493,7 +2602,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/irq.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/irq.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
@@ -2503,18 +2612,20 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
@@ -2543,22 +2654,24 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pll.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pll.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pll.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
@@ -2584,23 +2697,25 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
@@ -2626,17 +2741,19 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -2661,16 +2778,20 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -2679,6 +2800,8 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime/include/pico/runtime.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/include/pico/runtime_init.h \
   /usr/include/newlib/_ansi.h \
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/assert.h \
@@ -2695,22 +2818,23 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/ticks.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/ticks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/ticks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/include/hardware/ticks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -2731,25 +2855,27 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/timer.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/timer.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
@@ -2776,26 +2902,28 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_uart/uart.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_uart/uart.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
@@ -2822,18 +2950,20 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_vreg/vreg.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/vreg_and_chip_reset.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/vreg_and_chip_reset.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/powman.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/powman.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_vreg/include/hardware/vreg.h \
@@ -2857,24 +2987,32 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/psm.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/psm.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/psm.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/ticks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/watchdog.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/psm.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/ticks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/watchdog.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/include/hardware/ticks.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
@@ -2912,18 +3050,20 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/xip.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/xip.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/xip.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/xip.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -2949,20 +3089,22 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xosc/xosc.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/xosc.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/xosc.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/xosc.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/xosc.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
@@ -2987,7 +3129,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_atomic/atomic.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -2999,13 +3141,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -3033,7 +3177,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picobin_headers/include/boot/picobin.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picoboot_headers/include/boot/picoboot.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picoboot_headers/include/boot/picoboot_constants.h \
@@ -3042,13 +3186,21 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_rcp/include/hardware/rcp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom_constants.h \
@@ -3081,19 +3233,26 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
@@ -3118,20 +3277,22 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
@@ -3187,16 +3348,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -3206,9 +3367,9 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/alloca.h \
   /usr/include/newlib/assert.h \
-  /usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/c++config.h \
-  /usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/cpu_defines.h \
-  /usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/os_defines.h \
+  /usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/softfp/bits/c++config.h \
+  /usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/softfp/bits/cpu_defines.h \
+  /usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/softfp/bits/os_defines.h \
   /usr/include/newlib/c++/13.2.1/bits/std_abs.h \
   /usr/include/newlib/c++/13.2.1/cassert \
   /usr/include/newlib/c++/13.2.1/cstdlib \
@@ -3230,27 +3391,22 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
 
-CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c \
+CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_divider_headers/include/pico/divider.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom_constants.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/include/pico/flash.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/include/hardware/divider.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -3259,19 +3415,11 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/assert.h \
   /usr/include/newlib/machine/_default_types.h \
-  /usr/include/newlib/machine/_types.h \
   /usr/include/newlib/machine/ieeefp.h \
   /usr/include/newlib/newlib.h \
-  /usr/include/newlib/string.h \
-  /usr/include/newlib/strings.h \
-  /usr/include/newlib/sys/_locale.h \
-  /usr/include/newlib/sys/_types.h \
   /usr/include/newlib/sys/cdefs.h \
   /usr/include/newlib/sys/config.h \
   /usr/include/newlib/sys/features.h \
-  /usr/include/newlib/sys/lock.h \
-  /usr/include/newlib/sys/reent.h \
-  /usr/include/newlib/sys/string.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
@@ -3279,16 +3427,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_double/double_math.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_double/double_math.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_double/include/pico/double.h \
@@ -3317,40 +3465,17 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb_dpram.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include/pico/fix/rp2040_usb_device_enumeration.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -3371,7 +3496,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/flash.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/flash.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -3383,15 +3508,17 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -3416,65 +3543,19 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
 
-CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c \
-  generated/pico_base/pico/config_autogen.h \
-  generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom_constants.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/include/pico/flash.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
-  /usr/include/newlib/_ansi.h \
-  /usr/include/newlib/_newlib_version.h \
-  /usr/include/newlib/assert.h \
-  /usr/include/newlib/machine/_default_types.h \
-  /usr/include/newlib/machine/_types.h \
-  /usr/include/newlib/machine/ieeefp.h \
-  /usr/include/newlib/newlib.h \
-  /usr/include/newlib/string.h \
-  /usr/include/newlib/strings.h \
-  /usr/include/newlib/sys/_locale.h \
-  /usr/include/newlib/sys/_types.h \
-  /usr/include/newlib/sys/cdefs.h \
-  /usr/include/newlib/sys/config.h \
-  /usr/include/newlib/sys/features.h \
-  /usr/include/newlib/sys/lock.h \
-  /usr/include/newlib/sys/reent.h \
-  /usr/include/newlib/sys/string.h \
-  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
-  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
-  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
-
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_math.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_math.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/include/pico/float.h \
@@ -3504,7 +3585,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_malloc/malloc.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -3513,13 +3594,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -3553,7 +3636,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/multicore.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
@@ -3566,22 +3649,24 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/psm.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/psm.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/psm.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/psm.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
@@ -3611,17 +3696,19 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/tbman.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/tbman.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
@@ -3644,16 +3731,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/panic.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -3697,16 +3784,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_printf/printf.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_printf/printf.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -3737,16 +3824,16 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime/runtime.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -3770,35 +3857,51 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb_dpram.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/usb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb_dpram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom_constants.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/include/pico/flash.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -3809,11 +3912,19 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/assert.h \
   /usr/include/newlib/machine/_default_types.h \
+  /usr/include/newlib/machine/_types.h \
   /usr/include/newlib/machine/ieeefp.h \
   /usr/include/newlib/newlib.h \
+  /usr/include/newlib/string.h \
+  /usr/include/newlib/strings.h \
+  /usr/include/newlib/sys/_locale.h \
+  /usr/include/newlib/sys/_types.h \
   /usr/include/newlib/sys/cdefs.h \
   /usr/include/newlib/sys/config.h \
   /usr/include/newlib/sys/features.h \
+  /usr/include/newlib/sys/lock.h \
+  /usr/include/newlib/sys/reent.h \
+  /usr/include/newlib/sys/string.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h
@@ -3821,30 +3932,31 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pll.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/rtc.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/vreg_and_chip_reset.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/xosc.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/vreg_and_chip_reset.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/xosc.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pll.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/powman.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/ticks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/xosc.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pll.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/powman.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/ticks.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/xosc.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
@@ -3852,7 +3964,6 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/include/hardware/ticks.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_vreg/include/hardware/vreg.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xosc/include/hardware/xosc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -3876,20 +3987,17 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/mpu.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
@@ -3911,7 +4019,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -3921,11 +4029,11 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/boot_stage2/include/boot_stage2/config.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/boot_stage2/include/boot_stage2/config.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -3947,7 +4055,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio/stdio.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -3956,13 +4064,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -4020,7 +4130,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -4032,15 +4142,19 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_usb_reset_interface_headers/include/pico/usb_reset_interface.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/watchdog.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/watchdog.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
@@ -4107,7 +4221,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -4122,18 +4236,20 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
@@ -4192,7 +4308,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -4204,13 +4320,15 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_usb_reset_interface_headers/include/pico/usb_reset_interface.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
@@ -4254,7 +4372,7 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -4266,32 +4384,35 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
@@ -4319,20 +4440,27 @@ CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pic
 CMakeFiles/fpga_msxtr_controller.dir/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom_constants.h \
@@ -4367,7 +4495,7 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h \
   /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/vdp_control.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
@@ -4375,34 +4503,37 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
-  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
   /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
@@ -4433,8 +4564,6 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c:
@@ -4447,17 +4576,15 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio/driver.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/boot_stage2/include/boot_stage2/config.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/rtc.h:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime/runtime.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/panic.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/tbman.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/tbman.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/common.c:
 
@@ -4471,15 +4598,17 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/include/pico/float.h:
 
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/boot_stage2/include/boot_stage2/config.h:
+
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_math.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_flash/flash.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include/pico/fix/rp2040_usb_device_enumeration.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_double/double_math.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_divider_headers/include/pico/divider.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb/reset_interface.h:
 
@@ -4489,11 +4618,7 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
 
 /usr/include/newlib/c++/13.2.1/cassert:
 
-/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/os_defines.h:
-
-/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/c++config.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/mpu.h:
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/softfp/bits/c++config.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp:
 
@@ -4501,11 +4626,13 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
 
 /usr/include/newlib/sys/unistd.h:
 
+/usr/include/newlib/sys/times.h:
+
 /usr/include/newlib/sys/stat.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_rcp/include/hardware/rcp.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picoboot_headers/include/boot/picoboot_constants.h:
 
@@ -4515,11 +4642,23 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_atomic/include/stdatomic.h:
 
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_atomic/atomic.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/xosc.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/xosc.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xosc/xosc.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/xip.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picobin_headers/include/boot/picobin.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c:
+
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_multicore/include/pico/multicore.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/include/pico/util/queue.h:
 
@@ -4527,53 +4666,37 @@ CMakeFiles/fpga_msxtr_controller.dir/vdp_control.c.o: /mnt/c/Users/hra/Documents
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/ticks.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/i2c.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/cdc/cdc.h:
-
-/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/keyboard.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c:
 
 /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_uart.h:
 
 /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_msxtr_controller.c:
 
-/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/hw_config.c:
-
 _deps/no_os_fatfs-src/FatFs_SPI/src/rtc.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_printf/include/pico/printf.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c:
 
-_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c:
+_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c:
 
-_deps/no_os_fatfs-src/FatFs_SPI/include/ff_stdio.h:
-
-/usr/include/newlib/c++/13.2.1/pstl/pstl_config.h:
-
-/usr/include/newlib/sys/timespec.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h:
 
 /usr/include/newlib/machine/_default_types.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_time_adapter/include/pico/time_adapter.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c:
+/usr/include/newlib/c++/13.2.1/pstl/pstl_config.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h:
+/usr/include/newlib/sys/timespec.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h:
+
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/keyboard.h:
 
 _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.c:
 
@@ -4589,17 +4712,23 @@ _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_printf/include/pico/printf.h:
+
+_deps/no_os_fatfs-src/FatFs_SPI/src/glue.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:
 
-/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/cpu_defines.h:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/mutex.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom_constants.h:
 
@@ -4609,37 +4738,65 @@ _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.c:
 
 _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/demo_logging.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/ssi.h:
+/usr/lib/gcc/arm-none-eabi/13.2.1/include/limits.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h:
 
-/usr/lib/gcc/arm-none-eabi/13.2.1/include/limits.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sync.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_platform_panic/panic.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c:
+/usr/include/newlib/sys/_timespec.h:
 
-_deps/no_os_fatfs-src/FatFs_SPI/src/my_debug.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/otp_data.h:
 
-/usr/include/newlib/_ansi.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma_debug.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/critical_section.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/include/hardware/ticks.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h:
+
+_deps/no_os_fatfs-src/FatFs_SPI/include/my_debug.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/divider.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/xip.h:
+
+/usr/include/newlib/sys/sched.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h:
+
+/usr/include/newlib/stdlib.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/m33.h:
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/hw_config.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio/stdio.c:
 
@@ -4647,15 +4804,23 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffunicode.c:
 
 _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.h:
 
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h:
+
 /usr/include/newlib/machine/_types.h:
 
 _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h:
+/usr/include/newlib/sys/features.h:
 
-_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h:
+_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c:
+
+_deps/no_os_fatfs-src/FatFs_SPI/include/f_util.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h:
 
 /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h:
 
@@ -4663,11 +4828,15 @@ _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/flash.c:
 
+/usr/include/newlib/string.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c:
+
 _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/diskio.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/config.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/irq.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/types.h:
 
@@ -4683,33 +4852,27 @@ _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_spi.h:
 
 /usr/include/newlib/sys/reent.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h:
+/usr/include/newlib/_ansi.h:
 
-_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime/runtime.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/usb.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pll.h:
 
-/usr/include/newlib/sys/times.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_pll/pll.c:
 
 _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ff.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/assert.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb_dpram.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/sem.h:
 
-/usr/include/newlib/sys/_locale.h:
-
-_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.h:
+/usr/include/newlib/sys/cdefs.h:
 
 /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/vdp_control.h:
 
@@ -4721,13 +4884,23 @@ _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h:
 
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb.h:
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/sd_card.h:
+
+/usr/include/newlib/sys/_locale.h:
+
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/mutex.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h:
+/usr/include/newlib/_newlib_version.h:
 
 /usr/include/newlib/sys/_intsup.h:
 
@@ -4737,61 +4910,61 @@ _deps/no_os_fatfs-src/FatFs_SPI/src/f_util.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h:
 
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/critical_section.h:
+
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.h:
 
 /usr/include/newlib/machine/ieeefp.h:
 
 /usr/include/newlib/sys/_types.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h:
+_deps/no_os_fatfs-src/FatFs_SPI/include/ff_stdio.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/watchdog.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h:
 
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/i2c.h:
+
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/time.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h:
-
-_deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffsystem.c:
-
-_deps/no_os_fatfs-src/FatFs_SPI/include/f_util.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h:
-
-/usr/include/newlib/time.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h:
 
 /usr/include/newlib/strings.h:
 
 /usr/include/newlib/assert.h:
 
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h:
+
+/usr/include/newlib/sys/config.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_debug.h:
+
+_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/crc.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico2_w.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/include/pico/platform/cpu_regs.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_irq/irq.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pll.h:
+
 /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/vreg_and_chip_reset.h:
-
-generated/pico_base/pico/version.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h:
+/usr/include/newlib/machine/_endian.h:
 
 /usr/include/newlib/sys/stdio.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h:
-
-_deps/no_os_fatfs-src/FatFs_SPI/include/my_debug.h:
-
-_deps/no_os_fatfs-src/FatFs_SPI/sd_driver/hw_config.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_atomic/atomic.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h:
 
 /usr/include/newlib/math.h:
 
@@ -4801,23 +4974,17 @@ _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/hw_config.h:
 
 _deps/no_os_fatfs-src/FatFs_SPI/sd_driver/spi.h:
 
-/usr/include/newlib/stdlib.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h:
 
 generated/pico_base/pico/config_autogen.h:
 
-/usr/include/newlib/string.h:
+/usr/include/newlib/stdio.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h:
+generated/pico_base/pico/version.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb_option.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/boards/include/boards/pico.h:
-
-/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_uart.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/powman.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_base_headers/include/pico/error.h:
 
@@ -4825,15 +4992,19 @@ generated/pico_base/pico/config_autogen.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/lock_core.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/include/pico/util/pheap.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xosc/xosc.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h:
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/softfp/bits/os_defines.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h:
+
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/fpga_uart.c:
 
 _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c:
 
@@ -4841,11 +5012,11 @@ _deps/no_os_fatfs-src/FatFs_SPI/src/ff_stdio.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xosc/include/hardware/xosc.h:
 
-/usr/include/newlib/sys/config.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_common.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_debug.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/usb_dpram.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h:
 
@@ -4853,9 +5024,11 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_types.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pll.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/qmi.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_verify.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/pico_platform/platform.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/video/video_device.c:
 
@@ -4873,6 +5046,8 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c:
 
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_qspi.h:
+
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_vreg/include/hardware/vreg.h:
@@ -4882,12 +5057,6 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c:
 
@@ -4911,21 +5080,13 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/usb.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/include/pico/critical_section.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb.h:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/claim.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/critical_section.c:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/lock_core.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h:
 
 /mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/keyboard.c:
 
@@ -4935,17 +5096,21 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/include/pico/runtime_init.h:
 
+/usr/include/newlib/sys/time.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/sem.c:
+
 /usr/include/newlib/c++/13.2.1/stdlib.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/time.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_time/include/pico/timeout_helper.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/datetime.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/queue.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_qspi.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_clocks/clocks.c:
 
@@ -4955,13 +5120,9 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 
 /usr/include/newlib/machine/time.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_qspi.h:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/pheap.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_common.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xosc/include/hardware/xosc.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c:
 
@@ -4973,37 +5134,27 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 
 /usr/include/newlib/sys/_sigset.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/xip.h:
-
-/usr/include/newlib/sys/_timespec.h:
-
-/usr/include/newlib/sys/sched.h:
-
 /usr/include/newlib/sys/types.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/include/pico/util/pheap.h:
+/usr/include/newlib/time.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c:
 
-/usr/include/newlib/_newlib_version.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/ticks.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/pico_platform/platform.c:
+/usr/include/newlib/machine/_time.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/hardware_claim/include/hardware/claim.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sysinfo.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sysinfo.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c:
 
-/usr/include/newlib/sys/features.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/bootram.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/bootram.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/psm.h:
+/mnt/c/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/controller/pico2w_labo_vdp007/hw_config.c:
 
-/usr/include/newlib/machine/_endian.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/tusb.h:
 
@@ -5011,60 +5162,52 @@ _deps/no_os_fatfs-src/FatFs_SPI/ff15/source/ffconf.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_dma/dma.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/psm.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_qspi.h:
-
-/usr/include/newlib/machine/_time.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/ssi.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_qspi.h:
-
-/usr/include/newlib/sys/cdefs.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_qspi.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/qmi.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/boot_bootrom_headers/include/boot/bootrom_constants.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xip_cache/include/hardware/xip_cache.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h:
-
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_vreg/vreg.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_gpio/gpio.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_spi/spi.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_util/queue.c:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync/sync.c:
 
 /usr/include/newlib/machine/stdlib.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/include/hardware/ticks.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_ticks/ticks.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/ticks.h:
+
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/timer.c:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/lib/tinyusb/src/common/tusb_fifo.h:
 
 /mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_uart/uart.c:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_timer/timer.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h:
 
-/usr/include/newlib/stdio.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_divider/include/hardware/divider.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/vreg_and_chip_reset.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/powman.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/boot_picobin_headers/include/boot/picobin.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/psm.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/psm.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/xosc.h:
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/softfp/bits/cpu_defines.h:
 
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/xip.h:
-
-/usr/include/newlib/sys/time.h:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/common/pico_sync/sem.c:
-
-/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/xosc.h:
+/mnt/c/Users/hra/Documents/github/OTHERS/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/watchdog.h:

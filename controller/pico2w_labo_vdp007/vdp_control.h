@@ -10,7 +10,7 @@
 #define SPI0_CSN_PIN  5
 #define SPI0_SCK_PIN  6
 #define SPI0_TX_PIN	  7
-#define SPI0_BAUDRATE (80000 * 1000)	// 80 MHz
+#define SPI0_BAUDRATE (80 * 1000 * 1000)	// 80 MHz
 
 void vdp_write_register(uint8_t reg, uint8_t data);
 void vdp_set_screen1(void);

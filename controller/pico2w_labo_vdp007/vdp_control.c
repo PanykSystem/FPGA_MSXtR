@@ -56,7 +56,6 @@ static uint8_t vdp_screen1_font[] = {
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x60, 0x60, 0x00, 0x00, 0x00, 0x08, 0x10, 0x20, 0x40, 0x80, 0x00,
 	0x70, 0x88, 0x98, 0xA8, 0xC8, 0x88, 0x70, 0x00, 0x20, 0x60, 0xA0, 0x20, 0x20, 0x20, 0xF8, 0x00,
 	0x70, 0x88, 0x08, 0x10, 0x60, 0x80, 0xF8, 0x00, 0x70, 0x88, 0x08, 0x30, 0x08, 0x88, 0x70, 0x00,
-	0x70, 0x88, 0x08, 0x10, 0x60, 0x80, 0xF8, 0x00, 0x70, 0x88, 0x08, 0x30, 0x08, 0x88, 0x70, 0x00,
 	0x10, 0x30, 0x50, 0x90, 0xF8, 0x10, 0x10, 0x00, 0xF8, 0x80, 0xE0, 0x10, 0x08, 0x10, 0xE0, 0x00,
 	0x30, 0x40, 0x80, 0xF0, 0x88, 0x88, 0x70, 0x00, 0xF8, 0x88, 0x10, 0x20, 0x20, 0x20, 0x20, 0x00,
 	0x70, 0x88, 0x88, 0x70, 0x88, 0x88, 0x70, 0x00, 0x70, 0x88, 0x88, 0x78, 0x08, 0x10, 0x60, 0x00,
@@ -183,6 +182,7 @@ void vdp_write_register(uint8_t reg, uint8_t data) {
 	spi_write_blocking(SPI0_PORT, &buf, 1);
 	buf = reg | 0x80;
 	spi_write_blocking(SPI0_PORT, &buf, 1);
+	sleep_us(10);
 	gpio_put(SPI0_CSN_PIN, 1);
 }
 
@@ -196,84 +196,79 @@ void vdp_set_screen1(void) {
 }
 
 // ---------------------------------------------------------------
+//	VDPにVRAMアドレス設定
+void vdp_set_vram_address(uint16_t addr) {
+	uint8_t buf;
+
+	buf = 0x01;
+	spi_write_blocking(SPI0_PORT, &buf, 1);
+	buf = 0x99;
+	spi_write_blocking(SPI0_PORT, &buf, 1);
+	buf = addr & 0xFF;	//	アドレス下位 8bit
+	spi_write_blocking(SPI0_PORT, &buf, 1);
+	sleep_us(10);
+	buf = 0x01;
+	spi_write_blocking(SPI0_PORT, &buf, 1);
+	buf = 0x99;
+	spi_write_blocking(SPI0_PORT, &buf, 1);
+	buf = 0x40 + ((addr >> 8) & 0x3F);	//	アドレス上位 6bit
+	spi_write_blocking(SPI0_PORT, &buf, 1);
+	sleep_us(10);
+}
+
+// ---------------------------------------------------------------
+//	VRAMにまとめて書き込む
+void vdp_write_vram(uint8_t* data, uint16_t size) {
+	uint8_t buf;
+
+	for (int i = 0; i < size; i++) {
+		buf = 0x01;
+		spi_write_blocking(SPI0_PORT, &buf, 1);
+		buf = 0x98;
+		spi_write_blocking(SPI0_PORT, &buf, 1);
+		buf = data[i];
+		spi_write_blocking(SPI0_PORT, &buf, 1);
+		sleep_us(10);
+	}
+}
+
+// ---------------------------------------------------------------
+//	VRAMの所定の範囲を所定の値で埋める
+void vdp_fill_vram(uint16_t addr, uint8_t value, uint16_t size) {
+	uint8_t buf;
+
+	vdp_set_vram_address(addr);
+	for (int i = 0; i < size; i++) {
+		buf = 0x01;
+		spi_write_blocking(SPI0_PORT, &buf, 1);
+		buf = 0x98;
+		spi_write_blocking(SPI0_PORT, &buf, 1);
+		buf = value;
+		spi_write_blocking(SPI0_PORT, &buf, 1);
+		sleep_us(10);
+	}
+}
+
+// ---------------------------------------------------------------
 void vdp_set_screen1_font(void) {
 	uint8_t buf;
 
 	gpio_put(SPI0_CSN_PIN, 0);
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x00;			//	アドレス下位 8bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x40 + 0x00;	//	アドレス上位 6bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
+	vdp_set_vram_address( 0x0000 );
+	vdp_write_vram( (uint8_t*)vdp_screen1_font, sizeof(vdp_screen1_font) );
 
-	for (int i = 0; i < (int)sizeof(vdp_screen1_font); i++) {
-		buf = 0x01;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = 0x98;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = vdp_screen1_font[i];
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		sleep_us(10);
-	}
-
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x00;			//	アドレス下位 8bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x40 + 0x20;	//	アドレス上位 6bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	for( int i = 0; i < 32; i++) {
-		buf = 0x01;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = 0x98;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = 0xF4;			//	フォントの色 (前景：白、背景：青 )
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		sleep_us(10);
-	}
+	vdp_fill_vram( 0x1800, 0x20, 768 );		//	ネームテーブルをスペースで埋め尽くす
+	vdp_fill_vram( 0x1B00, 0xD8, 4 * 32 );	//	スプライトアトリビュートを初期化する
+	vdp_fill_vram( 0x2000, 0xF4, 32 * 24 );	//	タイルパターンを全て同じ色 (前景：白、背景：青) にする
 	gpio_put(SPI0_CSN_PIN, 1);
 }
 
 // ---------------------------------------------------------------
 void vdp_set_screen1_message(void) {
-	char s_buffer[] = "MSX Font Test";
-	uint8_t buf;
+	char s_buffer[] = "FPGA MSXtR VDP/PICO Test.";
 
 	gpio_put(SPI0_CSN_PIN, 0);
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x00;			//	アドレス下位 8bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x40 + 0x18;	//	アドレス上位 6bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-
-	for (int i = 0; i < (int)sizeof(s_buffer); i++) {
-		buf = 0x01;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = 0x98;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = s_buffer[i];
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		sleep_us(10);
-	}
+	vdp_set_vram_address( 0x1800 );
+	vdp_write_vram( (uint8_t*) s_buffer, sizeof(s_buffer) );
 	gpio_put(SPI0_CSN_PIN, 1);
 }
