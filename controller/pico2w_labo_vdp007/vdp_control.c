@@ -188,7 +188,7 @@ void vdp_write_register(uint8_t reg, uint8_t data) {
 
 // ---------------------------------------------------------------
 // VDPレジスタの初期化 (SCREEN 1 モード)
-void vdp_set_screen1(void) {
+void vdp_ll_set_screen1(void) {
 
 	for (int i = 0; i < (int)sizeof(vdp_screen1); i += 2) {
 		vdp_write_register(vdp_screen1[i], vdp_screen1[i + 1]);
@@ -197,7 +197,7 @@ void vdp_set_screen1(void) {
 
 // ---------------------------------------------------------------
 //	VDPにVRAMアドレス設定
-void vdp_set_vram_address(uint16_t addr) {
+void vdp_ll_set_vram_address(uint16_t addr) {
 	uint8_t buf;
 
 	buf = 0x01;
@@ -218,7 +218,7 @@ void vdp_set_vram_address(uint16_t addr) {
 
 // ---------------------------------------------------------------
 //	VRAMにまとめて書き込む
-void vdp_write_vram(uint8_t* data, uint16_t size) {
+void vdp_ll_write_vram(uint8_t* data, uint16_t size) {
 	uint8_t buf;
 
 	for (int i = 0; i < size; i++) {
@@ -234,10 +234,10 @@ void vdp_write_vram(uint8_t* data, uint16_t size) {
 
 // ---------------------------------------------------------------
 //	VRAMの所定の範囲を所定の値で埋める
-void vdp_fill_vram(uint16_t addr, uint8_t value, uint16_t size) {
+void vdp_ll_fill_vram(uint16_t addr, uint8_t value, uint16_t size) {
 	uint8_t buf;
 
-	vdp_set_vram_address(addr);
+	vdp_ll_set_vram_address(addr);
 	for (int i = 0; i < size; i++) {
 		buf = 0x01;
 		spi_write_blocking(SPI0_PORT, &buf, 1);
@@ -254,12 +254,12 @@ void vdp_set_screen1_font(void) {
 	uint8_t buf;
 
 	gpio_put(SPI0_CSN_PIN, 0);
-	vdp_set_vram_address( 0x0000 );
-	vdp_write_vram( (uint8_t*)vdp_screen1_font, sizeof(vdp_screen1_font) );
+	vdp_ll_set_vram_address( 0x0000 );
+	vdp_ll_write_vram( (uint8_t*)vdp_screen1_font, sizeof(vdp_screen1_font) );
 
-	vdp_fill_vram( 0x1800, 0x20, 768 );		//	ネームテーブルをスペースで埋め尽くす
-	vdp_fill_vram( 0x1B00, 0xD8, 4 * 32 );	//	スプライトアトリビュートを初期化する
-	vdp_fill_vram( 0x2000, 0xF4, 32 * 24 );	//	タイルパターンを全て同じ色 (前景：白、背景：青) にする
+	vdp_ll_fill_vram( 0x1800, 0x20, 768 );		//	ネームテーブルをスペースで埋め尽くす
+	vdp_ll_fill_vram( 0x1B00, 0xD8, 4 * 32 );	//	スプライトアトリビュートを初期化する
+	vdp_ll_fill_vram( 0x2000, 0xF4, 32 * 24 );	//	タイルパターンを全て同じ色 (前景：白、背景：青) にする
 	gpio_put(SPI0_CSN_PIN, 1);
 }
 
@@ -268,7 +268,7 @@ void vdp_set_screen1_message(void) {
 	char s_buffer[] = "FPGA MSXtR VDP/PICO Test.";
 
 	gpio_put(SPI0_CSN_PIN, 0);
-	vdp_set_vram_address( 0x1800 );
-	vdp_write_vram( (uint8_t*) s_buffer, sizeof(s_buffer) );
+	vdp_ll_set_vram_address( 0x1800 );
+	vdp_ll_write_vram( (uint8_t*) s_buffer, sizeof(s_buffer) );
 	gpio_put(SPI0_CSN_PIN, 1);
 }

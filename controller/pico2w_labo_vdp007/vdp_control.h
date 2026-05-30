@@ -13,8 +13,15 @@
 #define SPI0_BAUDRATE (80 * 1000 * 1000)	// 80 MHz
 
 void vdp_write_register(uint8_t reg, uint8_t data);
-void vdp_set_screen1(void);
+void vdp_ll_set_screen1(void);
 void vdp_set_screen1_font(void);
 void vdp_set_screen1_message(void);
+
+#define vdp_ll_begin() gpio_put(SPI0_CSN_PIN, 0)
+#define vdp_ll_end() gpio_put(SPI0_CSN_PIN, 1)
+
+void vdp_ll_fill_vram(uint16_t addr, uint8_t value, uint16_t size);
+void vdp_ll_write_vram(uint8_t* data, uint16_t size);
+void vdp_ll_set_vram_address(uint16_t addr);
 
 #endif

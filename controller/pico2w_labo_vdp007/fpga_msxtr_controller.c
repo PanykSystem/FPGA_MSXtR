@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "pico/stdlib.h"
 #include "pico/multicore.h"
 #include "hardware/i2c.h"
@@ -17,6 +18,23 @@
 
 // SPI1 (SDカード) -- ピン設定は hw_config.c で管理
 // RX=8, CSN=9, SCK=10, TX=11, BAUDRATE=12.5MHz (no-OS-FatFS ライブラリが初期化)
+
+static uint8_t keymatrix[KEYBOARD_KEY_MATRIX_SIZE];
+
+static char *s_keymatrix[] = {
+	"[7 ][6 ][5 ][4 ][3 ][2 ][1 ][0 ]",
+	"[+ ][{ ][` ][| ][~ ][= ][) ][( ]",
+	"[B ][A ][_ ][/ ][. ][, ][} ][: ]",
+	"[J ][I ][H ][G ][F ][E ][D ][C ]",
+	"[R ][Q ][P ][O ][N ][M ][L ][K ]",
+	"[Z ][Y ][X ][W ][V ][U ][T ][S ]",
+	"[F3][F2][F1][ka][cp][gr][ct][sh]",
+	"[re][se][bs][st][tb][es][f5][f4]",
+	"[->][v ][^ ][<-][de][in][hm][sp]",
+	"[t4][t3][t2][t1][t0][op][op][op]",
+	"[, ][. ][- ][t9][t8][t7][t6][t5]",
+	"[- ][- ][- ][- ][- ][- ][- ][Me]",
+};
 
 // ---------------------------------------------------------
 static void i2c0_init(void) {
@@ -143,27 +161,25 @@ static void core1_entry(void) {
 	uint8_t prev_mat11 = 0xFF;	// 前回の matrix[11] (初期値: 全ビット High)
 
 	while (true) {
-		keyboard_update(led_state);
-
-//		  printf("Send 0x%02X\n", led_state);
-		const uint8_t *matrix = keyboard_get_matrix();
-//		  for (int i = 0; i < KEYBOARD_KEY_MATRIX_SIZE; i++) {
-//			  printf("Recv[%d] = 0x%02X\n", i, matrix[i]);
-//		  }
+		keyboard_update( led_state );
+		memcpy( keymatrix, keyboard_get_matrix(), KEYBOARD_KEY_MATRIX_SIZE );
 
 		// matrix[11] bit0: 1→0 の立ち下がり検出 (キー押下)
-		if ((prev_mat11 & 0x01) && !(matrix[11] & 0x01)) {
+		if ((prev_mat11 & 0x01) && !(keymatrix[11] & 0x01)) {
 			dir_sd_root();
 		}
-		prev_mat11 = matrix[11];
+		prev_mat11 = keymatrix[11];
 
 		led_state++;
-		sleep_ms(100);
+		sleep_ms(10);
 	}
 }
 
 // Core 0: SPI通信（FPGAモジュール・SDカード）
 int main(void) {
+	char s_keyline[32], *p_dest, *p_src;
+	int i, j;
+	uint8_t matrix;
 
 	stdio_init_all();
 	i2c0_init();
@@ -175,12 +191,30 @@ int main(void) {
 	// FPGAが起動するまでは取りこぼすのでしばらく待つ
 	sleep_ms(1000);
 
-	vdp_set_screen1();
+	vdp_ll_set_screen1();
 	vdp_set_screen1_font();
 	vdp_set_screen1_message();
 	while (true) {
-		fpga_uart_puts("Hello from Pico2W FPGA MSX-TR Controller!\r\n");
-		sleep_ms(500);
+		for( i = 0; i < 12; i++ ) {
+			matrix = keymatrix[i];
+			p_src = s_keymatrix[i];
+			p_dest = s_keyline;
+			for( j = 0; j < 8; j++ ) {
+				if( (matrix & (0x80 >> j)) == 0 ) {
+					memcpy( p_dest, "[**]", 4 );
+				}
+				else {
+					memcpy( p_dest, p_src, 4 );
+				}
+				p_src += 4;
+				p_dest += 4;
+			}
+			vdp_ll_begin();
+			vdp_ll_set_vram_address( 0x1800 + i * 32 + 64);
+			vdp_ll_write_vram( (uint8_t*)s_keyline, 32 );
+			vdp_ll_end();
+		}
+		sleep_ms(5);
 	}
 	return 0;
 }

@@ -199,7 +199,7 @@ int main(void) {
 	// FPGAが起動するまでは取りこぼすのでしばらく待つ
 	sleep_ms(500);
 
-	vdp_set_screen1();
+	vdp_ll_set_screen1();
 	vdp_set_screen1_font();
 	vdp_set_screen1_message();
 	while (true) {
