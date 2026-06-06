@@ -1,0 +1,52 @@
+[
+ {
+  "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/tangnano20k_vdp_cartridge_lcd.v",
+  "InstLine" : 24,
+  "InstName" : "tangnano20k_vdp_cartridge_lcd",
+  "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/tangnano20k_vdp_cartridge_lcd.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "tangnano20k_vdp_cartridge_lcd",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/tangnano20k_vdp_cartridge_lcd.v",
+    "InstLine" : 146,
+    "InstName" : "u_pll",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/tangnano20k_vdp_cartridge_lcd.v",
+    "InstLine" : 152,
+    "InstName" : "u_pll2",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008/src/gowin_rpll2/gowin_rpll2.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL2"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/tangnano20k_vdp_cartridge_lcd.v",
+    "InstLine" : 159,
+    "InstName" : "u_clkdiv",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008/src/gowin_clkdiv/gowin_clkdiv.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_CLKDIV"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/tangnano20k_vdp_cartridge_lcd.v",
+    "InstLine" : 201,
+    "InstName" : "u_sdram",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008/src/sdram/ip_sdram_tangnano20k_c.v",
+    "ModuleLine" : 57,
+    "ModuleName" : "ip_sdram"
+   },
+   {
+    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/tangnano20k_vdp_cartridge_lcd.v",
+    "InstLine" : 229,
+    "InstName" : "u_display_controller",
+    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_008_LCD_ONLY/src/display_controller.v",
+    "ModuleLine" : 57,
+    "ModuleName" : "display_controller"
+   }
+  ]
+ }
+]

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="tangnano20k_vdp_cartridge_lcd" Register="3" T_Register="74(3)" T_Lut="132(0)">
+ <SubModule name="u_pll2"/>
+ <SubModule name="u_sdram" Register="30" Lut="71" T_Register="30(30)" T_Lut="71(71)"/>
+ <SubModule name="u_display_controller" Register="41" Lut="61" T_Register="41(41)" T_Lut="61(61)"/>
+</Module>
