@@ -83,10 +83,30 @@ module tangnano20k_vdp_cartridge_lcd (
 	reg		[24:0]	ff_counter;
 	reg				ff_led;
 
-	reg				ff_reset_n0 = 1'b0;
-	reg				ff_reset_n1 = 1'b0;
-	reg				ff_reset_n2 = 1'b0;
+	// ---------------------------------------------------------
+	//	【注意】
+	//	合成ツールは、論理的に等価だと判断した FF は、自動的に
+	//	統合する最適化を行う場合がある。
+	//	これを抑止するために、syn_preserve = 1
+	//	というオプションを指定するが、コメント内にも記述できる。
+	//	下記の reset信号のコメントは、その指示である。
+	//	コメントによる指示を削除するとタイミングバイオレーション
+	//	が発生するようになる可能性があるので注意。
+	// ---------------------------------------------------------
+	reg				ff_reset_n0 = 1'b0;			/* synthesis syn_preserve = 1 */
+	reg				ff_reset_n1 = 1'b0;			/* synthesis syn_preserve = 1 */
+	reg				ff_reset_n2 = 1'b0;			/* synthesis syn_preserve = 1 */
 	wire			reset_n;
+
+	reg				ff_reset_vdp_n0 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_vdp_n1 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_vdp_n2 = 1'b0;		/* synthesis syn_preserve = 1 */
+	wire			reset_vdp_n;
+
+	reg				ff_reset_spi_n0 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_spi_n1 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_spi_n2 = 1'b0;		/* synthesis syn_preserve = 1 */
+	wire			reset_spi_n;
 
 	wire			w_bus_write;
 	wire			w_bus_valid;
@@ -164,7 +184,21 @@ module tangnano20k_vdp_cartridge_lcd (
 		ff_reset_n2		<= ff_reset_n1;
 	end
 
+	always @( posedge clk85m ) begin
+		ff_reset_vdp_n0	<= 1'b1;
+		ff_reset_vdp_n1	<= ff_reset_vdp_n0;
+		ff_reset_vdp_n2	<= ff_reset_vdp_n1;
+	end
+
+	always @( posedge clk85m ) begin
+		ff_reset_spi_n0	<= 1'b1;
+		ff_reset_spi_n1	<= ff_reset_spi_n0;
+		ff_reset_spi_n2	<= ff_reset_spi_n1;
+	end
+
 	assign reset_n		= ff_reset_n2;
+	assign reset_vdp_n	= ff_reset_vdp_n2;
+	assign reset_spi_n	= ff_reset_spi_n2;
 
 	// --------------------------------------------------------------------
 	//	clock
@@ -221,7 +255,7 @@ module tangnano20k_vdp_cartridge_lcd (
 	//	Controller connection
 	// --------------------------------------------------------------------
 	ip_spi u_controller_spi (
-		.reset_n				( reset_n					),
+		.reset_n				( reset_spi_n				),
 		.clk					( clk85m					),
 		.clk_serial				( clk215m					),
 		.bus_io					( bus_ctrl1_io				),
@@ -280,7 +314,7 @@ module tangnano20k_vdp_cartridge_lcd (
 	//	V9968
 	// --------------------------------------------------------------------
 	vdp_lcd u_v9968 (
-		.reset_n			( reset_n					),
+		.reset_n			( reset_vdp_n				),
 		.clk				( clk85m					),
 		.initial_busy		( w_sdram_init_busy			),
 		.bus_address		( w_bus_address[2:0]		),

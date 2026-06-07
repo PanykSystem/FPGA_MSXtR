@@ -1,9 +1,9 @@
 -d C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008_LCD\impl\gwsynthesis\tangnano20k_vdp_cartridge_lcd.vg
 -p GW2AR-18C-QFN88-8
 -pn GW2AR-LV18QN88C8/I7
--cst C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\tangnano20k_vdp_cartridge.cst
+-cst C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008_LCD\src\tangnano20k_vdp_cartridge.cst
 -cfg C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008_LCD\impl\pnr\device.cfg
--sdc C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\tangnano20k_vdp_cartridge.sdc
+-sdc C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008_LCD\src\tangnano20k_vdp_cartridge.sdc
 -bit
 -tr
 -ph
@@ -13,5 +13,5 @@
 -route_option 0
 -clock_route_order 0
 -correct_hold 1
--route_maxfan 23
+-route_maxfan 100
 -global_freq 100.000

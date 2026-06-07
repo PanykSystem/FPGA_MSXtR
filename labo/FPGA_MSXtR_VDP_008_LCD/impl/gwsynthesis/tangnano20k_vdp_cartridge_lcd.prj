@@ -5,7 +5,6 @@
     <Device id="GW2AR-18C" package="QFN88" speed="8" partNumber="GW2AR-LV18QN88C8/I7"/>
     <FileList>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\debugger\ip_debugger.v" type="verilog"/>
-        <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\dvi_tx\dvi_tx.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\gowin_clkdiv\gowin_clkdiv.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\gowin_rpll\gowin_rpll.v" type="verilog"/>
         <File path="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\gowin_rpll2\gowin_rpll2.v" type="verilog"/>
@@ -45,7 +44,7 @@
         <Option type="global_freq" value="100.000"/>
         <Option type="looplimit" value="400000"/>
         <Option type="output_file" value="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008_LCD\impl\gwsynthesis\tangnano20k_vdp_cartridge_lcd.vg"/>
-        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="print_all_synthesis_warning" value="1"/>
         <Option type="ram_rw_check" value="0"/>
         <Option type="top_module" value="tangnano20k_vdp_cartridge_lcd"/>
         <Option type="vcc" value="1.0"/>

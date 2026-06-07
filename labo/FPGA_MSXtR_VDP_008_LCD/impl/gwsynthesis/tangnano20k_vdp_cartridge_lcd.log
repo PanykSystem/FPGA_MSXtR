@@ -1,7 +1,6 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\debugger\ip_debugger.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\dvi_tx\dvi_tx.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\gowin_clkdiv\gowin_clkdiv.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\gowin_rpll\gowin_rpll.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\gowin_rpll2\gowin_rpll2.v'
@@ -34,7 +33,7 @@ Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\lab
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_upscan_line_buffer.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_video_double_buffer.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_lcd_out.v'
-Undeclared symbol 'w_display_en', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_lcd_out.v":406)
+Undeclared symbol 'w_display_en', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_lcd_out.v":407)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_video_out_bilinear.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_video_ram_line_buffer.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_vram_interface.v'
@@ -73,9 +72,6 @@ Compiling module 'vdp_video_double_buffer'("C:\Users\hra\Documents\github\HRA_pr
 Compiling module 'vdp_video_ram_line_buffer'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_video_ram_line_buffer.v":58)
 Extracting RAM for identifier 'ff_imem'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_video_ram_line_buffer.v":66)
 Compiling module 'vdp_video_out_bilinear'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_video_out_bilinear.v":60)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 5("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_lcd_out.v":407)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 6("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_lcd_out.v":408)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 5("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\v9968\vdp_lcd_out.v":409)
 Compiling module 'uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\uart\uart.v":27)
 Compiling module 'ip_uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\uart\ip_uart.v":27)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\src\uart\ip_uart.v":69)

@@ -87,7 +87,7 @@ module spi (
 
 	// ---------------------------------------------------------
 	//	外部信号を FF 受け
-	always @( posedge clk_serial ) begin
+	always @( posedge clk_serial or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_spi_cs_n_pre	<= 1'b1;
 			ff_spi_clk_pre	<= 1'b0;
@@ -113,7 +113,7 @@ module spi (
 
 	// ---------------------------------------------------------
 	//	内部からの送信要求を認知する
-	always @( posedge clk ) begin
+	always @( posedge clk or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_send			<= 1'b0;
 			ff_send_data	<= 8'd0;
@@ -141,7 +141,7 @@ module spi (
 	assign spi_rdata	= ff_spi_data;
 	assign spi_rdata_en = w_byte_finished & ~ff_send;
 
-	always @( posedge clk ) begin
+	always @( posedge clk or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_done_pulse_pre	<= 1'b0;
 			ff_done_pulse		<= 1'b0;
@@ -163,7 +163,7 @@ module spi (
 
 	// ---------------------------------------------------------
 	//	spi_valid のタイミング（開始タイミング）を生成する
-	always @( posedge clk_serial ) begin
+	always @( posedge clk_serial or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_spi_start_pre	<= 1'b0;
 			ff_spi_start		<= 1'b0;
@@ -182,7 +182,7 @@ module spi (
 	//	通信用のシフトレジスタ
 	assign w_spi_shift = (ff_send && w_spi_clk_falling_edge) || (!ff_send && w_spi_clk_rising_edge);
 
-	always @( posedge clk_serial ) begin
+	always @( posedge clk_serial or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_spi_data <= 8'd0;
 		end
@@ -204,7 +204,7 @@ module spi (
 		end
 	end
 
-	always @( posedge clk_serial ) begin
+	always @( posedge clk_serial or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_bit_counter <= 4'd0;
 		end

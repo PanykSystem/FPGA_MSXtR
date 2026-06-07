@@ -58,7 +58,7 @@
 // -----------------------------------------------------------------------------
 
 module vdp_lcd_out (
-	input				clk,						//	42.95454MHz
+	input				clk,					//	85.90908MHz
 	input				reset_n,
 	input				initial_busy,
 	input		[11:0]	h_count,
@@ -93,13 +93,14 @@ module vdp_lcd_out (
 	localparam		h_en_start			= 12'd132;
 	localparam		h_en_end			= h_en_start + 12'd1600;
 	localparam		hs_start			= clocks_per_line - 1;
-	localparam		hs_end				= 12'd40 - 12'd1;
+	localparam		hs_end				= 12'd128 - 12'd1;
 	localparam		v_en_start			= 10'd14;
 	localparam		v_en_end			= v_en_start + 10'd480;
-	localparam		vs_start_60hz		= c_v_count_max_60 - 10'd13;
-	localparam		vs_end_60hz			= c_v_count_max_60 - 10'd6;
-	localparam		vs_start_50hz		= c_v_count_max_50 - 10'd13;
-	localparam		vs_end_50hz			= c_v_count_max_50 - 10'd6;
+	localparam		v_flag_change_h		= active_area_start;
+	localparam		vs_start_60hz		= v_en_end + 10'd13;		//	c_v_count_max_60 - 10'd13;
+	localparam		vs_end_60hz			= vs_start_60hz + 10'd2;	//	c_v_count_max_60 - 10'd11;
+	localparam		vs_start_50hz		= v_en_end + 10'd13;		//	c_v_count_max_50 - 10'd13;
+	localparam		vs_end_50hz			= vs_start_60hz + 10'd2;	//	c_v_count_max_50 - 10'd11;
 	localparam		c_numerator			= 576 / 4;
 
 	wire			w_enable;
@@ -186,7 +187,7 @@ module vdp_lcd_out (
 		if( !reset_n ) begin
 			ff_v_en <= 1'b0;
 		end
-		else if( h_count == (clocks_per_line - 1) ) begin
+		else if( h_count == v_flag_change_h ) begin
 			if( v_count == v_en_end ) begin
 				ff_v_en <= 1'b0;
 			end
@@ -212,7 +213,7 @@ module vdp_lcd_out (
 		if( !reset_n ) begin
 			ff_vs <= 1'b1;
 		end
-		else if( h_count == (clocks_per_line - 1) ) begin
+		else if( h_count == v_flag_change_h ) begin
 			if( reg_50hz_mode == 1'b0 ) begin
 				if( v_count == vs_end_60hz ) begin
 					ff_vs <= 1'b1;
@@ -404,9 +405,9 @@ module vdp_lcd_out (
 	end
 
 	assign w_display_en	= ff_h_en & ff_v_en;
-	assign lcd_red		= w_display_en ? ff_display_r : 8'd0;
-	assign lcd_green	= w_display_en ? ff_display_g : 8'd0;
-	assign lcd_blue		= w_display_en ? ff_display_b : 8'd0;
+	assign lcd_red		= w_display_en ? ff_display_r[7:3] : 5'd0;
+	assign lcd_green	= w_display_en ? ff_display_g[7:2] : 6'd0;
+	assign lcd_blue		= w_display_en ? ff_display_b[7:3] : 5'd0;
 	assign lcd_de		= w_display_en;
 	assign lcd_bl		= ff_backlight;
 	assign lcd_clk		= ff_lcd_clk;

@@ -71,7 +71,7 @@ module ip_spi (
 	reg				ff_bus_io;
 	reg				ff_bus_valid;
 
-	always @( posedge clk ) begin
+	always @( posedge clk or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_spi_cs_n_pre <= 1'b1;
 			ff_spi_cs_n     <= 1'b1;
@@ -85,7 +85,7 @@ module ip_spi (
 	// ---------------------------------------------------------
 	//	State machine
 	// ---------------------------------------------------------
-	always @( posedge clk ) begin
+	always @( posedge clk or negedge reset_n ) begin
 		if( !reset_n ) begin
 			ff_state		<= ST_IDLE;
 			ff_bus_address	<= 16'd0;
