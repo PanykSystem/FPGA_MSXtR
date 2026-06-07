@@ -7,9 +7,6 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
-WARN  (TA1132) :  'u_clkdiv/clkdiv_inst/CLKOUT.default_gen_clk' was determined to be a clock but was not created.
-WARN  (TA1117) : Can't calculate clocks' relationship between: "u_pll2/rpll_inst/CLKOUT.default_gen_clk" and "clk27m"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "clk27m" and "u_pll2/rpll_inst/CLKOUT.default_gen_clk"
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
@@ -30,5 +27,5 @@ Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MS
 Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\impl\pnr\tangnano20k_vdp_cartridge.rpt.html" completed
 Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\impl\pnr\tangnano20k_vdp_cartridge.rpt.txt" completed
 Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_008\impl\pnr\tangnano20k_vdp_cartridge.tr.html" completed
-Fri Jun  5 20:45:51 2026
+Mon Jun  8 06:03:30 2026
 
