@@ -87,14 +87,14 @@ module vdp_lcd_out (
 );
 	localparam		c_v_count_max_60	= 10'd523;
 	localparam		c_v_count_max_50	= 10'd625;
-	localparam		active_area_start	= 12'd132;
+	localparam		active_area_start	= 12'd256 + 12'd800 - 12'd1;
 	localparam		active_area_end		= active_area_start + 12'd1600;
 	localparam		clocks_per_line		= 12'd2736;
-	localparam		h_en_start			= 12'd132;
+	localparam		h_en_start			= active_area_start;
 	localparam		h_en_end			= h_en_start + 12'd1600;
 	localparam		hs_start			= clocks_per_line - 1;
-	localparam		hs_end				= 12'd128 - 12'd1;
-	localparam		v_en_start			= 10'd14;
+	localparam		hs_end				= 12'd256 - 12'd1;
+	localparam		v_en_start			= 10'd13;
 	localparam		v_en_end			= v_en_start + 10'd480;
 	localparam		v_flag_change_h		= active_area_start;
 	localparam		vs_start_60hz		= v_en_end + 10'd13;		//	c_v_count_max_60 - 10'd13;

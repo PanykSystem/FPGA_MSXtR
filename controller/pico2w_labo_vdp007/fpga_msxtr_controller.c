@@ -189,7 +189,7 @@ int main(void) {
 	multicore_launch_core1(core1_entry);
 
 	// FPGAが起動するまでは取りこぼすのでしばらく待つ
-	sleep_ms(1000);
+	sleep_ms(5000);
 
 	vdp_ll_set_screen1();
 	vdp_set_screen1_font();

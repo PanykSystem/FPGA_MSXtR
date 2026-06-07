@@ -1,0 +1,10 @@
+1clock (LCD_CLK)
+	23280ns
+
+HSYNC(rise) Å® DE(rise)
+MSXtR:   58200ns
+DEMO : 9312000ns (400clk)
+
+HSYNCïù
+MSXtR: 1489920ns
+DEMO : 2979840ns (128clk)
