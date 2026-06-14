@@ -30,6 +30,8 @@ module tb();
 	reg	[7:0]	test_number;	// Current test number for waveform observation
 	reg			std_read_drive_en;
 	reg	[7:0]	std_read_expect_data;
+	integer			total_checks;
+	integer			error_count;
 
 	// =====================================================================
 	//	Module instantiation
@@ -83,6 +85,8 @@ module tb();
 		std_read_expect_data = 8'd0;
 		ff_write = 1'b0;
 		test_number = 8'd0;
+		total_checks = 0;
+		error_count = 0;
 		#(CLK_PERIOD*10) reset = 1'b1;
 		#(CLK_PERIOD*10) reset = 1'b0;
 		$display( "[%0t] Initialize complete", $time );
@@ -102,6 +106,201 @@ module tb();
 		while( !serial_rdata_en ) begin
 			@( posedge clk );
 		end
+	end
+	endtask
+
+	task check_byte(
+		input [127:0] check_name,
+		input [7:0] expected,
+		input [7:0] actual
+	);
+	begin
+		total_checks = total_checks + 1;
+		if( actual !== expected ) begin
+			error_count = error_count + 1;
+			$error( "[%0t] %0s FAILED: expected=0x%02x actual=0x%02x", $time, check_name, expected, actual );
+		end
+		else begin
+			$display( "[%0t] %0s PASSED: expected=0x%02x actual=0x%02x", $time, check_name, expected, actual );
+		end
+	end
+	endtask
+
+	task check_int(
+		input [127:0] check_name,
+		input integer expected,
+		input integer actual
+	);
+	begin
+		total_checks = total_checks + 1;
+		if( actual !== expected ) begin
+			error_count = error_count + 1;
+			$error( "[%0t] %0s FAILED: expected=%0d actual=%0d", $time, check_name, expected, actual );
+		end
+		else begin
+			$display( "[%0t] %0s PASSED: expected=%0d actual=%0d", $time, check_name, expected, actual );
+		end
+	end
+	endtask
+
+	task capture_std_write_byte(
+		output [7:0] captured,
+		output timeout_hit
+	);
+		integer bit_idx;
+		time wait_timeout;
+	begin
+		captured = 8'd0;
+		timeout_hit = 1'b0;
+		wait_timeout = CLK_SERIAL_PERIOD * 40;
+		bit_idx = 7;
+
+		while( bit_idx >= 0 && !timeout_hit ) begin
+			fork
+				begin
+					@( posedge qspi_clk );
+				end
+				begin
+					#(wait_timeout);
+					timeout_hit = 1'b1;
+				end
+			join_any
+			disable fork;
+
+			if( !timeout_hit ) begin
+				captured[bit_idx] = qspi_sio[0];
+				bit_idx = bit_idx - 1;
+			end
+		end
+	end
+	endtask
+
+	task capture_quad_write_byte(
+		output [7:0] captured,
+		output timeout_hit
+	);
+		time wait_timeout;
+	begin
+		captured = 8'd0;
+		timeout_hit = 1'b0;
+		wait_timeout = CLK_SERIAL_PERIOD * 40;
+
+		fork
+			begin
+				@( posedge qspi_clk );
+			end
+			begin
+				#(wait_timeout);
+				timeout_hit = 1'b1;
+			end
+		join_any
+		disable fork;
+		if( timeout_hit ) begin
+			return;
+		end
+		captured[7:4] = qspi_sio[3:0];
+
+		fork
+			begin
+				@( posedge qspi_clk );
+			end
+			begin
+				#(wait_timeout);
+				timeout_hit = 1'b1;
+			end
+		join_any
+		disable fork;
+		if( timeout_hit ) begin
+			return;
+		end
+		captured[3:0] = qspi_sio[3:0];
+	end
+	endtask
+
+	task run_std_write_check(
+		input [7:0] wdata,
+		input [127:0] check_name
+	);
+		reg [7:0] captured;
+		reg timeout_hit;
+	begin
+		timeout_hit = 1'b0;
+		fork
+			begin
+				capture_std_write_byte( captured, timeout_hit );
+			end
+			begin
+				serial_write_byte( 3'd0, wdata );
+			end
+		join
+		if( timeout_hit ) begin
+			total_checks = total_checks + 1;
+			error_count = error_count + 1;
+			$error( "[%0t] %0s FAILED: timeout while capturing STD write stream", $time, check_name );
+		end
+		else begin
+			check_byte( check_name, wdata, captured );
+		end
+	end
+	endtask
+
+	task run_quad_write_check(
+		input [7:0] wdata,
+		input [127:0] check_name
+	);
+		reg [7:0] captured;
+		reg timeout_hit;
+	begin
+		timeout_hit = 1'b0;
+		fork
+			begin
+				capture_quad_write_byte( captured, timeout_hit );
+			end
+			begin
+				serial_write_byte( 3'd2, wdata );
+			end
+		join
+		if( timeout_hit ) begin
+			total_checks = total_checks + 1;
+			error_count = error_count + 1;
+			$error( "[%0t] %0s FAILED: timeout while capturing QUAD write stream", $time, check_name );
+		end
+		else begin
+			check_byte( check_name, wdata, captured );
+		end
+	end
+	endtask
+
+	task run_std_read_check(
+		input [7:0] expected,
+		input [127:0] check_name
+	);
+		reg [7:0] rdata;
+	begin
+		serial_read_byte( 3'd1, expected, rdata );
+		check_byte( check_name, expected, rdata );
+	end
+	endtask
+
+	task run_quad_read_check(
+		input [7:0] expected,
+		input [127:0] check_name
+	);
+		reg [7:0] rdata;
+	begin
+		serial_read_byte( 3'd3, expected, rdata );
+		check_byte( check_name, expected, rdata );
+	end
+	endtask
+
+	task run_dummy_clock_check(
+		input integer expected_rise,
+		input [127:0] check_name
+	);
+		integer rise_count;
+	begin
+		dummy_clock( 3'd4, rise_count );
+		check_int( check_name, expected_rise, rise_count );
 	end
 	endtask
 
@@ -133,10 +332,10 @@ module tb();
 	);
 	begin
 		std_read_expect_data	<= expect_data;
-		std_read_drive_en	<= 1'b1;
+		std_read_drive_en	<= (mode == 3'd1);
 		wait_ready();
 		@( posedge clk );
-		serial_mode		<= 3'd1;
+		serial_mode		<= mode;
 		serial_write	<= 1'b0;
 		serial_valid	<= 1'b1;
 		@( posedge clk );
@@ -153,17 +352,34 @@ module tb();
 	endtask
 
 	task dummy_clock(
-		input [2:0] mode
+		input [2:0] mode,
+		output integer rise_count
 	);
+		time timeout;
 	begin
+		rise_count = 0;
+		timeout = CLK_SERIAL_PERIOD * 120;
 		wait_ready();
 		@( posedge clk );
 		serial_mode		<= mode;
-		serial_write	<= 1'b0;
+		// Dummy時はff_write=1にして、波形上でDUTのHi-Z状態を観測しやすくする
+		serial_write	<= 1'b1;
 		serial_valid	<= 1'b1;
 		@( posedge clk );
 		serial_valid	<= 1'b0;
-		#(CLK_SERIAL_PERIOD*100);	// Wait for operation to complete
+		fork
+			begin
+				forever begin
+					@( posedge qspi_clk );
+					rise_count = rise_count + 1;
+				end
+			end
+			begin
+				#(timeout);
+			end
+		join_any
+		disable fork;
+		wait_ready();
 		$display( "[%0t] Dummy clock: mode=%0d", $time, mode );
 	end
 	endtask
@@ -204,17 +420,14 @@ module tb();
 			end
 			// For quad SPI read (SIO[3:0])
 			else if( serial_mode == 3'd3 ) begin
-				qspi_sio_slave[3:0] <= slave_tx_data[7:4];
-
 				if( slave_quad_bit_count == 4'd0 ) begin
-					slave_tx_data <= 8'h5A;	// Test pattern
-				end
-				else if( slave_quad_bit_count == 4'd1 ) begin
-					slave_quad_bit_count <= 4'd0;
+					slave_tx_data <= std_read_expect_data;
+					qspi_sio_slave[3:0] <= std_read_expect_data[7:4];
+					slave_quad_bit_count <= 4'd1;
 				end
 				else begin
-					slave_quad_bit_count <= slave_quad_bit_count + 4'd1;
-					slave_tx_data <= {slave_tx_data[3:0], 4'b0000};
+					qspi_sio_slave[3:0] <= slave_tx_data[3:0];
+					slave_quad_bit_count <= 4'd0;
 				end
 			end
 			else begin
@@ -233,60 +446,54 @@ module tb();
 
 		test_number = 8'd1;
 		$display( "\n========== Test %0d: Standard SPI Write (0x42) ==========" , test_number );
-		$display( "[%0t] Before write: serial_ready=%b, serial_valid=%b", $time, serial_ready, serial_valid );
-		serial_write_byte( 3'd0, 8'h42 );	// Write 0x42
-		$display( "[%0t] After write command issued: qspi_sio=%b, qspi_clk=%b", $time, qspi_sio, qspi_clk );
-		$display( "[%0t] Waiting for data transmission...", $time );
-		// Standard SPI: 8 bits, each takes 2 clk_serial cycles (up and down), so 16 cycles needed
-		// Plus some margin for synchronization delays
-		#(CLK_SERIAL_PERIOD*300);
-		$display( "[%0t] After transmission wait: qspi_sio=%b, qspi_clk=%b", $time, qspi_sio, qspi_clk );
+		run_std_write_check( 8'h42, "Test1 STD Write Data" );
+		#(CLK_SERIAL_PERIOD*80);
 
 		test_number = 8'd2;
 		$display( "\n========== Test %0d: Standard SPI Write 4-byte Sequence ==========" , test_number );
-		serial_write_byte( 3'd0, 8'h12 );
-		serial_write_byte( 3'd0, 8'h34 );
-		serial_write_byte( 3'd0, 8'h56 );
-		serial_write_byte( 3'd0, 8'h78 );
-		#(CLK_SERIAL_PERIOD*200);
+		run_std_write_check( 8'h12, "Test2 STD Write[0]" );
+		run_std_write_check( 8'h34, "Test2 STD Write[1]" );
+		run_std_write_check( 8'h56, "Test2 STD Write[2]" );
+		run_std_write_check( 8'h78, "Test2 STD Write[3]" );
+		#(CLK_SERIAL_PERIOD*80);
 
 		test_number = 8'd3;
 		$display( "\n========== Test %0d: Standard SPI Read ==========" , test_number );
-		serial_read_byte( 3'd1, 8'hA3, temp_rdata );
-		if( temp_rdata !== 8'hA3 ) begin
-			$error( "[%0t] Test 3 FAILED: expected=0xA3 actual=0x%02x", $time, temp_rdata );
-		end
-		else begin
-			$display( "[%0t] Test 3 PASSED: expected=0xA3 actual=0x%02x", $time, temp_rdata );
-		end
-		#(CLK_SERIAL_PERIOD*200);
+		run_std_read_check( 8'hA3, "Test3 STD Read Data" );
+		#(CLK_SERIAL_PERIOD*80);
 
 		test_number = 8'd4;
 		$display( "\n========== Test %0d: Quad SPI Write ==========" , test_number );
-		serial_write_byte( 3'd2, 8'h5C );	// Write 0x5C via quad
-		#(CLK_SERIAL_PERIOD*200);
+		run_quad_write_check( 8'h5C, "Test4 Quad Write Data" );
+		#(CLK_SERIAL_PERIOD*80);
 
 		test_number = 8'd5;
 		$display( "\n========== Test %0d: Quad SPI Read ==========" , test_number );
-		serial_read_byte( 3'd3, 8'h3A, temp_rdata );
-		#(CLK_SERIAL_PERIOD*200);
+		run_quad_read_check( 8'h3A, "Test5 Quad Read Data" );
+		#(CLK_SERIAL_PERIOD*80);
 
 		test_number = 8'd6;
 		$display( "\n========== Test %0d: Quad SPI Dummy Clock ==========" , test_number );
-		dummy_clock( 3'd4 );
-		#(CLK_SERIAL_PERIOD*200);
+		run_dummy_clock_check( 4, "Test6 Dummy Clock Rise Count" );
+		#(CLK_SERIAL_PERIOD*80);
 
 		test_number = 8'd7;
 		$display( "\n========== Test %0d: Sequential operations ==========" , test_number );
-		serial_write_byte( 3'd0, 8'h12 );	// Write command
-		#(CLK_SERIAL_PERIOD*200);
-		serial_write_byte( 3'd0, 8'h34 );	// Write data
-		#(CLK_SERIAL_PERIOD*200);
-		serial_read_byte( 3'd1, 8'hA5, temp_rdata );
-		#(CLK_SERIAL_PERIOD*200);
+		run_std_write_check( 8'h12, "Test7 Seq STD Write Cmd" );
+		run_std_write_check( 8'h34, "Test7 Seq STD Write Data" );
+		run_std_read_check( 8'hA5, "Test7 Seq STD Read Data" );
+		#(CLK_SERIAL_PERIOD*80);
 
 		test_number = 8'd0;
 		$display( "\n========== All tests completed ==========" );
+		$display( "Total checks : %0d", total_checks );
+		$display( "Total errors : %0d", error_count );
+		if( error_count == 0 ) begin
+			$display( "RESULT       : PASS" );
+		end
+		else begin
+			$display( "RESULT       : FAIL" );
+		end
 		#(CLK_PERIOD*100) $finish;
 	end
 
