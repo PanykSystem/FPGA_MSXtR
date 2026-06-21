@@ -36,6 +36,7 @@ module qspi (
 	output			serial_ready,
 	output	[7:0]	serial_rdata,
 	output			serial_rdata_en,
+	output			serial_idle,
 	//	QSPI interface
 	output			qspi_clk,
 	inout	[3:0]	qspi_sio
@@ -56,6 +57,7 @@ module qspi (
 	localparam [2:0]	MODE_QUAD_WRITE	= 3'd2;
 	localparam [2:0]	MODE_QUAD_READ	= 3'd3;
 	localparam [2:0]	MODE_QUAD_DUMMY	= 3'd4;
+	localparam [2:0] 	MODE_QUAD_DUMMY2	= 3'd5;
 	//	clk domain
 	reg		[2:0]	ff_fifo_mode;
 	reg		[7:0]	ff_fifo_wdata;
@@ -89,7 +91,9 @@ module qspi (
 	localparam	[4:0]	ST_QUAD_READ_B30FE	= 5'd15;	//	bit3-0 fall edge
 	localparam	[4:0]	ST_QUAD_DUMMY		= 5'd16;	//	Quad SPI dummy clock
 	localparam	[4:0]	ST_QUAD_DUMMY_CLK	= 5'd17;	//	Dummy clock上昇エッジ
-	localparam	[4:0]	ST_FINISH			= 5'd18;	//	通信処理完了
+	localparam	[4:0]	ST_QUAD_DUMMY2		= 5'd18;	//	Quad SPI dummy clock (2 bytes)
+	localparam	[4:0]	ST_QUAD_DUMMY2_CLK	= 5'd19;	//	Dummy clock上昇エッジ (2 bytes)
+	localparam	[4:0]	ST_FINISH			= 5'd20;	//	通信処理完了
 	reg					ff_qspi_serial_valid0;			//	ff_serial_valid を clk_serial ドメインに載せ替え用
 	reg					ff_qspi_serial_valid1;			//	ff_serial_valid を clk_serial ドメインに載せ替え用
 	reg					ff_qspi_processing;
@@ -281,6 +285,12 @@ module qspi (
 							ff_qspi_clk			<= 1'b0;
 							ff_qspi_substate	<= 3'd7;
 						end
+						MODE_QUAD_DUMMY2: begin
+							//	Quad SPI dummy clock (2 bytes)
+							ff_qspi_state		<= ST_QUAD_DUMMY2;
+							ff_qspi_clk			<= 1'b0;
+							ff_qspi_substate	<= 3'd4;
+						end
 						default: begin
 							//	Reserved
 							ff_qspi_state	<= ST_FINISH;
@@ -396,11 +406,11 @@ module qspi (
 				//	Quad SPI dummy の処理 (ビット選択ループ版)
 				// ---------------------------------------------------------
 				ST_QUAD_DUMMY: begin
-					//	4クロック分のダミーパルスを生成 (2byte分)
+					//	6クロック分のダミーパルスを生成 (3byte分)
 					ff_qspi_clk			<= 1'b0;
 					ff_qspi_hiz			<= 4'b1111;		//	Hi-Z
 					ff_qspi_sio			<= 4'b0000;
-					ff_qspi_substate	<= 3'd4;
+					ff_qspi_substate	<= 3'd6;
 					ff_qspi_state		<= ST_QUAD_DUMMY_CLK;
 				end
 				ST_QUAD_DUMMY_CLK: begin
@@ -413,6 +423,31 @@ module qspi (
 					end
 					else begin
 						//	立ち下がりエッジ
+						ff_qspi_clk			<= 1'b0;
+						if( ff_qspi_substate != 3'd1 ) begin
+							ff_qspi_substate	<= ff_qspi_substate - 3'd1;
+						end
+						else begin
+							ff_qspi_state		<= ST_FINISH;
+						end
+					end
+				end
+				ST_QUAD_DUMMY2: begin
+					//	4クロック分のダミーパルスを生成 (2byte分)
+					ff_qspi_clk			<= 1'b0;
+					ff_qspi_hiz			<= 4'b1111;		//	Hi-Z
+					ff_qspi_sio			<= 4'b0000;
+					ff_qspi_substate	<= 3'd4;
+					ff_qspi_state		<= ST_QUAD_DUMMY2_CLK;
+				end
+				ST_QUAD_DUMMY2_CLK: begin
+					//	Dummy中は常にHi-Z維持
+					ff_qspi_hiz			<= 4'b1111;
+					ff_qspi_sio			<= 4'b0000;
+					if( ff_qspi_clk == 1'b0 ) begin
+						ff_qspi_clk			<= 1'b1;
+					end
+					else begin
 						ff_qspi_clk			<= 1'b0;
 						if( ff_qspi_substate != 3'd1 ) begin
 							ff_qspi_substate	<= ff_qspi_substate - 3'd1;
@@ -460,4 +495,5 @@ module qspi (
 	assign qspi_sio[1]	= ff_qspi_hiz[1] ? 1'bz : ff_qspi_sio[1];
 	assign qspi_sio[2]	= ff_qspi_hiz[2] ? 1'bz : ff_qspi_sio[2];
 	assign qspi_sio[3]	= ff_qspi_hiz[3] ? 1'bz : ff_qspi_sio[3];
+	assign serial_idle	= ff_serial_ready & !ff_fifo_valid;
 endmodule

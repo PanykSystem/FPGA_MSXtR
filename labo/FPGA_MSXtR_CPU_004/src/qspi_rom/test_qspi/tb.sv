@@ -19,6 +19,7 @@ module tb();
 	wire			serial_ready;
 	wire	[7:0]	serial_rdata;
 	wire			serial_rdata_en;
+	wire			serial_idle;
 
 	// QSPI interface signals
 	wire			qspi_clk;
@@ -47,6 +48,7 @@ module tb();
 		.serial_ready		( serial_ready		),
 		.serial_rdata		( serial_rdata		),
 		.serial_rdata_en	( serial_rdata_en	),
+		.serial_idle		( serial_idle		),
 		.qspi_clk			( qspi_clk			),
 		.qspi_sio			( qspi_sio			)
 	);
