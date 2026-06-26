@@ -57,9 +57,10 @@
 module config_rom (
 	input			reset_n,
 	input			clk,
+	input			clk_serial,
 	//	internal bus interface
 	input			bus_cs,				//	chip select
-	input			bus_address,		//	0: register addresss port, 1: register data port
+	input	[3:0]	bus_address,		//	0: register addresss port, 1: register data port
 	input			bus_write,			//	read write direction (0: read, 1: write)
 	input			bus_valid,			//	access valid signal
 	output			bus_ready,			//	access ready signal
@@ -74,67 +75,132 @@ module config_rom (
 	inout			flash_spi_do,		//	MSPI_DO
 	inout			flash_spi_di		//	MSPI_DI
 );
-	wire			w_hclk;
-	wire			w_hresetn;
-	wire	[31:0]	w_haddr_reg;
-	wire	[31:0]	w_hrdata_reg;
-	wire			w_hreadyin_reg;
-	wire			w_hreadyout_reg;
-	wire	[1:0]	w_hresp_reg;
-	wire			w_hsel_reg;
-	wire			w_hvalid_reg;
-	wire			w_hsel_ip;
-	wire	[1:0]	w_htrans_reg;
-	wire	[2:0]	w_hsize_reg;
-	wire	[31:0]	w_hwdata_reg;
-	wire			w_hwrite_reg;
+	reg				ff_extio_en;
+	reg				ff_device_en;
+	reg		[7:0]	ff_rdata;
+	reg				ff_rdata_en;
+	reg				ff_bus_ready;
+	wire			w_bus_ready;
+	wire			w_bus_cs;
+	wire	[7:0]	w_bus_rdata;
+	wire			w_bus_rdata_en;
 
-	assign w_hclk			= clk;
-	assign w_hresetn		= reset_n;
-	assign w_hreadyin_reg	= 1'b1;
-	assign w_hsel_ip		= w_hsel_reg & w_hvalid_reg;
+	always @( posedge clk ) begin
+		if ( ~reset_n ) begin
+			ff_extio_en		<= 1'b0;
+			ff_device_en	<= 1'b0;
+			ff_rdata		<= 8'd0;
+			ff_rdata_en		<= 1'b0;
+			ff_bus_ready	<= 1'b1;
+		end
+		else begin
+			if ( bus_cs && bus_valid ) begin
+				if( bus_write ) begin
+					//	書き込みアクセス
+					case ( bus_address )
+						4'd0: begin
+							//	40h: external I/O enable
+							if( bus_wdata == 8'd64 ) begin
+								ff_extio_en	<= 1'b1;
+							end
+							else begin
+								ff_extio_en	<= 1'b0;
+							end
+							ff_bus_ready	<= 1'b1;
+						end
+						4'd1: begin
+							//	41h: device enable
+							if( ff_extio_en ) begin
+								if( bus_wdata == 8'd64 ) begin
+									ff_device_en	<= 1'b1;
+								end
+								else begin
+									ff_device_en	<= 1'b0;
+								end
+							end
+							else begin
+								//	hold
+							end
+							ff_bus_ready	<= 1'b1;
+						end
+						4'd2, 4'd3: begin
+							//	42h, 43h: QPI ROM access
+							if( ff_extio_en && ff_device_en ) begin
+								ff_bus_ready	<= 1'b1;
+							end
+							else begin
+								ff_bus_ready	<= 1'b1;
+							end
+						end
+					default: begin
+						end
+					endcase
+					ff_rdata_en		<= 1'b0;
+				end
+				else begin
+					//	読み込みアクセス
+					case( bus_address )
+						4'd0: begin
+							//	40h: external I/O enable
+							if( ff_extio_en ) begin
+								ff_rdata		<= ~8'd64;
+								ff_rdata_en		<= 1'b1;
+								ff_bus_ready	<= 1'b0;
+							end
+							else begin
+								ff_rdata		<= 8'hFF;
+								ff_rdata_en		<= 1'b0;		//	invalid
+								ff_bus_ready	<= 1'b1;
+							end
+						end
+						4'd1: begin
+							//	41h: device enable
+							if( ff_device_en ) begin
+								ff_rdata		<= ~8'd01;
+								ff_rdata_en		<= 1'b1;
+								ff_bus_ready	<= 1'b0;
+							end
+							else begin
+								ff_rdata		<= 8'hFF;
+								ff_rdata_en		<= 1'b0;		//	invalid
+								ff_bus_ready	<= 1'b1;
+							end
+						end
+						default: begin
+							ff_rdata		<= 8'hFF;
+							ff_rdata_en		<= 1'b0;		//	invalid
+							ff_bus_ready	<= 1'b1;
+						end
+					endcase
+				end
+			end
+			else begin
+				ff_rdata_en		<= 1'b0;
+				ff_bus_ready	<= 1'b1;
+			end
+		end
+	end
 
-
-	bus_to_ahb_bridge u_bus_to_ahb_bridge (
-		.reset_n			( reset_n			),
-		.clk				( clk				),
-		.bus_cs				( bus_cs			),
-		.bus_address		( bus_address		),
-		.bus_write			( bus_write			),
-		.bus_valid			( bus_valid			),
-		.bus_ready			( bus_ready			),
-		.bus_wdata			( bus_wdata			),
-		.bus_rdata			( bus_rdata			),
-		.bus_rdata_en		( bus_rdata_en		),
-		.ahb_mst_valid		( w_hvalid_reg		),
-		.ahb_mst_ready		( w_hreadyout_reg	),
-		.ahb_mst_sel		( w_hsel_reg		),
-		.ahb_mst_trans		( w_htrans_reg		),
-		.ahb_mst_size		( w_hsize_reg		),
-		.ahb_mst_write		( w_hwrite_reg		),
-		.ahb_mst_addr		( w_haddr_reg		),
-		.ahb_mst_wdata		( w_hwdata_reg		),
-		.ahb_mst_rdata		( w_hrdata_reg		),
-		.ahb_mst_resp		( w_hresp_reg		)
+	ip_qspi_rom u_config_rom (
+		.reset				( ~reset_n															),		//	System Reset (Active High)
+		.clk				( clk																),		//	System Clock
+		.clk_serial			( clk_serial														),		//	Serial Clock (High speed)
+		.bus_cs				( w_bus_cs															),
+		.bus_address		( bus_address[0]													),
+		.bus_write			( bus_write															),
+		.bus_valid			( bus_valid															),
+		.bus_ready			( w_bus_ready														),
+		.bus_wdata			( bus_wdata															),
+		.bus_rdata			( w_bus_rdata														),
+		.bus_rdata_en		( w_bus_rdata_en													),
+		.srom0_cs_n			( 																	),
+		.srom1_cs_n			( flash_spi_cs_n													),
+		.srom_clk			( flash_spi_ck														),
+		.srom_sio			( {flash_spi_hold_n, flash_spi_wp_n, flash_spi_do, flash_spi_di}	)
 	);
 
-	SPI_Flash_Interface_Lite_Top u_spi_flash_if (
-		.I_hclk				( w_hclk			),		//	input I_hclk
-		.I_hresetn			( w_hresetn			),		//	input I_hresetn
-		.I_haddr_reg		( w_haddr_reg		),		//	input [31:0] I_haddr_reg
-		.O_hrdata_reg		( w_hrdata_reg		),		//	output [31:0] O_hrdata_reg
-		.I_hreadyin_reg		( w_hreadyin_reg	),		//	input I_hreadyin_reg
-		.O_hreadyout_reg	( w_hreadyout_reg	),		//	output O_hreadyout_reg
-		.O_hresp_reg		( w_hresp_reg		),		//	output [1:0] O_hresp_reg
-		.I_hsel_reg			( w_hsel_ip			),		//	input I_hsel_reg
-		.I_htrans_reg		( w_htrans_reg		),		//	input [1:0] I_htrans_reg
-		.I_hwdata_reg		( w_hwdata_reg		),		//	input [31:0] I_hwdata_reg
-		.I_hwrite_reg		( w_hwrite_reg		),		//	input I_hwrite_reg
-		.O_flash_ck			( flash_spi_ck		),		//	output O_flash_ck
-		.O_flash_cs_n		( flash_spi_cs_n	),		//	output O_flash_cs_n
-		.IO_flash_hold_n	( flash_spi_hold_n	),		//	inout IO_flash_hold_n
-		.IO_flash_wp_n		( flash_spi_wp_n	),		//	inout IO_flash_wp_n
-		.IO_flash_do		( flash_spi_do		),		//	inout IO_flash_do
-		.IO_flash_di		( flash_spi_di		)		//	inout IO_flash_di
-	);
+	assign w_bus_cs		= bus_cs & ff_extio_en & ff_device_en;
+	assign bus_ready	= ff_bus_ready & w_bus_ready;
+	assign bus_rdata	= w_bus_rdata_en ? w_bus_rdata : ff_rdata;
+	assign bus_rdata_en	= ff_rdata_en | w_bus_rdata_en;
 endmodule

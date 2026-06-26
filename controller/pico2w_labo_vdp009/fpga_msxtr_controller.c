@@ -7,7 +7,6 @@
 #include "hw_config.h"
 #include "keyboard.h"
 #include "vdp_control.h"
-#include "fpga_uart.h"
 #include "fpga_config.h"
 
 // I2C (キーボードコントローラー)
@@ -50,7 +49,7 @@ static char hex_to_char(uint8_t value) {
 
 // ---------------------------------------------------------
 static void dump_vdp_config_rom(void) {
-	char s_line[16 * 3 + 2];
+	char s_line[16 * 3 + 1];
 	char *p_dest;
 	int i, j;
 	uint8_t rom_data;
@@ -66,12 +65,10 @@ static void dump_vdp_config_rom(void) {
 				*p_dest++ = ' ';
 			}
 		}
-		*p_dest++ = '\r';
-		*p_dest++ = '\n';
 		*p_dest = '\0';
-		fpga_uart_puts(s_line);
+		printf("%s\r\n", s_line);
 	}
-	fpga_uart_puts("\r\n");
+	printf("----\r\n");
 }
 
 // ---------------------------------------------------------
@@ -218,8 +215,8 @@ int main(void) {
 	char s_keyline[32], *p_dest, *p_src;
 	int i, j;
 	uint8_t matrix;
-	uint64_t dump_start_time;
-	uint64_t dump_elapsed_us;
+	uint64_t step_start_time;
+	uint64_t step_elapsed_us;
 
 	stdio_init_all();
 	i2c0_init();
@@ -235,9 +232,8 @@ int main(void) {
 	vdp_set_screen1_font();
 	vdp_set_screen1_message();
 	while (true) {
-		dump_start_time = time_us_64();
+		step_start_time = time_us_64();
 		dump_vdp_config_rom();
-		dump_elapsed_us = time_us_64() - dump_start_time;
 
 		for( i = 0; i < 12; i++ ) {
 			matrix = keymatrix[i];
@@ -259,8 +255,9 @@ int main(void) {
 			vdp_ll_end();
 		}
 
-		if( dump_elapsed_us < 5000000ULL ) {
-			sleep_ms((uint32_t)((5000000ULL - dump_elapsed_us) / 1000ULL));
+		step_elapsed_us = time_us_64() - step_start_time;
+		if( step_elapsed_us < 5000000ULL ) {
+			sleep_ms((uint32_t)((5000000ULL - step_elapsed_us) / 1000ULL));
 		}
 	}
 	return 0;

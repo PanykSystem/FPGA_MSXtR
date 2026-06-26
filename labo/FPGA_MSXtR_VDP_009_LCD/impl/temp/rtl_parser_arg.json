@@ -2,10 +2,6 @@
  "Device" : "GW2AR-18C",
  "Files" : [
   {
-   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/bus_to_ahb_bridge/bus_to_ahb_bridge.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/config_rom/config_rom.v",
    "Type" : "verilog"
   },
@@ -23,6 +19,18 @@
   },
   {
    "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/gowin_rpll2/gowin_rpll2.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/qspi_rom/ip_qspi_rom.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/qspi_rom/qdpi.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/qspi_rom/qspi.v",
    "Type" : "verilog"
   },
   {

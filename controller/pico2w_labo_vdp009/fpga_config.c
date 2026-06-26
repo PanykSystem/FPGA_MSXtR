@@ -4,7 +4,20 @@
 #include "vdp_control.h"
 #include "fpga_config.h"
 
-static void fpga_config_rom_set_address(uint8_t base, uint32_t address) {
+static uint8_t ff_current_device_id = 0xFF;
+
+static void fpga_config_rom_ensure_device(uint8_t device_id) {
+	if( ff_current_device_id == device_id ) {
+		return;
+	}
+
+	fpga_config_write(FPGA_CONFIG_PORT_MANUFACTURER_ID, FPGA_CONFIG_MANUFACTURER_ID);
+	fpga_config_write(FPGA_CONFIG_PORT_DEVICE_ID, device_id);
+	ff_current_device_id = device_id;
+}
+
+static void fpga_config_rom_set_address(uint8_t base, uint8_t device_id, uint32_t address) {
+	fpga_config_rom_ensure_device(device_id);
 	fpga_config_write(base | FPGA_CONFIG_ROM_PORT_ADDR, (uint8_t)(address & 0xFF));
 	fpga_config_write(base | FPGA_CONFIG_ROM_PORT_ADDR, (uint8_t)((address >> 8) & 0xFF));
 	fpga_config_write(base | FPGA_CONFIG_ROM_PORT_ADDR, (uint8_t)((address >> 16) & 0xFF));
@@ -14,6 +27,9 @@ static void fpga_config_rom_set_address(uint8_t base, uint32_t address) {
 // ---------------------------------------------------------
 void fpga_config_write(uint8_t io_address, uint8_t data) {
 	uint8_t buf;
+	if( io_address == FPGA_CONFIG_PORT_MANUFACTURER_ID || io_address == FPGA_CONFIG_PORT_DEVICE_ID ) {
+		ff_current_device_id = 0xFF;
+	}
 
 	gpio_put(SPI0_CSN_PIN, 0);
 
@@ -75,6 +91,7 @@ uint8_t fpga_config_read(uint8_t io_address) {
 void fpga_config_rom_write_vdp(uint8_t port_offset, uint8_t data) {
 	uint8_t io_address;
 
+	fpga_config_rom_ensure_device(FPGA_CONFIG_DEVICE_ID_VDP);
 	io_address = FPGA_CONFIG_ROM_BASE_VDP | (port_offset & 0x01);
 	fpga_config_write(io_address, data);
 }
@@ -83,19 +100,21 @@ void fpga_config_rom_write_vdp(uint8_t port_offset, uint8_t data) {
 uint8_t fpga_config_rom_read_vdp(uint8_t port_offset) {
 	uint8_t io_address;
 
+	fpga_config_rom_ensure_device(FPGA_CONFIG_DEVICE_ID_VDP);
 	io_address = FPGA_CONFIG_ROM_BASE_VDP | (port_offset & 0x01);
 	return fpga_config_read(io_address);
 }
 
 // ---------------------------------------------------------
 void fpga_config_rom_set_address_vdp(uint32_t address) {
-	fpga_config_rom_set_address(FPGA_CONFIG_ROM_BASE_VDP, address);
+	fpga_config_rom_set_address(FPGA_CONFIG_ROM_BASE_VDP, FPGA_CONFIG_DEVICE_ID_VDP, address);
 }
 
 // ---------------------------------------------------------
 void fpga_config_rom_write_cpu(uint8_t port_offset, uint8_t data) {
 	uint8_t io_address;
 
+	fpga_config_rom_ensure_device(FPGA_CONFIG_DEVICE_ID_CPU);
 	io_address = FPGA_CONFIG_ROM_BASE_CPU | (port_offset & 0x01);
 	fpga_config_write(io_address, data);
 }
@@ -104,11 +123,12 @@ void fpga_config_rom_write_cpu(uint8_t port_offset, uint8_t data) {
 uint8_t fpga_config_rom_read_cpu(uint8_t port_offset) {
 	uint8_t io_address;
 
+	fpga_config_rom_ensure_device(FPGA_CONFIG_DEVICE_ID_CPU);
 	io_address = FPGA_CONFIG_ROM_BASE_CPU | (port_offset & 0x01);
 	return fpga_config_read(io_address);
 }
 
 // ---------------------------------------------------------
 void fpga_config_rom_set_address_cpu(uint32_t address) {
-	fpga_config_rom_set_address(FPGA_CONFIG_ROM_BASE_CPU, address);
+	fpga_config_rom_set_address(FPGA_CONFIG_ROM_BASE_CPU, FPGA_CONFIG_DEVICE_ID_CPU, address);
 }

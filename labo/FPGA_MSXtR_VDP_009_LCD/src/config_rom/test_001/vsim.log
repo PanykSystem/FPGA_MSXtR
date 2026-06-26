@@ -1,0 +1,30 @@
+# vsim -c work.tb_config_rom -l vsim.log -do "run -all; quit -f" 
+# Start time: 06:32:59 on Jun 26,2026
+# Loading work.tb_config_rom
+# Loading work.config_rom
+# Loading work.ip_qspi_rom
+# Loading work.qdpi
+# Loading work.qspi
+# Loading work.W25Q32JVxxIM
+# run -all
+# ** Warning: (vsim-7) Failed to open readmem file "SECSI.TXT" in read mode.
+# No such file or directory. (errno = ENOENT)    : ./W25Q32JVxxIM.v(357)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_config_rom/u_flash
+# ** Warning: (vsim-7) Failed to open readmem file "SFDP.TXT" in read mode.
+# No such file or directory. (errno = ENOENT)    : ./W25Q32JVxxIM.v(358)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_config_rom/u_flash
+# [TB] Enable ConfigROM access
+# [TB] read 0x40 = bf
+# [TB] read 0x41 = fe
+# [TB] Select Serial ROM #1
+# [TB] Set QE bit
+# [TB] Poll status busy bit
+# 
+# Command = 06
+# 
+# Command = 31
+# [TB][ERROR] bus_read8 data timeout. addr=03 time=402310
+# ** Note: $finish    : ./tb_config_rom.v(119)
+#    Time: 402310 ns  Iteration: 1  Instance: /tb_config_rom
+# End time: 06:32:59 on Jun 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
