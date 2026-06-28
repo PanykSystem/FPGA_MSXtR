@@ -119,7 +119,7 @@ module s2026b (
 	// ---------------------------------------------------------
 	assign w_vdp_cs			= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h98 ));
 	assign w_uart_cs		= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h10 ));
-	assign w_crom_cs		= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h20 ));
+	assign w_crom_cs		= (w_bus_io  && ( {w_bus_address[7:4], 4'd0} == 8'h40 ));
 	always @( posedge clk ) begin
 		if( w_vdp_cs && bus_vdp_rdata_en ) begin
 			ff_bus_rdata		<= bus_vdp_rdata;
