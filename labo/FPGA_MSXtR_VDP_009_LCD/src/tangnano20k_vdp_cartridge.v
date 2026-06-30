@@ -27,10 +27,10 @@ module tangnano20k_vdp_cartridge (
 	input	[1:0]	button,					//	button[0]	PIN88_MODE0_KEY1
 											//	button[1]	PIN87_MODE1_KEY2
 	//	Connect CPU
-	output			vdp_so_clk,				//	vdp_so_clk	PIN73
-	output	[1:0]	vdp_so,					//	vdp_so		PIN75, PIN74
-	input			vdp_si_clk,				//	vdp_si_clk	PIN85
-	input	[1:0]	vdp_si,					//	vdp_si		PIN16, PIN15
+	output			fpga_so_clk,			//	fpga_so_clk	PIN73
+	inout	[1:0]	fpga_so,				//	fpga_so		PIN75, PIN74
+	input			fpga_si_clk,			//	fpga_si_clk	PIN85
+	inout	[1:0]	fpga_si,				//	fpga_si		PIN16, PIN15
 	//	Connect Micom
 	input			spi_cs_n,				//	spi_cs_n	PIN17
 	input			spi_clk,				//	spi_clk		PIN20
@@ -111,11 +111,6 @@ module tangnano20k_vdp_cartridge (
 	reg				ff_reset_spi_n2 = 1'b0;		/* synthesis syn_preserve = 1 */
 	wire			reset_spi_n;
 
-	wire			w_bus_write;
-	wire			w_bus_valid;
-	wire	[7:0]	w_bus_wdata;
-	wire	[15:0]	w_bus_address;
-
 	wire			bus_ctrl0_io;
 	wire			bus_ctrl0_write;
 	wire			bus_ctrl0_valid;
@@ -134,9 +129,18 @@ module tangnano20k_vdp_cartridge (
 	wire	[7:0]	bus_ctrl1_rdata;
 	wire			bus_ctrl1_rdata_en;
 
+	wire			w_bus_write;
+	wire			w_bus_valid;
+	wire			w_bus_ready;
+	wire	[7:0]	w_bus_wdata;
+	wire	[15:0]	w_bus_address;
 	wire	[7:0]	w_bus_rdata;
 	wire			w_bus_rdata_en;
-	wire			w_bus_ready;
+
+	wire			w_bus_fpga_cs;
+	wire			w_bus_fpga_ready;
+	wire	[7:0]	w_bus_fpga_rdata;
+	wire			w_bus_fpga_rdata_en;
 
 	wire			w_bus_vdp_cs;
 	wire			w_bus_vdp_ready;
@@ -185,6 +189,11 @@ module tangnano20k_vdp_cartridge (
 	wire	[7:0]	w_green;
 	wire	[7:0]	w_blue;
 	wire			w_int_n;
+
+	wire	[31:0]	sound_l;
+	wire	[31:0]	sound_r;
+	wire			sound_valid;
+	wire			sound_ready;
 
 	always @( posedge clk85m ) begin
 		ff_reset_n0		<= 1'b1;
@@ -249,12 +258,6 @@ module tangnano20k_vdp_cartridge (
 	// --------------------------------------------------------------------
 	//	Access interface
 	// --------------------------------------------------------------------
-	assign bus_ctrl0_io			= 1'b0;
-	assign bus_ctrl0_write		= 1'b1;
-	assign bus_ctrl0_valid		= 1'b0;
-	assign bus_ctrl0_wdata		= 8'd0;
-	assign bus_ctrl0_address	= 16'd0;
-
 	assign w_bus_rdata		= ( w_bus_vdp_rdata_en		) ? w_bus_vdp_rdata: 8'hFF;
 	assign w_bus_rdata_en	= w_bus_vdp_rdata_en;
 	assign w_bus_ready		= w_bus_vdp_ready;
@@ -282,13 +285,57 @@ module tangnano20k_vdp_cartridge (
 	);
 
 	// --------------------------------------------------------------------
+	//	FPGA (CPU) connection
+	// --------------------------------------------------------------------
+	fpga_connect_master u_fpga_connect_master (
+		.reset_n				( reset_spi_n				),
+		.clk					( clk85m					),
+		.clk_serial				( clk215m					),
+		.bus_cs					( w_bus_fpga_cs				),
+		.bus_address			( w_bus_address[7:0]			),
+		.bus_write				( w_bus_write				),
+		.bus_wdata				( w_bus_wdata				),
+		.bus_valid				( w_bus_valid				),
+		.bus_ready				( w_bus_fpga_ready			),
+		.bus_rdata				( w_bus_fpga_rdata			),
+		.bus_rdata_en			( w_bus_fpga_rdata_en		),
+		.sound_l				( 32'd0						),
+		.sound_r				( 32'd0						),
+		.sound_valid			( 1'b0						),
+		.sound_ready			( 						),
+		.fpga_so_clk			( fpga_so_clk				),
+		.fpga_so				( fpga_so					)
+	);
+
+	fpga_connect_slave u_fpga_connect_slave (
+		.reset_n				( reset_spi_n				),
+		.clk					( clk85m					),
+		.clk_serial				( clk215m					),
+		.bus_address			( bus_ctrl0_address[7:0]	),
+		.bus_write				( bus_ctrl0_write			),
+		.bus_wdata				( bus_ctrl0_wdata			),
+		.bus_valid				( bus_ctrl0_valid			),
+		.bus_ready				( bus_ctrl0_ready			),
+		.bus_rdata				( bus_ctrl0_rdata			),
+		.bus_rdata_en			( bus_ctrl0_rdata_en		),
+		.sound_l				( sound_l					),
+		.sound_r				( sound_r					),
+		.sound_valid			( sound_valid				),
+		.sound_ready			( sound_ready				),
+		.fpga_si_clk			( fpga_si_clk				),
+		.fpga_si				( fpga_si					)
+	);
+
+	assign sound_ready = 1'b1;
+
+	// --------------------------------------------------------------------
 	//	System Controller
 	// --------------------------------------------------------------------
 	s2026b u_s2026b (
 		.reset_n				( reset_n					),
 		.clk					( clk85m					),
 		.sdram_init_busy		( w_sdram_init_busy			),
-		.bus_ctrl0_io			( bus_ctrl0_io				),
+		.bus_ctrl0_io			( 1'b1						),
 		.bus_ctrl0_write		( bus_ctrl0_write			),
 		.bus_ctrl0_valid		( bus_ctrl0_valid			),
 		.bus_ctrl0_ready		( bus_ctrl0_ready			),
@@ -308,6 +355,10 @@ module tangnano20k_vdp_cartridge (
 		.bus_valid				( w_bus_valid				),
 		.bus_wdata				( w_bus_wdata				),
 		.bus_address			( w_bus_address				),
+		.bus_fpga_cs			( w_bus_fpga_cs				),
+		.bus_fpga_rdata			( w_bus_fpga_rdata			),
+		.bus_fpga_rdata_en		( w_bus_fpga_rdata_en		),
+		.bus_fpga_ready			( w_bus_fpga_ready			),
 		.bus_vdp_cs				( w_bus_vdp_cs				),
 		.bus_vdp_rdata			( w_bus_vdp_rdata			),
 		.bus_vdp_rdata_en		( w_bus_vdp_rdata_en		),
@@ -326,42 +377,42 @@ module tangnano20k_vdp_cartridge (
 	//	V9968
 	// --------------------------------------------------------------------
 	vdp u_v9968 (
-		.reset_n			( reset_vdp_n				),
-		.clk				( clk85m					),
-		.initial_busy		( w_sdram_init_busy			),
-		.bus_address		( w_bus_address[2:0]		),
-		.bus_cs				( w_bus_vdp_cs				),
-		.bus_write			( w_bus_write				),
-		.bus_valid			( w_bus_valid				),
-		.bus_ready			( w_bus_vdp_ready			),
-		.bus_wdata			( w_bus_wdata				),
-		.bus_rdata			( w_bus_vdp_rdata			),
-		.bus_rdata_en		( w_bus_vdp_rdata_en		),
-		.int_n				( w_int_n					),
-		.vram_address		( w_sdram_address[17:2]		),
-		.vram_write			( w_sdram_write				),
-		.vram_valid			( w_sdram_valid				),
-		.vram_wdata			( w_sdram_wdata				),
-		.vram_wdata_mask	( w_sdram_wdata_mask		),
-		.vram_rdata			( w_sdram_rdata				),
-		.vram_rdata_en		( w_sdram_rdata_en			),
-		.vram_refresh		( w_sdram_refresh			),
-		.display_hs			( w_video_hs				),
-		.display_vs			( w_video_vs				),
-		.display_en			( w_video_de				),
-		.display_r			( w_video_r					),
-		.display_g			( w_video_g					),
-		.display_b			( w_video_b					),
-		.force_highspeed	( dipsw						),
-		.button				( button					),
-		.pulse0				( w_pulse0					),
-		.pulse1				( w_pulse1					),
-		.pulse2				( w_pulse2					),
-		.pulse3				( w_pulse3					),
-		.pulse4				( w_pulse4					),
-		.pulse5				( w_pulse5					),
-		.pulse6				( w_pulse6					),
-		.pulse7				( w_pulse7					)
+		.reset_n				( reset_vdp_n				),
+		.clk					( clk85m					),
+		.initial_busy			( w_sdram_init_busy			),
+		.bus_address			( w_bus_address[2:0]		),
+		.bus_cs					( w_bus_vdp_cs				),
+		.bus_write				( w_bus_write				),
+		.bus_valid				( w_bus_valid				),
+		.bus_ready				( w_bus_vdp_ready			),
+		.bus_wdata				( w_bus_wdata				),
+		.bus_rdata				( w_bus_vdp_rdata			),
+		.bus_rdata_en			( w_bus_vdp_rdata_en		),
+		.int_n					( w_int_n					),
+		.vram_address			( w_sdram_address[17:2]		),
+		.vram_write				( w_sdram_write				),
+		.vram_valid				( w_sdram_valid				),
+		.vram_wdata				( w_sdram_wdata				),
+		.vram_wdata_mask		( w_sdram_wdata_mask		),
+		.vram_rdata				( w_sdram_rdata				),
+		.vram_rdata_en			( w_sdram_rdata_en			),
+		.vram_refresh			( w_sdram_refresh			),
+		.display_hs				( w_video_hs				),
+		.display_vs				( w_video_vs				),
+		.display_en				( w_video_de				),
+		.display_r				( w_video_r					),
+		.display_g				( w_video_g					),
+		.display_b				( w_video_b					),
+		.force_highspeed		( dipsw						),
+		.button					( button					),
+		.pulse0					( w_pulse0					),
+		.pulse1					( w_pulse1					),
+		.pulse2					( w_pulse2					),
+		.pulse3					( w_pulse3					),
+		.pulse4					( w_pulse4					),
+		.pulse5					( w_pulse5					),
+		.pulse6					( w_pulse6					),
+		.pulse7					( w_pulse7					)
 	);
 
 	assign w_sdram_address[22:18]	= 5'd0;
@@ -370,125 +421,126 @@ module tangnano20k_vdp_cartridge (
 	//	UART
 	// --------------------------------------------------------------------
 	uart #(
-		.clk_uart_mhz		( 27.0						)
+		.clk_uart_mhz			( 27.0						)
 	) u_uart (
-		.reset_n			( reset_n					),
-		.clk				( clk85m					),
-		.clk_uart			( clk27m					),
-		.bus_uart_cs		( w_bus_uart_cs				),
-		.bus_valid			( w_bus_valid				),
-		.bus_write			( w_bus_write				),
-		.bus_ready			( w_bus_uart_ready			),
-		.bus_wdata			( w_bus_wdata				),
-		.bus_rdata			( w_bus_uart_rdata			),
-		.bus_rdata_en		( w_bus_uart_rdata_en		),
-		.uart_tx			( uart_tx					),
-		.button				( button					)
+		.reset_n				( reset_n					),
+		.clk					( clk85m					),
+		.clk_uart				( clk27m					),
+		.bus_uart_cs			( w_bus_uart_cs				),
+		.bus_valid				( w_bus_valid				),
+		.bus_write				( w_bus_write				),
+		.bus_ready				( w_bus_uart_ready			),
+		.bus_wdata				( w_bus_wdata				),
+		.bus_rdata				( w_bus_uart_rdata			),
+		.bus_rdata_en			( w_bus_uart_rdata_en		),
+		.uart_tx				( uart_tx					),
+		.button					( button					)
 	);
 
 	// --------------------------------------------------------------------
 	//	config ROM
 	// --------------------------------------------------------------------
 	config_rom u_config_rom (
-		.reset_n			( reset_n					),
-		.clk				( clk85m					),
-		.bus_cs				( w_bus_crom_cs				),
-		.bus_address		( w_bus_address[0]			),
-		.bus_write			( w_bus_write				),
-		.bus_valid			( w_bus_valid				),
-		.bus_ready			( w_bus_crom_ready			),
-		.bus_wdata			( w_bus_wdata				),
-		.bus_rdata			( w_bus_crom_rdata			),
-		.bus_rdata_en		( w_bus_crom_rdata_en		),
-		.flash_spi_cs_n		( flash_spi_cs_n			),
-		.flash_spi_ck		( flash_spi_clk				),
-		.flash_spi_hold_n	( flash_spi_hold_n			),
-		.flash_spi_wp_n		( flash_spi_wp_n			),
-		.flash_spi_do		( flash_spi_do				),
-		.flash_spi_di		( flash_spi_di				)
+		.reset_n				( reset_n					),
+		.clk					( clk85m					),
+		.clk_serial				( clk215m					),
+		.bus_cs					( w_bus_crom_cs				),
+		.bus_address			( w_bus_address[3:0]		),
+		.bus_write				( w_bus_write				),
+		.bus_valid				( w_bus_valid				),
+		.bus_ready				( w_bus_crom_ready			),
+		.bus_wdata				( w_bus_wdata				),
+		.bus_rdata				( w_bus_crom_rdata			),
+		.bus_rdata_en			( w_bus_crom_rdata_en		),
+		.flash_spi_cs_n			( flash_spi_cs_n			),
+		.flash_spi_ck			( flash_spi_clk				),
+		.flash_spi_hold_n		( flash_spi_hold_n			),
+		.flash_spi_wp_n			( flash_spi_wp_n			),
+		.flash_spi_do			( flash_spi_do				),
+		.flash_spi_di			( flash_spi_di				)
 	);
 
 	// --------------------------------------------------------------------
 	//	HDMI
 	// --------------------------------------------------------------------
 	DVI_TX_Top u_dvi (
-		.I_rst_n			( reset_n					),		//input I_rst_n
-		.I_serial_clk		( clk215m					),		//input I_serial_clk
-		.I_rgb_clk			( clk42m					),		//input I_rgb_clk
-		.I_rgb_vs			( w_video_vs				),		//input I_rgb_vs
-		.I_rgb_hs			( w_video_hs				),		//input I_rgb_hs
-		.I_rgb_de			( w_video_de				),		//input I_rgb_de
-		.I_rgb_r			( w_video_r					),		//input [7:0] I_rgb_r
-		.I_rgb_g			( w_video_g					),		//input [7:0] I_rgb_g
-		.I_rgb_b			( w_video_b					),		//input [7:0] I_rgb_b
-		.O_tmds_clk_p		( tmds_clk_p				),		//output O_tmds_clk_p
-		.O_tmds_clk_n		( tmds_clk_n				),		//output O_tmds_clk_n
-		.O_tmds_data_p		( tmds_d_p					),		//output [2:0] O_tmds_data_p
-		.O_tmds_data_n		( tmds_d_n					)		//output [2:0] O_tmds_data_n
+		.I_rst_n				( reset_n					),		//input I_rst_n
+		.I_serial_clk			( clk215m					),		//input I_serial_clk
+		.I_rgb_clk				( clk42m					),		//input I_rgb_clk
+		.I_rgb_vs				( w_video_vs				),		//input I_rgb_vs
+		.I_rgb_hs				( w_video_hs				),		//input I_rgb_hs
+		.I_rgb_de				( w_video_de				),		//input I_rgb_de
+		.I_rgb_r				( w_video_r					),		//input [7:0] I_rgb_r
+		.I_rgb_g				( w_video_g					),		//input [7:0] I_rgb_g
+		.I_rgb_b				( w_video_b					),		//input [7:0] I_rgb_b
+		.O_tmds_clk_p			( tmds_clk_p				),		//output O_tmds_clk_p
+		.O_tmds_clk_n			( tmds_clk_n				),		//output O_tmds_clk_n
+		.O_tmds_data_p			( tmds_d_p					),		//output [2:0] O_tmds_data_p
+		.O_tmds_data_n			( tmds_d_n					)		//output [2:0] O_tmds_data_n
 	);
 
 	// --------------------------------------------------------------------
 	//	SDRAM
 	// --------------------------------------------------------------------
 	ip_sdram #(
-		.FREQ				( 85_909_080				)		//	Hz
+		.FREQ					( 85_909_080				)		//	Hz
 	) u_sdram (
-		.reset_n			( reset_n					),
-		.clk				( clk85m					),		//	85.90908MHz
-		.clk_sdram			( clk85m_n					),
-		.sdram_init_busy	( w_sdram_init_busy			),
-		.bus_address		( w_sdram_address			),
-		.bus_valid			( w_sdram_valid				),
-		.bus_write			( w_sdram_write				),
-		.bus_refresh		( w_sdram_refresh			),
-		.bus_wdata			( w_sdram_wdata				),
-		.bus_wdata_mask		( w_sdram_wdata_mask		),
-		.bus_rdata			( w_sdram_rdata				),
-		.bus_rdata_en		( w_sdram_rdata_en			),
-		.O_sdram_clk		( O_sdram_clk				),
-		.O_sdram_cke		( O_sdram_cke				),
-		.O_sdram_cs_n		( O_sdram_cs_n				),		// chip select
-		.O_sdram_ras_n		( O_sdram_ras_n				),		// row address select
-		.O_sdram_cas_n		( O_sdram_cas_n				),		// columns address select
-		.O_sdram_wen_n		( O_sdram_wen_n				),		// write enable
-		.IO_sdram_dq		( IO_sdram_dq				),		// 32 bit bidirectional data bus
-		.O_sdram_addr		( O_sdram_addr				),		// 11 bit multiplexed address bus
-		.O_sdram_ba			( O_sdram_ba				),		// two banks
-		.O_sdram_dqm		( O_sdram_dqm				)		// data mask
+		.reset_n				( reset_n					),
+		.clk					( clk85m					),		//	85.90908MHz
+		.clk_sdram				( clk85m_n					),
+		.sdram_init_busy		( w_sdram_init_busy			),
+		.bus_address			( w_sdram_address			),
+		.bus_valid				( w_sdram_valid				),
+		.bus_write				( w_sdram_write				),
+		.bus_refresh			( w_sdram_refresh			),
+		.bus_wdata				( w_sdram_wdata				),
+		.bus_wdata_mask			( w_sdram_wdata_mask		),
+		.bus_rdata				( w_sdram_rdata				),
+		.bus_rdata_en			( w_sdram_rdata_en			),
+		.O_sdram_clk			( O_sdram_clk				),
+		.O_sdram_cke			( O_sdram_cke				),
+		.O_sdram_cs_n			( O_sdram_cs_n				),		// chip select
+		.O_sdram_ras_n			( O_sdram_ras_n				),		// row address select
+		.O_sdram_cas_n			( O_sdram_cas_n				),		// columns address select
+		.O_sdram_wen_n			( O_sdram_wen_n				),		// write enable
+		.IO_sdram_dq			( IO_sdram_dq				),		// 32 bit bidirectional data bus
+		.O_sdram_addr			( O_sdram_addr				),		// 11 bit multiplexed address bus
+		.O_sdram_ba				( O_sdram_ba				),		// two banks
+		.O_sdram_dqm			( O_sdram_dqm				)		// data mask
 	);
 
 	// --------------------------------------------------------------------
 	//	Debug LED
 	// --------------------------------------------------------------------
 	ip_ws2812_led u_led (
-		.reset_n			( reset_n					),
-		.clk				( clk85m					),
-		.wr					( w_wr						),
-		.sending			( w_sending					),
-		.red				( w_red						),
-		.green				( w_green					),
-		.blue				( w_blue					),
-		.ws2812_led			( ws2812					)
+		.reset_n				( reset_n					),
+		.clk					( clk85m					),
+		.wr						( w_wr						),
+		.sending				( w_sending					),
+		.red					( w_red						),
+		.green					( w_green					),
+		.blue					( w_blue					),
+		.ws2812_led				( ws2812					)
 	);
 
 	// --------------------------------------------------------------------
 	//	Debugger
 	// --------------------------------------------------------------------
 	ip_debugger u_debugger (
-		.reset_n			( reset_n					),
-		.clk				( clk85m					),
-		.pulse0				( w_pulse0					),
-		.pulse1				( w_pulse1					),
-		.pulse2				( w_pulse2					),
-		.pulse3				( w_pulse3					),
-		.pulse4				( w_pulse4					),
-		.pulse5				( w_pulse5					),
-		.pulse6				( w_pulse6					),
-		.pulse7				( w_pulse7					),
-		.wr					( w_wr						),
-		.sending			( w_sending					),
-		.red				( w_red						),
-		.green				( w_green					),
-		.blue				( w_blue					)
+		.reset_n				( reset_n					),
+		.clk					( clk85m					),
+		.pulse0					( w_pulse0					),
+		.pulse1					( w_pulse1					),
+		.pulse2					( w_pulse2					),
+		.pulse3					( w_pulse3					),
+		.pulse4					( w_pulse4					),
+		.pulse5					( w_pulse5					),
+		.pulse6					( w_pulse6					),
+		.pulse7					( w_pulse7					),
+		.wr						( w_wr						),
+		.sending				( w_sending					),
+		.red					( w_red						),
+		.green					( w_green					),
+		.blue					( w_blue					)
 	);
 endmodule

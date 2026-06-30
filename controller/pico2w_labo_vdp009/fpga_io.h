@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-//	fpga_uart.h
+//	fpga_io.h
 //	Copyright (C)2026 Takayuki Hara (HRA!)
 //	
 //	 Permission is hereby granted, free of charge, to any person obtaining a 
@@ -21,10 +21,30 @@
 //	in the Software.
 // -----------------------------------------------------------------------------
 
-#ifndef __FPGA_UART_H__
-#define __FPGA_UART_H__
+#ifndef __FPGA_IO_H__
+#define __FPGA_IO_H__
 
-void fpga_uart_putc( char c );
-void fpga_uart_puts( const char *s );
+#include "pico/stdlib.h"
+
+#define IO_UART						0x10
+
+#define IO_EXTIO_MANUFACTURER_ID	0x40
+#define IO_EXTIO_DEVICE_ID			0x41
+#define IO_EXTIO_ROM_COMMAND_PORT	0x42
+#define IO_EXTIO_ROM_DATA_PORT		0x43
+
+#define IO_VDP_PORT0				0x98
+#define IO_VDP_PORT1				0x99
+#define IO_VDP_PORT2				0x9A
+#define IO_VDP_PORT3				0x9B
+#define IO_VDP_PORT4				0x9C
+
+void fpga_io_init( void );
+void fpga_outport( uint8_t io_address, uint8_t data );
+uint8_t fpga_inport( uint8_t io_address );
+void fpga_outport_bulk( uint8_t io_address, uint8_t data );
+uint8_t fpga_inport_bulk( uint8_t io_address );
+void vdp_ll_begin( void );
+void vdp_ll_end( void );
 
 #endif

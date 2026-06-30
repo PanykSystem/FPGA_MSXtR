@@ -57,6 +57,7 @@ module ip_spi (
 	localparam		ST_WDATA		= 3'd3;
 	localparam		ST_DO			= 3'd4;
 	localparam		ST_SEND			= 3'd5;
+	localparam		ST_WAIT_RDATA	= 3'd6;
 	reg				ff_spi_cs_n_pre;
 	reg				ff_spi_cs_n;
 	reg		[2:0]	ff_state;
@@ -73,7 +74,7 @@ module ip_spi (
 	reg				ff_bus_write;
 	reg				ff_bus_valid;
 
-	always @( posedge clk or negedge reset_n ) begin
+	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_spi_cs_n_pre <= 1'b1;
 			ff_spi_cs_n     <= 1'b1;
@@ -87,7 +88,7 @@ module ip_spi (
 	// ---------------------------------------------------------
 	//	State machine
 	// ---------------------------------------------------------
-	always @( posedge clk or negedge reset_n ) begin
+	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_state		<= ST_IDLE;
 			ff_bus_address	<= 16'd0;
@@ -98,13 +99,11 @@ module ip_spi (
 			ff_spi_wdata	<= 8'd0;
 			ff_spi_write	<= 1'b0;
 			ff_spi_valid	<= 1'b0;
-			ff_spi_intr		<= 1'b0;
 		end
 		else if( ff_state == ST_SEND ) begin
 			if( ff_spi_valid && spi_ready ) begin
 				ff_spi_valid	<= 1'b0;
 				ff_spi_write	<= 1'b0;
-				ff_spi_intr		<= 1'b0;
 				if( ff_spi_cs_n ) begin
 					ff_state <= ST_IDLE;
 				end
@@ -127,15 +126,18 @@ module ip_spi (
 						ff_spi_valid	<= 1'b1;
 						ff_spi_write	<= 1'b0;
 					end
-					ff_spi_intr		<= 1'b0;
 				end
 				else begin
-					ff_state		<= ST_SEND;
-					ff_spi_wdata	<= bus_rdata;
-					ff_spi_valid	<= 1'b1;
-					ff_spi_write	<= 1'b1;
-					ff_spi_intr		<= 1'b1;
+					ff_state		<= ST_WAIT_RDATA;
 				end
+			end
+		end
+		else if( ff_state == ST_WAIT_RDATA ) begin
+			if( bus_rdata_en ) begin
+				ff_state		<= ST_SEND;
+				ff_spi_wdata	<= bus_rdata;
+				ff_spi_valid	<= 1'b1;
+				ff_spi_write	<= 1'b1;
 			end
 		end
 		else if( ff_spi_cs_n ) begin
@@ -211,6 +213,25 @@ module ip_spi (
 				ff_state <= ST_COMMAND;
 			end
 			endcase
+		end
+	end
+
+	// ---------------------------------------------------------
+	// 	SPI interrupt control
+	// 	Set on bus_rdata_en, clear only after spi_clk goes high.
+	// ---------------------------------------------------------
+	always @( posedge clk ) begin
+		if( !reset_n ) begin
+			ff_spi_intr	<= 1'b0;
+		end
+		else if( ff_spi_cs_n ) begin
+			ff_spi_intr	<= 1'b0;
+		end
+		else if( ff_state == ST_WAIT_RDATA && bus_rdata_en ) begin
+			ff_spi_intr	<= 1'b1;
+		end
+		else if( ff_spi_intr && spi_clk ) begin
+			ff_spi_intr	<= 1'b0;
 		end
 	end
 

@@ -11,25 +11,30 @@ module tb;
 	wire			vdp_so_clk;
 	wire	[1:0]	vdp_so;
 	reg				vdp_si_clk;
-	reg		[1:0]	vdp_si;
+	tri		[1:0]	vdp_si;
 	reg				spi_cs_n;
 	reg				spi_clk;
 	reg				spi_mosi;
 	wire			spi_miso;
 	wire			spi_intr;
-	wire			pa_en;
-	reg				i2s_bclk;
-	reg				i2s_lrck;
-	reg				i2s_din;
-	wire			intr;
+	wire			flash_spi_cs_n;
+	wire			flash_spi_clk;
+	tri				flash_spi_hold_n;
+	tri				flash_spi_wp_n;
+	tri				flash_spi_do;
+	tri				flash_spi_di;
 	wire			ws2812;
 	wire			uart_tx;
 	reg				dipsw;
 	wire			led;
-	wire			tmds_clk_p;
-	wire			tmds_clk_n;
-	wire	[2:0]	tmds_d_p;
-	wire	[2:0]	tmds_d_n;
+	wire			lcd_clk;
+	wire			lcd_de;
+	wire			lcd_hsync;
+	wire			lcd_vsync;
+	wire	[4:0]	lcd_red;
+	wire	[5:0]	lcd_green;
+	wire	[4:0]	lcd_blue;
+	wire			lcd_bl;
 	wire			O_sdram_clk;
 	wire			O_sdram_cke;
 	wire			O_sdram_cs_n;
@@ -60,42 +65,47 @@ module tb;
 	// --------------------------------------------------------------------
 	//	DUT
 	// --------------------------------------------------------------------
-	tangnano20k_vdp_cartridge u_dut (
-		.clk27m			( clk27m		),
-		.clk14m			( clk14m		),
-		.button			( button		),
-		.vdp_so_clk		( vdp_so_clk	),
-		.vdp_so			( vdp_so		),
-		.vdp_si_clk		( vdp_si_clk	),
-		.vdp_si			( vdp_si		),
-		.spi_cs_n		( spi_cs_n		),
-		.spi_clk		( spi_clk		),
-		.spi_mosi		( spi_mosi		),
-		.spi_miso		( spi_miso		),
-		.spi_intr		( spi_intr		),
-		.pa_en			( pa_en			),
-		.i2s_bclk		( i2s_bclk		),
-		.i2s_lrck		( i2s_lrck		),
-		.i2s_din		( i2s_din		),
-		.intr			( intr			),
-		.ws2812			( ws2812		),
-		.uart_tx		( uart_tx		),
-		.dipsw			( dipsw			),
-		.led			( led			),
-		.tmds_clk_p		( tmds_clk_p	),
-		.tmds_clk_n		( tmds_clk_n	),
-		.tmds_d_p		( tmds_d_p		),
-		.tmds_d_n		( tmds_d_n		),
-		.O_sdram_clk	( O_sdram_clk	),
-		.O_sdram_cke	( O_sdram_cke	),
-		.O_sdram_cs_n	( O_sdram_cs_n	),
-		.O_sdram_cas_n	( O_sdram_cas_n	),
-		.O_sdram_ras_n	( O_sdram_ras_n	),
-		.O_sdram_wen_n	( O_sdram_wen_n	),
-		.IO_sdram_dq	( IO_sdram_dq	),
-		.O_sdram_addr	( O_sdram_addr	),
-		.O_sdram_ba		( O_sdram_ba	),
-		.O_sdram_dqm	( O_sdram_dqm	)
+	tangnano20k_vdp_cartridge_lcd u_dut (
+		.clk27m				( clk27m			),
+		.clk14m				( clk14m			),
+		.button				( button			),
+		.fpga_so_clk		( vdp_so_clk		),
+		.fpga_so			( vdp_so			),
+		.fpga_si_clk		( vdp_si_clk		),
+		.fpga_si			( vdp_si			),
+		.spi_cs_n			( spi_cs_n			),
+		.spi_clk			( spi_clk			),
+		.spi_mosi			( spi_mosi			),
+		.spi_miso			( spi_miso			),
+		.spi_intr			( spi_intr			),
+		.flash_spi_cs_n		( flash_spi_cs_n	),
+		.flash_spi_clk		( flash_spi_clk		),
+		.flash_spi_hold_n	( flash_spi_hold_n	),
+		.flash_spi_wp_n		( flash_spi_wp_n	),
+		.flash_spi_do		( flash_spi_do		),
+		.flash_spi_di		( flash_spi_di		),
+		.ws2812				( ws2812			),
+		.uart_tx			( uart_tx			),
+		.dipsw				( dipsw				),
+		.led				( led				),
+		.lcd_clk			( lcd_clk			),
+		.lcd_de				( lcd_de				),
+		.lcd_hsync			( lcd_hsync			),
+		.lcd_vsync			( lcd_vsync			),
+		.lcd_red			( lcd_red			),
+		.lcd_green			( lcd_green			),
+		.lcd_blue			( lcd_blue			),
+		.lcd_bl				( lcd_bl				),
+		.O_sdram_clk		( O_sdram_clk		),
+		.O_sdram_cke		( O_sdram_cke		),
+		.O_sdram_cs_n		( O_sdram_cs_n		),
+		.O_sdram_cas_n		( O_sdram_cas_n		),
+		.O_sdram_ras_n		( O_sdram_ras_n		),
+		.O_sdram_wen_n		( O_sdram_wen_n		),
+		.IO_sdram_dq		( IO_sdram_dq		),
+		.O_sdram_addr		( O_sdram_addr		),
+		.O_sdram_ba			( O_sdram_ba		),
+		.O_sdram_dqm		( O_sdram_dqm		)
 	);
 
 	always #(CLK14M_PERIOD_PS / 2.0) begin
@@ -149,13 +159,9 @@ module tb;
 		clk14m = 1'b0;
 		button = 2'd0;
 		vdp_si_clk = 1'b0;
-		vdp_si = 2'd0;
 		spi_cs_n = 1'b1;
 		spi_clk = 1'b0;
 		spi_mosi = 1'b0;
-		i2s_bclk = 1'b0;
-		i2s_lrck = 1'b0;
-		i2s_din = 1'b0;
 		dipsw = 1'b0;
 
 		repeat(5000) @(posedge clk14m);

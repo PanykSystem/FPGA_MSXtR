@@ -104,56 +104,107 @@ module fpga_connect_slave (
 	reg				ff_read_reply_toggle_sync1;
 	reg				ff_read_reply_toggle_sync2;
 
-	reg		[7:0]	ff_tx_read_data;
-	reg				ff_read_ready;
+	reg				ff_si_clk_sync0;
+	reg				ff_si_clk_sync1;
+	reg		[1:0]	ff_si_sync0;
+	reg		[1:0]	ff_tx_pair;
 
-	wire		[1:0]	w_si_in;
+	reg				ff_read_ready;
+	reg				ff_read_ready_seen;
+
+	wire	[1:0]	w_si_in;
 	wire			w_ev_io_write;
 	wire			w_ev_io_read;
 	wire			w_ev_sound;
 	wire			w_read_reply_event;
 	wire			w_read_drive;
-	wire		[1:0]	w_read_pair;
+	wire			w_si_clk_rise;
+	wire			w_si_clk_fall;
 
 	function [1:0] f_get_pair8;
 		input [7:0] data;
 		input [1:0] index;
 		begin
 			case( index )
-			2'd0: f_get_pair8 = data[7:6];
-			2'd1: f_get_pair8 = data[5:4];
-			2'd2: f_get_pair8 = data[3:2];
-			default: f_get_pair8 = data[1:0];
+			2'd0:		f_get_pair8 = data[7:6];
+			2'd1:		f_get_pair8 = data[5:4];
+			2'd2:		f_get_pair8 = data[3:2];
+			default:	f_get_pair8 = data[1:0];
 			endcase
 		end
 	endfunction
 
-	assign w_si_in				= fpga_si;
 	assign w_ev_io_write		= ff_ev_io_write_sync1 ^ ff_ev_io_write_sync2;
-	assign w_ev_io_read		= ff_ev_io_read_sync1 ^ ff_ev_io_read_sync2;
+	assign w_ev_io_read			= ff_ev_io_read_sync1 ^ ff_ev_io_read_sync2;
 	assign w_ev_sound			= ff_ev_sound_sync1 ^ ff_ev_sound_sync2;
 	assign w_read_reply_event	= ff_read_reply_toggle_sync1 ^ ff_read_reply_toggle_sync2;
-	assign w_read_drive		= (ff_rx_mode == c_mode_io_read) && (ff_rx_bit_index >= 6'd5) && (ff_rx_bit_index <= 6'd9);
-	assign w_read_pair		= (ff_rx_bit_index == 6'd5) ? (ff_read_ready ? 2'b11 : 2'b00):
-									f_get_pair8( ff_tx_read_data, ff_rx_bit_index[1:0] - 2'd2 );
+	assign w_read_drive			= (ff_rx_mode == c_mode_io_read) && (ff_rx_bit_index >= 6'd5) && (ff_rx_bit_index <= 6'd9);
+	assign w_si_clk_rise		= ff_si_clk_sync0 && !ff_si_clk_sync1;
+	assign w_si_clk_fall		= !ff_si_clk_sync0 && ff_si_clk_sync1;
 
-	//	fpga_si_clk domain: receive serial stream
-	always @( posedge fpga_si_clk ) begin
+	assign w_si_in				= ff_si_sync0;
+
+	//	clk_serial domain: synchronize GPIO serial clock/data inputs
+	always @( posedge clk_serial ) begin
 		if( !reset_n ) begin
-			ff_rx_bit_index		<= 6'd0;
-			ff_rx_mode			<= c_mode_io_write;
-			ff_rx_address		<= 8'd0;
-			ff_rx_wdata			<= 8'd0;
-			ff_rx_sound_l		<= 32'd0;
-			ff_rx_sound_r		<= 32'd0;
-			ff_ev_io_write_toggle	<= 1'b0;
-			ff_ev_io_read_toggle	<= 1'b0;
-			ff_ev_sound_toggle	<= 1'b0;
-			ff_tx_read_data		<= 8'hFF;
-			ff_read_ready		<= 1'b0;
+			ff_si_clk_sync0 <= 1'b0;
+			ff_si_clk_sync1 <= 1'b0;
+			ff_si_sync0 <= 2'b00;
+			ff_tx_pair <= 2'b00;
+			ff_read_reply_data_sync0 <= 8'hFF;
+			ff_read_reply_data_sync1 <= 8'hFF;
+			ff_read_reply_toggle_sync0 <= 1'b0;
+			ff_read_reply_toggle_sync1 <= 1'b0;
+			ff_read_reply_toggle_sync2 <= 1'b0;
 		end
 		else begin
-			if( ff_rx_bit_index == 6'd0 ) begin
+			ff_si_clk_sync0 <= fpga_si_clk;
+			ff_si_clk_sync1 <= ff_si_clk_sync0;
+			ff_si_sync0 <= fpga_si;
+			ff_read_reply_data_sync0 <= ff_read_reply_data;
+			ff_read_reply_data_sync1 <= ff_read_reply_data_sync0;
+			ff_read_reply_toggle_sync0 <= ff_read_reply_toggle;
+			ff_read_reply_toggle_sync1 <= ff_read_reply_toggle_sync0;
+			ff_read_reply_toggle_sync2 <= ff_read_reply_toggle_sync1;
+
+			if( w_si_clk_fall ) begin
+				if( (ff_rx_mode == c_mode_io_read) && (ff_rx_bit_index >= 6'd5) && (ff_rx_bit_index <= 6'd9) ) begin
+					if( ff_rx_bit_index == 6'd5 ) begin
+						ff_tx_pair <= ff_read_ready ? 2'b11: 2'b00;
+					end
+					else begin
+						ff_tx_pair <= f_get_pair8( ff_read_reply_data_sync1, ff_rx_bit_index[1:0] - 2'd2 );
+					end
+				end
+				else begin
+					ff_tx_pair <= 2'b00;
+				end
+			end
+		end
+	end
+
+	//	clk_serial domain: receive serial stream (triggered by synchronized fpga_si_clk rising edge)
+	always @( posedge clk_serial ) begin
+		if( !reset_n ) begin
+			ff_rx_bit_index			<= 6'd0;
+			ff_rx_mode				<= c_mode_io_write;
+			ff_rx_address			<= 8'd0;
+			ff_rx_wdata				<= 8'd0;
+			ff_rx_sound_l			<= 32'd0;
+			ff_rx_sound_r			<= 32'd0;
+			ff_ev_io_write_toggle	<= 1'b0;
+			ff_ev_io_read_toggle	<= 1'b0;
+			ff_ev_sound_toggle		<= 1'b0;
+			ff_read_ready			<= 1'b0;
+			ff_read_ready_seen		<= 1'b0;
+		end
+		else begin
+			if( w_read_reply_event && (ff_rx_mode == c_mode_io_read) && (ff_rx_bit_index >= 6'd5) && (ff_rx_bit_index <= 6'd9) ) begin
+				ff_read_ready <= 1'b1;
+			end
+
+			if( w_si_clk_rise ) begin
+				if( ff_rx_bit_index == 6'd0 ) begin
 				if( (w_si_in === c_mode_io_write) || (w_si_in === c_mode_io_read) || (w_si_in === c_mode_sound_send) ) begin
 					ff_rx_mode		<= w_si_in;
 					ff_rx_bit_index	<= 6'd1;
@@ -161,112 +212,121 @@ module fpga_connect_slave (
 				else begin
 					ff_rx_bit_index	<= 6'd0;
 				end
-			end
-			else begin
-				case( ff_rx_mode )
-				c_mode_io_write: begin
-					case( ff_rx_bit_index )
-					6'd1: ff_rx_address[7:6] <= w_si_in;
-					6'd2: ff_rx_address[5:4] <= w_si_in;
-					6'd3: ff_rx_address[3:2] <= w_si_in;
-					6'd4: ff_rx_address[1:0] <= w_si_in;
-					6'd5: ff_rx_wdata[7:6] <= w_si_in;
-					6'd6: ff_rx_wdata[5:4] <= w_si_in;
-					6'd7: ff_rx_wdata[3:2] <= w_si_in;
-					6'd8: ff_rx_wdata[1:0] <= w_si_in;
-					default: begin end
-					endcase
-
-					if( ff_rx_bit_index == 6'd8 ) begin
-						ff_ev_io_write_toggle	<= ~ff_ev_io_write_toggle;
-						ff_rx_bit_index			<= 6'd0;
-					end
-					else begin
-						ff_rx_bit_index <= ff_rx_bit_index + 6'd1;
-					end
 				end
+				else begin
+					case( ff_rx_mode )
+					c_mode_io_write: begin
+						case( ff_rx_bit_index )
+						6'd1: ff_rx_address[7:6] <= w_si_in;
+						6'd2: ff_rx_address[5:4] <= w_si_in;
+						6'd3: ff_rx_address[3:2] <= w_si_in;
+						6'd4: ff_rx_address[1:0] <= w_si_in;
+						6'd5: ff_rx_wdata[7:6] <= w_si_in;
+						6'd6: ff_rx_wdata[5:4] <= w_si_in;
+						6'd7: ff_rx_wdata[3:2] <= w_si_in;
+						6'd8: ff_rx_wdata[1:0] <= w_si_in;
+						default: begin end
+						endcase
 
-				c_mode_io_read: begin
-					case( ff_rx_bit_index )
-					6'd1: ff_rx_address[7:6] <= w_si_in;
-					6'd2: ff_rx_address[5:4] <= w_si_in;
-					6'd3: ff_rx_address[3:2] <= w_si_in;
-					6'd4: ff_rx_address[1:0] <= w_si_in;
-					default: begin end
-					endcase
-
-					if( ff_rx_bit_index == 6'd4 ) begin
-						ff_ev_io_read_toggle	<= ~ff_ev_io_read_toggle;
-						ff_read_ready		<= 1'b0;
-						ff_rx_bit_index		<= 6'd5;
-					end
-					else if( ff_rx_bit_index == 6'd5 ) begin
-						if( ff_read_ready ) begin
-							ff_rx_bit_index <= 6'd6;
+						if( ff_rx_bit_index == 6'd8 ) begin
+							ff_ev_io_write_toggle	<= ~ff_ev_io_write_toggle;
+							ff_rx_bit_index			<= 6'd0;
 						end
 						else begin
-							ff_rx_bit_index <= 6'd5;
+							ff_rx_bit_index <= ff_rx_bit_index + 6'd1;
 						end
 					end
-					else if( ff_rx_bit_index == 6'd9 ) begin
+
+					c_mode_io_read: begin
+						case( ff_rx_bit_index )
+						6'd1: ff_rx_address[7:6] <= w_si_in;
+						6'd2: ff_rx_address[5:4] <= w_si_in;
+						6'd3: ff_rx_address[3:2] <= w_si_in;
+						6'd4: ff_rx_address[1:0] <= w_si_in;
+						default: begin end
+						endcase
+
+						if( ff_rx_bit_index == 6'd4 ) begin
+							ff_ev_io_read_toggle	<= ~ff_ev_io_read_toggle;
+							ff_read_ready			<= 1'b0;
+							ff_read_ready_seen	<= 1'b0;
+							ff_rx_bit_index			<= 6'd5;
+						end
+						else if( ff_rx_bit_index == 6'd5 ) begin
+							if( ff_read_ready ) begin
+								if( ff_read_ready_seen ) begin
+									ff_rx_bit_index <= 6'd6;
+								end
+								else begin
+									ff_read_ready_seen <= 1'b1;
+									ff_rx_bit_index <= 6'd5;
+								end
+							end
+							else begin
+								ff_rx_bit_index <= 6'd5;
+							end
+						end
+						else if( ff_rx_bit_index == 6'd9 ) begin
+							ff_rx_bit_index		<= 6'd0;
+							ff_read_ready		<= 1'b0;
+							ff_read_ready_seen	<= 1'b0;
+						end
+						else begin
+							ff_rx_bit_index <= ff_rx_bit_index + 6'd1;
+						end
+					end
+
+					c_mode_sound_send: begin
+						case( ff_rx_bit_index )
+						6'd1:	ff_rx_sound_l[31:30] <= w_si_in;
+						6'd2:	ff_rx_sound_l[29:28] <= w_si_in;
+						6'd3:	ff_rx_sound_l[27:26] <= w_si_in;
+						6'd4:	ff_rx_sound_l[25:24] <= w_si_in;
+						6'd5:	ff_rx_sound_l[23:22] <= w_si_in;
+						6'd6:	ff_rx_sound_l[21:20] <= w_si_in;
+						6'd7:	ff_rx_sound_l[19:18] <= w_si_in;
+						6'd8:	ff_rx_sound_l[17:16] <= w_si_in;
+						6'd9:	ff_rx_sound_l[15:14] <= w_si_in;
+						6'd10:	ff_rx_sound_l[13:12] <= w_si_in;
+						6'd11:	ff_rx_sound_l[11:10] <= w_si_in;
+						6'd12:	ff_rx_sound_l[9:8] <= w_si_in;
+						6'd13:	ff_rx_sound_l[7:6] <= w_si_in;
+						6'd14:	ff_rx_sound_l[5:4] <= w_si_in;
+						6'd15:	ff_rx_sound_l[3:2] <= w_si_in;
+						6'd16:	ff_rx_sound_l[1:0] <= w_si_in;
+						6'd17:	ff_rx_sound_r[31:30] <= w_si_in;
+						6'd18:	ff_rx_sound_r[29:28] <= w_si_in;
+						6'd19:	ff_rx_sound_r[27:26] <= w_si_in;
+						6'd20:	ff_rx_sound_r[25:24] <= w_si_in;
+						6'd21:	ff_rx_sound_r[23:22] <= w_si_in;
+						6'd22:	ff_rx_sound_r[21:20] <= w_si_in;
+						6'd23:	ff_rx_sound_r[19:18] <= w_si_in;
+						6'd24:	ff_rx_sound_r[17:16] <= w_si_in;
+						6'd25:	ff_rx_sound_r[15:14] <= w_si_in;
+						6'd26:	ff_rx_sound_r[13:12] <= w_si_in;
+						6'd27:	ff_rx_sound_r[11:10] <= w_si_in;
+						6'd28:	ff_rx_sound_r[9:8] <= w_si_in;
+						6'd29:	ff_rx_sound_r[7:6] <= w_si_in;
+						6'd30:	ff_rx_sound_r[5:4] <= w_si_in;
+						6'd31:	ff_rx_sound_r[3:2] <= w_si_in;
+						6'd32:	ff_rx_sound_r[1:0] <= w_si_in;
+						default: begin end
+						endcase
+
+						if( ff_rx_bit_index == 6'd32 ) begin
+							ff_ev_sound_toggle	<= ~ff_ev_sound_toggle;
+							ff_rx_bit_index		<= 6'd0;
+						end
+						else begin
+							ff_rx_bit_index <= ff_rx_bit_index + 6'd1;
+						end
+					end
+
+					default: begin
 						ff_rx_bit_index <= 6'd0;
-						ff_read_ready <= 1'b0;
 					end
-					else begin
-						ff_rx_bit_index <= ff_rx_bit_index + 6'd1;
-					end
-				end
-
-				c_mode_sound_send: begin
-					case( ff_rx_bit_index )
-					6'd1:	ff_rx_sound_l[31:30] <= w_si_in;
-					6'd2:	ff_rx_sound_l[29:28] <= w_si_in;
-					6'd3:	ff_rx_sound_l[27:26] <= w_si_in;
-					6'd4:	ff_rx_sound_l[25:24] <= w_si_in;
-					6'd5:	ff_rx_sound_l[23:22] <= w_si_in;
-					6'd6:	ff_rx_sound_l[21:20] <= w_si_in;
-					6'd7:	ff_rx_sound_l[19:18] <= w_si_in;
-					6'd8:	ff_rx_sound_l[17:16] <= w_si_in;
-					6'd9:	ff_rx_sound_l[15:14] <= w_si_in;
-					6'd10:	ff_rx_sound_l[13:12] <= w_si_in;
-					6'd11:	ff_rx_sound_l[11:10] <= w_si_in;
-					6'd12:	ff_rx_sound_l[9:8] <= w_si_in;
-					6'd13:	ff_rx_sound_l[7:6] <= w_si_in;
-					6'd14:	ff_rx_sound_l[5:4] <= w_si_in;
-					6'd15:	ff_rx_sound_l[3:2] <= w_si_in;
-					6'd16:	ff_rx_sound_l[1:0] <= w_si_in;
-					6'd17:	ff_rx_sound_r[31:30] <= w_si_in;
-					6'd18:	ff_rx_sound_r[29:28] <= w_si_in;
-					6'd19:	ff_rx_sound_r[27:26] <= w_si_in;
-					6'd20:	ff_rx_sound_r[25:24] <= w_si_in;
-					6'd21:	ff_rx_sound_r[23:22] <= w_si_in;
-					6'd22:	ff_rx_sound_r[21:20] <= w_si_in;
-					6'd23:	ff_rx_sound_r[19:18] <= w_si_in;
-					6'd24:	ff_rx_sound_r[17:16] <= w_si_in;
-					6'd25:	ff_rx_sound_r[15:14] <= w_si_in;
-					6'd26:	ff_rx_sound_r[13:12] <= w_si_in;
-					6'd27:	ff_rx_sound_r[11:10] <= w_si_in;
-					6'd28:	ff_rx_sound_r[9:8] <= w_si_in;
-					6'd29:	ff_rx_sound_r[7:6] <= w_si_in;
-					6'd30:	ff_rx_sound_r[5:4] <= w_si_in;
-					6'd31:	ff_rx_sound_r[3:2] <= w_si_in;
-					6'd32:	ff_rx_sound_r[1:0] <= w_si_in;
-					default: begin end
 					endcase
-
-					if( ff_rx_bit_index == 6'd32 ) begin
-						ff_ev_sound_toggle	<= ~ff_ev_sound_toggle;
-						ff_rx_bit_index		<= 6'd0;
-					end
-					else begin
-						ff_rx_bit_index <= ff_rx_bit_index + 6'd1;
-					end
 				end
-
-				default: begin
-					ff_rx_bit_index <= 6'd0;
-				end
-				endcase
 			end
 		end
 	end
@@ -277,22 +337,22 @@ module fpga_connect_slave (
 		ff_ev_io_write_sync1	<= ff_ev_io_write_sync0;
 		ff_ev_io_write_sync2	<= ff_ev_io_write_sync1;
 
-		ff_ev_io_read_sync0	<= ff_ev_io_read_toggle;
-		ff_ev_io_read_sync1	<= ff_ev_io_read_sync0;
-		ff_ev_io_read_sync2	<= ff_ev_io_read_sync1;
+		ff_ev_io_read_sync0		<= ff_ev_io_read_toggle;
+		ff_ev_io_read_sync1		<= ff_ev_io_read_sync0;
+		ff_ev_io_read_sync2		<= ff_ev_io_read_sync1;
 
-		ff_ev_sound_sync0	<= ff_ev_sound_toggle;
-		ff_ev_sound_sync1	<= ff_ev_sound_sync0;
-		ff_ev_sound_sync2	<= ff_ev_sound_sync1;
+		ff_ev_sound_sync0		<= ff_ev_sound_toggle;
+		ff_ev_sound_sync1		<= ff_ev_sound_sync0;
+		ff_ev_sound_sync2		<= ff_ev_sound_sync1;
 
-		ff_rx_address_sync0	<= ff_rx_address;
-		ff_rx_address_sync1	<= ff_rx_address_sync0;
-		ff_rx_wdata_sync0	<= ff_rx_wdata;
-		ff_rx_wdata_sync1	<= ff_rx_wdata_sync0;
-		ff_rx_sound_l_sync0	<= ff_rx_sound_l;
-		ff_rx_sound_l_sync1	<= ff_rx_sound_l_sync0;
-		ff_rx_sound_r_sync0	<= ff_rx_sound_r;
-		ff_rx_sound_r_sync1	<= ff_rx_sound_r_sync0;
+		ff_rx_address_sync0		<= ff_rx_address;
+		ff_rx_address_sync1		<= ff_rx_address_sync0;
+		ff_rx_wdata_sync0		<= ff_rx_wdata;
+		ff_rx_wdata_sync1		<= ff_rx_wdata_sync0;
+		ff_rx_sound_l_sync0		<= ff_rx_sound_l;
+		ff_rx_sound_l_sync1		<= ff_rx_sound_l_sync0;
+		ff_rx_sound_r_sync0		<= ff_rx_sound_r;
+		ff_rx_sound_r_sync1		<= ff_rx_sound_r_sync0;
 	end
 
 	//	clk domain: bus request engine
@@ -328,15 +388,15 @@ module fpga_connect_slave (
 					end
 				end
 				else if( bus_rdata_en ) begin
-					ff_bus_valid		<= 1'b0;
-					ff_bus_read_busy	<= 1'b0;
-					ff_read_reply_data	<= bus_rdata;
+					ff_bus_valid			<= 1'b0;
+					ff_bus_read_busy		<= 1'b0;
+					ff_read_reply_data		<= bus_rdata;
 					ff_read_reply_toggle	<= ~ff_read_reply_toggle;
 				end
 			end
 			else if( ff_bus_read_busy && bus_rdata_en ) begin
-				ff_bus_read_busy	<= 1'b0;
-				ff_read_reply_data	<= bus_rdata;
+				ff_bus_read_busy		<= 1'b0;
+				ff_read_reply_data		<= bus_rdata;
 				ff_read_reply_toggle	<= ~ff_read_reply_toggle;
 			end
 		end
@@ -345,9 +405,9 @@ module fpga_connect_slave (
 	//	clk domain: sound output engine
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
-			ff_sound_l		<= 32'd0;
-			ff_sound_r		<= 32'd0;
-			ff_sound_valid	<= 1'b0;
+			ff_sound_l			<= 32'd0;
+			ff_sound_r			<= 32'd0;
+			ff_sound_valid		<= 1'b0;
 			ff_sound_pending	<= 1'b0;
 			ff_sound_pending_l	<= 32'd0;
 			ff_sound_pending_r	<= 32'd0;
@@ -363,24 +423,10 @@ module fpga_connect_slave (
 
 			if( ff_sound_pending && sound_ready ) begin
 				ff_sound_pending	<= 1'b0;
-				ff_sound_l		<= ff_sound_pending_l;
-				ff_sound_r		<= ff_sound_pending_r;
-				ff_sound_valid	<= 1'b1;
+				ff_sound_l			<= ff_sound_pending_l;
+				ff_sound_r			<= ff_sound_pending_r;
+				ff_sound_valid		<= 1'b1;
 			end
-		end
-	end
-
-	//	fpga_si_clk domain: synchronize read reply data from clk domain
-	always @( posedge fpga_si_clk ) begin
-		ff_read_reply_data_sync0	<= ff_read_reply_data;
-		ff_read_reply_data_sync1	<= ff_read_reply_data_sync0;
-		ff_read_reply_toggle_sync0	<= ff_read_reply_toggle;
-		ff_read_reply_toggle_sync1	<= ff_read_reply_toggle_sync0;
-		ff_read_reply_toggle_sync2	<= ff_read_reply_toggle_sync1;
-
-		if( w_read_reply_event ) begin
-			ff_tx_read_data <= ff_read_reply_data_sync1;
-			ff_read_ready <= 1'b1;
 		end
 	end
 
@@ -391,6 +437,6 @@ module fpga_connect_slave (
 	assign sound_l		= ff_sound_l;
 	assign sound_r		= ff_sound_r;
 	assign sound_valid	= ff_sound_valid;
-	assign fpga_si		= w_read_drive ? w_read_pair : 2'bzz;
+	assign fpga_si		= w_read_drive ? ff_tx_pair : 2'bzz;
 
 endmodule

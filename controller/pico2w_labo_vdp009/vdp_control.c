@@ -1,6 +1,7 @@
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
 #include "vdp_control.h"
+#include "fpga_io.h"
 
 static uint8_t vdp_screen1[] = {
 	0, 0x00,
@@ -165,30 +166,17 @@ static uint8_t vdp_screen1_font[] = {
 // reg: レジスタ番号 (0x00〜0x1F など)
 // data: 書き込むデータ
 void vdp_write_register(uint8_t reg, uint8_t data) {
-	uint8_t buf;
 
 	// 1回目: アドレス 0x99 にデータを送る
-	gpio_put(SPI0_CSN_PIN, 0);
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	spi_write_blocking(SPI0_PORT, &data, 1);
+	fpga_outport( 0x99, data );
 	sleep_us(10);
 	// 2回目: アドレス 0x99 にレジスタ番号 | 0x80 を送る
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = reg | 0x80;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	sleep_us(10);
-	gpio_put(SPI0_CSN_PIN, 1);
+	fpga_outport( 0x99, reg | 0x80 );
 }
 
 // ---------------------------------------------------------------
 // VDPレジスタの初期化 (SCREEN 1 モード)
-void vdp_ll_set_screen1(void) {
+void vdp_set_screen1(void) {
 
 	for (int i = 0; i < (int)sizeof(vdp_screen1); i += 2) {
 		vdp_write_register(vdp_screen1[i], vdp_screen1[i + 1]);
@@ -197,54 +185,33 @@ void vdp_ll_set_screen1(void) {
 
 // ---------------------------------------------------------------
 //	VDPにVRAMアドレス設定
-void vdp_ll_set_vram_address(uint16_t addr) {
+void vdp_set_vram_address(uint16_t addr) {
 	uint8_t buf;
 
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = addr & 0xFF;	//	アドレス下位 8bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
+	fpga_outport( 0x99, addr & 0xFF );	//	アドレス下位 8bit
 	sleep_us(10);
-	buf = 0x01;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x99;
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	buf = 0x40 + ((addr >> 8) & 0x3F);	//	アドレス上位 6bit
-	spi_write_blocking(SPI0_PORT, &buf, 1);
-	sleep_us(10);
+	fpga_outport( 0x99, 0x40 + ((addr >> 8) & 0x3F) );	//	アドレス上位 8bit
 }
 
 // ---------------------------------------------------------------
 //	VRAMにまとめて書き込む
-void vdp_ll_write_vram(uint8_t* data, uint16_t size) {
+void vdp_write_vram(uint8_t* data, uint16_t size) {
 	uint8_t buf;
 
 	for (int i = 0; i < size; i++) {
-		buf = 0x01;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = 0x98;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = data[i];
-		spi_write_blocking(SPI0_PORT, &buf, 1);
+		fpga_outport( 0x98, data[i] );
 		sleep_us(10);
 	}
 }
 
 // ---------------------------------------------------------------
 //	VRAMの所定の範囲を所定の値で埋める
-void vdp_ll_fill_vram(uint16_t addr, uint8_t value, uint16_t size) {
+void vdp_fill_vram(uint16_t addr, uint8_t value, uint16_t size) {
 	uint8_t buf;
 
-	vdp_ll_set_vram_address(addr);
+	vdp_set_vram_address(addr);
 	for (int i = 0; i < size; i++) {
-		buf = 0x01;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = 0x98;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
-		buf = value;
-		spi_write_blocking(SPI0_PORT, &buf, 1);
+		fpga_outport( 0x98, value );
 		sleep_us(10);
 	}
 }
@@ -253,22 +220,24 @@ void vdp_ll_fill_vram(uint16_t addr, uint8_t value, uint16_t size) {
 void vdp_set_screen1_font(void) {
 	uint8_t buf;
 
-	gpio_put(SPI0_CSN_PIN, 0);
-	vdp_ll_set_vram_address( 0x0000 );
-	vdp_ll_write_vram( (uint8_t*)vdp_screen1_font, sizeof(vdp_screen1_font) );
+	vdp_set_vram_address( 0x0000 );
+	vdp_write_vram( (uint8_t*)vdp_screen1_font, sizeof(vdp_screen1_font) );
 
-	vdp_ll_fill_vram( 0x1800, 0x20, 768 );		//	ネームテーブルをスペースで埋め尽くす
-	vdp_ll_fill_vram( 0x1B00, 0xD8, 4 * 32 );	//	スプライトアトリビュートを初期化する
-	vdp_ll_fill_vram( 0x2000, 0xF4, 32 * 24 );	//	タイルパターンを全て同じ色 (前景：白、背景：青) にする
-	gpio_put(SPI0_CSN_PIN, 1);
+	vdp_fill_vram( 0x1800, 0x20, 768 );		//	ネームテーブルをスペースで埋め尽くす
+	vdp_fill_vram( 0x1B00, 0xD8, 4 * 32 );	//	スプライトアトリビュートを初期化する
+	vdp_fill_vram( 0x2000, 0xF4, 32 * 24 );	//	タイルパターンを全て同じ色 (前景：白、背景：青) にする
 }
 
 // ---------------------------------------------------------------
 void vdp_set_screen1_message(void) {
 	char s_buffer[] = "FPGA MSXtR VDP/PICO Test.";
 
-	gpio_put(SPI0_CSN_PIN, 0);
-	vdp_ll_set_vram_address( 0x1800 );
-	vdp_ll_write_vram( (uint8_t*) s_buffer, sizeof(s_buffer) );
-	gpio_put(SPI0_CSN_PIN, 1);
+	vdp_set_vram_address( 0x1800 );
+	vdp_write_vram( (uint8_t*) s_buffer, sizeof(s_buffer) );
+}
+
+// ---------------------------------------------------------
+uint8_t vdp_get_status( void ) {
+
+	return fpga_inport( 0x99 );
 }

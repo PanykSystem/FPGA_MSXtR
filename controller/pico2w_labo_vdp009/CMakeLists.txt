@@ -41,6 +41,7 @@ set_target_properties(FatFs_SPI PROPERTIES INTERFACE_LINK_LIBRARIES "${_fatfs_li
 add_executable(fpga_msxtr_controller
     fpga_msxtr_controller.c
     vdp_control.c
+	fpga_io.c
     fpga_uart.c
     fpga_config.c
     keyboard.c

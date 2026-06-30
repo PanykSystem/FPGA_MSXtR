@@ -8,6 +8,7 @@
 #include "keyboard.h"
 #include "vdp_control.h"
 #include "fpga_config.h"
+#include "fpga_io.h"
 
 // I2C (キーボードコントローラー)
 #define I2C_PORT	 i2c0
@@ -54,13 +55,15 @@ static void dump_vdp_config_rom(void) {
 	int i, j;
 	uint8_t rom_data;
 
-	fpga_config_rom_set_address_vdp(0);
+	printf( "Dump ConfigROM\r\n" );
+	fpga_config_rom_set_address_vdp( 0 );
 	for( i = 0; i < 16; i++ ) {
+		printf( "%02d: ", i );
 		p_dest = s_line;
 		for( j = 0; j < 16; j++ ) {
-			rom_data = fpga_config_rom_read_vdp(FPGA_CONFIG_ROM_PORT_DATA);
-			*p_dest++ = hex_to_char(rom_data >> 4);
-			*p_dest++ = hex_to_char(rom_data);
+			rom_data = fpga_config_rom_read_vdp();
+			*p_dest++ = hex_to_char( rom_data >> 4 );
+			*p_dest++ = hex_to_char( rom_data & 0x0F );
 			if( j != 15 ) {
 				*p_dest++ = ' ';
 			}
@@ -72,24 +75,18 @@ static void dump_vdp_config_rom(void) {
 }
 
 // ---------------------------------------------------------
+static void dump_vdp_status( void ) {
+	uint8_t status = vdp_get_status();
+	printf( "VDP Status: 0x%02X\r\n", status );
+}
+
+// ---------------------------------------------------------
 static void i2c0_init(void) {
 	i2c_init(I2C_PORT, I2C_BAUDRATE);
 	gpio_set_function(I2C_SDA_PIN, GPIO_FUNC_I2C);
 	gpio_set_function(I2C_SCL_PIN, GPIO_FUNC_I2C);
 	gpio_pull_up(I2C_SDA_PIN);
 	gpio_pull_up(I2C_SCL_PIN);
-}
-
-// ---------------------------------------------------------
-static void spi0_init(void) {
-	spi_init(SPI0_PORT, SPI0_BAUDRATE);
-	gpio_set_function(SPI0_RX_PIN,	GPIO_FUNC_SPI);
-	gpio_set_function(SPI0_SCK_PIN, GPIO_FUNC_SPI);
-	gpio_set_function(SPI0_TX_PIN,	GPIO_FUNC_SPI);
-	// CSn はソフトウェア制御
-	gpio_init(SPI0_CSN_PIN);
-	gpio_set_dir(SPI0_CSN_PIN, GPIO_OUT);
-	gpio_put(SPI0_CSN_PIN, 1);
 }
 
 // ---------------------------------------------------------------
@@ -109,6 +106,7 @@ static void format_comma(char *buf, size_t buf_size,
 	buf[out] = '\0';
 }
 
+// ---------------------------------------------------------
 // SDカード ルートディレクトリ一覧 (MS-DOS DIR 形式)
 static void dir_sd_root(void) {
 	FATFS fs;
@@ -193,34 +191,29 @@ static void core1_entry(void) {
 	sd_init_driver();  // SPI1 + SDカードドライバ初期化
 
 	uint8_t led_state  = 0;
-	uint8_t prev_mat11 = 0xFF;	// 前回の matrix[11] (初期値: 全ビット High)
 
 	while (true) {
 		keyboard_update( led_state );
 		memcpy( keymatrix, keyboard_get_matrix(), KEYBOARD_KEY_MATRIX_SIZE );
-
-		// matrix[11] bit0: 1→0 の立ち下がり検出 (キー押下)
-		if ((prev_mat11 & 0x01) && !(keymatrix[11] & 0x01)) {
-			dir_sd_root();
-		}
-		prev_mat11 = keymatrix[11];
 
 		led_state++;
 		sleep_ms(10);
 	}
 }
 
+// ---------------------------------------------------------
 // Core 0: SPI通信（FPGAモジュール・SDカード）
+// ---------------------------------------------------------
 int main(void) {
 	char s_keyline[32], *p_dest, *p_src;
 	int i, j;
 	uint8_t matrix;
-	uint64_t step_start_time;
-	uint64_t step_elapsed_us;
+	uint8_t prev_mat11 = 0xFF;
+	uint8_t prev_mat00 = 0xFF;
 
 	stdio_init_all();
 	i2c0_init();
-	spi0_init();
+	fpga_io_init();
 	// SPI1 は sd_init_driver() (Core 1 内) が初期化するため spi1_init() 不要
 
 	multicore_launch_core1(core1_entry);
@@ -228,12 +221,22 @@ int main(void) {
 	// FPGAが起動するまでは取りこぼすのでしばらく待つ
 	sleep_ms(5000);
 
-	vdp_ll_set_screen1();
+	//	VDPに対して初期化処理を行う
+	vdp_set_screen1();
 	vdp_set_screen1_font();
 	vdp_set_screen1_message();
 	while (true) {
-		step_start_time = time_us_64();
-		dump_vdp_config_rom();
+		//	Menuボタンが押されたかどうかを確認する
+		if( (prev_mat11 & 0x01) && !(keymatrix[11] & 0x01) ) {
+			//	MENUキーが押されたタイミングなら、ConfigROM のダンプ処理を実行する
+			dump_vdp_config_rom();
+		}
+		if( (prev_mat00 & 0x02) && !(keymatrix[0] & 0x02) ) {
+			//	1キーが押されたタイミングなら、VDP のステータスレジスタを表示する
+			dump_vdp_status();
+		}
+		prev_mat00 = keymatrix[0];
+		prev_mat11 = keymatrix[11];
 
 		for( i = 0; i < 12; i++ ) {
 			matrix = keymatrix[i];
@@ -249,16 +252,11 @@ int main(void) {
 				p_src += 4;
 				p_dest += 4;
 			}
-			vdp_ll_begin();
-			vdp_ll_set_vram_address( 0x1800 + i * 32 + 64);
-			vdp_ll_write_vram( (uint8_t*)s_keyline, 32 );
-			vdp_ll_end();
+			vdp_set_vram_address( 0x1800 + i * 32 + 64);
+			vdp_write_vram( (uint8_t*)s_keyline, 32 );
 		}
 
-		step_elapsed_us = time_us_64() - step_start_time;
-		if( step_elapsed_us < 5000000ULL ) {
-			sleep_ms((uint32_t)((5000000ULL - step_elapsed_us) / 1000ULL));
-		}
+		sleep_ms(10);
 	}
 	return 0;
 }

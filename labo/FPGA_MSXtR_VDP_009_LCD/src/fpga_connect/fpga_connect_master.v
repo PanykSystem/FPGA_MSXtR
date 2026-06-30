@@ -29,6 +29,7 @@ module fpga_connect_master (
 	input			clk,				//	85.90908MHz
 	input			clk_serial,			//	214.7727MHz
 	//	内部バス
+	input			bus_cs,
 	input	[7:0]	bus_address,
 	input			bus_write,
 	input	[7:0]	bus_wdata,
@@ -233,7 +234,7 @@ module fpga_connect_master (
 		else if( w_ack_event ) begin
 			ff_req_busy <= 1'b0;
 		end
-		else if( !ff_req_busy && bus_valid ) begin
+		else if( !ff_req_busy && bus_valid && bus_cs ) begin
 			ff_req_busy		<= 1'b1;
 			ff_req_mode		<= bus_write ? c_mode_io_write : c_mode_io_read;
 			ff_req_address	<= bus_address;
@@ -268,40 +269,40 @@ module fpga_connect_master (
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_bus_rdata		<= 8'd0;
-			ff_bus_rdata_en	<= 1'b0;
+			ff_bus_rdata_en		<= 1'b0;
 			ff_read_wait_count	<= 5'd0;
-			ff_abort_toggle	<= 1'b0;
+			ff_abort_toggle		<= 1'b0;
 		end
 		else if( w_rsp_event ) begin
 			ff_bus_rdata		<= ff_rsp_rdata_sync1;
-			ff_bus_rdata_en	<= 1'b1;
+			ff_bus_rdata_en		<= 1'b1;
 			ff_read_wait_count	<= 5'd0;
 		end
 		else if( w_ack_event ) begin
-			ff_bus_rdata_en	<= 1'b0;
+			ff_bus_rdata_en		<= 1'b0;
 			ff_read_wait_count	<= 5'd0;
 		end
 		else if( w_read_wait ) begin
-			ff_bus_rdata_en	<= 1'b0;
+			ff_bus_rdata_en		<= 1'b0;
 			if( ff_read_wait_count == 5'd15 ) begin
 				ff_read_wait_count	<= 5'd0;
-				ff_abort_toggle	<= ~ff_abort_toggle;
+				ff_abort_toggle		<= ~ff_abort_toggle;
 			end
 			else begin
 				ff_read_wait_count	<= ff_read_wait_count + 5'd1;
 			end
 		end
 		else begin
-			ff_bus_rdata_en	<= 1'b0;
+			ff_bus_rdata_en		<= 1'b0;
 			ff_read_wait_count	<= 5'd0;
 		end
 	end
 
 	//	clk_serial domain: synchronize request payload
 	always @( posedge clk_serial ) begin
-		ff_req_toggle_sync0	<= ff_req_toggle;
-		ff_req_toggle_sync1	<= ff_req_toggle_sync0;
-		ff_req_toggle_sync2	<= ff_req_toggle_sync1;
+		ff_req_toggle_sync0		<= ff_req_toggle;
+		ff_req_toggle_sync1		<= ff_req_toggle_sync0;
+		ff_req_toggle_sync2		<= ff_req_toggle_sync1;
 
 		ff_req_mode_sync0		<= ff_req_mode;
 		ff_req_mode_sync1		<= ff_req_mode_sync0;
@@ -322,27 +323,27 @@ module fpga_connect_master (
 	//	clk_serial domain: serial transfer engine
 	always @( posedge clk_serial ) begin
 		if( !reset_n ) begin
-			ff_div_counter	<= 2'd0;
-			ff_tx_busy		<= 1'b0;
-			ff_tx_pending	<= 1'b0;
-			ff_tx_mode		<= c_mode_io_write;
-			ff_tx_address	<= 8'd0;
-			ff_tx_wdata		<= 8'd0;
-			ff_tx_sound_l	<= 32'd0;
-			ff_tx_sound_r	<= 32'd0;
+			ff_div_counter			<= 2'd0;
+			ff_tx_busy				<= 1'b0;
+			ff_tx_pending			<= 1'b0;
+			ff_tx_mode				<= c_mode_io_write;
+			ff_tx_address			<= 8'd0;
+			ff_tx_wdata				<= 8'd0;
+			ff_tx_sound_l			<= 32'd0;
+			ff_tx_sound_r			<= 32'd0;
 			ff_tx_pending_mode		<= c_mode_io_write;
 			ff_tx_pending_address	<= 8'd0;
 			ff_tx_pending_wdata		<= 8'd0;
 			ff_tx_pending_sound_l	<= 32'd0;
 			ff_tx_pending_sound_r	<= 32'd0;
-			ff_tx_bit_index	<= 6'd0;
-			ff_tx_first_rise	<= 1'b0;
-			ff_tx_wait_read	<= 1'b0;
-			ff_so_out		<= 2'b00;
-			ff_so_oe		<= 1'b0;
-			ff_rx_rdata		<= 8'd0;
-			ff_ack_toggle	<= 1'b0;
-			ff_rsp_toggle	<= 1'b0;
+			ff_tx_bit_index			<= 6'd0;
+			ff_tx_first_rise		<= 1'b0;
+			ff_tx_wait_read			<= 1'b0;
+			ff_so_out				<= 2'b00;
+			ff_so_oe				<= 1'b0;
+			ff_rx_rdata				<= 8'd0;
+			ff_ack_toggle			<= 1'b0;
+			ff_rsp_toggle			<= 1'b0;
 		end
 		else begin
 			ff_div_counter <= ff_div_counter + 2'd1;
@@ -350,32 +351,32 @@ module fpga_connect_master (
 
 			if( w_req_event ) begin
 				ff_tx_pending			<= 1'b1;
-				ff_tx_pending_mode	<= ff_req_mode_sync1;
+				ff_tx_pending_mode		<= ff_req_mode_sync1;
 				ff_tx_pending_address	<= ff_req_address_sync1;
-				ff_tx_pending_wdata	<= ff_req_wdata_sync1;
+				ff_tx_pending_wdata		<= ff_req_wdata_sync1;
 				ff_tx_pending_sound_l	<= ff_req_sound_l_sync1;
 				ff_tx_pending_sound_r	<= ff_req_sound_r_sync1;
 			end
 
 			if( !ff_tx_busy && ff_tx_pending ) begin
-				ff_div_counter	<= 2'd2;
-				ff_tx_busy		<= 1'b1;
-				ff_tx_pending	<= 1'b0;
-				ff_tx_mode		<= ff_tx_pending_mode;
-				ff_tx_address	<= ff_tx_pending_address;
-				ff_tx_wdata		<= ff_tx_pending_wdata;
-				ff_tx_sound_l	<= ff_tx_pending_sound_l;
-				ff_tx_sound_r	<= ff_tx_pending_sound_r;
-				ff_tx_bit_index	<= 6'd0;
-				ff_tx_first_rise	<= 1'b1;
+				ff_div_counter			<= 2'd2;
+				ff_tx_busy				<= 1'b1;
+				ff_tx_pending			<= 1'b0;
+				ff_tx_mode				<= ff_tx_pending_mode;
+				ff_tx_address			<= ff_tx_pending_address;
+				ff_tx_wdata				<= ff_tx_pending_wdata;
+				ff_tx_sound_l			<= ff_tx_pending_sound_l;
+				ff_tx_sound_r			<= ff_tx_pending_sound_r;
+				ff_tx_bit_index			<= 6'd0;
+				ff_tx_first_rise		<= 1'b1;
 				t_set_output( ff_tx_pending_mode, 6'd0 );
 			end
 			else if( ff_tx_busy && w_abort_event ) begin
-				ff_tx_busy	<= 1'b0;
-				ff_tx_first_rise	<= 1'b0;
-				ff_tx_wait_read	<= 1'b0;
-				ff_so_oe		<= 1'b0;
-				ff_ack_toggle	<= ~ff_ack_toggle;
+				ff_tx_busy				<= 1'b0;
+				ff_tx_first_rise		<= 1'b0;
+				ff_tx_wait_read			<= 1'b0;
+				ff_so_oe				<= 1'b0;
+				ff_ack_toggle			<= ~ff_ack_toggle;
 			end
 			else if( ff_tx_busy && w_clk_rise ) begin
 				if( ff_tx_first_rise ) begin
@@ -383,36 +384,36 @@ module fpga_connect_master (
 					t_set_output( ff_tx_mode, 6'd0 );
 				end
 				else begin
-				if( ff_tx_mode == c_mode_io_read ) begin
-					case( ff_tx_bit_index )
-					6'd6: ff_rx_rdata[7:6] <= w_so_in;
-					6'd7: ff_rx_rdata[5:4] <= w_so_in;
-					6'd8: ff_rx_rdata[3:2] <= w_so_in;
-					6'd9: ff_rx_rdata[1:0] <= w_so_in;
-					default: begin end
-					endcase
-				end
-
-				if( (ff_tx_mode == c_mode_sound_send && ff_tx_bit_index == 6'd32) ||
-					(ff_tx_mode == c_mode_io_write && ff_tx_bit_index == 6'd8) ||
-					(ff_tx_mode == c_mode_io_read && ff_tx_bit_index == 6'd9) ) begin
-					ff_tx_busy	<= 1'b0;
-					ff_tx_first_rise	<= 1'b0;
-					ff_so_oe		<= 1'b0;
-					ff_ack_toggle	<= ~ff_ack_toggle;
 					if( ff_tx_mode == c_mode_io_read ) begin
-						ff_rsp_toggle <= ~ff_rsp_toggle;
+						case( ff_tx_bit_index )
+						6'd6: ff_rx_rdata[7:6] <= w_so_in;
+						6'd7: ff_rx_rdata[5:4] <= w_so_in;
+						6'd8: ff_rx_rdata[3:2] <= w_so_in;
+						6'd9: ff_rx_rdata[1:0] <= w_so_in;
+						default: begin end
+						endcase
 					end
-				end
-				else if( ff_tx_mode == c_mode_io_read && ff_tx_bit_index == 6'd5 && w_so_in != 2'b11 ) begin
-					ff_tx_wait_read <= 1'b1;
-					ff_tx_bit_index <= 6'd5;
-					t_set_output( ff_tx_mode, 6'd5 );
-				end
-				else begin
-					ff_tx_bit_index <= ff_tx_bit_index + 6'd1;
-					t_set_output( ff_tx_mode, ff_tx_bit_index + 6'd1 );
-				end
+
+					if( (ff_tx_mode == c_mode_sound_send && ff_tx_bit_index == 6'd32) ||
+						(ff_tx_mode == c_mode_io_write && ff_tx_bit_index == 6'd8) ||
+						(ff_tx_mode == c_mode_io_read && ff_tx_bit_index == 6'd9) ) begin
+						ff_tx_busy	<= 1'b0;
+						ff_tx_first_rise	<= 1'b0;
+						ff_so_oe		<= 1'b0;
+						ff_ack_toggle	<= ~ff_ack_toggle;
+						if( ff_tx_mode == c_mode_io_read ) begin
+							ff_rsp_toggle <= ~ff_rsp_toggle;
+						end
+					end
+					else if( ff_tx_mode == c_mode_io_read && ff_tx_bit_index == 6'd5 && w_so_in != 2'b11 ) begin
+						ff_tx_wait_read <= 1'b1;
+						ff_tx_bit_index <= 6'd5;
+						t_set_output( ff_tx_mode, 6'd5 );
+					end
+					else begin
+						ff_tx_bit_index <= ff_tx_bit_index + 6'd1;
+						t_set_output( ff_tx_mode, ff_tx_bit_index + 6'd1 );
+					end
 				end
 			end
 		end

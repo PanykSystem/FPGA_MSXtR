@@ -27,10 +27,10 @@ module tangnano20k_vdp_cartridge_lcd (
 	input	[1:0]	button,					//	button[0]	PIN88_MODE0_KEY1
 											//	button[1]	PIN87_MODE1_KEY2
 	//	Connect CPU
-//	output			vdp_so_clk,				//	vdp_so_clk	PIN73
-//	output	[1:0]	vdp_so,					//	vdp_so		PIN75, PIN74
-//	input			vdp_si_clk,				//	vdp_si_clk	PIN85
-//	input	[1:0]	vdp_si,					//	vdp_si		PIN16, PIN15
+	output			fpga_so_clk,			//	fpga_so_clk	PIN73
+	inout	[1:0]	fpga_so,				//	fpga_so		PIN75, PIN74
+	input			fpga_si_clk,			//	fpga_si_clk	PIN85
+	inout	[1:0]	fpga_si,				//	fpga_si		PIN16, PIN15
 	//	Connect Micom
 	input			spi_cs_n,				//	spi_cs_n	PIN17
 	input			spi_clk,				//	spi_clk		PIN20
@@ -115,11 +115,6 @@ module tangnano20k_vdp_cartridge_lcd (
 	reg				ff_reset_spi_n2 = 1'b0;		/* synthesis syn_preserve = 1 */
 	wire			reset_spi_n;
 
-	wire			w_bus_write;
-	wire			w_bus_valid;
-	wire	[7:0]	w_bus_wdata;
-	wire	[15:0]	w_bus_address;
-
 	wire			bus_ctrl0_io;
 	wire			bus_ctrl0_write;
 	wire			bus_ctrl0_valid;
@@ -138,9 +133,18 @@ module tangnano20k_vdp_cartridge_lcd (
 	wire	[7:0]	bus_ctrl1_rdata;
 	wire			bus_ctrl1_rdata_en;
 
+	wire			w_bus_write;
+	wire			w_bus_valid;
+	wire			w_bus_ready;
+	wire	[7:0]	w_bus_wdata;
+	wire	[15:0]	w_bus_address;
 	wire	[7:0]	w_bus_rdata;
 	wire			w_bus_rdata_en;
-	wire			w_bus_ready;
+
+	wire			w_bus_fpga_cs;
+	wire			w_bus_fpga_ready;
+	wire	[7:0]	w_bus_fpga_rdata;
+	wire			w_bus_fpga_rdata_en;
 
 	wire			w_bus_vdp_cs;
 	wire			w_bus_vdp_ready;
@@ -189,6 +193,11 @@ module tangnano20k_vdp_cartridge_lcd (
 	wire	[7:0]	w_green;
 	wire	[7:0]	w_blue;
 	wire			w_int_n;
+
+	wire	[31:0]	sound_l;
+	wire	[31:0]	sound_r;
+	wire			sound_valid;
+	wire			sound_ready;
 
 	always @( posedge clk85m ) begin
 		ff_reset_n0		<= 1'b1;
@@ -253,12 +262,6 @@ module tangnano20k_vdp_cartridge_lcd (
 	// --------------------------------------------------------------------
 	//	Access interface
 	// --------------------------------------------------------------------
-	assign bus_ctrl0_io			= 1'b0;
-	assign bus_ctrl0_write		= 1'b1;
-	assign bus_ctrl0_valid		= 1'b0;
-	assign bus_ctrl0_wdata		= 8'd0;
-	assign bus_ctrl0_address	= 16'd0;
-
 	assign w_bus_rdata		= ( w_bus_vdp_rdata_en		) ? w_bus_vdp_rdata: 8'hFF;
 	assign w_bus_rdata_en	= w_bus_vdp_rdata_en;
 	assign w_bus_ready		= w_bus_vdp_ready;
@@ -284,6 +287,50 @@ module tangnano20k_vdp_cartridge_lcd (
 		.spi_miso				( spi_miso					),
 		.spi_intr				( spi_intr					)
 	);
+
+	// --------------------------------------------------------------------
+	//	FPGA (CPU) connection
+	// --------------------------------------------------------------------
+	fpga_connect_master u_fpga_connect_master (
+		.reset_n				( reset_spi_n				),
+		.clk					( clk85m					),
+		.clk_serial				( clk215m					),
+		.bus_cs					( w_bus_fpga_cs				),
+		.bus_address			( w_bus_address[7:0]		),
+		.bus_write				( w_bus_write				),
+		.bus_wdata				( w_bus_wdata				),
+		.bus_valid				( w_bus_valid				),
+		.bus_ready				( w_bus_fpga_ready			),
+		.bus_rdata				( w_bus_fpga_rdata			),
+		.bus_rdata_en			( w_bus_fpga_rdata_en		),
+		.sound_l				( 32'd0						),
+		.sound_r				( 32'd0						),
+		.sound_valid			( 1'b0						),
+		.sound_ready			( 							),
+		.fpga_so_clk			( fpga_so_clk				),
+		.fpga_so				( fpga_so					)
+	);
+
+	fpga_connect_slave u_fpga_connect_slave (
+		.reset_n				( reset_spi_n				),
+		.clk					( clk85m					),
+		.clk_serial				( clk215m					),
+		.bus_address			( bus_ctrl0_address[7:0]	),
+		.bus_write				( bus_ctrl0_write			),
+		.bus_wdata				( bus_ctrl0_wdata			),
+		.bus_valid				( bus_ctrl0_valid			),
+		.bus_ready				( bus_ctrl0_ready			),
+		.bus_rdata				( bus_ctrl0_rdata			),
+		.bus_rdata_en			( bus_ctrl0_rdata_en		),
+		.sound_l				( sound_l					),
+		.sound_r				( sound_r					),
+		.sound_valid			( sound_valid				),
+		.sound_ready			( sound_ready				),
+		.fpga_si_clk			( fpga_si_clk				),
+		.fpga_si				( fpga_si					)
+	);
+
+	assign sound_ready = 1'b1;
 
 	// --------------------------------------------------------------------
 	//	System Controller
@@ -312,6 +359,10 @@ module tangnano20k_vdp_cartridge_lcd (
 		.bus_valid				( w_bus_valid				),
 		.bus_wdata				( w_bus_wdata				),
 		.bus_address			( w_bus_address				),
+		.bus_fpga_cs			( w_bus_fpga_cs				),
+		.bus_fpga_rdata			( w_bus_fpga_rdata			),
+		.bus_fpga_rdata_en		( w_bus_fpga_rdata_en		),
+		.bus_fpga_ready			( w_bus_fpga_ready			),
 		.bus_vdp_cs				( w_bus_vdp_cs				),
 		.bus_vdp_rdata			( w_bus_vdp_rdata			),
 		.bus_vdp_rdata_en		( w_bus_vdp_rdata_en		),
@@ -398,8 +449,9 @@ module tangnano20k_vdp_cartridge_lcd (
 	config_rom u_config_rom (
 		.reset_n			( reset_n					),
 		.clk				( clk85m					),
+		.clk_serial			( clk215m					),
 		.bus_cs				( w_bus_crom_cs				),
-		.bus_address		( w_bus_address[0]			),
+		.bus_address		( w_bus_address[3:0]		),
 		.bus_write			( w_bus_write				),
 		.bus_valid			( w_bus_valid				),
 		.bus_ready			( w_bus_crom_ready			),

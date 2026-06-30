@@ -694,7 +694,7 @@ module ip_qspi_rom(
 	// ---------------------------------------------------------
 	//	QSPI Controller
 	// ---------------------------------------------------------
-	qdpi u_qdpi (
+	qspi u_qspi (
 		.reset				( reset					),
 		.clk				( clk					),
 		.clk_serial			( clk_serial			),

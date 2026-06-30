@@ -7,11 +7,12 @@
     <FileList>
         <File path="src/config_rom/config_rom.v" type="file.verilog" enable="1"/>
         <File path="src/debugger/ip_debugger.v" type="file.verilog" enable="1"/>
+        <File path="src/fpga_connect/fpga_connect_master.v" type="file.verilog" enable="1"/>
+        <File path="src/fpga_connect/fpga_connect_slave.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_clkdiv/gowin_clkdiv.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_rpll/gowin_rpll.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_rpll2/gowin_rpll2.v" type="file.verilog" enable="1"/>
         <File path="src/qspi_rom/ip_qspi_rom.v" type="file.verilog" enable="1"/>
-        <File path="src/qspi_rom/qdpi.v" type="file.verilog" enable="1"/>
         <File path="src/qspi_rom/qspi.v" type="file.verilog" enable="1"/>
         <File path="src/s2026b/s2026b.v" type="file.verilog" enable="1"/>
         <File path="src/s2026b/s2026b_cpu_select.v" type="file.verilog" enable="1"/>

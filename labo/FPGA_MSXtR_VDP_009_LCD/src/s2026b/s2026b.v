@@ -55,6 +55,10 @@ module s2026b (
 	output			bus_valid,
 	output	[7:0]	bus_wdata,
 	output	[15:0]	bus_address,
+	output			bus_fpga_cs,
+	input	[7:0]	bus_fpga_rdata,
+	input			bus_fpga_rdata_en,
+	input			bus_fpga_ready,
 	output			bus_vdp_cs,
 	input	[7:0]	bus_vdp_rdata,
 	input			bus_vdp_rdata_en,
@@ -68,6 +72,7 @@ module s2026b (
 	input			bus_crom_rdata_en,
 	input			bus_crom_ready
 );
+	wire			w_fpga_cs;
 	wire			w_vdp_cs;
 	wire			w_uart_cs;
 	wire			w_crom_cs;
@@ -120,6 +125,7 @@ module s2026b (
 	assign w_vdp_cs			= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h98 ));
 	assign w_uart_cs		= (w_bus_io  && ( {w_bus_address[7:3], 3'd0} == 8'h10 ));
 	assign w_crom_cs		= (w_bus_io  && ( {w_bus_address[7:4], 4'd0} == 8'h40 ));
+	assign w_fpga_cs		= (w_bus_io  && !( w_vdp_cs || w_uart_cs || w_crom_cs ));
 	always @( posedge clk ) begin
 		if( w_vdp_cs && bus_vdp_rdata_en ) begin
 			ff_bus_rdata		<= bus_vdp_rdata;
@@ -133,6 +139,10 @@ module s2026b (
 			ff_bus_rdata		<= bus_crom_rdata;
 			ff_bus_rdata_en		<= 1'b1;
 		end
+		else if( w_fpga_cs && bus_fpga_rdata_en ) begin
+			ff_bus_rdata		<= bus_fpga_rdata;
+			ff_bus_rdata_en		<= 1'b1;
+		end
 		else begin
 			ff_bus_rdata		<= 8'h00;
 			ff_bus_rdata_en		<= 1'b0;
@@ -142,9 +152,10 @@ module s2026b (
 	// ---------------------------------------------------------
 	//	Wait / Ready
 	// ---------------------------------------------------------
-	assign w_bus_ready		= w_vdp_cs  ? bus_vdp_ready  :
-							w_uart_cs ? bus_uart_ready : 
-							w_crom_cs ? bus_crom_ready : 1'b1;
+	assign w_bus_ready		=	w_vdp_cs  ? bus_vdp_ready  :
+								w_uart_cs ? bus_uart_ready : 
+								w_crom_cs ? bus_crom_ready : 
+								w_fpga_cs ? bus_fpga_ready : 1'b1;
 
 	//--------------------------------------------------------------
 	//	out assignment
@@ -152,6 +163,7 @@ module s2026b (
 	assign bus_vdp_cs		= w_vdp_cs;
 	assign bus_uart_cs		= w_uart_cs;
 	assign bus_crom_cs		= w_crom_cs;
+	assign bus_fpga_cs		= w_fpga_cs;
 	assign bus_write		= w_bus_write;
 	assign bus_valid		= w_bus_valid;
 	assign bus_wdata		= w_bus_wdata;
