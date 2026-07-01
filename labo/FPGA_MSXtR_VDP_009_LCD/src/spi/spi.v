@@ -193,7 +193,7 @@ module spi (
 			ff_spi_data <= ff_send_data;
 		end
 		else if( !ff_spi_ready ) begin
-			if( ff_send && w_spi_clk_rising_edge ) begin
+			if( ff_send && w_spi_clk_falling_edge ) begin
 				//	送信モード
 				ff_spi_data <= { ff_spi_data[6:0], 1'b0 };
 			end

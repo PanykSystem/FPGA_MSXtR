@@ -81,6 +81,21 @@ static void dump_vdp_status( void ) {
 }
 
 // ---------------------------------------------------------
+static void detect_config_rom_controller( void ) {
+	uint8_t controller;
+
+	//	拡張I/O を ConfigROMコントローラーに切り替える
+	fpga_outport( 0x40, 64 );
+	controller = fpga_inport( 0x40 );
+	if( controller == 0xBF ) {
+		printf( "ConfigROM Controller: FOUND\r\n" );
+	}
+	else {
+		printf( "ConfigROM Controller: NOT FOUND (0x%02X)\r\n", controller );
+	}
+}
+
+// ---------------------------------------------------------
 static void i2c0_init(void) {
 	i2c_init(I2C_PORT, I2C_BAUDRATE);
 	gpio_set_function(I2C_SDA_PIN, GPIO_FUNC_I2C);
@@ -234,6 +249,10 @@ int main(void) {
 		if( (prev_mat00 & 0x02) && !(keymatrix[0] & 0x02) ) {
 			//	1キーが押されたタイミングなら、VDP のステータスレジスタを表示する
 			dump_vdp_status();
+		}
+		if( (prev_mat00 & 0x04) && !(keymatrix[0] & 0x04) ) {
+			//	2キーが押されたタイミングなら、ConfigROM コントローラを検出する
+			detect_config_rom_controller();
 		}
 		prev_mat00 = keymatrix[0];
 		prev_mat11 = keymatrix[11];

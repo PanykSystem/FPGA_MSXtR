@@ -47,6 +47,7 @@ void vdp_ll_end( void ) {
 // ---------------------------------------------------------
 void fpga_io_init( void ) {
 	spi_init( SPI0_PORT, SPI0_BAUDRATE );
+	spi_set_format( SPI0_PORT, 8, SPI_CPOL_0, SPI_CPHA_0, SPI_MSB_FIRST );
 	gpio_set_function( SPI0_RX_PIN,	GPIO_FUNC_SPI );
 	gpio_set_function( SPI0_SCK_PIN, GPIO_FUNC_SPI );
 	gpio_set_function( SPI0_TX_PIN,	GPIO_FUNC_SPI );

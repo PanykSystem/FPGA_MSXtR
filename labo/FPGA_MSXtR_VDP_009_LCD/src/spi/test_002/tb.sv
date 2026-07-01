@@ -183,11 +183,12 @@ module tb ();
 			rx_data = 8'h00;
 			for ( i = 7; i >= 0; i-- ) begin
 				spi_mosi = tx_data[i];
-				rx_data[i] = spi_miso;
 				#( SPI_HALF );
 				spi_clk = 1'b1;
 				#( SPI_HALF );
 				spi_clk = 1'b0;
+				#( 1 );
+				rx_data[i] = spi_miso;
 			end
 			repeat( 20 ) @( posedge clk );
 		end
