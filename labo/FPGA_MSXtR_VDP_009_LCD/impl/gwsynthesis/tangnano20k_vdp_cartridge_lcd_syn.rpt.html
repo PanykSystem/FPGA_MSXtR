@@ -57,6 +57,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td class="label">Design File</td>
 <td>C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\config_rom\config_rom.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\debugger\ip_debugger.v<br>
+C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_sub.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_slave.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\gowin_clkdiv\gowin_clkdiv.v<br>
@@ -69,7 +70,6 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\sdram\ip_sdram_tangnano20k_c.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\ip_spi.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\spi.v<br>
-C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi_flash_interface_lite\spi_flash_interface_lite.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\tangnano20k_vdp_cartridge_lcd.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\uart\ip_uart.v<br>
 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\uart\uart.v<br>
@@ -119,7 +119,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sat Jul  4 09:30:05 2026
+<td>Sun Jul  5 22:18:28 2026
 </td>
 </tr>
 <tr>
@@ -135,11 +135,11 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">Synthesis Process</td>
-<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.937s, Elapsed time = 0h 0m 0.87s, Peak memory usage = 612.363MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.468s, Elapsed time = 0h 0m 0.472s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 612.363MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0.562s, Elapsed time = 0h 0m 0.57s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.25s, Elapsed time = 0h 0m 0.226s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.062s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.047s, Peak memory usage = 612.363MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.265s, Elapsed time = 0h 0m 0.255s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.546s, Elapsed time = 0h 0m 0.512s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s, Peak memory usage = 612.363MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.515s, Elapsed time = 0h 0m 0.561s, Peak memory usage = 612.363MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.671s, Elapsed time = 0h 0m 0.683s, Peak memory usage = 612.363MB<br/></td>
+<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.718s, Elapsed time = 0h 0m 0.739s, Peak memory usage = 270.711MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.437s, Elapsed time = 0h 0m 0.441s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 270.711MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0.562s, Elapsed time = 0h 0m 0.577s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.234s, Elapsed time = 0h 0m 0.228s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.058s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.045s, Peak memory usage = 270.711MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.218s, Elapsed time = 0h 0m 0.215s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.515s, Elapsed time = 0h 0m 0.488s, Peak memory usage = 270.711MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s, Peak memory usage = 288.453MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.468s, Elapsed time = 0h 0m 0.501s, Peak memory usage = 288.453MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.671s, Elapsed time = 0h 0m 0.72s, Peak memory usage = 308.938MB<br/></td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s, Peak memory usage = 612.363MB</td>
+<td>CPU time = 0h 0m 19s, Elapsed time = 0h 0m 20s, Peak memory usage = 308.938MB</td>
 </tr>
 </table>
 <h1><a name="resource">Resource</a></h1>
@@ -175,15 +175,15 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label"><b>Register </b></td>
-<td>4633</td>
+<td>4535</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFF</td>
-<td>400</td>
+<td>336</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFE</td>
-<td>354</td>
+<td>363</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFS</td>
@@ -195,11 +195,11 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFR</td>
-<td>260</td>
+<td>255</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFRE</td>
-<td>3386</td>
+<td>3344</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFP</td>
@@ -211,7 +211,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFC</td>
-<td>11</td>
+<td>15</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFCE</td>
@@ -219,27 +219,27 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label"><b>LUT </b></td>
-<td>6385</td>
+<td>6408</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT2</td>
-<td>522</td>
+<td>530</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT3</td>
-<td>2709</td>
+<td>2693</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT4</td>
-<td>3154</td>
+<td>3185</td>
 </tr>
 <tr>
 <td class="label"><b>ALU </b></td>
-<td>680</td>
+<td>676</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspALU</td>
-<td>680</td>
+<td>676</td>
 </tr>
 <tr>
 <td class="label"><b>SSRAM </b></td>
@@ -255,11 +255,11 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label"><b>INV </b></td>
-<td>88</td>
+<td>84</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspINV</td>
-<td>88</td>
+<td>84</td>
 </tr>
 <tr>
 <td class="label"><b>DSP </b></td>
@@ -315,13 +315,13 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>7249(6473 LUT, 680 ALU, 16 RAM16) / 20736</td>
-<td>35%</td>
+<td>7264(6492 LUT, 676 ALU, 16 RAM16) / 20736</td>
+<td>36%</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>4633 / 15915</td>
-<td>30%</td>
+<td>4535 / 15915</td>
+<td>29%</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp--Register as Latch</td>
@@ -330,8 +330,8 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp--Register as FF</td>
-<td>4633 / 15915</td>
-<td>30%</td>
+<td>4535 / 15915</td>
+<td>29%</td>
 </tr>
 <tr>
 <td class="label">BSRAM</td>
@@ -509,7 +509,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>2</td>
 <td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
 <td>214.770(MHz)</td>
-<td>158.228(MHz)</td>
+<td>151.653(MHz)</td>
 <td>7</td>
 <td>TOP</td>
 </tr>
@@ -517,7 +517,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>3</td>
 <td>u_pll2/rpll_inst/CLKOUT.default_gen_clk</td>
 <td>85.908(MHz)</td>
-<td>83.139(MHz)</td>
+<td>85.955(MHz)</td>
 <td>12</td>
 <td>TOP</td>
 </tr>
@@ -536,11 +536,11 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-3.784</td>
+<td>-5.079</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>16.074</td>
+<td>17.369</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -594,7 +594,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>0.360</td>
 <td>tCL</td>
 <td>RR</td>
-<td>207</td>
+<td>153</td>
 <td>u_pll/rpll_inst/CLKOUT</td>
 </tr>
 <tr>
@@ -642,7 +642,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
-<td>2</td>
+<td>3</td>
 <td>u_controller_spi/n57_s1/F</td>
 </tr>
 <tr>
@@ -651,66 +651,82 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>u_controller_spi/n310_s10/I3</td>
+<td>u_controller_spi/ff_bus_io_s5/I2</td>
 </tr>
 <tr>
-<td>12.983</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n310_s10/F</td>
-</tr>
-<tr>
-<td>13.457</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_bus_io_s3/I3</td>
-</tr>
-<tr>
-<td>13.828</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>u_controller_spi/ff_bus_io_s3/F</td>
-</tr>
-<tr>
-<td>14.302</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_bus_io_s2/I2</td>
-</tr>
-<tr>
-<td>14.755</td>
+<td>13.065</td>
 <td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>u_controller_spi/ff_bus_io_s2/F</td>
+<td>1</td>
+<td>u_controller_spi/ff_bus_io_s5/F</td>
 </tr>
 <tr>
-<td>15.229</td>
+<td>13.539</td>
 <td>0.474</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>u_controller_spi/n306_s5/I3</td>
+<td>u_controller_spi/n309_s7/I2</td>
 </tr>
 <tr>
-<td>15.600</td>
+<td>13.992</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_controller_spi/n309_s7/F</td>
+</tr>
+<tr>
+<td>14.466</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_controller_spi/n307_s3/I1</td>
+</tr>
+<tr>
+<td>15.021</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_controller_spi/n307_s3/F</td>
+</tr>
+<tr>
+<td>15.495</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_controller_spi/n306_s8/I3</td>
+</tr>
+<tr>
+<td>15.866</td>
 <td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>u_controller_spi/n306_s5/F</td>
+<td>u_controller_spi/n306_s8/F</td>
 </tr>
 <tr>
-<td>16.074</td>
+<td>16.340</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_controller_spi/n306_s9/I1</td>
+</tr>
+<tr>
+<td>16.895</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_controller_spi/n306_s9/F</td>
+</tr>
+<tr>
+<td>17.369</td>
 <td>0.474</td>
 <td>tNET</td>
 <td>FF</td>
@@ -749,7 +765,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>0.360</td>
 <td>tCL</td>
 <td>RR</td>
-<td>4381</td>
+<td>4337</td>
 <td>u_pll2/rpll_inst/CLKOUT</td>
 </tr>
 <tr>
@@ -789,12 +805,12 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>7</td>
+<td>8</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 2.492, 41.245%; route: 3.318, 54.915%; tC2Q: 0.232, 3.840%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 3.313, 45.155%; route: 3.792, 51.683%; tC2Q: 0.232, 3.162%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 </table>
@@ -804,189 +820,34 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-3.784</td>
+<td>-4.117</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>16.074</td>
+<td>18.735</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>12.290</td>
+<td>14.618</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>u_controller_spi/ff_state_1_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_0_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
-<table class="summary_table">
-<tr>
-<th>AT</th>
-<th>DELAY</th>
-<th>TYPE</th>
-<th>RF</th>
-<th>FANOUT</th>
-<th>NODE</th>
-</tr>
-<tr>
-<td>9.312</td>
-<td>9.312</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>active clock edge time</td>
-</tr>
-<tr>
-<td>9.312</td>
-<td>0.000</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
-</tr>
-<tr>
-<td>9.672</td>
-<td>0.360</td>
-<td>tCL</td>
-<td>RR</td>
-<td>207</td>
-<td>u_pll/rpll_inst/CLKOUT</td>
-</tr>
-<tr>
-<td>10.032</td>
-<td>0.360</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/CLK</td>
-</tr>
-<tr>
-<td>10.264</td>
-<td>0.232</td>
-<td>tC2Q</td>
-<td>RF</td>
-<td>4</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/Q</td>
-</tr>
-<tr>
-<td>10.738</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/I1</td>
-</tr>
-<tr>
-<td>11.293</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/F</td>
-</tr>
-<tr>
-<td>11.767</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s1/I3</td>
-</tr>
-<tr>
-<td>12.138</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n57_s1/F</td>
-</tr>
-<tr>
-<td>12.612</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s10/I3</td>
-</tr>
-<tr>
-<td>12.983</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n310_s10/F</td>
-</tr>
-<tr>
-<td>13.457</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_bus_io_s3/I3</td>
-</tr>
-<tr>
-<td>13.828</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>u_controller_spi/ff_bus_io_s3/F</td>
-</tr>
-<tr>
-<td>14.302</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n309_s7/I3</td>
-</tr>
-<tr>
-<td>14.673</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n309_s7/F</td>
-</tr>
-<tr>
-<td>15.147</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n309_s5/I2</td>
-</tr>
-<tr>
-<td>15.600</td>
-<td>0.453</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n309_s5/F</td>
-</tr>
-<tr>
-<td>16.074</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_state_1_s1/D</td>
-</tr>
-</table>
-<b>Data Required Path:</b>
 <table class="summary_table">
 <tr>
 <th>AT</th>
@@ -1017,7 +878,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>0.360</td>
 <td>tCL</td>
 <td>RR</td>
-<td>4381</td>
+<td>4337</td>
 <td>u_pll2/rpll_inst/CLKOUT</td>
 </tr>
 <tr>
@@ -1026,23 +887,178 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>u_controller_spi/ff_state_1_s1/CLK</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/CLK</td>
 </tr>
 <tr>
-<td>12.325</td>
+<td>12.592</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>9</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/Q</td>
+</tr>
+<tr>
+<td>13.066</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/I0</td>
+</tr>
+<tr>
+<td>13.583</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/F</td>
+</tr>
+<tr>
+<td>14.057</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/I3</td>
+</tr>
+<tr>
+<td>14.428</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/F</td>
+</tr>
+<tr>
+<td>14.902</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/I1</td>
+</tr>
+<tr>
+<td>15.457</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/F</td>
+</tr>
+<tr>
+<td>15.931</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/I1</td>
+</tr>
+<tr>
+<td>16.486</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/F</td>
+</tr>
+<tr>
+<td>16.960</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/I3</td>
+</tr>
+<tr>
+<td>17.331</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/F</td>
+</tr>
+<tr>
+<td>17.805</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/I1</td>
+</tr>
+<tr>
+<td>18.375</td>
+<td>0.570</td>
+<td>tINS</td>
+<td>FR</td>
+<td>4</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/F</td>
+</tr>
+<tr>
+<td>18.735</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_0_s0/CE</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>13.968</td>
+<td>13.968</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>13.968</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>14.328</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>153</td>
+<td>u_pll/rpll_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>14.688</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_0_s0/CLK</td>
+</tr>
+<tr>
+<td>14.653</td>
 <td>-0.035</td>
 <td>tUnc</td>
 <td> </td>
 <td> </td>
-<td>u_controller_spi/ff_state_1_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_0_s0</td>
 </tr>
 <tr>
-<td>12.290</td>
+<td>14.618</td>
 <td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>u_controller_spi/ff_state_1_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_0_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1062,7 +1078,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 2.492, 41.245%; route: 3.318, 54.915%; tC2Q: 0.232, 3.840%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 2.939, 46.102%; route: 3.204, 50.259%; tC2Q: 0.232, 3.639%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 </table>
@@ -1072,173 +1088,34 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-3.041</td>
+<td>-4.117</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>15.331</td>
+<td>18.735</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>12.290</td>
+<td>14.618</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>u_controller_spi/ff_state_0_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_1_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
-<table class="summary_table">
-<tr>
-<th>AT</th>
-<th>DELAY</th>
-<th>TYPE</th>
-<th>RF</th>
-<th>FANOUT</th>
-<th>NODE</th>
-</tr>
-<tr>
-<td>9.312</td>
-<td>9.312</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>active clock edge time</td>
-</tr>
-<tr>
-<td>9.312</td>
-<td>0.000</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
-</tr>
-<tr>
-<td>9.672</td>
-<td>0.360</td>
-<td>tCL</td>
-<td>RR</td>
-<td>207</td>
-<td>u_pll/rpll_inst/CLKOUT</td>
-</tr>
-<tr>
-<td>10.032</td>
-<td>0.360</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/CLK</td>
-</tr>
-<tr>
-<td>10.264</td>
-<td>0.232</td>
-<td>tC2Q</td>
-<td>RF</td>
-<td>4</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/Q</td>
-</tr>
-<tr>
-<td>10.738</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/I1</td>
-</tr>
-<tr>
-<td>11.293</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/F</td>
-</tr>
-<tr>
-<td>11.767</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s1/I3</td>
-</tr>
-<tr>
-<td>12.138</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n57_s1/F</td>
-</tr>
-<tr>
-<td>12.612</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s10/I3</td>
-</tr>
-<tr>
-<td>12.983</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n310_s10/F</td>
-</tr>
-<tr>
-<td>13.457</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s8/I1</td>
-</tr>
-<tr>
-<td>14.012</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s8/F</td>
-</tr>
-<tr>
-<td>14.486</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s5/I3</td>
-</tr>
-<tr>
-<td>14.857</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s5/F</td>
-</tr>
-<tr>
-<td>15.331</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_state_0_s1/D</td>
-</tr>
-</table>
-<b>Data Required Path:</b>
 <table class="summary_table">
 <tr>
 <th>AT</th>
@@ -1269,7 +1146,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>0.360</td>
 <td>tCL</td>
 <td>RR</td>
-<td>4381</td>
+<td>4337</td>
 <td>u_pll2/rpll_inst/CLKOUT</td>
 </tr>
 <tr>
@@ -1278,23 +1155,178 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>u_controller_spi/ff_state_0_s1/CLK</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/CLK</td>
 </tr>
 <tr>
-<td>12.325</td>
+<td>12.592</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>9</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/Q</td>
+</tr>
+<tr>
+<td>13.066</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/I0</td>
+</tr>
+<tr>
+<td>13.583</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/F</td>
+</tr>
+<tr>
+<td>14.057</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/I3</td>
+</tr>
+<tr>
+<td>14.428</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/F</td>
+</tr>
+<tr>
+<td>14.902</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/I1</td>
+</tr>
+<tr>
+<td>15.457</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/F</td>
+</tr>
+<tr>
+<td>15.931</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/I1</td>
+</tr>
+<tr>
+<td>16.486</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/F</td>
+</tr>
+<tr>
+<td>16.960</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/I3</td>
+</tr>
+<tr>
+<td>17.331</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/F</td>
+</tr>
+<tr>
+<td>17.805</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/I1</td>
+</tr>
+<tr>
+<td>18.375</td>
+<td>0.570</td>
+<td>tINS</td>
+<td>FR</td>
+<td>4</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/F</td>
+</tr>
+<tr>
+<td>18.735</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_1_s0/CE</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>13.968</td>
+<td>13.968</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>13.968</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>14.328</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>153</td>
+<td>u_pll/rpll_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>14.688</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_1_s0/CLK</td>
+</tr>
+<tr>
+<td>14.653</td>
 <td>-0.035</td>
 <td>tUnc</td>
 <td> </td>
 <td> </td>
-<td>u_controller_spi/ff_state_0_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_1_s0</td>
 </tr>
 <tr>
-<td>12.290</td>
+<td>14.618</td>
 <td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>u_controller_spi/ff_state_0_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_1_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1309,12 +1341,12 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>7</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 2.223, 41.951%; route: 2.844, 53.671%; tC2Q: 0.232, 4.378%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 2.939, 46.102%; route: 3.204, 50.259%; tC2Q: 0.232, 3.639%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 </table>
@@ -1324,173 +1356,34 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-3.041</td>
+<td>-4.117</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>15.331</td>
+<td>18.735</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>12.290</td>
+<td>14.618</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>u_controller_spi/ff_spi_write_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_6_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
-<table class="summary_table">
-<tr>
-<th>AT</th>
-<th>DELAY</th>
-<th>TYPE</th>
-<th>RF</th>
-<th>FANOUT</th>
-<th>NODE</th>
-</tr>
-<tr>
-<td>9.312</td>
-<td>9.312</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>active clock edge time</td>
-</tr>
-<tr>
-<td>9.312</td>
-<td>0.000</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
-</tr>
-<tr>
-<td>9.672</td>
-<td>0.360</td>
-<td>tCL</td>
-<td>RR</td>
-<td>207</td>
-<td>u_pll/rpll_inst/CLKOUT</td>
-</tr>
-<tr>
-<td>10.032</td>
-<td>0.360</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/CLK</td>
-</tr>
-<tr>
-<td>10.264</td>
-<td>0.232</td>
-<td>tC2Q</td>
-<td>RF</td>
-<td>4</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/Q</td>
-</tr>
-<tr>
-<td>10.738</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/I1</td>
-</tr>
-<tr>
-<td>11.293</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/F</td>
-</tr>
-<tr>
-<td>11.767</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s1/I3</td>
-</tr>
-<tr>
-<td>12.138</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n57_s1/F</td>
-</tr>
-<tr>
-<td>12.612</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s10/I3</td>
-</tr>
-<tr>
-<td>12.983</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n310_s10/F</td>
-</tr>
-<tr>
-<td>13.457</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_bus_io_s3/I3</td>
-</tr>
-<tr>
-<td>13.828</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>u_controller_spi/ff_bus_io_s3/F</td>
-</tr>
-<tr>
-<td>14.302</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n307_s2/I1</td>
-</tr>
-<tr>
-<td>14.857</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n307_s2/F</td>
-</tr>
-<tr>
-<td>15.331</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_spi_write_s1/D</td>
-</tr>
-</table>
-<b>Data Required Path:</b>
 <table class="summary_table">
 <tr>
 <th>AT</th>
@@ -1521,7 +1414,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>0.360</td>
 <td>tCL</td>
 <td>RR</td>
-<td>4381</td>
+<td>4337</td>
 <td>u_pll2/rpll_inst/CLKOUT</td>
 </tr>
 <tr>
@@ -1530,23 +1423,178 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>u_controller_spi/ff_spi_write_s1/CLK</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/CLK</td>
 </tr>
 <tr>
-<td>12.325</td>
+<td>12.592</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>9</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/Q</td>
+</tr>
+<tr>
+<td>13.066</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/I0</td>
+</tr>
+<tr>
+<td>13.583</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/F</td>
+</tr>
+<tr>
+<td>14.057</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/I3</td>
+</tr>
+<tr>
+<td>14.428</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/F</td>
+</tr>
+<tr>
+<td>14.902</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/I1</td>
+</tr>
+<tr>
+<td>15.457</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/F</td>
+</tr>
+<tr>
+<td>15.931</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/I1</td>
+</tr>
+<tr>
+<td>16.486</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/F</td>
+</tr>
+<tr>
+<td>16.960</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/I3</td>
+</tr>
+<tr>
+<td>17.331</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/F</td>
+</tr>
+<tr>
+<td>17.805</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/I1</td>
+</tr>
+<tr>
+<td>18.375</td>
+<td>0.570</td>
+<td>tINS</td>
+<td>FR</td>
+<td>4</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/F</td>
+</tr>
+<tr>
+<td>18.735</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_6_s0/CE</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>13.968</td>
+<td>13.968</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>13.968</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>14.328</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>153</td>
+<td>u_pll/rpll_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>14.688</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_6_s0/CLK</td>
+</tr>
+<tr>
+<td>14.653</td>
 <td>-0.035</td>
 <td>tUnc</td>
 <td> </td>
 <td> </td>
-<td>u_controller_spi/ff_spi_write_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_6_s0</td>
 </tr>
 <tr>
-<td>12.290</td>
+<td>14.618</td>
 <td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>u_controller_spi/ff_spi_write_s1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_6_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1561,12 +1609,12 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>7</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 2.223, 41.951%; route: 2.844, 53.671%; tC2Q: 0.232, 4.378%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 2.939, 46.102%; route: 3.204, 50.259%; tC2Q: 0.232, 3.639%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 </table>
@@ -1576,173 +1624,34 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-2.834</td>
+<td>-4.117</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>15.124</td>
+<td>18.735</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>12.290</td>
+<td>14.618</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>u_controller_spi/ff_bus_write_s0</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>u_pll2/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
-<table class="summary_table">
-<tr>
-<th>AT</th>
-<th>DELAY</th>
-<th>TYPE</th>
-<th>RF</th>
-<th>FANOUT</th>
-<th>NODE</th>
-</tr>
-<tr>
-<td>9.312</td>
-<td>9.312</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>active clock edge time</td>
-</tr>
-<tr>
-<td>9.312</td>
-<td>0.000</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
-</tr>
-<tr>
-<td>9.672</td>
-<td>0.360</td>
-<td>tCL</td>
-<td>RR</td>
-<td>207</td>
-<td>u_pll/rpll_inst/CLKOUT</td>
-</tr>
-<tr>
-<td>10.032</td>
-<td>0.360</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/CLK</td>
-</tr>
-<tr>
-<td>10.264</td>
-<td>0.232</td>
-<td>tC2Q</td>
-<td>RF</td>
-<td>4</td>
-<td>u_controller_spi/u_spi/ff_spi_data_6_s1/Q</td>
-</tr>
-<tr>
-<td>10.738</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/I1</td>
-</tr>
-<tr>
-<td>11.293</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s2/F</td>
-</tr>
-<tr>
-<td>11.767</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n57_s1/I3</td>
-</tr>
-<tr>
-<td>12.138</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n57_s1/F</td>
-</tr>
-<tr>
-<td>12.612</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/n310_s10/I3</td>
-</tr>
-<tr>
-<td>12.983</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>2</td>
-<td>u_controller_spi/n310_s10/F</td>
-</tr>
-<tr>
-<td>13.457</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_bus_io_s3/I3</td>
-</tr>
-<tr>
-<td>13.828</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>u_controller_spi/ff_bus_io_s3/F</td>
-</tr>
-<tr>
-<td>14.302</td>
-<td>0.474</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>u_controller_spi/ff_bus_io_s2/I2</td>
-</tr>
-<tr>
-<td>14.764</td>
-<td>0.462</td>
-<td>tINS</td>
-<td>FR</td>
-<td>3</td>
-<td>u_controller_spi/ff_bus_io_s2/F</td>
-</tr>
-<tr>
-<td>15.124</td>
-<td>0.360</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>u_controller_spi/ff_bus_write_s0/CE</td>
-</tr>
-</table>
-<b>Data Required Path:</b>
 <table class="summary_table">
 <tr>
 <th>AT</th>
@@ -1773,7 +1682,7 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>0.360</td>
 <td>tCL</td>
 <td>RR</td>
-<td>4381</td>
+<td>4337</td>
 <td>u_pll2/rpll_inst/CLKOUT</td>
 </tr>
 <tr>
@@ -1782,23 +1691,178 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>u_controller_spi/ff_bus_write_s0/CLK</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/CLK</td>
 </tr>
 <tr>
-<td>12.325</td>
+<td>12.592</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>9</td>
+<td>u_fpga_connect_master/ff_serial_busy_s5/Q</td>
+</tr>
+<tr>
+<td>13.066</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/I0</td>
+</tr>
+<tr>
+<td>13.583</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s8/F</td>
+</tr>
+<tr>
+<td>14.057</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/I3</td>
+</tr>
+<tr>
+<td>14.428</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s7/F</td>
+</tr>
+<tr>
+<td>14.902</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/I1</td>
+</tr>
+<tr>
+<td>15.457</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_start_s9/F</td>
+</tr>
+<tr>
+<td>15.931</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/I1</td>
+</tr>
+<tr>
+<td>16.486</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_0_s7/F</td>
+</tr>
+<tr>
+<td>16.960</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/I3</td>
+</tr>
+<tr>
+<td>17.331</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>u_fpga_connect_master/ff_sub_mode_1_s9/F</td>
+</tr>
+<tr>
+<td>17.805</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/I1</td>
+</tr>
+<tr>
+<td>18.375</td>
+<td>0.570</td>
+<td>tINS</td>
+<td>FR</td>
+<td>4</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s8/F</td>
+</tr>
+<tr>
+<td>18.735</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s0/CE</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>13.968</td>
+<td>13.968</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>13.968</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>u_pll/rpll_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>14.328</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>153</td>
+<td>u_pll/rpll_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>14.688</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s0/CLK</td>
+</tr>
+<tr>
+<td>14.653</td>
 <td>-0.035</td>
 <td>tUnc</td>
 <td> </td>
 <td> </td>
-<td>u_controller_spi/ff_bus_write_s0</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s0</td>
 </tr>
 <tr>
-<td>12.290</td>
+<td>14.618</td>
 <td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>u_controller_spi/ff_bus_write_s0</td>
+<td>u_fpga_connect_master/ff_sub_tx_data_7_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1813,12 +1877,12 @@ C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>7</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 2.130, 41.830%; route: 2.730, 53.614%; tC2Q: 0.232, 4.556%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 2.939, 46.102%; route: 3.204, 50.259%; tC2Q: 0.232, 3.639%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
 </table>

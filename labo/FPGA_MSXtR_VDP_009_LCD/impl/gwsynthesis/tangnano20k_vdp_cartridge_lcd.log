@@ -2,6 +2,7 @@ GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\config_rom\config_rom.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\debugger\ip_debugger.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_sub.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_slave.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\gowin_clkdiv\gowin_clkdiv.v'
@@ -15,7 +16,6 @@ Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\lab
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\sdram\ip_sdram_tangnano20k_c.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\ip_spi.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\spi.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi_flash_interface_lite\spi_flash_interface_lite.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\tangnano20k_vdp_cartridge_lcd.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\uart\ip_uart.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\uart\uart.v'
@@ -50,8 +50,10 @@ Compiling module 'Gowin_rPLL2'("C:\Users\hra\Documents\github\HRA_product\FPGA_M
 Compiling module 'Gowin_CLKDIV'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\gowin_clkdiv\gowin_clkdiv.v":10)
 Compiling module 'ip_spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\ip_spi.v":34)
 Compiling module 'spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\spi.v":38)
-Compiling module 'fpga_connect_master'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master.v":27)
-Compiling module 'fpga_connect_slave'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_slave.v":27)
+Compiling module 'fpga_connect_master'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master.v":28)
+Compiling module 'fpga_connect_sub'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_sub.v":44)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 2("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_sub.v":187)
+Compiling module 'fpga_connect_slave'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_slave.v":28)
 Compiling module 's2026b'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b.v":34)
 Compiling module 's2026b_cpu_select'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b_cpu_select.v":34)
 Compiling module 'vdp_lcd'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_lcd.v":58)

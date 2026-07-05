@@ -10,6 +10,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_sub.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_master.v",
    "Type" : "verilog"
   },

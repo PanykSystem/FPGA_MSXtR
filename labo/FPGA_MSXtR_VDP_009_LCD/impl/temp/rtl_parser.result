@@ -54,15 +54,25 @@
     "InstLine" : 294,
     "InstName" : "u_fpga_connect_master",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_master.v",
-    "ModuleLine" : 27,
-    "ModuleName" : "fpga_connect_master"
+    "ModuleLine" : 28,
+    "ModuleName" : "fpga_connect_master",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_master.v",
+      "InstLine" : 370,
+      "InstName" : "u_fpga_connect_sub",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_sub.v",
+      "ModuleLine" : 44,
+      "ModuleName" : "fpga_connect_sub"
+     }
+    ]
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/tangnano20k_vdp_cartridge_lcd.v",
     "InstLine" : 314,
     "InstName" : "u_fpga_connect_slave",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_slave.v",
-    "ModuleLine" : 27,
+    "ModuleLine" : 28,
     "ModuleName" : "fpga_connect_slave"
    },
    {

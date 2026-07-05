@@ -316,7 +316,6 @@ module fpga_connect_master (
 					if( w_sub_done ) begin
 						//	I/O Read モード: データ受信完了
 						ff_bus_rdata			<= w_sub_rx_data;
-						ff_bus_rdata_en			<= 1'b1;
 						ff_sub_tx_active		<= 1'b0;
 						ff_done					<= 1'b1;
 						ff_state				<= c_st_wait_done;
@@ -368,7 +367,7 @@ module fpga_connect_master (
 	// ---------------------------------------------------------
 	//	通信モジュール（クロックドメイン：clk_serial）
 	// ---------------------------------------------------------
-	fpga_connect_master_sub u_fpga_connect_master_sub (
+	fpga_connect_sub u_fpga_connect_sub (
 		.reset_n		( reset_n			),
 		.clk_serial		( clk_serial		),
 		.tx_cs			( w_sub_tx_active	),

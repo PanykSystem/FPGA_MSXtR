@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-//	fpga_connect_master_sub.v
+//	fpga_connect_sub.v
 //	Copyright (C)2026 Takayuki Hara (HRA!)
 //	
 //	 Permission is hereby granted, free of charge, to any person obtaining a 
@@ -21,21 +21,27 @@
 //	in the Software.
 // -----------------------------------------------------------------------------
 //	Description:
-//		fpga_connect_master の 2bit シリアル送受信サブモジュール
+//		fpga_connect_sub の 2bit シリアル送受信サブモジュール
 //		mode:
-//			00: モードビット送信
+//			00: モードビット送信 for Master
 //				tx_data[1:0] = 00: I/O write
 //				tx_data[1:0] = 01: I/O read
 //				tx_data[1:0] = 10: Sound Send
 //				tx_data[1:0] = 11: Sound Receive
-//			01: 1byte 送信
+//			00: 2bit送信(送信ステータス) for Slave
+//				tx_data[1:0] = 00: BUSY
+//				tx_data[1:0] = 01: Reserved
+//				tx_data[1:0] = 10: Reserved
+//				tx_data[1:0] = 11: READY
+//			01: 1byte 送信 for Master/Slave
 //				tx_data[7:0] = 送信するデータ
-//			10: 1byte 受信
+//			10: 1byte 受信 for Master/Slave
 //				rx_data[7:0] = 受信したデータ
-//			11: 2bit受信(相手側ステータス取得)
+//			11: 2bit受信(相手側ステータス取得) for Master
+//			11: 2bit受信(モードビット取得) for Slave
 // -----------------------------------------------------------------------------
 
-module fpga_connect_master_sub (
+module fpga_connect_sub (
 	input			reset_n,
 	input			clk_serial,
 	input			tx_cs,

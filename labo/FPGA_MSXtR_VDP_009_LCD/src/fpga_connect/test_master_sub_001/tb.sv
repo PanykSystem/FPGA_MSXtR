@@ -42,7 +42,7 @@ module tb;
 		clk_serial <= ~clk_serial;
 	end
 
-	fpga_connect_master_sub u_dut (
+	fpga_connect_sub u_dut (
 		.reset_n	( reset_n		),
 		.clk_serial	( clk_serial	),
 		.tx_cs		( tx_cs			),
