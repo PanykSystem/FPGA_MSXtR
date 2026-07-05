@@ -30,6 +30,24 @@ module tb;
 	reg				tb_so_oe;
 	integer			test_number;
 
+	function [7:0] f_sound_tx_byte;
+		input [31:0] lch;
+		input [31:0] rch;
+		input [2:0] index;
+		begin
+			case( index )
+			3'd0:		f_sound_tx_byte = lch[31:24];
+			3'd1:		f_sound_tx_byte = lch[23:16];
+			3'd2:		f_sound_tx_byte = lch[15:8];
+			3'd3:		f_sound_tx_byte = lch[7:0];
+			3'd4:		f_sound_tx_byte = rch[31:24];
+			3'd5:		f_sound_tx_byte = rch[23:16];
+			3'd6:		f_sound_tx_byte = rch[15:8];
+			default:	f_sound_tx_byte = rch[7:0];
+			endcase
+		end
+	endfunction
+
 	assign fpga_so = tb_so_oe ? tb_so_drive : 2'bzz;
 
 	always #(CLK_PERIOD_NS / 2.0) begin
@@ -44,6 +62,7 @@ module tb;
 		.reset_n		( reset_n		),
 		.clk			( clk			),
 		.clk_serial		( clk_serial	),
+		.bus_cs			( 1'b1			),
 		.bus_address	( bus_address	),
 		.bus_write		( bus_write		),
 		.bus_wdata		( bus_wdata		),
@@ -125,25 +144,6 @@ module tb;
 		end
 	endtask
 
-	task automatic check_so_pair;
-		input [1:0] expected;
-		input [255:0] msg;
-		reg found;
-		reg [1:0] actual;
-		begin
-			wait_so_clk_posedge( found );
-			if( !found ) begin
-				$display( "FAIL: %0s timeout", msg );
-				fail_count = fail_count + 1;
-			end
-			else begin
-				#1;
-				actual = fpga_so;
-				check_equal2( actual, expected, msg );
-			end
-		end
-	endtask
-
 	task automatic wait_ready_before_request;
 		input is_sound;
 		input [255:0] msg;
@@ -165,29 +165,33 @@ module tb;
 		end
 	endtask
 
-	task automatic wait_mode_start;
-		input [1:0] mode;
+	task automatic wait_sub_start;
+		input [1:0] exp_mode;
+		input [7:0] exp_tx_data;
+		input check_tx_data;
 		input [255:0] msg;
 		integer i;
 		reg found;
 		begin
 			found = 1'b0;
-			begin : u_wait_mode
+			begin : u_wait_sub_start
 				for( i = 0; i < 512; i = i + 1 ) begin
-					@( posedge fpga_so_clk );
-					#1;
-					if( fpga_so === mode ) begin
+					@( posedge clk_serial );
+					if( u_dut.w_sub_start && (u_dut.w_sub_mode == exp_mode) ) begin
 						found = 1'b1;
-						disable u_wait_mode;
+						disable u_wait_sub_start;
 					end
 				end
 			end
 			if( !found ) begin
-				$display( "FAIL: %0s mode start timeout", msg );
+				$display( "FAIL: %0s sub start timeout", msg );
 				fail_count = fail_count + 1;
 			end
 			else begin
 				pass_count = pass_count + 1;
+				if( check_tx_data ) begin
+					check_equal8( u_dut.w_sub_tx_data, exp_tx_data, msg );
+				end
 			end
 		end
 	endtask
@@ -292,15 +296,9 @@ module tb;
 		input [7:0] exp_addr;
 		input [7:0] exp_data;
 		begin
-			wait_mode_start( 2'b00, "io_write" );
-			check_so_pair( exp_addr[7:6], "io_write addr[7:6]" );
-			check_so_pair( exp_addr[5:4], "io_write addr[5:4]" );
-			check_so_pair( exp_addr[3:2], "io_write addr[3:2]" );
-			check_so_pair( exp_addr[1:0], "io_write addr[1:0]" );
-			check_so_pair( exp_data[7:6], "io_write data[7:6]" );
-			check_so_pair( exp_data[5:4], "io_write data[5:4]" );
-			check_so_pair( exp_data[3:2], "io_write data[3:2]" );
-			check_so_pair( exp_data[1:0], "io_write data[1:0]" );
+			wait_sub_start( 2'b00, 8'h00, 1'b1, "io_write mode" );
+			wait_sub_start( 2'b01, exp_addr, 1'b1, "io_write addr" );
+			wait_sub_start( 2'b01, exp_data, 1'b1, "io_write data" );
 		end
 	endtask
 
@@ -308,28 +306,10 @@ module tb;
 		input [31:0] exp_l;
 		input [31:0] exp_r;
 		integer i;
-		reg found;
 		begin
-			wait_mode_start( 2'b10, "sound_send" );
-			for( i = 0; i < 16; i = i + 1 ) begin
-				wait_so_clk_posedge( found );
-				if( !found ) begin
-					$display( "FAIL: sound L pair timeout" );
-					fail_count = fail_count + 1;
-					disable expect_sound_frame;
-				end
-				#1;
-				check_equal2( fpga_so, exp_l[31 - (i*2) -: 2], "sound L pair" );
-			end
-			for( i = 0; i < 16; i = i + 1 ) begin
-				wait_so_clk_posedge( found );
-				if( !found ) begin
-					$display( "FAIL: sound R pair timeout" );
-					fail_count = fail_count + 1;
-					disable expect_sound_frame;
-				end
-				#1;
-				check_equal2( fpga_so, exp_r[31 - (i*2) -: 2], "sound R pair" );
+			wait_sub_start( 2'b00, 8'h02, 1'b1, "sound_send mode" );
+			for( i = 0; i < 8; i = i + 1 ) begin
+				wait_sub_start( 2'b01, f_sound_tx_byte( exp_l, exp_r, i[2:0] ), 1'b1, "sound_send byte" );
 			end
 		end
 	endtask
@@ -340,40 +320,19 @@ module tb;
 		integer i;
 		reg found;
 		begin
-			wait_mode_start( 2'b01, "io_read" );
-			check_so_pair( exp_addr[7:6], "io_read addr[7:6]" );
-			check_so_pair( exp_addr[5:4], "io_read addr[5:4]" );
-			check_so_pair( exp_addr[3:2], "io_read addr[3:2]" );
-			check_so_pair( exp_addr[1:0], "io_read addr[1:0]" );
+			wait_sub_start( 2'b00, 8'h01, 1'b1, "io_read mode" );
+			wait_sub_start( 2'b01, exp_addr, 1'b1, "io_read addr" );
+			wait_sub_start( 2'b11, 8'h00, 1'b1, "io_read status" );
 
-			// Wait until master advances to #5 and releases the line.
-			wait_so_clk_posedge( found );
-			if( !found ) begin
-				$display( "FAIL: io_read release timeout" );
-				fail_count = fail_count + 1;
-				disable respond_io_read_frame;
-			end
-
-			// #5: ready flag, #6-#9: data pairs.
+			// Status read is sampled in RX_STATUS mode.
 			tb_so_oe = 1'b1;
 			tb_so_drive = 2'b11;
-			wait_so_clk_posedge( found );
-			if( !found ) begin
-				$display( "FAIL: io_read ready flag sample timeout" );
-				fail_count = fail_count + 1;
-				tb_so_oe = 1'b0;
-				disable respond_io_read_frame;
-			end
-			wait_so_clk_negedge( found );
-			if( !found ) begin
-				$display( "FAIL: io_read ready flag drive timeout" );
-				fail_count = fail_count + 1;
-				tb_so_oe = 1'b0;
-				disable respond_io_read_frame;
-			end
+
+			wait_sub_start( 2'b10, 8'h00, 1'b1, "io_read data" );
+			// RX_BYTE captures one pair per so_clk cycle.
 			tb_so_drive = ret_data[7:6];
 			for( i = 0; i < 3; i = i + 1 ) begin
-				wait_so_clk_negedge( found );
+				wait_so_clk_posedge( found );
 				if( !found ) begin
 					$display( "FAIL: io_read response drive timeout" );
 					fail_count = fail_count + 1;
@@ -386,11 +345,21 @@ module tb;
 				default: tb_so_drive = ret_data[1:0];
 				endcase
 			end
-			wait_so_clk_posedge( found );
+
+			// Keep driving until RX_BYTE sub-transaction is completed.
+			found = 1'b0;
+			for( i = 0; i < 128; i = i + 1 ) begin
+				@( posedge clk_serial );
+				if( u_dut.w_sub_done ) begin
+					found = 1'b1;
+					i = 128;
+				end
+			end
 			if( !found ) begin
-				$display( "FAIL: io_read final data sample timeout" );
+				$display( "FAIL: io_read final done timeout" );
 				fail_count = fail_count + 1;
 			end
+			@( posedge clk_serial );
 			tb_so_oe = 1'b0;
 		end
 	endtask

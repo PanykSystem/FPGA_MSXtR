@@ -58,10 +58,6 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/spi_flash_interface_lite/spi_flash_interface_lite.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/tangnano20k_vdp_cartridge_lcd.v",
    "Type" : "verilog"
   },

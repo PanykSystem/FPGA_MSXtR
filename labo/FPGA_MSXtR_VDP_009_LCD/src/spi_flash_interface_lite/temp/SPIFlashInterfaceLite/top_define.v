@@ -1,1 +1,0 @@
-`define module_name SPI_Flash_Interface_Lite_Top

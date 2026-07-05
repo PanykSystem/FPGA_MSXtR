@@ -43,7 +43,7 @@
 module tb ();
 	localparam real	CLK_PERIOD			= 1000.0 / 85.0;		//	~11.76 ns  (85 MHz)
 	localparam real	CLK_SERIAL_PERIOD	= 1000.0 / 214.0;		//	~4.67 ns   (214 MHz)
-	localparam real	SPI_HALF			= 1000.0 / 42.0 / 2.0;	//	~11.9 ns   (42 MHz SPI)
+	localparam real	SPI_HALF			= 1000.0 / 80.0 / 2.0;	//	6.25 ns    (80 MHz SPI)
 
 	int			test_no;
 	int			pass_count;
@@ -173,6 +173,8 @@ module tb ();
 	// --------------------------------------------------------------------
 	//	Task: spi_transfer_byte
 	//	  Sends one byte and captures one byte from MISO (MSB-first).
+	//	  In TX mode, DUT shifts on SPI rising edge, so sample MISO while
+	//	  SCK is low (before the next rising edge).
 	// --------------------------------------------------------------------
 	task automatic spi_transfer_byte(
 		input	[7:0]	tx_data,
@@ -183,12 +185,12 @@ module tb ();
 			rx_data = 8'h00;
 			for ( i = 7; i >= 0; i-- ) begin
 				spi_mosi = tx_data[i];
+				#( 1 );
+				rx_data[i] = spi_miso;
 				#( SPI_HALF );
 				spi_clk = 1'b1;
 				#( SPI_HALF );
 				spi_clk = 1'b0;
-				#( 1 );
-				rx_data[i] = spi_miso;
 			end
 			repeat( 20 ) @( posedge clk );
 		end
@@ -429,7 +431,7 @@ module tb ();
 		//	  Packet : [0x02][0x66][dummy]
 		//	  Expected:
 		//	    - bus_valid pulse once with bus_write=0, bus_address=0x0066
-		//	    - after bus_rdata_en, spi_intr asserts
+		//	    - spi_intr asserts only after TX data is load-ready on MISO
 		//	    - dummy byte clocks out bus_rdata (0xA5)
 		// ================================================================
 		test_no = 5;
@@ -468,12 +470,12 @@ module tb ();
 
 			//	Provide read data for ST_WAIT_RDATA.
 			repeat( 2 ) @( posedge clk );
-			bus_rdata    = 8'hA5;
+			bus_rdata    = 8'hBF;
 			bus_rdata_en = 1'b1;
 			@( posedge clk );
 			bus_rdata_en = 1'b0;
 
-			//	Wait for SPI interrupt assertion (ready-to-send notification)
+			//	Wait for SPI interrupt assertion (first MISO bit is ready)
 			intr_timeout = 0;
 			while ( (spi_intr == 1'b0) && (intr_timeout < 200) ) begin
 				intr_timeout = intr_timeout + 1;
@@ -487,9 +489,6 @@ module tb ();
 				$display( "[TEST %0d] FAIL: spi_intr did not assert (timeout)", test_no );
 				fail_count = fail_count + 1;
 			end
-
-			//	Give spi.v one more system-clock window to accept tx request.
-			repeat( 4 ) @( posedge clk );
 
 			$display( "[TEST %0d]   Sending dummy byte and capturing read data ...", test_no );
 			spi_transfer_byte( 8'h00, read_data );
@@ -530,11 +529,11 @@ module tb ();
 				fail_count = fail_count + 1;
 			end
 
-			if ( read_data === 8'hA5 ) begin
+			if ( read_data === 8'hBF ) begin
 				$display( "[TEST %0d] PASS: read data = 0x%02X", test_no, read_data );
 				pass_count = pass_count + 1;
 			end else begin
-				$display( "[TEST %0d] FAIL: read data = 0x%02X (expected 0xA5)", test_no, read_data );
+				$display( "[TEST %0d] FAIL: read data = 0x%02X (expected 0xBF)", test_no, read_data );
 				fail_count = fail_count + 1;
 			end
 		end

@@ -55,6 +55,7 @@ module tb ();
 	reg		[7:0]	spi_wdata;
 	wire	[7:0]	spi_rdata;
 	wire			spi_rdata_en;
+	wire			spi_tx_load_en;
 
 	//	SPI bus
 	reg				spi_cs_n;
@@ -92,6 +93,7 @@ module tb ();
 		.spi_wdata		( spi_wdata		),
 		.spi_rdata		( spi_rdata		),
 		.spi_rdata_en	( spi_rdata_en	),
+		.spi_tx_load_en	( spi_tx_load_en	),
 		.spi_cs_n		( spi_cs_n		),
 		.spi_clk		( spi_clk		),
 		.spi_mosi		( spi_mosi		),
@@ -138,11 +140,9 @@ module tb ();
 		//	  MOSI: drive bit[i] before rising edge; DUT samples on falling edge.
 		captured = 8'h00;
 		for ( i = 7; i >= 0; i-- ) begin
-			//	Sample MISO — bit[i] of tx_data is present before rising edge
-			captured[i] = spi_miso;
-
 			//	Drive MOSI with bit[i] of rx_data (MSB first)
 			spi_mosi = rx_data[i];
+			captured[i] = spi_miso;
 
 			//	Rising edge — DUT shifts MISO (next bit appears after ~2 clk_serial)
 			#( SPI_HALF );

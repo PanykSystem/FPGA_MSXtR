@@ -1,23 +1,5 @@
 [
  {
-  "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/spi_flash_interface_lite/spi_flash_interface_lite.v",
-  "InstLine" : 2391,
-  "InstName" : "SPI_Flash_Interface_Lite_Top",
-  "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/spi_flash_interface_lite/spi_flash_interface_lite.v",
-  "ModuleLine" : 2391,
-  "ModuleName" : "SPI_Flash_Interface_Lite_Top",
-  "SubInsts" : [
-   {
-    "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/spi_flash_interface_lite/spi_flash_interface_lite.v",
-    "InstLine" : 2456,
-    "InstName" : "spiflash_inst",
-    "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/spi_flash_interface_lite/spi_flash_interface_lite.v",
-    "ModuleLine" : 11,
-    "ModuleName" : "~spiflash.SPI_Flash_Interface_Lite_Top"
-   }
-  ]
- },
- {
   "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/tangnano20k_vdp_cartridge_lcd.v",
   "InstLine" : 24,
   "InstName" : "tangnano20k_vdp_cartridge_lcd",
@@ -59,7 +41,7 @@
     "SubInsts" : [
      {
       "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/spi/ip_spi.v",
-      "InstLine" : 241,
+      "InstLine" : 249,
       "InstName" : "u_spi",
       "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/spi/spi.v",
       "ModuleLine" : 38,

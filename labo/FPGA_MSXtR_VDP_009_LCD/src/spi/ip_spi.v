@@ -65,9 +65,11 @@ module ip_spi (
 	reg				ff_spi_write;
 	reg				ff_spi_valid;
 	reg				ff_spi_intr;
+	reg			ff_spi_tx_load_en_d1;
 	wire			spi_ready;
 	wire	[7:0]	spi_rdata;
 	wire			spi_rdata_en;
+	wire			spi_tx_load_en;
 	reg		[15:0]	ff_bus_address;
 	reg		[7:0]	ff_bus_wdata;
 	reg				ff_bus_io;
@@ -218,20 +220,26 @@ module ip_spi (
 
 	// ---------------------------------------------------------
 	// 	SPI interrupt control
-	// 	Set on bus_rdata_en, clear only after spi_clk goes high.
+	// 	Set when TX data is actually loaded to the SPI shifter
+	// 	(first MISO bit is ready), clear only after spi_clk goes high.
 	// ---------------------------------------------------------
 	always @( posedge clk ) begin
 		if( !reset_n ) begin
-			ff_spi_intr	<= 1'b0;
+			ff_spi_intr				<= 1'b0;
+			ff_spi_tx_load_en_d1	<= 1'b0;
 		end
 		else if( ff_spi_cs_n ) begin
-			ff_spi_intr	<= 1'b0;
+			ff_spi_intr				<= 1'b0;
+			ff_spi_tx_load_en_d1	<= 1'b0;
 		end
-		else if( ff_state == ST_WAIT_RDATA && bus_rdata_en ) begin
+		else begin
+			ff_spi_tx_load_en_d1	<= spi_tx_load_en;
+			if( ff_spi_tx_load_en_d1 ) begin
 			ff_spi_intr	<= 1'b1;
-		end
-		else if( ff_spi_intr && spi_clk ) begin
-			ff_spi_intr	<= 1'b0;
+			end
+			else if( ff_spi_intr && spi_clk ) begin
+				ff_spi_intr	<= 1'b0;
+			end
 		end
 	end
 
@@ -239,19 +247,20 @@ module ip_spi (
 	//	SPI slave module for connect the micro controller.
 	// ---------------------------------------------------------
 	spi u_spi (
-	.reset_n		( reset_n		),
-	.clk			( clk			),
-	.clk_serial		( clk_serial	),
-	.spi_valid		( ff_spi_valid	),
-	.spi_ready		( spi_ready		),
-	.spi_write		( ff_spi_write	),
-	.spi_wdata		( ff_spi_wdata	),
-	.spi_rdata		( spi_rdata		),
-	.spi_rdata_en	( spi_rdata_en	),
-	.spi_cs_n		( spi_cs_n		),
-	.spi_clk		( spi_clk		),
-	.spi_mosi		( spi_mosi		),
-	.spi_miso		( spi_miso		)
+	.reset_n		( reset_n			),
+	.clk			( clk				),
+	.clk_serial		( clk_serial		),
+	.spi_valid		( ff_spi_valid		),
+	.spi_ready		( spi_ready			),
+	.spi_write		( ff_spi_write		),
+	.spi_wdata		( ff_spi_wdata		),
+	.spi_rdata		( spi_rdata			),
+	.spi_rdata_en	( spi_rdata_en		),
+	.spi_tx_load_en	( spi_tx_load_en	),
+	.spi_cs_n		( spi_cs_n			),
+	.spi_clk		( spi_clk			),
+	.spi_mosi		( spi_mosi			),
+	.spi_miso		( spi_miso			)
 	);
 
 	assign spi_intr			= ff_spi_intr;

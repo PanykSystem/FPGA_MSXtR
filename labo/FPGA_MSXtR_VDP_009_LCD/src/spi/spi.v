@@ -46,6 +46,7 @@ module spi (
 	input	[7:0]	spi_wdata,
 	output	[7:0]	spi_rdata,
 	output			spi_rdata_en,
+	output			spi_tx_load_en,
 	//	SPI
 	input			spi_cs_n,
 	input			spi_clk,
@@ -59,7 +60,6 @@ module spi (
 	reg				ff_spi_cs_n;
 	reg				ff_spi_clk;
 	reg				ff_spi_mosi;
-	reg				ff_spi_clk_d1;
 
 	//	送信用の FF
 	reg				ff_send;
@@ -72,6 +72,13 @@ module spi (
 	wire			w_spi_start;
 	wire			w_spi_shift;
 	reg		[7:0]	ff_spi_data;
+
+	//	TX load event CDC (clk_serial -> clk)
+	reg				ff_tx_load_toggle_serial;
+	reg				ff_tx_load_toggle_pre;
+	reg				ff_tx_load_toggle;
+	reg				ff_tx_load_toggle_d1;
+	wire			w_spi_tx_load_event;
 
 	//	SPIタイミング信号
 	wire			w_spi_clk_falling_edge;
@@ -104,12 +111,11 @@ module spi (
 			ff_spi_cs_n		<= ff_spi_cs_n_pre;
 			ff_spi_clk		<= ff_spi_clk_pre;
 			ff_spi_mosi		<= ff_spi_mosi_pre;
-			ff_spi_clk_d1	<= ff_spi_clk;	//	1-cycle delayed version of SPI clock for edge detection
 		end
 	end
 
-	assign w_spi_clk_falling_edge	=  ff_spi_clk_d1 & ~ff_spi_clk;
-	assign w_spi_clk_rising_edge	= ~ff_spi_clk_d1 &  ff_spi_clk;
+	assign w_spi_clk_falling_edge	=  ff_spi_clk & ~ff_spi_clk_pre;
+	assign w_spi_clk_rising_edge	= ~ff_spi_clk &  ff_spi_clk_pre;
 
 	// ---------------------------------------------------------
 	//	内部からの送信要求を認知する
@@ -137,9 +143,35 @@ module spi (
 		end
 	end
 
-	assign spi_ready	= ff_spi_ready;
-	assign spi_rdata	= ff_spi_data;
-	assign spi_rdata_en = w_byte_finished & ~ff_send;
+	assign spi_ready		= ff_spi_ready;
+	assign spi_rdata		= ff_spi_data;
+	assign spi_rdata_en		= w_byte_finished & ~ff_send;
+
+	assign w_spi_tx_load_event = w_spi_start & ff_send;
+
+	always @( posedge clk_serial or negedge reset_n ) begin
+		if( !reset_n ) begin
+			ff_tx_load_toggle_serial <= 1'b0;
+		end
+		else if( w_spi_tx_load_event ) begin
+			ff_tx_load_toggle_serial <= ~ff_tx_load_toggle_serial;
+		end
+	end
+
+	always @( posedge clk or negedge reset_n ) begin
+		if( !reset_n ) begin
+			ff_tx_load_toggle_pre	<= 1'b0;
+			ff_tx_load_toggle		<= 1'b0;
+			ff_tx_load_toggle_d1	<= 1'b0;
+		end
+		else begin
+			ff_tx_load_toggle_pre	<= ff_tx_load_toggle_serial;
+			ff_tx_load_toggle		<= ff_tx_load_toggle_pre;
+			ff_tx_load_toggle_d1	<= ff_tx_load_toggle;
+		end
+	end
+
+	assign spi_tx_load_en	= ff_tx_load_toggle ^ ff_tx_load_toggle_d1;
 
 	always @( posedge clk or negedge reset_n ) begin
 		if( !reset_n ) begin
@@ -193,7 +225,7 @@ module spi (
 			ff_spi_data <= ff_send_data;
 		end
 		else if( !ff_spi_ready ) begin
-			if( ff_send && w_spi_clk_falling_edge ) begin
+			if( ff_send && w_spi_clk_rising_edge ) begin
 				//	送信モード
 				ff_spi_data <= { ff_spi_data[6:0], 1'b0 };
 			end

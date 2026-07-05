@@ -72,6 +72,7 @@ module tb;
 		.reset_n		( reset_n		),
 		.clk			( clk			),
 		.clk_serial		( clk_serial	),
+		.bus_cs			( 1'b1			),
 		.bus_address	( m_bus_address	),
 		.bus_write		( m_bus_write	),
 		.bus_wdata		( m_bus_wdata	),

@@ -257,23 +257,23 @@ int main(void) {
 		prev_mat00 = keymatrix[0];
 		prev_mat11 = keymatrix[11];
 
-		for( i = 0; i < 12; i++ ) {
-			matrix = keymatrix[i];
-			p_src = s_keymatrix[i];
-			p_dest = s_keyline;
-			for( j = 0; j < 8; j++ ) {
-				if( (matrix & (0x80 >> j)) == 0 ) {
-					memcpy( p_dest, "[**]", 4 );
-				}
-				else {
-					memcpy( p_dest, p_src, 4 );
-				}
-				p_src += 4;
-				p_dest += 4;
-			}
-			vdp_set_vram_address( 0x1800 + i * 32 + 64);
-			vdp_write_vram( (uint8_t*)s_keyline, 32 );
-		}
+//		for( i = 0; i < 12; i++ ) {
+//			matrix = keymatrix[i];
+//			p_src = s_keymatrix[i];
+//			p_dest = s_keyline;
+//			for( j = 0; j < 8; j++ ) {
+//				if( (matrix & (0x80 >> j)) == 0 ) {
+//					memcpy( p_dest, "[**]", 4 );
+//				}
+//				else {
+//					memcpy( p_dest, p_src, 4 );
+//				}
+//				p_src += 4;
+//				p_dest += 4;
+//			}
+//			vdp_set_vram_address( 0x1800 + i * 32 + 64);
+//			vdp_write_vram( (uint8_t*)s_keyline, 32 );
+//		}
 
 		sleep_ms(10);
 	}

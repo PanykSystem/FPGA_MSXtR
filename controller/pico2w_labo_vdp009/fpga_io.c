@@ -32,15 +32,15 @@
 #define SPI0_SCK_PIN  6
 #define SPI0_TX_PIN	  7
 #define SPI0_INTR_PIN 3
-#define SPI0_BAUDRATE (80 * 1000 * 1000)	// 80 MHz
+#define SPI0_BAUDRATE (70 * 1000 * 1000)	// 70 MHz
 
 // ---------------------------------------------------------
-void vdp_ll_begin( void ) {
+void fpga_access_begin( void ) {
 	gpio_put( SPI0_CSN_PIN, 0 );
 }
 
 // ---------------------------------------------------------
-void vdp_ll_end( void ) {
+void fpga_access_end( void ) {
 	gpio_put( SPI0_CSN_PIN, 1 );
 }
 

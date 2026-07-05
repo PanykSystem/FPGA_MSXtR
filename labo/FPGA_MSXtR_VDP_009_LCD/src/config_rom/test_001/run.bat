@@ -9,7 +9,6 @@ if errorlevel 1 goto :error
 
 vlog ..\config_rom.v ^
 	..\..\qspi_rom\ip_qspi_rom.v ^
-	..\..\qspi_rom\qdpi.v ^
 	..\..\qspi_rom\qspi.v ^
 	.\W25Q32JVxxIM.v
 vlog tb.sv
