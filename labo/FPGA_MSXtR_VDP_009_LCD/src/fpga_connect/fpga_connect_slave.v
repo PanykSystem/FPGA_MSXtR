@@ -29,7 +29,7 @@ module fpga_connect_slave (
 	input			reset_n,
 	input			clk,				//	85.90908MHz
 	input			clk_serial,			//	214.7727MHz
-	//	内部バス
+	//	バス制御
 	output	[7:0]	bus_address,
 	output			bus_write,
 	output	[7:0]	bus_wdata,
@@ -48,7 +48,7 @@ module fpga_connect_slave (
 );
 	// ---------------------------------------------------------
 	//	clk_serial		1010101010101010 214.7727MHz
-	//	fpga_si_clk	は、53.693175MHz くらいのクロックが入ってくる。
+	//	fpga_so_clk		1100110011001100  53.693175MHz
 	// ---------------------------------------------------------
 	localparam	[1:0]	c_mode_io_write		= 2'b00;
 	localparam	[1:0]	c_mode_io_read		= 2'b01;
@@ -208,6 +208,10 @@ module fpga_connect_slave (
 				if( ff_rx_bit_index == 6'd0 ) begin
 				if( (w_si_in === c_mode_io_write) || (w_si_in === c_mode_io_read) || (w_si_in === c_mode_sound_send) ) begin
 					ff_rx_mode		<= w_si_in;
+					if( w_si_in === c_mode_sound_send ) begin
+						ff_rx_sound_l <= 32'd0;
+						ff_rx_sound_r <= 32'd0;
+					end
 					ff_rx_bit_index	<= 6'd1;
 				end
 				else begin
@@ -278,41 +282,12 @@ module fpga_connect_slave (
 					end
 
 					c_mode_sound_send: begin
-						case( ff_rx_bit_index )
-						6'd1:	ff_rx_sound_l[31:30] <= w_si_in;
-						6'd2:	ff_rx_sound_l[29:28] <= w_si_in;
-						6'd3:	ff_rx_sound_l[27:26] <= w_si_in;
-						6'd4:	ff_rx_sound_l[25:24] <= w_si_in;
-						6'd5:	ff_rx_sound_l[23:22] <= w_si_in;
-						6'd6:	ff_rx_sound_l[21:20] <= w_si_in;
-						6'd7:	ff_rx_sound_l[19:18] <= w_si_in;
-						6'd8:	ff_rx_sound_l[17:16] <= w_si_in;
-						6'd9:	ff_rx_sound_l[15:14] <= w_si_in;
-						6'd10:	ff_rx_sound_l[13:12] <= w_si_in;
-						6'd11:	ff_rx_sound_l[11:10] <= w_si_in;
-						6'd12:	ff_rx_sound_l[9:8] <= w_si_in;
-						6'd13:	ff_rx_sound_l[7:6] <= w_si_in;
-						6'd14:	ff_rx_sound_l[5:4] <= w_si_in;
-						6'd15:	ff_rx_sound_l[3:2] <= w_si_in;
-						6'd16:	ff_rx_sound_l[1:0] <= w_si_in;
-						6'd17:	ff_rx_sound_r[31:30] <= w_si_in;
-						6'd18:	ff_rx_sound_r[29:28] <= w_si_in;
-						6'd19:	ff_rx_sound_r[27:26] <= w_si_in;
-						6'd20:	ff_rx_sound_r[25:24] <= w_si_in;
-						6'd21:	ff_rx_sound_r[23:22] <= w_si_in;
-						6'd22:	ff_rx_sound_r[21:20] <= w_si_in;
-						6'd23:	ff_rx_sound_r[19:18] <= w_si_in;
-						6'd24:	ff_rx_sound_r[17:16] <= w_si_in;
-						6'd25:	ff_rx_sound_r[15:14] <= w_si_in;
-						6'd26:	ff_rx_sound_r[13:12] <= w_si_in;
-						6'd27:	ff_rx_sound_r[11:10] <= w_si_in;
-						6'd28:	ff_rx_sound_r[9:8] <= w_si_in;
-						6'd29:	ff_rx_sound_r[7:6] <= w_si_in;
-						6'd30:	ff_rx_sound_r[5:4] <= w_si_in;
-						6'd31:	ff_rx_sound_r[3:2] <= w_si_in;
-						6'd32:	ff_rx_sound_r[1:0] <= w_si_in;
-						default: begin end
-						endcase
+						if( ff_rx_bit_index <= 6'd16 ) begin
+							ff_rx_sound_l <= { ff_rx_sound_l[29:0], w_si_in };
+						end
+						else if( ff_rx_bit_index <= 6'd32 ) begin
+							ff_rx_sound_r <= { ff_rx_sound_r[29:0], w_si_in };
+						end
 
 						if( ff_rx_bit_index == 6'd32 ) begin
 							ff_ev_sound_toggle	<= ~ff_ev_sound_toggle;

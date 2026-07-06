@@ -4,7 +4,7 @@ setlocal
 if exist work rmdir /s /q work
 vlib work
 
-vlog ..\fpga_connect_sub.v
+vlog ..\fpga_connect_master_sub.v
 vlog ..\fpga_connect_master.v
 vlog ..\fpga_connect_slave.v
 vlog tb.sv

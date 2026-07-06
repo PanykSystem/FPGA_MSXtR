@@ -3,7 +3,7 @@
  "COMPRESS" : false,
  "CPU" : false,
  "CRC_CHECK" : true,
- "Clock_Route_Order" : 1,
+ "Clock_Route_Order" : 0,
  "Co-Place_IO_Registers" : false,
  "Convert_SDP32_36_to_SDP16_18" : true,
  "Correct_Hold_Violation" : true,

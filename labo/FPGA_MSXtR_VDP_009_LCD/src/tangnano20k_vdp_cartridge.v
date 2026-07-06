@@ -96,20 +96,25 @@ module tangnano20k_vdp_cartridge (
 	//	コメントによる指示を削除するとタイミングバイオレーション
 	//	が発生するようになる可能性があるので注意。
 	// ---------------------------------------------------------
-	reg				ff_reset_n0 = 1'b0;			/* synthesis syn_preserve = 1 */
-	reg				ff_reset_n1 = 1'b0;			/* synthesis syn_preserve = 1 */
-	reg				ff_reset_n2 = 1'b0;			/* synthesis syn_preserve = 1 */
+	reg				ff_reset_n0 = 1'b0;				/* synthesis syn_preserve = 1 */
+	reg				ff_reset_n1 = 1'b0;				/* synthesis syn_preserve = 1 */
+	reg				ff_reset_n2 = 1'b0;				/* synthesis syn_preserve = 1 */
 	wire			reset_n;
 
-	reg				ff_reset_vdp_n0 = 1'b0;		/* synthesis syn_preserve = 1 */
-	reg				ff_reset_vdp_n1 = 1'b0;		/* synthesis syn_preserve = 1 */
-	reg				ff_reset_vdp_n2 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_vdp_n0 = 1'b0;			/* synthesis syn_preserve = 1 */
+	reg				ff_reset_vdp_n1 = 1'b0;			/* synthesis syn_preserve = 1 */
+	reg				ff_reset_vdp_n2 = 1'b0;			/* synthesis syn_preserve = 1 */
 	wire			reset_vdp_n;
 
-	reg				ff_reset_spi_n0 = 1'b0;		/* synthesis syn_preserve = 1 */
-	reg				ff_reset_spi_n1 = 1'b0;		/* synthesis syn_preserve = 1 */
-	reg				ff_reset_spi_n2 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_spi_n0 = 1'b0;			/* synthesis syn_preserve = 1 */
+	reg				ff_reset_spi_n1 = 1'b0;			/* synthesis syn_preserve = 1 */
+	reg				ff_reset_spi_n2 = 1'b0;			/* synthesis syn_preserve = 1 */
 	wire			reset_spi_n;
+
+	reg				ff_reset_fpgacon_n0 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_fpgacon_n1 = 1'b0;		/* synthesis syn_preserve = 1 */
+	reg				ff_reset_fpgacon_n2 = 1'b0;		/* synthesis syn_preserve = 1 */
+	wire			reset_fpgacon_n;
 
 	wire			bus_ctrl0_io;
 	wire			bus_ctrl0_write;
@@ -213,9 +218,16 @@ module tangnano20k_vdp_cartridge (
 		ff_reset_spi_n2	<= ff_reset_spi_n1;
 	end
 
-	assign reset_n		= ff_reset_n2;
-	assign reset_vdp_n	= ff_reset_vdp_n2;
-	assign reset_spi_n	= ff_reset_spi_n2;
+	always @( posedge clk85m ) begin
+		ff_reset_fpgacon_n0	<= 1'b1;
+		ff_reset_fpgacon_n1	<= ff_reset_fpgacon_n0;
+		ff_reset_fpgacon_n2	<= ff_reset_fpgacon_n1;
+	end
+
+	assign reset_n			= ff_reset_n2;
+	assign reset_vdp_n		= ff_reset_vdp_n2;
+	assign reset_spi_n		= ff_reset_spi_n2;
+	assign reset_fpgacon_n	= ff_reset_fpgacon_n2;
 
 	// --------------------------------------------------------------------
 	//	clock
@@ -288,11 +300,11 @@ module tangnano20k_vdp_cartridge (
 	//	FPGA (CPU) connection
 	// --------------------------------------------------------------------
 	fpga_connect_master u_fpga_connect_master (
-		.reset_n				( reset_spi_n				),
+		.reset_n				( reset_fpgacon_n			),
 		.clk					( clk85m					),
 		.clk_serial				( clk215m					),
 		.bus_cs					( w_bus_fpga_cs				),
-		.bus_address			( w_bus_address[7:0]			),
+		.bus_address			( w_bus_address[7:0]		),
 		.bus_write				( w_bus_write				),
 		.bus_wdata				( w_bus_wdata				),
 		.bus_valid				( w_bus_valid				),
@@ -302,13 +314,13 @@ module tangnano20k_vdp_cartridge (
 		.sound_l				( 32'd0						),
 		.sound_r				( 32'd0						),
 		.sound_valid			( 1'b0						),
-		.sound_ready			( 						),
+		.sound_ready			( 							),
 		.fpga_so_clk			( fpga_so_clk				),
 		.fpga_so				( fpga_so					)
 	);
 
 	fpga_connect_slave u_fpga_connect_slave (
-		.reset_n				( reset_spi_n				),
+		.reset_n				( reset_fpgacon_n			),
 		.clk					( clk85m					),
 		.clk_serial				( clk215m					),
 		.bus_address			( bus_ctrl0_address[7:0]	),

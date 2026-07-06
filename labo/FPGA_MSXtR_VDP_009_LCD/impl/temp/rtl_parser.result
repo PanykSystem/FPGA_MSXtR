@@ -60,10 +60,10 @@
      {
       "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_master.v",
       "InstLine" : 370,
-      "InstName" : "u_fpga_connect_sub",
-      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_sub.v",
-      "ModuleLine" : 44,
-      "ModuleName" : "fpga_connect_sub"
+      "InstName" : "u_fpga_connect_master_sub",
+      "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/fpga_connect/fpga_connect_master_sub.v",
+      "ModuleLine" : 38,
+      "ModuleName" : "fpga_connect_master_sub"
      }
     ]
    },
@@ -119,7 +119,7 @@
       "SubInsts" : [
        {
         "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_timing_control.v",
-        "InstLine" : 159,
+        "InstLine" : 160,
         "InstName" : "u_ssg",
         "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_timing_control_ssg.v",
         "ModuleLine" : 58,
@@ -127,7 +127,7 @@
        },
        {
         "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_timing_control.v",
-        "InstLine" : 198,
+        "InstLine" : 200,
         "InstName" : "u_screen_mode",
         "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_timing_control_screen_mode.v",
         "ModuleLine" : 58,
@@ -135,7 +135,7 @@
        },
        {
         "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_timing_control.v",
-        "InstLine" : 235,
+        "InstLine" : 237,
         "InstName" : "u_sprite",
         "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_timing_control_sprite.v",
         "ModuleLine" : 58,
@@ -187,7 +187,7 @@
       "SubInsts" : [
        {
         "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_command.v",
-        "InstLine" : 1894,
+        "InstLine" : 1896,
         "InstName" : "u_cache",
         "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/v9968/vdp_command_cache.v",
         "ModuleLine" : 57,

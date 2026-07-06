@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-//	fpga_connect_sub.v
+//	fpga_connect_master_sub.v
 //	Copyright (C)2026 Takayuki Hara (HRA!)
 //	
 //	 Permission is hereby granted, free of charge, to any person obtaining a 
@@ -21,30 +21,25 @@
 //	in the Software.
 // -----------------------------------------------------------------------------
 //	Description:
-//		fpga_connect_sub の 2bit シリアル送受信サブモジュール
+//		fpga_connect_master_sub の 2bit シリアル送受信サブモジュール
 //		mode:
-//			00: モードビット送信 for Master
+//			00: モードビット送信
 //				tx_data[1:0] = 00: I/O write
 //				tx_data[1:0] = 01: I/O read
 //				tx_data[1:0] = 10: Sound Send
 //				tx_data[1:0] = 11: Sound Receive
-//			00: 2bit送信(送信ステータス) for Slave
-//				tx_data[1:0] = 00: BUSY
-//				tx_data[1:0] = 01: Reserved
-//				tx_data[1:0] = 10: Reserved
-//				tx_data[1:0] = 11: READY
-//			01: 1byte 送信 for Master/Slave
+//			01: 1byte 送信
 //				tx_data[7:0] = 送信するデータ
-//			10: 1byte 受信 for Master/Slave
+//			10: 1byte 受信
 //				rx_data[7:0] = 受信したデータ
-//			11: 2bit受信(相手側ステータス取得) for Master
-//			11: 2bit受信(モードビット取得) for Slave
+//			11: 2bit受信(相手側ステータス取得)
 // -----------------------------------------------------------------------------
 
-module fpga_connect_sub (
+module fpga_connect_master_sub (
 	input			reset_n,
 	input			clk_serial,
 	input			tx_cs,
+	input			use_tick,
 	input			start,
 	input	[1:0]	mode,
 	input	[7:0]	tx_data,
@@ -91,6 +86,9 @@ module fpga_connect_sub (
 	//	serial timing generator (moved from parent module)
 	always @( posedge clk_serial ) begin
 		if( !reset_n ) begin
+			ff_div_counter <= 2'd0;
+		end
+		else if( use_tick ) begin
 			ff_div_counter <= 2'd0;
 		end
 		else if( start ) begin
@@ -142,7 +140,50 @@ module fpga_connect_sub (
 					ff_so_out		<= 2'b00;
 				end
 			end
-			else if( ff_busy && (ff_div_counter == 2'd2) ) begin
+			else if( use_tick && ff_busy && tx_cs ) begin
+				case( ff_mode )
+					c_mode_tx_mode: begin
+						ff_done		<= 1'b1;
+						ff_so_oe	<= 1'b0;
+						ff_busy		<= 1'b0;
+					end
+
+					c_mode_tx_byte: begin
+						if( ff_pair_index == 2'd3 ) begin
+							ff_done		<= 1'b1;
+							ff_so_oe	<= 1'b0;
+							ff_busy		<= 1'b0;
+						end
+						else begin
+							ff_pair_index	<= ff_pair_index + 2'd1;
+							ff_so_out		<= { ff_tx_data[5:0], 2'd0 };
+							ff_tx_data		<= { ff_tx_data[5:0], 2'd0 };
+						end
+					end
+
+					c_mode_rx_byte: begin
+						ff_rx_data		<= { ff_rx_data[5:0], w_so_in };
+
+						if( ff_pair_index == 2'd3 ) begin
+							ff_done			<= 1'b1;
+							ff_busy			<= 1'b0;
+							ff_rx_data_en	<= 1'b1;
+						end
+						else begin
+							ff_pair_index	<= ff_pair_index + 2'd1;
+						end
+					end
+
+					default: begin
+						ff_rx_data[7:2]	<= 6'd0;
+						ff_rx_data[1:0]	<= w_so_in;
+						ff_done			<= 1'b1;
+						ff_busy			<= 1'b0;
+						ff_rx_data_en	<= 1'b1;
+					end
+				endcase
+			end
+			else if( !use_tick && ff_busy && (ff_div_counter == 2'd2) ) begin
 				case( ff_mode )
 					c_mode_tx_mode: begin
 						ff_done		<= 1'b1;
@@ -168,7 +209,7 @@ module fpga_connect_sub (
 					end
 				endcase
 			end
-			else if( ff_busy && (ff_div_counter == 2'd3) ) begin
+			else if( !use_tick && ff_busy && (ff_div_counter == 2'd3) ) begin
 				ff_done		<= 1'b0;
 
 				case( ff_mode )
@@ -207,7 +248,10 @@ module fpga_connect_sub (
 					end
 				endcase
 			end
-			else if( !tx_cs && !ff_busy ) begin
+			else if( !use_tick && !tx_cs && !ff_busy ) begin
+				ff_so_oe	<= 1'b0;
+			end
+			else if( use_tick && !ff_busy ) begin
 				ff_so_oe	<= 1'b0;
 			end
 		end
@@ -219,7 +263,7 @@ module fpga_connect_sub (
 	assign rx_data		= ff_rx_data;
 	assign so_oe		= ff_so_oe;
 	assign rx_data_en	= ff_rx_data_en;
-	assign so_clk		= (tx_cs && ff_busy) ? ~ff_div_counter[1] : 1'b0;
+	assign so_clk		= use_tick ? 1'b0 : ((tx_cs && ff_busy) ? ~ff_div_counter[1] : 1'b0);
 	assign so			= ff_so_oe ? ff_so_out : 2'bzz;
 	assign w_so_in		= so;
 endmodule

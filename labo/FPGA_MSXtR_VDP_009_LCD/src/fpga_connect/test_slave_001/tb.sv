@@ -71,10 +71,6 @@ module tb;
 		clk_serial <= ~clk_serial;
 	end
 
-	always #(SI_CLK_PERIOD_NS / 2.0) begin
-		fpga_si_clk <= ~fpga_si_clk;
-	end
-
 	fpga_connect_slave u_dut (
 		.reset_n		( reset_n		),
 		.clk			( clk			),
@@ -127,10 +123,23 @@ module tb;
 	task automatic send_pair;
 		input [1:0] pair;
 		begin
-			@( negedge fpga_si_clk );
-			master_si_oe		= 1'b1;
+			master_si_oe	= 1'b1;
 			master_si_drive	= pair;
-			@( posedge fpga_si_clk );
+			#(SI_CLK_PERIOD_NS / 2.0);
+			fpga_si_clk		= 1'b1;
+			#(SI_CLK_PERIOD_NS / 2.0);
+			fpga_si_clk		= 1'b0;
+		end
+	endtask
+
+	task automatic receive_pair;
+		output [1:0] pair;
+		begin
+			#(SI_CLK_PERIOD_NS / 2.0);
+			fpga_si_clk	= 1'b1;
+			pair			= fpga_si;
+			#(SI_CLK_PERIOD_NS / 2.0);
+			fpga_si_clk	= 1'b0;
 		end
 	endtask
 
@@ -140,8 +149,8 @@ module tb;
 			master_si_oe = 1'b0;
 			master_si_drive = 2'b00;
 			bus_rdata_en = 1'b0;
+			fpga_si_clk = 1'b0;
 			repeat( 6 ) @( posedge clk );
-			repeat( 6 ) @( posedge fpga_si_clk );
 			reset_n = 1'b1;
 			repeat( 10 ) @( posedge clk );
 		end
@@ -160,7 +169,6 @@ module tb;
 			send_pair( data[5:4] );
 			send_pair( data[3:2] );
 			send_pair( data[1:0] );
-			@( negedge fpga_si_clk );
 			master_si_oe <= 1'b0;
 		end
 	endtask
@@ -177,7 +185,6 @@ module tb;
 			for( i = 0; i < 16; i = i + 1 ) begin
 				send_pair( rch[31 - (i*2) -: 2] );
 			end
-			@( negedge fpga_si_clk );
 			master_si_oe <= 1'b0;
 		end
 	endtask
@@ -193,20 +200,26 @@ module tb;
 			send_pair( addr[5:4] );
 			send_pair( addr[3:2] );
 			send_pair( addr[1:0] );
-			@( negedge fpga_si_clk );
 			master_si_oe <= 1'b0;
 			pair = 2'b00;
 			for( i = 0; i < 256; i = i + 1 ) begin
-				@( posedge fpga_si_clk );
-				pair = fpga_si;
+				receive_pair( pair );
 				if( pair === 2'b11 ) begin
 					i = 256;
 				end
 			end
-			for( i = 0; i < 4; i = i + 1 ) begin
-				@( posedge fpga_si_clk );
-				captured[7 - (i*2) -: 2] = fpga_si;
+			for( i = 0; i < 256; i = i + 1 ) begin
+				receive_pair( pair );
+				if( pair !== 2'b11 ) begin
+					captured[7:6] = pair;
+					i = 256;
+				end
 			end
+			for( i = 1; i < 4; i = i + 1 ) begin
+				receive_pair( pair );
+				captured[7 - (i*2) -: 2] = pair;
+			end
+			fpga_si_clk = 1'b0;
 		end
 	endtask
 

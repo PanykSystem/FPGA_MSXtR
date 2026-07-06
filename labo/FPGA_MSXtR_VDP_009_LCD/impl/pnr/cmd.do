@@ -11,7 +11,7 @@
 -cst_error
 -place_option 0
 -route_option 1
--clock_route_order 1
+-clock_route_order 0
 -correct_hold 1
 -route_maxfan 100
 -global_freq 100.000

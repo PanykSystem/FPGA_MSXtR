@@ -367,10 +367,11 @@ module fpga_connect_master (
 	// ---------------------------------------------------------
 	//	通信モジュール（クロックドメイン：clk_serial）
 	// ---------------------------------------------------------
-	fpga_connect_sub u_fpga_connect_sub (
+	fpga_connect_master_sub u_fpga_connect_master_sub (
 		.reset_n		( reset_n			),
 		.clk_serial		( clk_serial		),
 		.tx_cs			( w_sub_tx_active	),
+		.use_tick		( 1'b0				),
 		.start			( w_sub_start		),
 		.mode			( w_sub_mode		),
 		.tx_data		( w_sub_tx_data		),

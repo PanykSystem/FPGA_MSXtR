@@ -2,7 +2,7 @@ GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\config_rom\config_rom.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\debugger\ip_debugger.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_sub.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master_sub.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_slave.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\gowin_clkdiv\gowin_clkdiv.v'
@@ -36,7 +36,7 @@ Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\lab
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_timing_control_screen_mode.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_timing_control_sprite.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_timing_control_ssg.v'
-Undeclared symbol 'dot_phase', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_timing_control_ssg.v":422)
+Undeclared symbol 'dot_phase', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_timing_control_ssg.v":432)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_upscan.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_upscan_line_buffer.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\v9968\vdp_video_double_buffer.v'
@@ -51,8 +51,9 @@ Compiling module 'Gowin_CLKDIV'("C:\Users\hra\Documents\github\HRA_product\FPGA_
 Compiling module 'ip_spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\ip_spi.v":34)
 Compiling module 'spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\spi.v":38)
 Compiling module 'fpga_connect_master'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master.v":28)
-Compiling module 'fpga_connect_sub'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_sub.v":44)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 2("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_sub.v":187)
+Compiling module 'fpga_connect_master_sub'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master_sub.v":38)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 2("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master_sub.v":159)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 2("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master_sub.v":228)
 Compiling module 'fpga_connect_slave'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_slave.v":28)
 Compiling module 's2026b'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b.v":34)
 Compiling module 's2026b_cpu_select'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b_cpu_select.v":34)
