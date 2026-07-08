@@ -48,6 +48,16 @@ module tb;
 	wire	[3:0]	O_sdram_dqm;
 	reg		[7:0]	read_data;
 
+	localparam	[3:0]	CMD_SET_ADDRESS				= 4'd0;
+	localparam	[3:0]	CMD_SINGLE_READ				= 4'd1;
+	localparam	[3:0]	CMD_BURST_READ				= 4'd2;
+	localparam	[3:0]	CMD_BURST_WRITE				= 4'd3;
+	localparam	[3:0]	CMD_CHIP_ERASE				= 4'd4;
+	localparam	[3:0]	CMD_READ_STATUS				= 4'd5;
+	localparam	[3:0]	CMD_SELECT_SROM				= 4'd6;
+	localparam	[3:0]	CMD_ACCESS_END				= 4'd7;
+	localparam	[3:0]	CMD_SET_QUAD_ENABLE			= 4'd8;
+
 	// --------------------------------------------------------------------
 	//	SDRAM モデル
 	// --------------------------------------------------------------------
@@ -248,9 +258,40 @@ module tb;
 		spi_read( 8'h40, read_data );
 		$display( "[%0t] INFO: read_data(port 0x40)=0x%02h", $time, read_data );
 		if( read_data !== 8'hBF ) begin
-			$error( "port 0x40 read mismatch: actual=0x%02h expected=0xBF", read_data );
+			$error( "FAIL: port 0x40 read mismatch: actual=0x%02h expected=0xBF", read_data );
 		end
 
+		spi_write( 8'h41, 8'h01 );				//	DeviceID: ConfigROM
+		repeat(10) @(posedge clk14m);
+		spi_read( 8'h41, read_data );
+		$display( "[%0t] INFO: read_data(port 0x41)=0x%02h", $time, read_data );
+		if( read_data !== 8'hFE ) begin
+			$error( "FAIL: port 0x41 read mismatch: actual=0x%02h expected=0xFE", read_data );
+		end
+
+		spi_write( 8'h42, CMD_SELECT_SROM );	//	Command: Select ConfigROM
+		$display( "[%0t] INFO: write_data(port 0x42)=CMD_SELECT_SROM(0x06)", $time );
+		spi_write( 8'h43, 8'h01 );				//	Select ConfigROM for VDP FPGA
+		$display( "[%0t] INFO: write_data(port 0x43)=0x01", $time );
+
+		spi_write( 8'h42, CMD_SET_ADDRESS );	//	Command: Set Address
+		$display( "[%0t] INFO: write_data(port 0x42)=CMD_SET_ADDRESS(0x00)", $time );
+		spi_write( 8'h43, 8'h00 );				//	Set AddressL for VDP FPGA
+		$display( "[%0t] INFO: write_data(port 0x43)=0x00", $time );
+		spi_write( 8'h43, 8'h00 );				//	Set AddressM for VDP FPGA
+		$display( "[%0t] INFO: write_data(port 0x43)=0x00", $time );
+		spi_write( 8'h43, 8'h00 );				//	Set AddressH for VDP FPGA
+		$display( "[%0t] INFO: write_data(port 0x43)=0x00", $time );
+
+		spi_write( 8'h42, CMD_SINGLE_READ );	//	Command: Single Read
+		$display( "[%0t] INFO: write_data(port 0x42)=CMD_SINGLE_READ(0x01)", $time );
+
+		repeat( 16 ) begin
+			spi_read( 8'h43, read_data );
+			$display( "[%0t] INFO: read_data(port 0x43)=0x%02h", $time, read_data );
+		end
+
+		repeat(100) @(posedge clk14m);
 		$finish;
 	end
 endmodule

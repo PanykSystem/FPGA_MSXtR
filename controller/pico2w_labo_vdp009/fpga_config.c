@@ -12,7 +12,7 @@ static void fpga_config_rom_ensure_device(uint8_t device_id) {
 
 // ---------------------------------------------------------
 static void fpga_config_rom_set_address( uint8_t device_id, uint32_t address ) {
-	fpga_config_rom_ensure_device(device_id);
+	fpga_config_rom_ensure_device(FPGA_CONFIG_DEVICE_ID_VDP);
 
 	// ConfigROM を選択する
 	fpga_outport( FPGA_CONFIG_ROM_COMMAND_PORT, FPGA_CONFIG_ROM_SELECT_SROM );
@@ -52,5 +52,5 @@ uint8_t fpga_config_rom_read_vdp( void ) {
 
 // ---------------------------------------------------------
 void fpga_config_rom_set_address_vdp( uint32_t address ) {
-	fpga_config_rom_set_address( FPGA_CONFIG_DEVICE_ID_VDP, address );
+	fpga_config_rom_set_address( FPGA_CONFIG_ROM_ID_VDP, address );
 }

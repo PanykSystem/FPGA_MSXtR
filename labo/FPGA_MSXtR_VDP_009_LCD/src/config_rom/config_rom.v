@@ -111,7 +111,7 @@ module config_rom (
 						4'd1: begin
 							//	41h: device enable
 							if( ff_extio_en ) begin
-								if( bus_wdata == 8'd64 ) begin
+								if( bus_wdata == 8'd01 ) begin
 									ff_device_en	<= 1'b1;
 								end
 								else begin
