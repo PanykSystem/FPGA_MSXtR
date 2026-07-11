@@ -14,7 +14,7 @@ for %%F in (..\uart\*.v) do vlog "%%F"
 for %%F in (..\s2026b\*.v) do vlog "%%F"
 for %%F in (..\spi\*.v) do vlog "%%F"
 for %%F in (..\fpga_connect\*.v) do vlog "%%F"
-for %%F in (..\qspi_rom\*.v) do vlog "%%F"
+for %%F in (..\spi_rom\*.v) do vlog "%%F"
 vlog ..\config_rom\config_rom.v
 for %%F in (..\v9968\*.v) do vlog "%%F"
 vlog ..\ws2812_led\ip_ws2812_led.v

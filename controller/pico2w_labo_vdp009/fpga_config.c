@@ -1,5 +1,4 @@
 #include "pico/stdlib.h"
-#include "pico/time.h"
 #include "vdp_control.h"
 #include "fpga_config.h"
 
@@ -20,9 +19,9 @@ static void fpga_config_rom_set_address( uint8_t device_id, uint32_t address ) {
 
 	// ConfigROM のアドレスを設定する
 	fpga_outport( FPGA_CONFIG_ROM_COMMAND_PORT, FPGA_CONFIG_ROM_SET_ADDRESS );
-	fpga_outport( FPGA_CONFIG_ROM_DATA_PORT, (uint8_t)(address & 0xFF));
-	fpga_outport( FPGA_CONFIG_ROM_DATA_PORT, (uint8_t)((address >> 8) & 0xFF));
 	fpga_outport( FPGA_CONFIG_ROM_DATA_PORT, (uint8_t)((address >> 16) & 0xFF));
+	fpga_outport( FPGA_CONFIG_ROM_DATA_PORT, (uint8_t)((address >> 8) & 0xFF));
+	fpga_outport( FPGA_CONFIG_ROM_DATA_PORT, (uint8_t)(address & 0xFF));
 }
 
 // ---------------------------------------------------------

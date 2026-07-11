@@ -1,7 +1,7 @@
 # 概要
 
-config_rom は、ip_qspi_rom を使用して、FPGA の Configration ROM を読み書きするためのモジュールである。
-config_rom階層には、内部バス I/F と ip_qspi_rom の接続を行うラッピング処理回路のみが含まれる。
+config_rom は、ip_spi_rom を使用して、FPGA の Configration ROM を読み書きするためのモジュールである。
+config_rom階層には、内部バス I/F と ip_spi_rom の接続を行うラッピング処理回路のみが含まれる。
 
 # I/O ポート一覧
 

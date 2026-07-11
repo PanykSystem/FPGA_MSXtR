@@ -181,7 +181,7 @@ module config_rom (
 		end
 	end
 
-	ip_qspi_rom u_config_rom (
+	ip_spi_rom u_config_rom (
 		.reset				( ~reset_n															),		//	System Reset (Active High)
 		.clk				( clk																),		//	System Clock
 		.clk_serial			( clk_serial														),		//	Serial Clock (High speed)
@@ -196,7 +196,10 @@ module config_rom (
 		.srom0_cs_n			( 																	),
 		.srom1_cs_n			( flash_spi_cs_n													),
 		.srom_clk			( flash_spi_ck														),
-		.srom_sio			( {flash_spi_hold_n, flash_spi_wp_n, flash_spi_do, flash_spi_di}	)
+		.srom_hold_n		( flash_spi_hold_n												),
+		.srom_wp_n			( flash_spi_wp_n													),
+		.srom_do			( flash_spi_do														),
+		.srom_di			( flash_spi_di														)
 	);
 
 	assign w_bus_cs		= bus_cs & ff_extio_en & ff_device_en;

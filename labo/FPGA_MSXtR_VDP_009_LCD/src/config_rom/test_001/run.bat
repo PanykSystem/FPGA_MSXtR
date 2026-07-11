@@ -8,8 +8,7 @@ vlib work
 if errorlevel 1 goto :error
 
 vlog ..\config_rom.v ^
-	..\..\qspi_rom\ip_qspi_rom.v ^
-	..\..\qspi_rom\qspi.v ^
+	..\..\spi_rom\ip_spi_rom.v ^
 	.\W25Q32JVxxIM.v
 vlog tb.sv
 if errorlevel 1 goto :error

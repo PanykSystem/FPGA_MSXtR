@@ -450,7 +450,7 @@ module tangnano20k_vdp_cartridge (
 	);
 
 	// --------------------------------------------------------------------
-	//	config ROM
+	//	config SPI ROM
 	// --------------------------------------------------------------------
 	config_rom u_config_rom (
 		.reset_n				( reset_n					),

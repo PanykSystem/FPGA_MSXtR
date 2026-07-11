@@ -1,8 +1,8 @@
-# ip_qspi_rom
+# ip_spi_rom
 
 ## 概要
 
-QSPI (Quad SPI) シリアルフラッシュ ROM コントローラ。  
+SPI シリアルフラッシュ ROM コントローラ。  
 内部バスインタフェース経由でコマンドポートとデータポートを操作することで、
 シリアルフラッシュ ROM の読み出し・書き込み・消去などを行う。
 
@@ -12,12 +12,11 @@ QSPI (Quad SPI) シリアルフラッシュ ROM コントローラ。
 
 | ファイル名 | 説明 |
 |---|---|
-| ip_qspi_rom.v | QSPI ROM コントローラ本体 |
-| qspi.v | Quad SPI 物理層コントローラ |
+| ip_spi_rom.v | SPI ROM コントローラ本体 |
 
 ---
 
-## モジュール: ip_qspi_rom
+## モジュール: ip_spi_rom
 
 ### ポート一覧
 

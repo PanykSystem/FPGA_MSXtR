@@ -341,17 +341,7 @@
       "InstName" : "u_config_rom",
       "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/qspi_rom/ip_qspi_rom.v",
       "ModuleLine" : 27,
-      "ModuleName" : "ip_qspi_rom",
-      "SubInsts" : [
-       {
-        "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/qspi_rom/ip_qspi_rom.v",
-        "InstLine" : 697,
-        "InstName" : "u_qspi",
-        "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_009_LCD/src/qspi_rom/qspi.v",
-        "ModuleLine" : 27,
-        "ModuleName" : "qspi"
-       }
-      ]
+      "ModuleName" : "ip_qspi_rom"
      }
     ]
    },
