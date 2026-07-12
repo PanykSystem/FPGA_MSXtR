@@ -21,12 +21,15 @@
 #define FPGA_CONFIG_ROM_READ_STATUS			0x05
 #define FPGA_CONFIG_ROM_SELECT_SROM			0x06
 #define FPGA_CONFIG_ROM_ACCESS_END			0x07
-#define FPGA_CONFIG_ROM_SET_QUAD_ENABLE		0x08
+#define FPGA_CONFIG_ROM_WRITE_ENABLE		0x08
+#define FPGA_CONFIG_ROM_BLOCK_ERASE			0x09
+#define FPGA_CONFIG_ROM_READ_STATUS2		0x0A
 
 void fpga_config_rom_write_start( uint32_t address );
 void fpga_config_rom_write_end( void );
 void fpga_config_rom_write_vdp( uint8_t data );
 uint8_t fpga_config_rom_read_vdp( void );
 void fpga_config_rom_set_address_vdp( uint32_t address );
+void fpga_config_rom_block_erase_vdp( uint32_t address, uint32_t size );
 
 #endif

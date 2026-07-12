@@ -37,6 +37,10 @@ static char *s_keymatrix[] = {
 	"[- ][- ][- ][- ][- ][- ][- ][Me]",
 };
 
+static uint8_t write_data[] = {
+#include "write_data.h"
+};
+
 // ---------------------------------------------------------
 static char hex_to_char(uint8_t value) {
 
@@ -122,6 +126,75 @@ static void format_comma(char *buf, size_t buf_size,
 }
 
 // ---------------------------------------------------------
+static void write_and_verify_dummy_data( void ) {
+	const uint32_t rom_address = 0x400000;
+	const uint32_t data_size = (uint32_t)sizeof(write_data);
+	const uint32_t write_unit = 256;
+	uint32_t i;
+	uint32_t chunk_size;
+	uint8_t rom_data;
+
+	if( data_size == 0 ) {
+		printf( "write_data is empty\r\n" );
+		return;
+	}
+
+	printf( "Erase ConfigROM: 0x%06lX - 0x%06lX\r\n",
+			(unsigned long)rom_address,
+			(unsigned long)(rom_address + data_size - 1) );
+	fpga_config_rom_block_erase_vdp( rom_address, data_size );
+
+	printf( "Write ConfigROM: 0x%06lX - 0x%06lX\r\n",
+			(unsigned long)rom_address,
+			(unsigned long)(rom_address + data_size - 1) );
+	i = 0;
+	while( i < data_size ) {
+		chunk_size = data_size - i;
+		if( chunk_size > write_unit ) {
+			chunk_size = write_unit;
+		}
+
+		fpga_config_rom_write_start( rom_address + i );
+		for( uint32_t j = 0; j < chunk_size; j++ ) {
+			fpga_config_rom_write_vdp( write_data[i + j] );
+		}
+		fpga_config_rom_write_end();
+
+		// ACCESS END 後に BUSY=0 を確認してから次の 256byte へ進む
+		fpga_outport( FPGA_CONFIG_ROM_COMMAND_PORT, FPGA_CONFIG_ROM_READ_STATUS );
+		while( (fpga_inport( FPGA_CONFIG_ROM_DATA_PORT ) & 0x01) != 0 ) {
+		}
+		fpga_outport( FPGA_CONFIG_ROM_COMMAND_PORT, FPGA_CONFIG_ROM_ACCESS_END );
+
+		i += chunk_size;
+		printf( "  write %lu / %lu bytes\r\n",
+				(unsigned long)i,
+				(unsigned long)data_size );
+	}
+
+	printf( "Verify ConfigROM: 0x%06lX - 0x%06lX\r\n",
+			(unsigned long)rom_address,
+			(unsigned long)(rom_address + data_size - 1) );
+	fpga_config_rom_set_address_vdp( rom_address );
+	for( i = 0; i < data_size; i++ ) {
+		rom_data = fpga_config_rom_read_vdp();
+		if( rom_data != write_data[i] ) {
+			printf( "Verify NG at 0x%06lX: expected 0x%02X, actual 0x%02X\r\n",
+					(unsigned long)(rom_address + i),
+					write_data[i],
+					rom_data );
+		}
+		if( ((i + 1) % 1024) == 0 || (i + 1) == data_size ) {
+			printf( "  verify %lu / %lu bytes\r\n",
+					(unsigned long)(i + 1),
+					(unsigned long)data_size );
+		}
+	}
+
+	printf( "Verify OK\r\n" );
+}
+
+// ---------------------------------------------------------
 // SDカード ルートディレクトリ一覧 (MS-DOS DIR 形式)
 static void dir_sd_root(void) {
 	FATFS fs;
@@ -200,6 +273,7 @@ static void dir_sd_root(void) {
 	f_unmount("0:");
 }
 
+// ---------------------------------------------------------
 // Core 1: I2C通信（キーボード）+ printf
 static void core1_entry(void) {
 	keyboard_init(I2C_PORT, I2C_ADDR);
@@ -253,6 +327,10 @@ int main(void) {
 		if( (prev_mat00 & 0x04) && !(keymatrix[0] & 0x04) ) {
 			//	2キーが押されたタイミングなら、ConfigROM コントローラを検出する
 			detect_config_rom_controller();
+		}
+		if( (prev_mat00 & 0x08) && !(keymatrix[0] & 0x08) ) {
+			//	3キーが押されたタイミングなら、ConfigROM にダミーデータを書き込む
+			write_and_verify_dummy_data();
 		}
 		prev_mat00 = keymatrix[0];
 		prev_mat11 = keymatrix[11];

@@ -8,7 +8,7 @@ Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\lab
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\gowin_clkdiv\gowin_clkdiv.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\gowin_rpll\gowin_rpll.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\gowin_rpll2\gowin_rpll2.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\qspi_rom\ip_qspi_rom.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi_rom\ip_spi_rom.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b.v'
 Undeclared symbol 'w_bus_ready', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b.v":114)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b_cpu_select.v'
@@ -51,8 +51,6 @@ Compiling module 'ip_spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\
 Compiling module 'spi'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi\spi.v":38)
 Compiling module 'fpga_connect_master'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master.v":28)
 Compiling module 'fpga_connect_master_sub'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master_sub.v":38)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 2("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master_sub.v":159)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 2("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_master_sub.v":228)
 Compiling module 'fpga_connect_slave'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\fpga_connect\fpga_connect_slave.v":28)
 Compiling module 's2026b'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b.v":34)
 Compiling module 's2026b_cpu_select'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\s2026b\s2026b_cpu_select.v":34)
@@ -86,8 +84,8 @@ Compiling module 'uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\la
 Compiling module 'ip_uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\uart\ip_uart.v":27)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\uart\ip_uart.v":69)
 Compiling module 'config_rom'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\config_rom\config_rom.v":57)
-Compiling module 'ip_qspi_rom'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\qspi_rom\ip_qspi_rom.v":27)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\qspi_rom\ip_qspi_rom.v":433)
+Compiling module 'ip_spi_rom'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi_rom\ip_spi_rom.v":27)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\spi_rom\ip_spi_rom.v":439)
 Compiling module 'ip_sdram'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\sdram\ip_sdram_tangnano20k_c.v":57)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 15("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\sdram\ip_sdram_tangnano20k_c.v":285)
 Compiling module 'ip_ws2812_led'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\src\ws2812_led\ip_ws2812_led.v":57)

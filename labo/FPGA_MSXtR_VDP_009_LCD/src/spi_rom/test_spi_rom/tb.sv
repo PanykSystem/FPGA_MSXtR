@@ -41,7 +41,8 @@ module tb();
 	localparam	[7:0]	CMD_READ_STATUS					= 8'd5;
 	localparam	[7:0]	CMD_SELECT_SROM					= 8'd6;
 	localparam	[7:0]	CMD_ACCESS_END					= 8'd7;
-	localparam	[7:0]	CMD_SET_QUAD_ENABLE				= 8'd8;
+	localparam	[7:0]	CMD_WRITE_ENABLE				= 8'd8;
+	localparam	[7:0]	CMD_BLOCK_ERASE					= 8'd9;
 
 	// ---------------------------------------------------------
 	//	Clock generation
@@ -178,9 +179,9 @@ module tb();
 		test_number = 1;
 		$display( "Test %0d: cmd set address", test_number );
 		write_data( 1'b0, CMD_SET_ADDRESS );
-		write_data( 1'b1, 8'h12 );
-		write_data( 1'b1, 8'h34 );
 		write_data( 1'b1, 8'h56 );
+		write_data( 1'b1, 8'h34 );
+		write_data( 1'b1, 8'h12 );
 		@( posedge clk );
 		if( u_spi_rom.ff_rom_address !== 24'h123456 ) begin
 			$display( "Test %0d: NG ff_rom_address=%06h expected=%06h", test_number, u_spi_rom.ff_rom_address, 24'h123456 );
@@ -220,13 +221,30 @@ module tb();
 		end
 
 		// ---------------------------------------------------------
-		//	互換コマンド送信（レガシー動作確認用）
+		//	WRITE_ENABLE コマンド送信
 		// ---------------------------------------------------------
 		test_number = 4;
-		$display( "Test %0d: cmd reserved(08h)", test_number );
-		write_data( 1'b0, CMD_SET_QUAD_ENABLE );
-		write_data( 1'b1, 8'h00 );
-		@( posedge clk );
+		$display( "Test %0d: cmd write enable(06h)", test_number );
+		write_data( 1'b0, CMD_WRITE_ENABLE );
+
+		//	WEL(bit1) が立つまで STATUS READ でポーリングする。
+		write_data( 1'b0, CMD_READ_STATUS );
+		for( i = 0; i < 500; i++ ) begin
+			read_data( 1'b1, data );
+			//	bus_rdata は busy(bit0) のみなので、内部の生SR1を参照して WEL(bit1) を確認する。
+			data = u_spi_rom.w_serial_rdata;
+			if( data[1] == 1'b1 ) begin
+				break;
+			end
+			repeat( 80 ) @( posedge clk );
+		end
+		if( i >= 500 ) begin
+			$display( "Test %0d: NG timeout waiting WEL=1 (500us)", test_number );
+		end
+		else begin
+			$display( "Test %0d: OK WEL=1 status=%02x", test_number, data );
+		end
+		write_data( 1'b0, CMD_ACCESS_END );
 
 		// ---------------------------------------------------------
 		//	SROM1消去テスト
@@ -324,9 +342,9 @@ module tb();
 		for( i = 0; i < 256; i++ ) begin
 			read_address = $urandom_range( 255, 0 );
 			write_data( 1'b0, CMD_SET_ADDRESS );
-			write_data( 1'b1, 8'h00 );
-			write_data( 1'b1, 8'h00 );
 			write_data( 1'b1, read_address[7:0] );
+			write_data( 1'b1, 8'h00 );
+			write_data( 1'b1, 8'h00 );
 			write_data( 1'b0, CMD_SINGLE_READ );
 			read_data( 1'b1, data );
 			if( data !== burst_write_pattern[read_address] ) begin
@@ -346,9 +364,9 @@ module tb();
 		end
 
 		write_data( 1'b0, CMD_SET_ADDRESS );
-		write_data( 1'b1, 8'h12 );
-		write_data( 1'b1, 8'h34 );
 		write_data( 1'b1, 8'h00 );
+		write_data( 1'b1, 8'h34 );
+		write_data( 1'b1, 8'h12 );
 
 		write_data( 1'b0, CMD_BURST_WRITE );
 		for( i = 0; i < 256; i++ ) begin
@@ -381,9 +399,9 @@ module tb();
 		test_number = 10;
 		$display( "Test %0d: sequential read verify address 123400-1234FF", test_number );
 		write_data( 1'b0, CMD_SET_ADDRESS );
-		write_data( 1'b1, 8'h12 );
-		write_data( 1'b1, 8'h34 );
 		write_data( 1'b1, 8'h00 );
+		write_data( 1'b1, 8'h34 );
+		write_data( 1'b1, 8'h12 );
 		write_data( 1'b0, CMD_BURST_READ );
 		for( i = 0; i < 256; i++ ) begin
 			read_data( 1'b1, data );
@@ -403,9 +421,9 @@ module tb();
 		for( i = 0; i < 256; i++ ) begin
 			read_address = $urandom_range( 255, 0 );
 			write_data( 1'b0, CMD_SET_ADDRESS );
-			write_data( 1'b1, 8'h12 );
-			write_data( 1'b1, 8'h34 );
 			write_data( 1'b1, read_address[7:0] );
+			write_data( 1'b1, 8'h34 );
+			write_data( 1'b1, 8'h12 );
 			write_data( 1'b0, CMD_SINGLE_READ );
 			read_data( 1'b1, data );
 			if( data !== burst_write_pattern[read_address] ) begin
@@ -413,6 +431,136 @@ module tb();
 			end
 		end
 		$display( "Test %0d: random read verify finished", test_number );
+
+		// ---------------------------------------------------------
+		//	ブロック消去テスト
+		// ---------------------------------------------------------
+		test_number = 12;
+		$display( "Test %0d: block erase at address 123400", test_number );
+		write_data( 1'b0, CMD_SET_ADDRESS );
+		write_data( 1'b1, 8'h00 );
+		write_data( 1'b1, 8'h34 );
+		write_data( 1'b1, 8'h12 );
+		write_data( 1'b0, CMD_WRITE_ENABLE );
+
+		write_data( 1'b0, CMD_READ_STATUS );
+		for( i = 0; i < 500; i++ ) begin
+			read_data( 1'b1, data );
+			data = u_spi_rom.w_serial_rdata;
+			if( data[1] == 1'b1 ) begin
+				break;
+			end
+			repeat( 80 ) @( posedge clk );
+		end
+		write_data( 1'b0, CMD_ACCESS_END );
+
+		if( i >= 500 ) begin
+			$display( "Test %0d: NG timeout waiting WEL=1 before block erase", test_number );
+		end
+
+		write_data( 1'b0, CMD_BLOCK_ERASE );
+
+		write_data( 1'b0, CMD_READ_STATUS );
+		for( i = 0; i < 10000; i++ ) begin
+			read_data( 1'b1, data );
+			if( data[0] == 1'b0 ) begin
+				break;
+			end
+			repeat( 5000 ) @( posedge clk );
+		end
+		if( i >= 10000 ) begin
+			$display( "Test %0d: NG timeout waiting block erase done", test_number );
+		end
+		else begin
+			$display( "Test %0d: OK block erase completed", test_number );
+		end
+		write_data( 1'b0, CMD_ACCESS_END );
+
+		// ---------------------------------------------------------
+		//	WRITE_ENABLE + WELポーリング
+		// ---------------------------------------------------------
+		test_number = 13;
+		$display( "Test %0d: cmd write enable + poll WEL", test_number );
+		write_data( 1'b0, CMD_READ_STATUS );
+		read_data( 1'b1, data );
+		write_data( 1'b0, CMD_ACCESS_END );
+		$display( "-- Status : %02x", data );
+
+		write_data( 1'b0, CMD_WRITE_ENABLE );
+		$display( "-- Send write enable command" );
+
+		write_data( 1'b0, CMD_READ_STATUS );
+		for( i = 0; i < 500; i++ ) begin
+			read_data( 1'b1, data );
+			data = u_spi_rom.w_serial_rdata;
+			if( data[1] == 1'b1 ) begin
+				break;
+			end
+			repeat( 80 ) @( posedge clk );
+		end
+		if( i >= 500 ) begin
+			$display( "Test %0d: NG timeout waiting WEL=1 (500us)", test_number );
+		end
+		else begin
+			$display( "Test %0d: OK WEL=1 status=%02x", test_number, data );
+		end
+		write_data( 1'b0, CMD_ACCESS_END );
+
+		// ---------------------------------------------------------
+		//	連続書き込みテスト3
+		// ---------------------------------------------------------
+		test_number = 14;
+		$display( "Test %0d: burst write 256 random bytes to address 123400", test_number );
+
+		for( i = 0; i < 256; i++ ) begin
+			burst_write_pattern[i] = $urandom();
+		end
+
+		write_data( 1'b0, CMD_SET_ADDRESS );
+		write_data( 1'b1, 8'h00 );
+		write_data( 1'b1, 8'h34 );
+		write_data( 1'b1, 8'h12 );
+
+		write_data( 1'b0, CMD_BURST_WRITE );
+		for( i = 0; i < 256; i++ ) begin
+			write_data( 1'b1, burst_write_pattern[i] );
+		end
+		write_data( 1'b0, CMD_ACCESS_END );
+
+		write_data( 1'b0, CMD_READ_STATUS );
+		for( i = 0; i < 5000; i++ ) begin
+			read_data( 1'b1, data );
+			if( data[0] == 1'b0 ) begin
+				break;
+			end
+			repeat( 200 ) @( posedge clk );
+		end
+		if( i >= 5000 ) begin
+			$display( "Test %0d: NG timeout", test_number );
+		end
+		else begin
+			$display( "Test %0d: OK burst write completed", test_number );
+		end
+		write_data( 1'b0, CMD_ACCESS_END );
+
+		// ---------------------------------------------------------
+		//	読み出しチェックテスト3
+		// ---------------------------------------------------------
+		test_number = 15;
+		$display( "Test %0d: sequential read verify address 123400-1234FF", test_number );
+		write_data( 1'b0, CMD_SET_ADDRESS );
+		write_data( 1'b1, 8'h00 );
+		write_data( 1'b1, 8'h34 );
+		write_data( 1'b1, 8'h12 );
+		write_data( 1'b0, CMD_BURST_READ );
+		for( i = 0; i < 256; i++ ) begin
+			read_data( 1'b1, data );
+			if( data !== burst_write_pattern[i] ) begin
+				$display( "Test %0d: NG address=%06x read=%02x expected=%02x", test_number, 24'h123400 + i, data, burst_write_pattern[i] );
+			end
+		end
+		write_data( 1'b0, CMD_ACCESS_END );
+		$display( "Test %0d: sequential read verify finished", test_number );
 
 		// ---------------------------------------------------------
 		//	終了

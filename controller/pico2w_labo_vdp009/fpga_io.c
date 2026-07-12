@@ -61,29 +61,31 @@ void fpga_io_init( void ) {
 }
 
 // ---------------------------------------------------------
-void fpga_outport_bulk( uint8_t io_address, uint8_t data ) {
+void fpga_outport( uint8_t io_address, uint8_t data ) {
 	uint8_t buf;
 
+	gpio_put( SPI0_CSN_PIN, 0 );
 	buf = 0x01;
 	spi_write_blocking( SPI0_PORT, &buf, 1 );
-
 	buf = io_address;
 	spi_write_blocking( SPI0_PORT, &buf, 1 );
-
 	buf = data;
 	spi_write_blocking( SPI0_PORT, &buf, 1 );
+	gpio_put( SPI0_CSN_PIN, 1 );
 }
+
 // ---------------------------------------------------------
-uint8_t fpga_inport_bulk( uint8_t io_address ) {
+uint8_t fpga_inport( uint8_t io_address ) {
 	uint8_t cmd;
 	uint8_t dummy;
 	uint8_t data;
 	absolute_time_t timeout_time;
 	bool intr_ready;
 
+	gpio_put( SPI0_CSN_PIN, 0 );
+
 	cmd = 0x02;
 	spi_write_blocking( SPI0_PORT, &cmd, 1 );
-
 	cmd = io_address;
 	spi_write_blocking( SPI0_PORT, &cmd, 1 );
 
@@ -106,23 +108,7 @@ uint8_t fpga_inport_bulk( uint8_t io_address ) {
 
 	dummy = 0x00;
 	spi_write_read_blocking( SPI0_PORT, &dummy, &data, 1 );
+
+	gpio_put( SPI0_CSN_PIN, 1 );
 	return data;
-}
-
-// ---------------------------------------------------------
-void fpga_outport( uint8_t io_address, uint8_t data ) {
-
-	gpio_put( SPI0_CSN_PIN, 0 );
-	fpga_outport_bulk( io_address, data );
-	gpio_put( SPI0_CSN_PIN, 1 );
-}
-
-// ---------------------------------------------------------
-uint8_t fpga_inport( uint8_t io_address ) {
-	uint8_t result;
-	
-	gpio_put( SPI0_CSN_PIN, 0 );
-	result = fpga_inport_bulk( io_address );
-	gpio_put( SPI0_CSN_PIN, 1 );
-	return result;
 }

@@ -156,7 +156,7 @@ module fpga_connect_master_sub (
 						end
 						else begin
 							ff_pair_index	<= ff_pair_index + 2'd1;
-							ff_so_out		<= { ff_tx_data[5:0], 2'd0 };
+							ff_so_out		<= ff_tx_data[7:6];
 							ff_tx_data		<= { ff_tx_data[5:0], 2'd0 };
 						end
 					end
@@ -225,7 +225,8 @@ module fpga_connect_master_sub (
 						end
 						else begin
 							ff_pair_index	<= ff_pair_index + 2'd1;
-							ff_so_out		<= {  ff_tx_data[5:0], 2'd0 };
+							ff_so_out		<= ff_tx_data[7:6];
+							ff_tx_data		<= {  ff_tx_data[5:0], 2'd0 };
 						end
 					end
 

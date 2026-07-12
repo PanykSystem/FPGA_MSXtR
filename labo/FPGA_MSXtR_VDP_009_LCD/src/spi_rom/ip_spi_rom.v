@@ -52,11 +52,11 @@ module ip_spi_rom(
 	localparam	[7:0]	SROM_PAGE_PROGRAM			= 8'h02;
 	localparam	[7:0]	SROM_WRITE_DISABLE			= 8'h04;
 	localparam	[7:0]	SROM_READ_STATUS_1			= 8'h05;
+	localparam	[7:0]	SROM_READ_STATUS_2			= 8'h35;
 	localparam	[7:0]	SROM_WRITE_ENABLE			= 8'h06;
-	localparam	[7:0]	SROM_WRITE_STATUS_2			= 8'h31;
+	localparam	[7:0]	SROM_BLOCK_ERASE			= 8'hD8;
 	localparam	[7:0]	SROM_CHIP_ERASE				= 8'h60;
 	localparam	[7:0]	SROM_FAST_READ				= 8'h0B;
-	localparam	[7:0]	SROM_STATUS_2_QE			= 8'h02;
 
 	localparam	[3:0]	CMD_SET_ADDRESS				= 4'd0;
 	localparam	[3:0]	CMD_SINGLE_READ				= 4'd1;
@@ -66,7 +66,9 @@ module ip_spi_rom(
 	localparam	[3:0]	CMD_READ_STATUS				= 4'd5;
 	localparam	[3:0]	CMD_SELECT_SROM				= 4'd6;
 	localparam	[3:0]	CMD_ACCESS_END				= 4'd7;
-	localparam	[3:0]	CMD_SET_QUAD_ENABLE			= 4'd8;
+	localparam	[3:0]	CMD_WRITE_ENABLE			= 4'd8;
+	localparam	[3:0]	CMD_BLOCK_ERASE				= 4'd9;
+	localparam	[3:0]	CMD_READ_STATUS_2			= 4'd10;
 	localparam	[3:0]	CMD_NOP						= 4'd15;
 
 	
@@ -185,7 +187,15 @@ module ip_spi_rom(
 	//			0xFF: 未接続
 	//		0x07: access end
 	//			w_serial_idle が 1 になるのを待ってから、ff_cs_n を 1 に戻す。
-	//		0x08-0xFF: reserved
+	//		0x08: write enable
+	//			Serial ROM へ WRITE_ENABLE(06h) のみを発行する。
+	//		0x09: block erase
+	//			Serial ROM へ BLOCK_ERASE(D8h) + 24bit address を発行する。
+	//			address は set address mode で設定した値を使う。
+	//		0x0A: read status register 2
+	//			Serial ROM のステータスレジスタ2を読み出すモード。
+	//			data port から、1byte 読み出すと、その最下位bitが入る。
+	//		0x0B-0xFF: reserved
 	// ---------------------------------------------------------
 	//	SerialROM Status Register
 	//	S0: busy
@@ -215,7 +225,7 @@ module ip_spi_rom(
 		end
 		else if( !ff_bus_ready ) begin
 			ff_do_command			<= 1'b0;
-			if( w_serial_rdata_en && (ff_command_mode != CMD_READ_STATUS) ) begin
+			if( w_serial_rdata_en && (ff_command_mode != CMD_READ_STATUS) && (ff_command_mode != CMD_READ_STATUS_2) ) begin
 				ff_rom_address	<= ff_rom_address + 24'd1;
 			end
 			if( ff_finish_command && (!ff_cs_n || (ff_wait_count == 0)) ) begin
@@ -264,10 +274,20 @@ module ip_spi_rom(
 						ff_do_command			<= 1'b1;
 					end
 					8'h08: begin
-						//	set quad enable (legacy compatibility command)
-						ff_command_mode			<= CMD_SET_QUAD_ENABLE;
+						//	write enable
+						ff_command_mode			<= CMD_WRITE_ENABLE;
 						ff_bus_ready			<= 1'b0;
 						ff_do_command			<= 1'b1;
+					end
+					8'h09: begin
+						//	block erase
+						ff_command_mode			<= CMD_BLOCK_ERASE;
+						ff_bus_ready			<= 1'b0;
+						ff_do_command			<= 1'b1;
+					end
+					8'h0A: begin
+						//	read status register 2
+						ff_command_mode			<= CMD_READ_STATUS_2;
 					end
 					default: begin
 						//	reserved command: enter NOP mode to avoid stale mode side effects.
@@ -281,7 +301,7 @@ module ip_spi_rom(
 					CMD_SET_ADDRESS: begin
 						case( ff_byte_count )
 							2'd0: begin
-								ff_rom_address[23:16]	<= bus_wdata;
+								ff_rom_address[ 7: 0]	<= bus_wdata;
 								ff_byte_count			<= 2'd1;
 							end
 							2'd1: begin
@@ -289,7 +309,7 @@ module ip_spi_rom(
 								ff_byte_count			<= 2'd2;
 							end
 							2'd2: begin
-								ff_rom_address[ 7: 0]	<= bus_wdata;
+								ff_rom_address[23:16]	<= bus_wdata;
 								ff_byte_count			<= 2'd0;
 							end
 							default: begin
@@ -360,6 +380,11 @@ module ip_spi_rom(
 						ff_bus_ready		<= 1'b0;
 						ff_do_command		<= 1'b1;
 					end
+					CMD_READ_STATUS_2: begin
+						//	data port から、1byte 読み出すと、その最下位bitが入る。
+						ff_bus_ready		<= 1'b0;
+						ff_do_command		<= 1'b1;
+					end
 					default: begin
 						//	reserved command, do nothing.
 					end
@@ -391,8 +416,9 @@ module ip_spi_rom(
 	localparam	[4:0]	ST_READ_ADDR_M	= 5'd13;
 	localparam	[4:0]	ST_READ_ADDR_L	= 5'd14;
 	localparam	[4:0]	ST_READ_DUMMY	= 5'd15;
-	localparam	[4:0]	ST_SET_QE_CMD	= 5'd16;
-	localparam	[4:0]	ST_SET_QE_DATA	= 5'd17;
+	localparam	[4:0]	ST_BLOCK_ERASE_ADDR_H	= 5'd16;
+	localparam	[4:0]	ST_BLOCK_ERASE_ADDR_M	= 5'd17;
+	localparam	[4:0]	ST_BLOCK_ERASE_ADDR_L	= 5'd18;
 
 	reg		[4:0]		ff_command_state;
 	reg		[4:0]		ff_next_command_state;
@@ -402,7 +428,7 @@ module ip_spi_rom(
 			ff_wait_count	<= 0;
 		end
 		else if( ff_cs_n == 1'b0 ) begin
-			if( ff_command_mode == CMD_BURST_READ || ff_command_mode == CMD_READ_STATUS ) begin
+			if( ff_command_mode == CMD_BURST_READ || ff_command_mode == CMD_READ_STATUS || ff_command_mode == CMD_READ_STATUS_2 ) begin
 				ff_wait_count	<= CS_WAIT_10NS;
 			end
 			else begin
@@ -499,6 +525,27 @@ module ip_spi_rom(
 						ff_serial_write		<= 1'b1;
 						ff_serial_valid		<= 1'b1;
 					end
+					ST_BLOCK_ERASE_ADDR_H: begin
+						ff_command_state	<= ST_BLOCK_ERASE_ADDR_M;
+						ff_serial_mode		<= MODE_STD_WRITE;
+						ff_serial_wdata		<= ff_rom_address[23:16];
+						ff_serial_write		<= 1'b1;
+						ff_serial_valid		<= 1'b1;
+					end
+					ST_BLOCK_ERASE_ADDR_M: begin
+						ff_command_state	<= ST_BLOCK_ERASE_ADDR_L;
+						ff_serial_mode		<= MODE_STD_WRITE;
+						ff_serial_wdata		<= ff_rom_address[15:8];
+						ff_serial_write		<= 1'b1;
+						ff_serial_valid		<= 1'b1;
+					end
+					ST_BLOCK_ERASE_ADDR_L: begin
+						ff_command_state	<= ST_FINISH;
+						ff_serial_mode		<= MODE_STD_WRITE;
+						ff_serial_wdata		<= ff_rom_address[7:0];
+						ff_serial_write		<= 1'b1;
+						ff_serial_valid		<= 1'b1;
+					end
 					default: begin
 						ff_serial_valid	<= 1'b0;
 					end
@@ -590,16 +637,43 @@ module ip_spi_rom(
 									ff_serial_valid 		<= 1'b1;
 								end
 							end
+							CMD_READ_STATUS_2: begin
+								if( ff_cs_n ) begin
+									//	Serial ROM のステータスレジスタ2を読み出すモード。
+									ff_command_state		<= ST_READ_BYTE;
+									ff_serial_mode			<= MODE_STD_WRITE;	//	通常の SPI モード
+									ff_serial_wdata 		<= SROM_READ_STATUS_2;
+									ff_serial_write 		<= 1'b1;
+									ff_serial_valid 		<= 1'b1;
+									ff_cs_n					<= 1'b0;
+								end
+								else begin
+									ff_command_state		<= ST_RECEIVE_BYTE;
+									ff_serial_mode			<= MODE_STD_READ;	//	通常の SPI モード
+									ff_serial_wdata 		<= 8'd0;
+									ff_serial_write 		<= 1'b0;
+									ff_serial_valid 		<= 1'b1;
+								end
+							end
 							CMD_ACCESS_END: begin
 								//	w_serial_idle が 1 になるのを待って、アクセスを終了する。
 								ff_command_state	<= ST_FINISH;
 							end
-							CMD_SET_QUAD_ENABLE: begin
-								//	Legacy compatibility path.
+							CMD_WRITE_ENABLE: begin
+								//	Issue only WRITE ENABLE (06h) and finish.
 								ff_command_state		<= ST_WAIT;
-								ff_next_command_state	<= ST_SET_QE_CMD;
+								ff_next_command_state	<= ST_FINISH;
 								ff_serial_mode			<= MODE_STD_WRITE;
 								ff_serial_wdata 		<= SROM_WRITE_ENABLE;
+								ff_serial_write 		<= 1'b1;
+								ff_serial_valid 		<= 1'b1;
+								ff_cs_n					<= 1'b0;
+							end
+							CMD_BLOCK_ERASE: begin
+								//	Issue BLOCK_ERASE (D8h) + 24bit address.
+								ff_command_state		<= ST_BLOCK_ERASE_ADDR_H;
+								ff_serial_mode			<= MODE_STD_WRITE;
+								ff_serial_wdata 		<= SROM_BLOCK_ERASE;
 								ff_serial_write 		<= 1'b1;
 								ff_serial_valid 		<= 1'b1;
 								ff_cs_n					<= 1'b0;
@@ -645,23 +719,6 @@ module ip_spi_rom(
 					ff_serial_write		<= 1'b1;
 					ff_serial_valid		<= 1'b1;
 				end
-				ST_SET_QE_CMD: begin
-					if( ff_wait_count == 0 ) begin
-						ff_command_state	<= ST_SET_QE_DATA;
-						ff_serial_mode		<= MODE_STD_WRITE;
-						ff_serial_wdata		<= SROM_WRITE_STATUS_2;
-						ff_serial_write		<= 1'b1;
-						ff_serial_valid		<= 1'b1;
-						ff_cs_n				<= 1'b0;
-					end
-				end
-				ST_SET_QE_DATA: begin
-					ff_command_state	<= ST_FINISH;
-					ff_serial_mode		<= MODE_STD_WRITE;
-					ff_serial_wdata		<= SROM_STATUS_2_QE;
-					ff_serial_write		<= 1'b1;
-					ff_serial_valid		<= 1'b1;
-				end
 				ST_READ_BYTE: begin
 					if( w_serial_idle ) begin
 						ff_command_state	<= ST_RECEIVE_BYTE;
@@ -673,12 +730,7 @@ module ip_spi_rom(
 				end
 				ST_RECEIVE_BYTE: begin
 					if( w_serial_rdata_en ) begin
-						if( ff_command_mode == CMD_READ_STATUS ) begin
-							ff_bus_rdata	<= { 7'b0, w_serial_rdata[0] };
-						end
-						else begin
-							ff_bus_rdata	<= w_serial_rdata;
-						end
+						ff_bus_rdata		<= w_serial_rdata;
 						ff_bus_rdata_en		<= 1'b1;
 						ff_command_state	<= ST_FINISH;
 					end
@@ -741,7 +793,7 @@ module ip_spi_rom(
 				ST_FINISH: begin
 					if( w_serial_idle ) begin
 						ff_command_state	<= ST_IDLE;
-						if( ff_command_mode == CMD_BURST_WRITE || ff_command_mode == CMD_BURST_READ || ff_command_mode == CMD_READ_STATUS ) begin
+						if( ff_command_mode == CMD_BURST_WRITE || ff_command_mode == CMD_BURST_READ || ff_command_mode == CMD_READ_STATUS || ff_command_mode == CMD_READ_STATUS_2 ) begin
 							//	これらのコマンドは、data port からのアクセスが続くので、ff_cs_n はアクティブのままにする。
 						end
 						else begin

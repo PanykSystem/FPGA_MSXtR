@@ -42,9 +42,5 @@
 void fpga_io_init( void );
 void fpga_outport( uint8_t io_address, uint8_t data );
 uint8_t fpga_inport( uint8_t io_address );
-void fpga_outport_bulk( uint8_t io_address, uint8_t data );
-uint8_t fpga_inport_bulk( uint8_t io_address );
-void fpga_access_begin( void );
-void fpga_access_end( void );
 
 #endif

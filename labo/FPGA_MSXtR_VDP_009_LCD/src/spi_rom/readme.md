@@ -81,7 +81,7 @@ SPI シリアルフラッシュ ROM コントローラ。
 ### 0x00: SET ADDRESS
 
 - コマンドポートに `0x00` を書き込むと、アドレスセットモードになる。
-- 続けてデータポートへ 3byte を MSB 順に書き込むと 24bit アドレスがセットされる。
+- 続けてデータポートへ 3byte を LSB から順に書き込むと 24bit アドレスがセットされる。
 - 途中でコマンドポートに `0x00` を再書き込みすると、1byte 目からやり直しになる。
 
 ### 0x01: SINGLE READ
@@ -130,9 +130,14 @@ SPI シリアルフラッシュ ROM コントローラ。
 
 - `w_serial_idle` が 1 になるのを待ってから、CS を非アクティブ (1) に戻す。
 
-### 0x08: SET QUAD ENABLE
+### 0x08: WRITE ENABLE
 
-- `WRITE ENABLE (06h)` → `WRITE STATUS REGISTER-2 (31h)` → `0x02 (QE bit)` の順にコマンドを発行し、Quad Enable ビットをセットする。
+- `WRITE ENABLE (06h)` コマンドを発行し、書き込みを許可する。
+- STATUS READ コマンドで、ステータスレジスタの bit 1 が 1 になるまで待機すること。
+
+### 0x09: BLOCK ERASE
+
+- SET ADDRESS で指定したアドレスに対応するブロックを消去して、全bit 1 にする。
 
 ---
 
