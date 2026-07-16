@@ -1,14 +1,13 @@
-Reading netlist file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\gwsynthesis\FPGA_MSXtR.vg"
-Parsing netlist file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\gwsynthesis\FPGA_MSXtR.vg" completed
+Reading netlist file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\gwsynthesis\FPGA_MSXtR.vg"
+Parsing netlist file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\gwsynthesis\FPGA_MSXtR.vg" completed
 Processing netlist completed
-Reading constraint file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\src\FPGA_MSXtR.cst"
+Reading constraint file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
-WARN  (TA1117) : Can't calculate clocks' relationship between: "clk27m" and "u_pll/rpll_inst/CLKOUTD.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "u_pll/rpll_inst/CLKOUTD.default_gen_clk" and "clk27m"
+WARN  (TA1123) : the clock "clk215m"'s frequency does not match u_pll2/rpll_inst/CLKOUT's 
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
@@ -24,10 +23,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\pnr\FPGA_MSXtR.power.html" completed
-Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\pnr\FPGA_MSXtR.pin.html" completed
-Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\pnr\FPGA_MSXtR.rpt.html" completed
-Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\pnr\FPGA_MSXtR.rpt.txt" completed
-Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\pnr\FPGA_MSXtR.tr.html" completed
-Sat Jun 13 07:13:19 2026
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.power.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.pin.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.rpt.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.rpt.txt" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.tr.html" completed
+Thu Jul 16 21:52:46 2026
 

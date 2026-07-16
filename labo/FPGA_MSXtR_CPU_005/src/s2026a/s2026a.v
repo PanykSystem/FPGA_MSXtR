@@ -66,14 +66,18 @@ module s2026a (
 	input	[7:0]	bus_bootrom_rdata,
 	input			bus_bootrom_rdata_en,
 	input			bus_bootrom_ready,
+	output			bus_extio_cs,
+	input	[7:0]	bus_extio_rdata,
+	input			bus_extio_rdata_en,
+	input			bus_extio_ready,
 //	output			bus_rtc_cs,
 //	input	[7:0]	bus_rtc_rdata,
 //	input			bus_rtc_rdata_en,
 //	input			bus_rtc_ready,
-//	output			bus_vdp_cs,
-//	input	[7:0]	bus_vdp_rdata,
-//	input			bus_vdp_rdata_en,
-//	input			bus_vdp_ready,
+//	output			bus_fpga_cs,
+//	input	[7:0]	bus_fpga_rdata,
+//	input			bus_fpga_rdata_en,
+//	input			bus_fpga_ready,
 //	output			bus_cartridge_cs,
 //	input	[7:0]	bus_cartridge_rdata,
 //	input			bus_cartridge_rdata_en,
@@ -138,6 +142,7 @@ module s2026a (
 	reg				ff_bus_rdata_en;
 	wire			w_uart_cs;
 	wire			w_bootrom_cs;
+	wire			w_extio_cs;
 	wire			w_mapper_cs;
 	wire			w_mapper_io_cs;
 	wire			w_secondary_slot0_cs;
@@ -157,6 +162,7 @@ module s2026a (
 	wire			w_sysctl_cs;
 	reg				ff_uart_cs;
 	reg				ff_bootrom_cs;
+	reg				ff_extio_cs;
 	reg				ff_mapper_cs;
 	reg				ff_mapper_io_cs;
 	reg				ff_secondary_slot0_cs;
@@ -325,6 +331,7 @@ module s2026a (
 	// ---------------------------------------------------------
 	assign w_uart_cs				= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'h10 ));
 	assign w_bootrom_cs				= (w_bus_mem &&  ff_bootrom_mode);
+	assign w_extio_cs				= (w_bus_io  && ( {w_bus_address[7:4], 4'd0} == 8'h40 ));
 //	assign w_mapper_cs				= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd3) && (w_secondary_slot3 == 2'd0));
 //	assign w_mapper_io_cs			= (w_bus_io  && ( {w_bus_address[7:2], 2'd0} == 8'hFC ));
 //	assign w_secondary_slot0_cs		= (w_bus_mem && !ff_bootrom_mode && (w_primary_slot == 2'd0));
@@ -347,6 +354,7 @@ module s2026a (
 		if( !reset_n ) begin
 			ff_uart_cs				<= 1'b0;
 			ff_bootrom_cs			<= 1'b0;
+			ff_extio_cs				<= 1'b0;
 //			ff_mapper_cs			<= 1'b0;
 //			ff_mapper_io_cs			<= 1'b0;
 //			ff_secondary_slot0_cs	<= 1'b0;
@@ -371,6 +379,7 @@ module s2026a (
 		else if( w_bus_valid ) begin
 			ff_uart_cs				<= w_uart_cs;
 			ff_bootrom_cs			<= w_bootrom_cs;
+			ff_extio_cs				<= w_extio_cs;
 //			ff_mapper_cs			<= w_mapper_cs;
 //			ff_mapper_io_cs			<= w_mapper_io_cs;
 //			ff_secondary_slot0_cs	<= w_secondary_slot0_cs;
@@ -420,6 +429,10 @@ module s2026a (
 		end
 		else if( bus_bootrom_rdata_en ) begin
 			ff_bus_rdata	<= bus_bootrom_rdata;
+			ff_bus_rdata_en	<= 1'b1;
+		end
+		else if( bus_extio_rdata_en ) begin
+			ff_bus_rdata	<= bus_extio_rdata;
 			ff_bus_rdata_en	<= 1'b1;
 		end
 //		else if( w_secondary_slot0_rdata_en ) begin
@@ -502,6 +515,7 @@ module s2026a (
 	// ---------------------------------------------------------
 	assign w_bus_ready	= (!w_uart_cs           | bus_uart_ready      ) &
 						  (!w_bootrom_cs        | bus_bootrom_ready   ) &
+						  (!w_extio_cs			| bus_extio_ready     ) &
 //						  (!w_mapper_io_cs      | w_mapper_ready      ) &
 //						  (!w_ppi_cs            | w_ppi_ready         ) &
 //						  (!w_rtc_cs            | bus_rtc_ready       ) &
@@ -523,6 +537,7 @@ module s2026a (
 
 	assign bus_uart_cs		= ff_uart_cs;
 	assign bus_bootrom_cs	= ff_bootrom_cs;
+	assign bus_extio_cs		= ff_extio_cs;
 //	assign bus_rtc_cs		= ff_rtc_cs;
 //	assign bus_cartridge_cs	= ff_cartridge_cs;
 //	assign bus_ssg_cs		= ff_ssg_cs;

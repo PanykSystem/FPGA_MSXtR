@@ -131,10 +131,18 @@ module cz80 (
 	reg				alternate;
 
 	// help registers
-	reg		[15:0]	tmpaddr;			// temporary address register
-	reg		[7:0]	ir;					// instruction register
-	reg		[1:0]	iset;				// instruction set selector
-	reg		[15:0]	regbusa_r;
+	reg		[15:0]	tmpaddr;				// temporary address register
+	reg		[7:0]	ir;						/* synthesis syn_preserve = 1 */	// instruction register
+	reg		[7:0]	ir_mcode1;				/* synthesis syn_preserve = 1 */	// instruction register for mcode fanout
+	reg		[7:0]	ir_mcode2;				/* synthesis syn_preserve = 1 */	// instruction register for mcode fanout
+	reg		[7:0]	ir_mcode3;				/* synthesis syn_preserve = 1 */	// instruction register for mcode fanout
+	reg		[7:0]	ir_mcode4;				/* synthesis syn_preserve = 1 */	// instruction register for mcode fanout
+	reg		[7:0]	ir_mcode5;				/* synthesis syn_preserve = 1 */	// instruction register for mcode fanout
+	reg		[7:0]	f_mcode;				// flag register for mcode fanout
+	reg		[1:0]	iset;					// instruction set selector
+	reg		[1:0]	iset_mcode;				/* synthesis syn_preserve = 1 */	// instruction set selector for mcode fanout
+	reg		[15:0]	regbusa_r0;				/* synthesis syn_preserve = 1 */
+	reg		[15:0]	regbusa_r1;				/* synthesis syn_preserve = 1 */
 	reg				oldnmi_n;
 
 	wire	[15:0]	id16;
@@ -142,6 +150,9 @@ module cz80 (
 
 	reg		[2:0]	tstate;
 	reg		[2:0]	mcycle;
+	reg		[2:0]	mcycle1;				/* synthesis syn_preserve = 1 */
+	reg		[2:0]	mcycle2;				/* synthesis syn_preserve = 1 */
+	reg		[2:0]	mcycle3;				/* synthesis syn_preserve = 1 */
 	reg				inte_ff1;
 	reg				inte_ff2;
 	reg				halt_ff;
@@ -234,62 +245,69 @@ module cz80 (
 	// --------------------------------------------------------------------
 	//	Sub module instances
 	// --------------------------------------------------------------------
+	wire	[3:0]	set_busb_to_regaddr;
 	cz80_mcode u_mcode (
-		.ir				( ir				),
-		.iset			( iset				),
-		.mcycle			( mcycle			),
-		.f				( f					),
-		.nmicycle		( nmicycle			),
-		.intcycle		( intcycle			),
-		.xy_state		( xy_state			),
-		.mcycles		( mcycles_d			),
-		.tstates		( tstates			),
-		.prefix			( prefix			),
-		.inc_pc			( inc_pc			),
-		.inc_wz			( inc_wz			),
-		.incdec_16		( incdec_16			),
-		.read_to_acc	( read_to_acc		),
-		.read_to_reg	( read_to_reg		),
-		.set_busb_to	( set_busb_to		),
-		.set_busa_to	( set_busa_to		),
-		.alu_op			( alu_op			),
-		.alu_cpi		( alu_cpi			),
-		.save_alu		( save_alu			),
-		.preservec		( preservec			),
-		.arith16		( arith16			),
-		.set_addr_to	( set_addr_to		),
-		.iorq			( iorq_i			),
-		.jump			( jump				),
-		.jumpe			( jumpe				),
-		.jumpxy			( jumpxy			),
-		.call			( call				),
-		.rstp			( rstp				),
-		.ldz			( ldz				),
-		.ldw			( ldw				),
-		.ldsphl			( ldsphl			),
-		.special_ld		( special_ld		),
-		.exchangedh		( exchangedh		),
-		.exchangerp		( exchangerp		),
-		.exchangeaf		( exchangeaf		),
-		.exchangers		( exchangers		),
-		.i_djnz			( i_djnz			),
-		.i_cpl			( i_cpl				),
-		.i_ccf			( i_ccf				),
-		.i_scf			( i_scf				),
-		.i_retn			( i_retn			),
-		.i_bt			( i_bt				),
-		.i_bc			( i_bc				),
-		.i_btr			( i_btr				),
-		.i_rld			( i_rld				),
-		.i_rrd			( i_rrd				),
-		.i_inrc			( i_inrc			),
-		.setdi			( setdi				),
-		.setei			( setei				),
-		.imode			( imode				),
-		.halt			( halt				),
-		.noread			( noread			),
-		.write			( write				),
-		.xybit_undoc	( xybit_undoc		)
+		.ir1					( ir_mcode1				),
+		.ir2					( ir_mcode2				),
+		.ir3					( ir_mcode3				),
+		.ir4					( ir_mcode4				),
+		.ir5					( ir_mcode5				),
+		.mcycle1				( mcycle1				),
+		.mcycle2				( mcycle2				),
+		.mcycle3				( mcycle3				),
+		.f						( f_mcode				),
+		.nmicycle				( nmicycle				),
+		.intcycle				( intcycle				),
+		.xy_state				( xy_state				),
+		.mcycles				( mcycles_d				),
+		.tstates				( tstates				),
+		.prefix					( prefix				),
+		.inc_pc					( inc_pc				),
+		.inc_wz					( inc_wz				),
+		.incdec_16				( incdec_16				),
+		.read_to_acc			( read_to_acc			),
+		.read_to_reg			( read_to_reg			),
+		.set_busb_to			( set_busb_to			),
+		.set_busb_to_regaddr	( set_busb_to_regaddr	),
+		.set_busa_to			( set_busa_to			),
+		.alu_op					( alu_op				),
+		.alu_cpi				( alu_cpi				),
+		.save_alu				( save_alu				),
+		.preservec				( preservec				),
+		.arith16				( arith16				),
+		.set_addr_to			( set_addr_to			),
+		.iorq					( iorq_i				),
+		.jump					( jump					),
+		.jumpe					( jumpe					),
+		.jumpxy					( jumpxy				),
+		.call					( call					),
+		.rstp					( rstp					),
+		.ldz					( ldz					),
+		.ldw					( ldw					),
+		.ldsphl					( ldsphl				),
+		.special_ld				( special_ld			),
+		.exchangedh				( exchangedh			),
+		.exchangerp				( exchangerp			),
+		.exchangeaf				( exchangeaf			),
+		.exchangers				( exchangers			),
+		.i_djnz					( i_djnz				),
+		.i_cpl					( i_cpl					),
+		.i_ccf					( i_ccf					),
+		.i_scf					( i_scf					),
+		.i_retn					( i_retn				),
+		.i_bt					( i_bt					),
+		.i_bc					( i_bc					),
+		.i_btr					( i_btr					),
+		.i_rld					( i_rld					),
+		.i_rrd					( i_rrd					),
+		.i_inrc					( i_inrc				),
+		.setdi					( setdi					),
+		.setei					( setei					),
+		.imode					( imode					),
+		.halt					( halt					),
+		.noread					( noread				),
+		.write					( write					),
+		.xybit_undoc			( xybit_undoc			)
 	);
 
 	// --------------------------------------------------------------------
@@ -322,7 +340,14 @@ module cz80 (
 			ff_a		<= 16'd0;
 			tmpaddr	<= 16'd0;
 			ir		<= 8'h00;
+			ir_mcode1 <= 8'h00;
+			ir_mcode2 <= 8'h00;
+			ir_mcode3 <= 8'h00;
+			ir_mcode4 <= 8'h00;
+			ir_mcode5 <= 8'h00;
+			f_mcode <= 8'hFF;
 			iset	<= 2'b00;
+			iset_mcode <= 2'b00;
 			xy_state <= 2'b00;
 			istatus <= 2'b00;
 			mcycles <= 3'b000;
@@ -384,15 +409,31 @@ module cz80 (
 
 					if( intcycle == 1'b1 && istatus == 2'b01 ) begin
 						ir <= 8'hFF;
+						ir_mcode1 <= 8'hFF;
+						ir_mcode2 <= 8'hFF;
+						ir_mcode3 <= 8'hFF;
+						ir_mcode4 <= 8'hFF;
+						ir_mcode5 <= 8'hFF;
 					end
 					else if( halt_ff == 1'b1 || (intcycle == 1'b1 && istatus == 2'b10) || nmicycle == 1'b1 ) begin
 						ir <= 8'h00;
+						ir_mcode1 <= 8'h00;
+						ir_mcode2 <= 8'h00;
+						ir_mcode3 <= 8'h00;
+						ir_mcode4 <= 8'h00;
+						ir_mcode5 <= 8'h00;
 					end
 					else begin
 						ir <= dinst;
+						ir_mcode1 <= dinst;
+						ir_mcode2 <= dinst;
+						ir_mcode3 <= dinst;
+						ir_mcode4 <= dinst;
+						ir_mcode5 <= dinst;
 					end
 
 					iset <= 2'b00;
+					iset_mcode <= 2'b00;
 					if( prefix != 2'b00 ) begin
 						if( prefix == 2'b11 ) begin
 							//	DDh = 11011101, FDh = 11111101h
@@ -409,6 +450,7 @@ module cz80 (
 								xy_ind <= 1'b0;
 							end
 							iset <= prefix;
+							iset_mcode <= prefix;
 						end
 					end
 					else begin
@@ -424,6 +466,7 @@ module cz80 (
 					xy_ind <= 1'b1;
 					if( prefix == 2'b01 ) begin
 						iset <= 2'b01;
+						iset_mcode <= 2'b01;
 					end
 				end
 
@@ -520,6 +563,11 @@ module cz80 (
 				if( tstate == 3'd2 && wait_n == 1'b1 ) begin
 					if( iset == 2'b01 && mcycle == 3'b111 ) begin
 						ir <= dinst;
+						ir_mcode1 <= dinst;
+						ir_mcode2 <= dinst;
+						ir_mcode3 <= dinst;
+						ir_mcode4 <= dinst;
+						ir_mcode5 <= dinst;
 					end
 					if( jumpe == 1'b1 ) begin
 						pc <= pc + { { 8 { di_reg[7] } }, di_reg };
@@ -557,6 +605,7 @@ module cz80 (
 					acc <= ap;
 					fp <= f;
 					f <= fp;
+					f_mcode <= fp;
 				end
 				if( exchangers == 1'b1 ) begin
 					alternate <= ~alternate;
@@ -581,6 +630,11 @@ module cz80 (
 							f[flag_h] <= 1'b0;
 							f[flag_s] <= i[7];
 							f[flag_z] <= ( i == 8'h00 );
+							f_mcode[flag_p] <= inte_ff2;
+							f_mcode[flag_n] <= 1'b0;
+							f_mcode[flag_h] <= 1'b0;
+							f_mcode[flag_s] <= i[7];
+							f_mcode[flag_z] <= ( i == 8'h00 );
 						end
 					2'b01:
 						begin
@@ -590,6 +644,11 @@ module cz80 (
 							f[flag_h] <= 1'b0;
 							f[flag_s] <= r[7];
 							f[flag_z] <= ( r == 8'h00 );
+							f_mcode[flag_p] <= inte_ff2;
+							f_mcode[flag_n] <= 1'b0;
+							f_mcode[flag_h] <= 1'b0;
+							f_mcode[flag_s] <= r[7];
+							f_mcode[flag_z] <= ( r == 8'h00 );
 						end
 					2'b10:
 						i <= acc;
@@ -601,21 +660,30 @@ module cz80 (
 
 			if( (i_djnz == 1'b0 && save_alu_r == 1'b1) || alu_op_r == 4'b1001 ) begin
 				f[7:1] <= f_out[7:1];
+				f_mcode[7:1] <= f_out[7:1];
 				if( preservec_r == 1'b0 ) begin
 					f[flag_c] <= f_out[0];
+					f_mcode[flag_c] <= f_out[0];
 				end
 			end
 			if( t_res == 1'b1 && i_inrc == 1'b1 ) begin
 				f[flag_h] <= 1'b0;
 				f[flag_n] <= 1'b0;
+				f_mcode[flag_h] <= 1'b0;
+				f_mcode[flag_n] <= 1'b0;
 				if( di_reg[7:0] == 8'h00) begin
 					f[flag_z] <= 1'b1;
+					f_mcode[flag_z] <= 1'b1;
 				end
 				else begin
 					f[flag_z] <= 1'b0;
+					f_mcode[flag_z] <= 1'b0;
 				end
 				f[flag_s] <= di_reg[7];
 				f[flag_p] <= ~(di_reg[0] ^ di_reg[1] ^ di_reg[2] ^ di_reg[3] ^
+					di_reg[4] ^ di_reg[5] ^ di_reg[6] ^ di_reg[7]);
+				f_mcode[flag_s] <= di_reg[7];
+				f_mcode[flag_p] <= ~(di_reg[0] ^ di_reg[1] ^ di_reg[2] ^ di_reg[3] ^
 					di_reg[4] ^ di_reg[5] ^ di_reg[6] ^ di_reg[7]);
 			end
 
@@ -645,9 +713,14 @@ module cz80 (
 				f[flag_y] <= alu_q[1];
 				f[flag_h] <= 1'b0;
 				f[flag_n] <= 1'b0;
+					f_mcode[flag_x] <= alu_q[3];
+					f_mcode[flag_y] <= alu_q[1];
+					f_mcode[flag_h] <= 1'b0;
+					f_mcode[flag_n] <= 1'b0;
 			end
 			if( i_bc == 1'b1 || i_bt == 1'b1 ) begin
 				f[flag_p] <= incdecz;
+					f_mcode[flag_p] <= incdecz;
 			end
 
 			if( (tstate == 3'd1 && save_alu_r == 1'b0 && auto_wait_t1 == 1'b0) ||
@@ -662,7 +735,10 @@ module cz80 (
 				5'b11001:
 					sp[15:8] <= save_mux;
 				5'b11011:
+					begin
 					f <= save_mux;
+					f_mcode <= save_mux;
+					end
 				default:
 					begin
 						//	hold
@@ -689,11 +765,11 @@ module cz80 (
 			end
 
 			// bus b
-			if( !xy_ind && xy_state != 2'b00 && set_busb_to[2:1] == 2'b10 ) begin
+			if( !xy_ind && xy_state != 2'b00 && set_busb_to_regaddr[2:1] == 2'b10 ) begin
 				regaddrb_r <= { xy_state[1], 2'b11 };
 			end
 			else begin
-				regaddrb_r <= { alternate, set_busb_to[2:1] };
+				regaddrb_r <= { alternate, set_busb_to_regaddr[2:1] };
 			end
 
 			// address from register
@@ -718,7 +794,8 @@ module cz80 (
 				incdecz <= f_out[flag_z];
 			end
 
-			regbusa_r <= regbusa;
+			regbusa_r0 <= regbusa;
+			regbusa_r1 <= regbusa;
 		end
 	end
 
@@ -775,10 +852,10 @@ module cz80 (
 	assign regwel = func_regwe( tstate, save_alu_r, auto_wait_t1, alu_op_r, read_to_reg_r, exchangedh, incdec_16, wait_n, mcycle,  read_to_reg_r[0] );
 
 	assign regdih	= ( incdec_16[2] && ((tstate == 3'd2 && mcycle != 3'd1) || (tstate == 3'd3 && mcycle == 3'd1)) ) ? id16[15:8] :
-					  ( exchangedh && tstate == 3'd4 ) ? regbusa_r[15:8]:
+					  ( exchangedh && tstate == 3'd4 ) ? regbusa_r0[15:8]:
 					  ( exchangedh && tstate == 3'd3 ) ? regbusb[15:8]: save_mux;
 	assign regdil	= ( incdec_16[2] && ((tstate == 3'd2 && mcycle != 3'd1) || (tstate == 3'd3 && mcycle == 3'd1)) ) ? id16[ 7:0] :
-					  ( exchangedh && tstate == 3'd4 ) ? regbusa_r[7:0]:
+					  ( exchangedh && tstate == 3'd4 ) ? regbusa_r1[7:0]:
 					  ( exchangedh && tstate == 3'd3 ) ? regbusb[7:0]: save_mux;
 
 	cz80_registers u_regs (
@@ -914,6 +991,9 @@ module cz80 (
 	always @( posedge clk_n ) begin
 		if( !reset_n ) begin
 			mcycle <= 3'b001;
+			mcycle1 <= 3'b001;
+			mcycle2 <= 3'b001;
+			mcycle3 <= 3'b001;
 			tstate <= 3'b000;
 			pre_xy_f_m <= 3'b000;
 			halt_ff <= 1'b0;
@@ -978,6 +1058,9 @@ module cz80 (
 						tstate <= 3'd1;
 						if( nextis_xy_fetch ) begin
 							mcycle <= 3'b110;
+							mcycle1 <= 3'b110;
+							mcycle2 <= 3'b110;
+							mcycle3 <= 3'b110;
 							if( ir == 8'h36 ) begin
 								pre_xy_f_m <= 3'd2;
 							end
@@ -987,10 +1070,16 @@ module cz80 (
 						end
 						else if( mcycle == 3'd7 ) begin
 							mcycle <= pre_xy_f_m + 3'd1;
+							mcycle1 <= pre_xy_f_m + 3'd1;
+							mcycle2 <= pre_xy_f_m + 3'd1;
+							mcycle3 <= pre_xy_f_m + 3'd1;
 						end
 						else if( (mcycle == mcycles) || no_btr || (mcycle == 3'd2 && i_djnz && incdecz) ) begin
 							ff_m1_n <= 1'b0;
 							mcycle <= 3'b001;
+							mcycle1 <= 3'b001;
+							mcycle2 <= 3'b001;
+							mcycle3 <= 3'b001;
 							if( nmi_s && prefix == 2'd0 ) begin
 								intcycle <= 1'b0;
 								nmicycle <= 1'b1;
@@ -1009,6 +1098,9 @@ module cz80 (
 						end
 						else begin
 							mcycle <= mcycle + 1;
+							mcycle1 <= mcycle + 1;
+							mcycle2 <= mcycle + 1;
+							mcycle3 <= mcycle + 1;
 						end
 					end
 				end

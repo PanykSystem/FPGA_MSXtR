@@ -93,7 +93,7 @@ module cz80_inst (
 //	reg					ff_iorq;
 	wire				w_iorq;
 	wire				w_rd;
-	reg					ff_wr;
+	reg					ff_wr;				/* synthesis syn_preserve = 1 */
 	wire				w_busak_n;
 	wire				w_m1_n;
 	reg		[7:0]		ff_di_reg;

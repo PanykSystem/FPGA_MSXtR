@@ -61,9 +61,15 @@
 //-----------------------------------------------------------------------------
 
 module cz80_mcode (
-	input	[7:0]		ir			,
+	input	[7:0]		ir1			,
+	input	[7:0]		ir2			,
+	input	[7:0]		ir3			,
+	input	[7:0]		ir4			,
+	input	[7:0]		ir5			,
+	input	[2:0]		mcycle1		,
+	input	[2:0]		mcycle2		,
+	input	[2:0]		mcycle3		,
 	input	[1:0]		iset		,
-	input	[2:0]		mcycle		,
 	input	[7:0]		f			,
 	input				nmicycle	,
 	input				intcycle	,
@@ -74,16 +80,17 @@ module cz80_mcode (
 	output				inc_pc		,
 	output				inc_wz		,
 	output	[3:0]		incdec_16	,	// bc,de,hl,sp	 0 is inc
-	output				read_to_reg ,
-	output				read_to_acc ,
-	output	[3:0]		set_busa_to ,	// b,c,d,e,h,l,di/db,a,sp(l),sp(m),0,f
-	output	[3:0]		set_busb_to ,	// b,c,d,e,h,l,di,a,sp(l),sp(m),1,f,pc(l),pc(m),0
+	output				read_to_reg	,
+	output				read_to_acc	,
+	output	[3:0]		set_busa_to	,	// b,c,d,e,h,l,di/db,a,sp(l),sp(m),0,f
+	output	[3:0]		set_busb_to	,	// b,c,d,e,h,l,di,a,sp(l),sp(m),1,f,pc(l),pc(m),0
+	output	[3:0]		set_busb_to_regaddr	,	// duplicate busb selector for fanout splitting
 	output	[3:0]		alu_op		,	// add, adc, sub, sbc, and, xor, or, cp, rot, bit, set, res, daa, rld, rrd, none
 	output				alu_cpi		,	//for undoc xy-flags
 	output				save_alu	,
 	output				preservec	,
 	output				arith16		,
-	output	[2:0]		set_addr_to ,	// anone,axy,aioa,asp,abc,ade,azi
+	output	[2:0]		set_addr_to	,	// anone,axy,aioa,asp,abc,ade,azi
 	output				iorq		,
 	output				jump		,
 	output				jumpe		,
@@ -138,6 +145,37 @@ module cz80_mcode (
 	wire	[2:0]	ddd;
 	wire	[2:0]	sss;
 	wire	[1:0]	dpair;
+
+	// --------------------------------------------------------------------
+	//	Top-level fanout split
+	// --------------------------------------------------------------------
+	assign alu_cpi	= ( iset[1] == 1'b1 && mcycle1 == 3'd2 &&
+			(irb == 8'hA1 || irb == 8'hA9 || irb == 8'hB1 || irb == 8'hB9) );
+	assign save_alu = func_save_alu( iset, mcycle3, irb, xy_state );
+	assign preservec = func_preservec( iset, mcycle2, irb );
+	assign noread	= func_noread( iset, mcycle1, irb );
+	assign jumpe = func_jumpe( iset, mcycle2, irb );
+	assign call = func_call( iset, mcycle3, irb );
+	assign write = func_write( iset, mcycle1, irb, xy_state );
+	assign ldz	= func_ldz( iset, mcycle2, irb, nmicycle, intcycle );
+	assign i_retn = func_i_retn( iset, mcycle3, irb );
+	assign ldw	= func_ldw( iset, mcycle1, irb );
+	assign exchangerp	= func_exchangerp( iset, mcycle2, irb );
+	assign i_btr		= func_i_btr( iset, mcycle3, irb );
+	assign xybit_undoc = func_xybit_undoc( iset, mcycle1, irb, xy_state );
+	assign i_djnz	= ( iset == 2'b00 && irb == 8'h10 && (mcycle1 == 3'd1 || mcycle1 == 3'd2) );
+	assign i_bt		= ( iset[1] == 1'b1 && (irb == 8'hA0 || irb == 8'hA8 || irb == 8'hB0 || irb == 8'hB8) && mcycle2 == 3'd3 );
+	assign i_bc		= ( iset[1] == 1'b1 && (irb == 8'hA1 || irb == 8'hA9 || irb == 8'hB1 || irb == 8'hB9) && mcycle2 == 3'd3 );
+	assign i_rrd	= ( iset[1] == 1'b1 && irb == 8'h67 && mcycle3 == 3'd4 );
+	assign i_rld	= ( iset[1] == 1'b1 && irb == 8'h6F && mcycle3 == 3'd4 );
+	assign i_inrc	= ( iset[1] == 1'b1 &&
+		(irb == 8'h40 || irb == 8'h48 || irb == 8'h50 || irb == 8'h58 ||
+		 irb == 8'h60 || irb == 8'h68 || irb == 8'h70 || irb == 8'h78 ) && mcycle2 == 3'd2 );
+	assign arith16	= ( iset == 2'b00 && (mcycle1 == 3'd2 || mcycle1 == 3'd3) &&
+		(irb == 8'h09 || irb == 8'h19 || irb == 8'h29 || irb == 8'h39) );
+	assign rstp			= ( iset == 2'b00 && mcycle2 == 3'd3 &&
+		(irb == 8'hC7 || irb == 8'hCF || irb == 8'hD7 || irb == 8'hDF ||
+		 irb == 8'hE7 || irb == 8'hEF || irb == 8'hF7 || irb == 8'hFF) );
 
 	// ------------------------------------------------------------------------
 	//	is_cc_true = f[6] のような記述だと、シミュレーション時にメモリモデルが
@@ -209,10 +247,10 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign ddd		= ir[5:3];
-	assign sss		= ir[2:0];
-	assign dpair	= ir[5:4];
-	assign irb		= ir;
+	assign ddd		= ir1[5:3];
+	assign sss		= ir1[2:0];
+	assign dpair	= ir1[5:4];
+	assign irb		= ir1;
 
 	// --------------------------------------------------------------------
 	//	Prefix instruction
@@ -409,7 +447,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign mcycles	= func_mcycles( iset, irb, xy_state, mcycle, f, ir[5:3] );
+	assign mcycles	= func_mcycles( iset, ir1, xy_state, mcycle1, f, ir4[5:3] );
 
 	// --------------------------------------------------------------------
 	//	tstates
@@ -665,7 +703,7 @@ module cz80_mcode (
 		end
 	endfunction
 
-	assign tstates = func_tstates( mcycle, iset, irb, f, ir[5:3], xy_state );
+	assign tstates = func_tstates( mcycle2, iset, ir2, f, ir5[5:3], xy_state );
 
 	// --------------------------------------------------------------------
 	//	Increment PC
@@ -725,7 +763,7 @@ module cz80_mcode (
 		end
 	endfunction
 
-	assign inc_pc = func_inc_pc( iset, mcycle, irb, nmicycle, intcycle );
+	assign inc_pc = func_inc_pc( iset, mcycle3, irb, nmicycle, intcycle );
 
 	// --------------------------------------------------------------------
 	//	Increment WZ
@@ -761,7 +799,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign inc_wz	= func_inc_wz( iset, mcycle, irb );
+	assign inc_wz	= func_inc_wz( iset, mcycle1, irb );
 
 	// --------------------------------------------------------------------
 	//	increment/decrement for 16bits
@@ -901,7 +939,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign incdec_16	= func_incdec_16( iset, mcycle, irb, nmicycle, intcycle, dpair, f, ir[5:3] );
+	assign incdec_16	= func_incdec_16( iset, mcycle2, ir3, nmicycle, intcycle, dpair, f, ir1[5:3] );
 
 	// --------------------------------------------------------------------
 	//	I/O request
@@ -939,7 +977,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign iorq	= func_iorq( mcycle, iset, irb );
+	assign iorq	= func_iorq( mcycle3, iset, irb );
 
 	// --------------------------------------------------------------------
 	//	read to accumulator flag
@@ -982,7 +1020,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign read_to_acc = func_read_to_acc( iset, mcycle, irb );
+	assign read_to_acc = func_read_to_acc( iset, mcycle1, irb );
 
 	// --------------------------------------------------------------------
 	//	read to register flag
@@ -1098,7 +1136,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign read_to_reg = func_read_to_reg( iset, mcycle, irb, ir[5:3], xy_state );
+	assign read_to_reg = func_read_to_reg( iset, mcycle2, ir4, ir2[5:3], xy_state );
 
 	// --------------------------------------------------------------------
 	//	BUSB
@@ -1411,7 +1449,7 @@ module cz80_mcode (
 		end
 	endfunction
 
-	assign set_busb_to = func_set_busb_to( iset, mcycle, irb, ir, dpair );
+	assign set_busb_to = func_set_busb_to( iset, mcycle3, irb, ir4, dpair );
 
 	// --------------------------------------------------------------------
 	//	BUSA
@@ -1635,7 +1673,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign set_busa_to = func_set_busa_to( iset, mcycle, irb, ir, dpair );
+	assign set_busa_to = func_set_busa_to( iset, mcycle1, irb, ir5, dpair );
 
 	// --------------------------------------------------------------------
 	//	ALU_OP
@@ -1891,8 +1929,8 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign alu_op	= func_alu_op( iset, mcycle, irb, ir[5:3], xy_state );
-	assign alu_cpi	= ( iset[1] == 1'b1 && mcycle == 3'd2 &&
+	assign alu_op	= func_alu_op( iset, mcycle2, irb, ir5[5:3], xy_state );
+	assign alu_cpi	= ( iset[1] == 1'b1 && mcycle1 == 3'd2 &&
 			(irb == 8'hA1 || irb == 8'hA9 || irb == 8'hB1 || irb == 8'hB9) );
 
 	// --------------------------------------------------------------------
@@ -1996,7 +2034,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign save_alu = func_save_alu( iset, mcycle, irb, xy_state );
+	assign save_alu = func_save_alu( iset, mcycle3, irb, xy_state );
 
 	// --------------------------------------------------------------------
 	//	preserve C
@@ -2035,7 +2073,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign preservec = func_preservec( iset, mcycle, irb );
+	assign preservec = func_preservec( iset, mcycle2, irb );
 
 	// --------------------------------------------------------------------
 	//	Set address
@@ -2214,7 +2252,8 @@ module cz80_mcode (
 		end
 	endfunction
 
-	assign set_addr_to = func_set_addr_to( iset, mcycle, irb, f, ir[5:3], nmicycle, intcycle, xy_state );
+	assign set_addr_to = func_set_addr_to( iset, mcycle1, irb, f, ir4[5:3], nmicycle, intcycle, xy_state );
+	assign set_busb_to_regaddr = func_set_busb_to( iset, mcycle3, irb, ir5, ir4[2:0] );
 
 	// --------------------------------------------------------------------
 	//	no read
@@ -2269,7 +2308,7 @@ module cz80_mcode (
 		end
 	endfunction
 
-	assign noread	= func_noread( iset, mcycle, irb );
+	assign noread	= func_noread( iset, mcycle1, irb );
 
 	// --------------------------------------------------------------------
 	//	JUMP
@@ -2317,7 +2356,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign jump = func_jump( iset, mcycle, irb, f, ir[5:3], nmicycle, intcycle );
+	assign jump = func_jump( iset, mcycle2, irb, f, ir1[5:3], nmicycle, intcycle );
 
 	// --------------------------------------------------------------------
 	//	JUMPE
@@ -2346,7 +2385,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign jumpe = func_jumpe( iset, mcycle, irb );
+	assign jumpe = func_jumpe( iset, mcycle2, irb );
 
 	// --------------------------------------------------------------------
 	//	call
@@ -2369,7 +2408,7 @@ module cz80_mcode (
 		end
 	endfunction
 
-	assign call = func_call( iset, mcycle, irb );
+	assign call = func_call( iset, mcycle3, irb );
 
 	// --------------------------------------------------------------------
 	//	write
@@ -2471,7 +2510,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign write = func_write( iset, mcycle, irb, xy_state );
+	assign write = func_write( iset, mcycle1, irb, xy_state );
 
 	// --------------------------------------------------------------------
 	//	ldz
@@ -2518,7 +2557,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign ldz	= func_ldz( iset, mcycle, irb, nmicycle, intcycle );
+	assign ldz	= func_ldz( iset, mcycle2, irb, nmicycle, intcycle );
 
 	// --------------------------------------------------------------------
 	//	retn
@@ -2547,7 +2586,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign i_retn = func_i_retn( iset, mcycle, irb );
+	assign i_retn = func_i_retn( iset, mcycle3, irb );
 
 	// --------------------------------------------------------------------
 	//	ldw
@@ -2586,7 +2625,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign ldw	= func_ldw( iset, mcycle, irb );
+	assign ldw	= func_ldw( iset, mcycle1, irb );
 
 	// --------------------------------------------------------------------
 	//	exchangerp
@@ -2623,7 +2662,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign exchangerp	= func_exchangerp( iset, mcycle, irb );
+	assign exchangerp	= func_exchangerp( iset, mcycle2, irb );
 
 	// --------------------------------------------------------------------
 	//	i_btr
@@ -2652,7 +2691,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign i_btr		= func_i_btr( iset, mcycle, irb );
+	assign i_btr		= func_i_btr( iset, mcycle3, irb );
 
 	// --------------------------------------------------------------------
 	//	xybit_undoc
@@ -2713,7 +2752,7 @@ module cz80_mcode (
 		endcase
 	endfunction
 
-	assign xybit_undoc = func_xybit_undoc( iset, mcycle, irb, xy_state );
+	assign xybit_undoc = func_xybit_undoc( iset, mcycle1, irb, xy_state );
 
 	// --------------------------------------------------------------------
 	//	CPL, SCF, CCF, LDI/LDIR/LDD/LDDR, CPI/CPIR/CPD/CPDR, EI, DI, HALT
@@ -2721,18 +2760,18 @@ module cz80_mcode (
 	assign i_cpl	= ( iset == 2'b00 && irb == 8'h2F );
 	assign i_scf	= ( iset == 2'b00 && irb == 8'h37 );
 	assign i_ccf	= ( iset == 2'b00 && irb == 8'h3F );
-	assign i_djnz	= ( iset == 2'b00 && irb == 8'h10 && (mcycle == 3'd1 || mcycle == 3'd2) );
-	assign i_bt		= ( iset[1] == 1'b1 && (irb == 8'hA0 || irb == 8'hA8 || irb == 8'hB0 || irb == 8'hB8) && mcycle == 3'd3 );
-	assign i_bc		= ( iset[1] == 1'b1 && (irb == 8'hA1 || irb == 8'hA9 || irb == 8'hB1 || irb == 8'hB9) && mcycle == 3'd3 );
-	assign i_rrd	= ( iset[1] == 1'b1 && irb == 8'h67 && mcycle == 3'd4 );
-	assign i_rld	= ( iset[1] == 1'b1 && irb == 8'h6F && mcycle == 3'd4 );
+	assign i_djnz	= ( iset == 2'b00 && irb == 8'h10 && (mcycle1 == 3'd1 || mcycle1 == 3'd2) );
+	assign i_bt		= ( iset[1] == 1'b1 && (irb == 8'hA0 || irb == 8'hA8 || irb == 8'hB0 || irb == 8'hB8) && mcycle2 == 3'd3 );
+	assign i_bc		= ( iset[1] == 1'b1 && (irb == 8'hA1 || irb == 8'hA9 || irb == 8'hB1 || irb == 8'hB9) && mcycle2 == 3'd3 );
+	assign i_rrd	= ( iset[1] == 1'b1 && irb == 8'h67 && mcycle3 == 3'd4 );
+	assign i_rld	= ( iset[1] == 1'b1 && irb == 8'h6F && mcycle3 == 3'd4 );
 	assign i_inrc	= ( iset[1] == 1'b1 && 
 		(irb == 8'h40 || irb == 8'h48 || irb == 8'h50 || irb == 8'h58 || 
-		 irb == 8'h60 || irb == 8'h68 || irb == 8'h70 || irb == 8'h78 ) && mcycle == 3'd2 );
+		 irb == 8'h60 || irb == 8'h68 || irb == 8'h70 || irb == 8'h78 ) && mcycle2 == 3'd2 );
 	assign halt		= ( iset == 2'b00 && irb == 8'h76 );
 	assign setdi	= ( iset == 2'b00 && irb == 8'hF3 );
 	assign setei	= ( iset == 2'b00 && irb == 8'hFB );
-	assign arith16	= ( iset == 2'b00 && (mcycle == 3'd2 || mcycle == 3'd3) &&
+	assign arith16	= ( iset == 2'b00 && (mcycle1 == 3'd2 || mcycle1 == 3'd3) &&
 		(irb == 8'h09 || irb == 8'h19 || irb == 8'h29 || irb == 8'h39) );
 
 	// --------------------------------------------------------------------
@@ -2748,7 +2787,7 @@ module cz80_mcode (
 							( irb == 8'h5F ) ? 3'd5:
 							( irb == 8'h47 ) ? 3'd6:
 							( irb == 8'h4F ) ? 3'd7: 3'd0 ): 3'd0;
-	assign rstp			= ( iset == 2'b00 && mcycle == 3'd3 &&
+	assign rstp			= ( iset == 2'b00 && mcycle2 == 3'd3 &&
 			(irb == 8'hC7 || irb == 8'hCF || irb == 8'hD7 || irb == 8'hDF || 
 			 irb == 8'hE7 || irb == 8'hEF || irb == 8'hF7 || irb == 8'hFF) );
 
