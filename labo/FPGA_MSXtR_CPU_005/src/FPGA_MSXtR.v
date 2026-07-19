@@ -123,12 +123,11 @@ module fpga_msxtr (
 	wire			w_uart_pre_reset_n;
 	wire			w_uart_reset_n;
 
-	reg		[4:0]	ff_3_579m = 5'd0;
+	reg		[3:0]	ff_3_579m = 4'd0;
 	wire			w_3_579m;
 	reg		[3:0]	ff_21m = 4'd0;
 	wire			w_21m;
 	reg		[21:0]	ff_counter;
-	reg				ff_led;
 	reg		[1:0]	ff_button_d0;
 	reg		[1:0]	ff_button_d1;
 
@@ -179,18 +178,29 @@ module fpga_msxtr (
 	wire	[7:0]	w_bus_bootrom_rdata;
 	wire			w_bus_bootrom_rdata_en;
 	wire			w_bus_bootrom_ready;
+
 	wire			w_bus_uart_cs;
 	wire	[7:0]	w_bus_uart_rdata;
 	wire			w_bus_uart_rdata_en;
 	wire			w_bus_uart_ready;
+
 	wire			w_bus_extio_cs;
 	wire	[7:0]	w_bus_extio_rdata;
 	wire			w_bus_extio_rdata_en;
 	wire			w_bus_extio_ready;
+
+	wire			w_bus_crom_cs;
+	wire	[7:0]	w_bus_crom_rdata;
+	wire			w_bus_crom_rdata_en;
+	wire			w_bus_crom_ready;
+
+	wire			w_bus_erom_cs;
+	wire	[7:0]	w_bus_erom_rdata;
+	wire			w_bus_erom_rdata_en;
+	wire			w_bus_erom_ready;
+
 	wire			w_z80_active;
 	wire			w_r800_active;
-	wire			w_bus_crom_cs;
-	wire			w_bus_erom_cs;
 
 	// --------------------------------------------------------------------
 	//	clock
@@ -206,21 +216,21 @@ module fpga_msxtr (
 		.clkin					( clk14m					)		//	input clkin		14.31818MHz
 	);
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
-			ff_3_579m <= 5'd0;
+			ff_3_579m <= 4'd0;
 		end
 		else if( w_3_579m ) begin
-			ff_3_579m <= 5'd0;
+			ff_3_579m <= 4'd0;
 		end
 		else begin
-			ff_3_579m <= ff_3_579m + 5'd1;
+			ff_3_579m <= ff_3_579m + 4'd1;
 		end
 	end
 
-	assign w_3_579m	= (ff_3_579m == 5'd23) ? 1'b1: 1'b0;
+	assign w_3_579m	= (ff_3_579m == 4'd11) ? 1'b1: 1'b0;
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_21m <= 2'd0;
 		end
@@ -234,30 +244,16 @@ module fpga_msxtr (
 
 	assign w_21m	= (ff_21m == 2'd3) ? 1'b1 : 1'b0;
 
-	always @( posedge clk85m ) begin
-		if( !w_msx_reset_n ) begin
-			ff_counter <= 22'd2147726;
-			ff_led <= 1'b0;
-		end
-		else if( ff_counter == 22'd0 ) begin
-			ff_counter <= 22'd2147726;
-			ff_led <= ~ff_led;
-		end
-		else begin
-			ff_counter <= ff_counter - 22'd1;
-		end
-	end
-
 	// --------------------------------------------------------------------
 	//	Reset
 	// --------------------------------------------------------------------
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( ff_reset_cnt != 5'b11111 ) begin
 			ff_reset_cnt <= ff_reset_cnt + 5'd1;
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_z80_pre_reset_n <= 1'b0;
 		end
@@ -266,7 +262,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_r800_pre_reset_n <= 1'b0;
 		end
@@ -275,7 +271,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_s2026a_pre_reset_n <= 1'b0;
 		end
@@ -284,7 +280,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_extio_pre_reset_n <= 1'b0;
 		end
@@ -293,7 +289,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_config_rom_pre_reset_n <= 1'b0;
 		end
@@ -302,7 +298,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_ext_rom_pre_reset_n <= 1'b0;
 		end
@@ -311,7 +307,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_bootrom_pre_reset_n <= 1'b0;
 		end
@@ -320,7 +316,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
 			ff_uart_pre_reset_n <= 1'b0;
 		end
@@ -329,7 +325,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_z80_pre_reset_n ) begin
 			ff_z80_reset_n <= 1'b0;
 		end
@@ -338,7 +334,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_r800_pre_reset_n ) begin
 			ff_r800_reset_n <= 1'b0;
 		end
@@ -347,7 +343,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_s2026a_pre_reset_n ) begin
 			ff_s2026a_reset_n <= 1'b0;
 		end
@@ -356,7 +352,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_extio_pre_reset_n ) begin
 			ff_extio_reset_n <= 1'b0;
 		end
@@ -365,7 +361,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_config_rom_pre_reset_n ) begin
 			ff_config_rom_reset_n <= 1'b0;
 		end
@@ -374,7 +370,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_ext_rom_pre_reset_n ) begin
 			ff_ext_rom_reset_n <= 1'b0;
 		end
@@ -383,7 +379,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_bootrom_pre_reset_n ) begin
 			ff_bootrom_reset_n <= 1'b0;
 		end
@@ -392,7 +388,7 @@ module fpga_msxtr (
 		end
 	end
 
-	always @( posedge clk85m ) begin
+	always @( posedge clk42m ) begin
 		if( !w_uart_pre_reset_n ) begin
 			ff_uart_reset_n <= 1'b0;
 		end
@@ -435,7 +431,7 @@ module fpga_msxtr (
 	//	Legasy compatible CPU core
 	cz80_inst u_z80 (
 		.reset_n				( w_z80_reset_n				),
-		.clk					( clk85m					),
+		.clk					( clk42m					),
 		.enable					( w_z80_active				),
 		.wait_p					( 1'b0						),
 		.int_p					( w_int_p					),
@@ -456,8 +452,8 @@ module fpga_msxtr (
 
 	//	Highspeed CPU core
 	cz80_inst u_r800 (
-		.reset_n				( w_r800_reset_n				),
-		.clk					( clk85m					),
+		.reset_n				( w_r800_reset_n			),
+		.clk					( clk42m					),
 		.enable					( w_r800_active				),
 		.wait_p					( 1'b0						),
 		.int_p					( w_int_p					),
@@ -483,7 +479,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 	s2026a u_s2026a (
 		.reset_n				( w_s2026a_reset_n			),
-		.clk					( clk85m					),
+		.clk					( clk42m					),
 		.enable_z80				( w_3_579m					),
 		.enable_r800			( w_21m						),
 		.z80_m1					( w_z80_m1					),
@@ -530,7 +526,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 //	fpga_connect_master u_fpga_connect_master (
 //		.reset_n				( w_fpga_reset_n			),
-//		.clk					( clk85m					),
+//		.clk					( clk42m					),
 //		.clk_serial				( clk215m					),
 //		.bus_cs					( w_bus_fpga_cs				),
 //		.bus_address			( w_bus_address[7:0]		),
@@ -550,7 +546,7 @@ module fpga_msxtr (
 //
 //	fpga_connect_slave u_fpga_connect_slave (
 //		.reset_n				( w_fpga_reset_n			),
-//		.clk					( clk85m					),
+//		.clk					( clk42m					),
 //		.clk_serial				( clk215m					),
 //		.bus_address			( bus_ctrl0_address[7:0]	),
 //		.bus_write				( bus_ctrl0_write			),
@@ -574,7 +570,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 	extio_a u_extio (
 		.reset_n				( w_extio_reset_n			),
-		.clk					( clk85m					),
+		.clk					( clk42m					),
 		.bus_cs					( w_bus_extio_cs			),
 		.bus_address			( w_bus_address[3:0]		),
 		.bus_write				( w_bus_write				),
@@ -592,7 +588,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 	ip_spi_rom u_config_rom (
 		.reset					( ~w_config_rom_reset_n		),
-		.clk					( clk85m					),
+		.clk					( clk42m					),
 		.clk_serial				( clk215m					),
 		.bus_cs					( w_bus_crom_cs				),
 		.bus_address			( w_bus_address[0]			),
@@ -616,7 +612,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 	ip_spi_rom u_ext_rom (
 		.reset					( ~w_ext_rom_reset_n		),
-		.clk					( clk85m					),
+		.clk					( clk42m					),
 		.clk_serial				( clk215m					),
 		.bus_cs					( w_bus_erom_cs				),
 		.bus_address			( w_bus_address[0]			),
@@ -640,7 +636,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 	bootrom u_bootrom (
 		.reset_n				( w_bootrom_reset_n			),
-		.clk					( clk85m					),
+		.clk					( clk42m					),
 		.bootrom_cs				( w_bus_bootrom_cs			),
 		.bus_write				( w_bus_write				),
 		.bus_valid				( w_bus_valid				),
@@ -656,7 +652,7 @@ module fpga_msxtr (
 	// --------------------------------------------------------------------
 	uart u_uart (
 		.reset_n				( w_uart_reset_n			),
-		.clk					( clk85m					),
+		.clk					( clk42m					),
 		.clk_uart				( clk27m					),
 		.bus_uart_cs			( w_bus_uart_cs				),
 		.bus_valid				( w_bus_valid				),
