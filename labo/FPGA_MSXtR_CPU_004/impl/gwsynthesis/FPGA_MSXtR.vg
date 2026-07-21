@@ -1,7 +1,7 @@
 //
 //Written by GowinSynthesis
 //Tool Version "V1.9.11.02 (64-bit)"
-//Sat Jun 13 07:13:09 2026
+//Mon Jul 20 21:50:21 2026
 
 //Source file index table:
 //file0 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_004/src/FPGA_MSXtR.v"
@@ -39844,8 +39844,8 @@ module s2026a_cpu_select (
   w_z80_rd,
   w_cpu_change_req,
   n578_5,
-  n480_6,
-  n483_5,
+  n484_6,
+  n487_5,
   w_r800_rd_4,
   ff_wr_7,
   w_z80_rd_4,
@@ -39880,8 +39880,8 @@ input w_r800_rd;
 input w_z80_rd;
 input w_cpu_change_req;
 input n578_5;
-input n480_6;
-input n483_5;
+input n484_6;
+input n487_5;
 input w_r800_rd_4;
 input ff_wr_7;
 input w_z80_rd_4;
@@ -40117,7 +40117,7 @@ defparam n278_s0.INIT=4'hE;
     .F(w_z80_active),
     .I0(n578_5),
     .I1(w_bus_valid),
-    .I2(n480_6),
+    .I2(n484_6),
     .I3(ff_z80_active) 
 );
 defparam w_z80_active_s.INIT=16'h7000;
@@ -40125,7 +40125,7 @@ defparam w_z80_active_s.INIT=16'h7000;
     .F(w_r800_active),
     .I0(n578_5),
     .I1(w_bus_valid),
-    .I2(n483_5),
+    .I2(n487_5),
     .I3(ff_r800_active) 
 );
 defparam w_r800_active_s.INIT=16'h7000;
@@ -40265,7 +40265,7 @@ defparam n277_s3.INIT=8'h01;
   LUT2 n277_s4 (
     .F(n277_7),
     .I0(ff_cpu_change_state[0]),
-    .I1(n483_5) 
+    .I1(n487_5) 
 );
 defparam n277_s4.INIT=4'h4;
   LUT4 n277_s5 (
@@ -40273,7 +40273,7 @@ defparam n277_s4.INIT=4'h4;
     .I0(w_bus_valid),
     .I1(w_r800_wr),
     .I2(ff_cpu_change_state[0]),
-    .I3(n480_6) 
+    .I3(n484_6) 
 );
 defparam n277_s5.INIT=16'h1000;
   LUT4 n276_s2 (
@@ -40762,8 +40762,8 @@ module s2026a (
   w_z80_wr,
   w_r800_rd,
   w_z80_rd,
-  n480_6,
-  n483_5,
+  n484_6,
+  n487_5,
   w_r800_rd_4,
   ff_wr_7,
   w_z80_rd_4,
@@ -40813,8 +40813,8 @@ input w_r800_wr;
 input w_z80_wr;
 input w_r800_rd;
 input w_z80_rd;
-input n480_6;
-input n483_5;
+input n484_6;
+input n487_5;
 input w_r800_rd_4;
 input ff_wr_7;
 input w_z80_rd_4;
@@ -41940,8 +41940,8 @@ defparam n323_s.ALU_MODE=0;
     .w_z80_rd(w_z80_rd),
     .w_cpu_change_req(w_cpu_change_req),
     .n578_5(n578_5),
-    .n480_6(n480_6),
-    .n483_5(n483_5),
+    .n484_6(n484_6),
+    .n487_5(n487_5),
     .w_r800_rd_4(w_r800_rd_4),
     .ff_wr_7(ff_wr_7),
     .w_z80_rd_4(w_z80_rd_4),
@@ -45637,7 +45637,7 @@ input [1:0] vdp_si;
 output srom_cs_n;
 output srom2_cs_n;
 output srom_clk;
-output [3:0] srom_sio;
+inout [3:0] srom_sio;
 output pa_en;
 output i2s_bclk;
 output i2s_lrck;
@@ -45668,11 +45668,11 @@ wire n11_4;
 wire n37_4;
 wire n36_4;
 wire n35_4;
-wire n480_6;
-wire n483_5;
+wire n484_6;
+wire n487_5;
 wire w_msx_reset_n_9;
-wire n483_7;
-wire n480_9;
+wire n487_7;
+wire n484_9;
 wire n163_11;
 wire n162_1;
 wire n162_2;
@@ -45756,6 +45756,26 @@ wire GND;
   IBUF dipsw_ibuf (
     .O(dio_d[2]),
     .I(dipsw) 
+);
+  TBUF srom_sio_3_s1 (
+    .O(srom_sio[0]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF srom_sio_3_s2 (
+    .O(srom_sio[1]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF srom_sio_3_s3 (
+    .O(srom_sio[2]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF srom_sio_3_s4 (
+    .O(srom_sio[3]),
+    .I(GND),
+    .OEN(VCC) 
 );
   TBUF IO_sdram_dq_31_s1 (
     .O(IO_sdram_dq[0]),
@@ -45939,22 +45959,6 @@ wire GND;
 );
   OBUF srom_clk_obuf (
     .O(srom_clk),
-    .I(GND) 
-);
-  OBUF srom_sio_0_obuf (
-    .O(srom_sio[0]),
-    .I(GND) 
-);
-  OBUF srom_sio_1_obuf (
-    .O(srom_sio[1]),
-    .I(GND) 
-);
-  OBUF srom_sio_2_obuf (
-    .O(srom_sio[2]),
-    .I(GND) 
-);
-  OBUF srom_sio_3_obuf (
-    .O(srom_sio[3]),
     .I(GND) 
 );
   OBUF pa_en_obuf (
@@ -46173,22 +46177,22 @@ defparam n36_s0.INIT=8'h78;
     .I3(ff_21m[3]) 
 );
 defparam n35_s0.INIT=16'h7F80;
-  LUT4 n480_s2 (
-    .F(n480_6),
+  LUT4 n484_s2 (
+    .F(n484_6),
     .I0(ff_3_579m[2]),
     .I1(ff_3_579m[1]),
     .I2(ff_3_579m[0]),
     .I3(ff_3_579m[3]) 
 );
-defparam n480_s2.INIT=16'h4000;
-  LUT4 n483_s2 (
-    .F(n483_5),
+defparam n484_s2.INIT=16'h4000;
+  LUT4 n487_s2 (
+    .F(n487_5),
     .I0(ff_21m[2]),
     .I1(ff_21m[3]),
     .I2(ff_21m[0]),
     .I3(ff_21m[1]) 
 );
-defparam n483_s2.INIT=16'h1000;
+defparam n487_s2.INIT=16'h1000;
   LUT4 w_msx_reset_n_s6 (
     .F(w_msx_reset_n_9),
     .I0(ff_reset_cnt[1]),
@@ -46197,22 +46201,22 @@ defparam n483_s2.INIT=16'h1000;
     .I3(ff_reset_cnt[4]) 
 );
 defparam w_msx_reset_n_s6.INIT=16'h8000;
-  LUT4 n483_s3 (
-    .F(n483_7),
+  LUT4 n487_s3 (
+    .F(n487_7),
     .I0(ff_reset_cnt[2]),
     .I1(ff_reset_cnt[3]),
     .I2(ff_reset_cnt[4]),
-    .I3(n483_5) 
+    .I3(n487_5) 
 );
-defparam n483_s3.INIT=16'hFF01;
-  LUT4 n480_s4 (
-    .F(n480_9),
-    .I0(n480_6),
+defparam n487_s3.INIT=16'hFF01;
+  LUT4 n484_s4 (
+    .F(n484_9),
+    .I0(n484_6),
     .I1(ff_reset_cnt[2]),
     .I2(ff_reset_cnt[3]),
     .I3(ff_reset_cnt[4]) 
 );
-defparam n480_s4.INIT=16'hAAAB;
+defparam n484_s4.INIT=16'hAAAB;
   LUT2 n163_s3 (
     .F(n163_11),
     .I0(w_msx_reset_n_9),
@@ -46223,49 +46227,49 @@ defparam n163_s3.INIT=4'hB;
     .Q(ff_3_579m[2]),
     .D(n12_4),
     .CLK(clk42m),
-    .RESET(n480_9) 
+    .RESET(n484_9) 
 );
 defparam ff_3_579m_2_s0.INIT=1'b0;
   DFFR ff_3_579m_1_s0 (
     .Q(ff_3_579m[1]),
     .D(n13_4),
     .CLK(clk42m),
-    .RESET(n480_9) 
+    .RESET(n484_9) 
 );
 defparam ff_3_579m_1_s0.INIT=1'b0;
   DFFR ff_3_579m_0_s0 (
     .Q(ff_3_579m[0]),
     .D(n14_6),
     .CLK(clk42m),
-    .RESET(n480_9) 
+    .RESET(n484_9) 
 );
 defparam ff_3_579m_0_s0.INIT=1'b0;
   DFFR ff_21m_3_s0 (
     .Q(ff_21m[3]),
     .D(n35_4),
     .CLK(clk42m),
-    .RESET(n483_7) 
+    .RESET(n487_7) 
 );
 defparam ff_21m_3_s0.INIT=1'b0;
   DFFR ff_21m_2_s0 (
     .Q(ff_21m[2]),
     .D(n36_4),
     .CLK(clk42m),
-    .RESET(n483_7) 
+    .RESET(n487_7) 
 );
 defparam ff_21m_2_s0.INIT=1'b0;
   DFFR ff_21m_1_s0 (
     .Q(ff_21m[1]),
     .D(n37_4),
     .CLK(clk42m),
-    .RESET(n483_7) 
+    .RESET(n487_7) 
 );
 defparam ff_21m_1_s0.INIT=1'b0;
   DFFR ff_21m_0_s0 (
     .Q(ff_21m[0]),
     .D(n38_6),
     .CLK(clk42m),
-    .RESET(n483_7) 
+    .RESET(n487_7) 
 );
 defparam ff_21m_0_s0.INIT=1'b0;
   DFFE ff_reset_cnt_4_s0 (
@@ -46320,7 +46324,7 @@ defparam ff_reset_cnt_1_s0.INIT=1'b0;
     .Q(ff_3_579m[3]),
     .D(n11_4),
     .CLK(clk42m),
-    .RESET(n480_9) 
+    .RESET(n484_9) 
 );
 defparam ff_3_579m_3_s0.INIT=1'b0;
   DFF ff_reset_cnt_0_s1 (
@@ -46425,8 +46429,8 @@ defparam n159_s.ALU_MODE=0;
     .w_z80_wr(w_z80_wr),
     .w_r800_rd(w_r800_rd),
     .w_z80_rd(w_z80_rd),
-    .n480_6(n480_6),
-    .n483_5(n483_5),
+    .n484_6(n484_6),
+    .n487_5(n487_5),
     .w_r800_rd_4(w_r800_rd_4),
     .ff_wr_7(ff_wr_7_9),
     .w_z80_rd_4(w_z80_rd_4),

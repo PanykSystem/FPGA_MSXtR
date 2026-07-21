@@ -139,7 +139,7 @@
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/FPGA_MSXtR.v",
-    "InstLine" : 589,
+    "InstLine" : 593,
     "InstName" : "u_config_rom",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/spi_rom/ip_spi_rom.v",
     "ModuleLine" : 27,
@@ -147,7 +147,7 @@
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/FPGA_MSXtR.v",
-    "InstLine" : 613,
+    "InstLine" : 617,
     "InstName" : "u_ext_rom",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/spi_rom/ip_spi_rom.v",
     "ModuleLine" : 27,
@@ -155,7 +155,7 @@
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/FPGA_MSXtR.v",
-    "InstLine" : 637,
+    "InstLine" : 641,
     "InstName" : "u_bootrom",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/bootrom/bootrom.v",
     "ModuleLine" : 34,
@@ -181,7 +181,7 @@
    },
    {
     "InstFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/FPGA_MSXtR.v",
-    "InstLine" : 653,
+    "InstLine" : 657,
     "InstName" : "u_uart",
     "ModuleFile" : "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/uart/uart.v",
     "ModuleLine" : 27,

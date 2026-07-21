@@ -59,42 +59,9 @@ wait_release_button:
 				jr		nz, wait_release_button
 
 ; ----------------------------------------------------------------------------
-;	SRAM TEST
-; ----------------------------------------------------------------------------
-;				ld		bc, 0x1000		; RAM TOP ADDRESS
-;	loop_address:
-;				ld		l, c
-;				ld		h, b
-;				jp		put_hex
-;	ret_address1:
-;				xor		a, a
-;	loop_data:
-;				ld		[hl], a
-;				cp		a, [hl]
-;				jp		nz, fail
-;				inc		a
-;				jr		nz, loop_data
-;	ok:
-;				ld		hl, ret_address2
-;				ld		de, s_ok
-;				jp		puts
-;	fail:
-;				ld		hl, ret_address2
-;				ld		de, s_fail
-;				jp		puts
-;	ret_address2:
-;				inc		bc
-;				ld		a, c
-;				cp		a, 0x00
-;				jr		nz, loop_address
-;				ld		a, b
-;				cp		a, 0x20
-;				jr		nz, loop_address
-;				halt
-
-; ----------------------------------------------------------------------------
 ;	Send prompt message
 ; ----------------------------------------------------------------------------
+				; Z80/R800 のどちらで動作しているかを調べる
 				ld		a, 6
 				out		[S2026_REG_IDX], a
 				in		a, [S2026_REG_VAL]
@@ -107,11 +74,11 @@ wait_release_button:
 	skip:
 				call	puts
 				; puts "*"
-				ld		b, 1
+				ld		b, 10
 	loop:
 				ld		de, asterisk
 				call	puts
-				ld		hl, 650
+				ld		hl, 65000
 	wait_loop:
 				nop
 				nop

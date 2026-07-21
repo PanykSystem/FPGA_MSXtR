@@ -108,16 +108,13 @@ wait_release_button:
 				ld		de, s_dump_process
 				call	puts
 
-				ld		e, 0
-				call	set_config_rom_address
+				call	set_config_rom_address00
 				ld		a, FPGA_CONFIG_ROM_BURST_READ
 				out		[CROM_COMMAND], a
 				ld		l, 0
 	dump_loop:
 				in		a, [CROM_DATA]
 				call	put_hex8
-				ld		a, ' '
-				out		[UART], a
 				inc		l
 				ld		a, l
 				and		a, 0x0F
@@ -135,8 +132,7 @@ wait_release_button:
 				call	puts
 
 				ld		hl, 0x0000				; 下位 16bit
-				ld		e, 0x40					; 上位 8bit
-				call	set_config_rom_address
+				call	set_config_rom_address40
 	erase_check_loop:
 				ld		a, FPGA_CONFIG_ROM_SINGLE_READ
 				out		[CROM_COMMAND], a
@@ -158,8 +154,7 @@ wait_release_button:
 				ld		de, s_write_block
 				call	puts
 				call	put_hex
-				ld		e, 0x40					; 上位 8bit
-				call	set_config_rom_address
+				call	set_config_rom_address40
 				call	set_config_rom_write_enable
 				ld		a, FPGA_CONFIG_ROM_BURST_WRITE
 				out		[CROM_COMMAND], a
@@ -183,8 +178,7 @@ wait_release_button:
 				ld		de, s_verify_block
 				call	puts
 				call	put_hex
-				ld		e, 0x40					; 上位 8bit
-				call	set_config_rom_address
+				call	set_config_rom_address40
 				ld		a, FPGA_CONFIG_ROM_BURST_READ
 				out		[CROM_COMMAND], a
 	byte_verify_loop:
@@ -210,15 +204,31 @@ wait_release_button:
 ; ----------------------------------------------------------------------------
 ;	ConfigROM のアクセスアドレスをセットする
 ; ----------------------------------------------------------------------------
-				scope	set_config_rom_address
-set_config_rom_address::
+				scope	set_config_rom_address00
+set_config_rom_address00::
 				ld		a, FPGA_CONFIG_ROM_SET_ADDRESS
 				out		[CROM_COMMAND], a
 				ld		a, l
 				out		[CROM_DATA], a
 				ld		a, h
 				out		[CROM_DATA], a
-				ld		a, e
+				ld		a, 0x00
+				out		[CROM_DATA], a
+				ret
+				endscope
+
+; ----------------------------------------------------------------------------
+;	ConfigROM のアクセスアドレスをセットする
+; ----------------------------------------------------------------------------
+				scope	set_config_rom_address40
+set_config_rom_address40::
+				ld		a, FPGA_CONFIG_ROM_SET_ADDRESS
+				out		[CROM_COMMAND], a
+				ld		a, l
+				out		[CROM_DATA], a
+				ld		a, h
+				out		[CROM_DATA], a
+				ld		a, 0x40
 				out		[CROM_DATA], a
 				ret
 				endscope
@@ -248,7 +258,7 @@ set_config_rom_write_enable::
 				scope	config_rom_block_erase
 config_rom_block_erase::
 				; 対象アドレスをセットする
-				call	set_config_rom_address
+				call	set_config_rom_address40
 				; 消去許可コマンド
 				call	set_config_rom_write_enable
 				; ブロック消去コマンド
@@ -273,7 +283,7 @@ config_rom_block_erase::
 				pop		hl
 				; 次のアドレスをセットする
 				inc		hl
-				call	set_config_rom_address
+				call	set_config_rom_address40
 				dec		hl
 				ret
 				endscope
@@ -303,9 +313,11 @@ puts::
 				ld		a, [de]
 				inc		de
 				or		a, a
-				ret		z
+				jp		z, _skip
 				out		[UART], a
 				jr		puts
+	_skip:
+				ret
 				endscope
 
 ; ----------------------------------------------------------------------------
@@ -317,8 +329,49 @@ puts::
 				scope	put_hex
 put_hex::
 				ld		a, h
-				call	put_hex8
+				rrca
+				rrca
+				rrca
+				rrca
+				and		a, 0x0F
+				add		a, '0'
+				cp		a, '9' + 1
+				jr		c, skip1
+				add		a, 'A' - '0' - 10
+	skip1:
+				out		[UART], a
+
+				ld		a, h
+				and		a, 0x0F
+				add		a, '0'
+				cp		a, '9' + 1
+				jr		c, skip2
+				add		a, 'A' - '0' - 10
+	skip2:
+				out		[UART], a
+
 				ld		a, l
+				rrca
+				rrca
+				rrca
+				rrca
+				and		a, 0x0F
+				add		a, '0'
+				cp		a, '9' + 1
+				jr		c, skip3
+				add		a, 'A' - '0' - 10
+	skip3:
+				out		[UART], a
+
+				ld		a, l
+				and		a, 0x0F
+				add		a, '0'
+				cp		a, '9' + 1
+				jr		c, skip4
+				add		a, 'A' - '0' - 10
+	skip4:
+				out		[UART], a
+				ret
 				endscope
 
 ; ----------------------------------------------------------------------------
@@ -334,15 +387,22 @@ put_hex8::
 				rrca
 				rrca
 				rrca
-				call	put_hex8_sub
-				pop		af
-	put_hex8_sub:
 				and		a, 0x0F
 				add		a, '0'
 				cp		a, '9' + 1
 				jr		c, skip1
 				add		a, 'A' - '0' - 10
 	skip1:
+				out		[UART], a
+				pop		af
+				and		a, 0x0F
+				add		a, '0'
+				cp		a, '9' + 1
+				jr		c, skip2
+				add		a, 'A' - '0' - 10
+	skip2:
+				out		[UART], a
+				ld		a, ' '
 				out		[UART], a
 				ret
 				endscope
@@ -351,28 +411,28 @@ put_hex8::
 ;	work area
 ; ----------------------------------------------------------------------------
 s_z80_message:
-				db		"[Z80]", 0x0D, 0x0A, 0
+				db		"THIS IS Z80", 0x0D, 0x0A, 0
 s_r800_message:
-				db		"[R800]", 0x0D, 0x0A, 0
+				db		"THIS IS R800", 0x0D, 0x0A, 0
 s_dump_process:
-				db		"Dump:", 0x0D, 0x0A, 0
+				db		"Dump process:", 0x0D, 0x0A, 0
 s_erase_process:
-				db		"Erase:", 0x0D, 0x0A, 0
+				db		"Erase process:", 0x0D, 0x0A, 0
 s_block_erase_done:
-				db		"-Erase 0x40", 0
+				db		"-- Erase: 0x40", 0
 s_write_process:
-				db		"Write:", 0x0D, 0x0A, 0
+				db		"Write process:", 0x0D, 0x0A, 0
 s_write_block:
-				db		"-Write 0x40", 0
+				db		"-- Write: 0x40", 0
 s_verify_process:
-				db		"Verify:", 0x0D, 0x0A, 0
+				db		"Verify process:", 0x0D, 0x0A, 0
 s_verify_block:
-				db		"-Verify 0x40", 0
+				db		"-- Verify: 0x40", 0
 crlf:
 				db		0x0D, 0x0A, 0
 s_ok:
 				db		"-OK", 0x0D, 0x0A, 0
 s_fail:
-				db		"-NG", 0x0D, 0x0A, 0
+				db		"-FAILED", 0x0D, 0x0A, 0
 s_finish:
-				db		"FIN", 0x0D, 0x0A, 0
+				db		"FINISH", 0x0D, 0x0A, 0

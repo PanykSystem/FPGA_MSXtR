@@ -1,10 +1,10 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v'
-Undeclared symbol 'flash_spi_ck', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":603)
-Undeclared symbol 'srom_spi_ck', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":627)
-Undeclared symbol 'vdp_so_clk', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":701)
-Undeclared symbol 'vdp_so', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":702)
+Undeclared symbol 'flash_spi_ck', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":607)
+Undeclared symbol 'srom_spi_ck', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":631)
+Undeclared symbol 'vdp_so_clk', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":705)
+Undeclared symbol 'vdp_so', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":706)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\bootrom\bootrom.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\bootrom\rom.v'
 Analyzing included file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\bootrom\bootrom.vh'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\bootrom\rom.v":55)

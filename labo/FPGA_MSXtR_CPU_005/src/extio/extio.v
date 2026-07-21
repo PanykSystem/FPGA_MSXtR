@@ -77,7 +77,11 @@ module extio_a (
 	output			bus_rdata_en,		//	read enable signal
 	//	extio interface
 	output			bus_crom_cs,
-	output			bus_erom_cs
+	input	[7:0]	bus_crom_rdata,
+	input			bus_crom_rdata_en,
+	output			bus_erom_cs,
+	input	[7:0]	bus_erom_rdata,
+	input			bus_erom_rdata_en
 );
 	reg				ff_extio_en;
 	reg				ff_crom_en;
@@ -200,8 +204,10 @@ module extio_a (
 	end
 
 	assign bus_ready	= ff_bus_ready;
-	assign bus_rdata	= ff_rdata_en ? ff_rdata : 8'd0;
-	assign bus_rdata_en	= ff_rdata_en;
+	assign bus_rdata	=	ff_rdata_en ? ff_rdata :
+							bus_crom_rdata_en ? bus_crom_rdata :
+							bus_erom_rdata_en ? bus_erom_rdata : 8'hFF;
+	assign bus_rdata_en	= ff_rdata_en | bus_crom_rdata_en | bus_erom_rdata_en;
 
 	assign bus_crom_cs	= (bus_cs && (bus_address[3:1] != 3'd0)) ? ff_crom_en : 1'b0;
 	assign bus_erom_cs	= (bus_cs && (bus_address[3:1] != 3'd0)) ? ff_erom_en : 1'b0;

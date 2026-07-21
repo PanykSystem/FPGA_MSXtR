@@ -580,7 +580,11 @@ module fpga_msxtr (
 		.bus_rdata				( w_bus_extio_rdata			),
 		.bus_rdata_en			( w_bus_extio_rdata_en		),
 		.bus_crom_cs			( w_bus_crom_cs				),
-		.bus_erom_cs			( w_bus_erom_cs				)
+		.bus_crom_rdata			( w_bus_crom_rdata			),
+		.bus_crom_rdata_en		( w_bus_crom_rdata_en		),
+		.bus_erom_cs			( w_bus_erom_cs				),
+		.bus_erom_rdata			( w_bus_erom_rdata			),
+		.bus_erom_rdata_en		( w_bus_erom_rdata_en		)
 	);
 
 	// --------------------------------------------------------------------
