@@ -62,12 +62,12 @@
 	12'h03d:		ff_rom_q <= 8'hcd;
 	12'h03e:		ff_rom_q <= 8'hee;
 	12'h03f:		ff_rom_q <= 8'h00;
-	12'h040:		ff_rom_q <= 8'h3e;
-	12'h041:		ff_rom_q <= 8'h02;
-	12'h042:		ff_rom_q <= 8'hd3;
-	12'h043:		ff_rom_q <= 8'h42;
-	12'h044:		ff_rom_q <= 8'h2e;
-	12'h045:		ff_rom_q <= 8'h00;
+	12'h040:		ff_rom_q <= 8'h2e;
+	12'h041:		ff_rom_q <= 8'h00;
+	12'h042:		ff_rom_q <= 8'h3e;
+	12'h043:		ff_rom_q <= 8'h01;
+	12'h044:		ff_rom_q <= 8'hd3;
+	12'h045:		ff_rom_q <= 8'h42;
 	12'h046:		ff_rom_q <= 8'hdb;
 	12'h047:		ff_rom_q <= 8'h43;
 	12'h048:		ff_rom_q <= 8'hcd;
@@ -82,7 +82,7 @@
 	12'h051:		ff_rom_q <= 8'he6;
 	12'h052:		ff_rom_q <= 8'h0f;
 	12'h053:		ff_rom_q <= 8'h20;
-	12'h054:		ff_rom_q <= 8'hf1;
+	12'h054:		ff_rom_q <= 8'hed;
 	12'h055:		ff_rom_q <= 8'h11;
 	12'h056:		ff_rom_q <= 8'hca;
 	12'h057:		ff_rom_q <= 8'h01;
@@ -92,7 +92,7 @@
 	12'h05b:		ff_rom_q <= 8'h7d;
 	12'h05c:		ff_rom_q <= 8'hb7;
 	12'h05d:		ff_rom_q <= 8'h20;
-	12'h05e:		ff_rom_q <= 8'he7;
+	12'h05e:		ff_rom_q <= 8'he3;
 	12'h05f:		ff_rom_q <= 8'h3e;
 	12'h060:		ff_rom_q <= 8'h07;
 	12'h061:		ff_rom_q <= 8'hd3;

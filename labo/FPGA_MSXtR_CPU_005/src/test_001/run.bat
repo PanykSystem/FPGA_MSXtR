@@ -25,6 +25,7 @@ vlog ..\cr800\cr800_alu.v
 vlog ..\cr800\cr800.v
 vlog ..\cr800\cr800_inst.v
 vlog ..\FPGA_MSXtR.v
+vlog W25Q32JVxxIM.v
 vlog tb.sv
 
 vsim -c -t 1ps -l log.txt tb -do "add wave -r *; run -all; quit -f"

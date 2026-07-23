@@ -1,7 +1,8 @@
-Reading netlist file: "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\gwsynthesis\FPGA_MSXtR.vg"
-Parsing netlist file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\gwsynthesis\FPGA_MSXtR.vg" completed
+Reading netlist file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\gwsynthesis\FPGA_MSXtR.vg"
+Parsing netlist file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\gwsynthesis\FPGA_MSXtR.vg" completed
+WARN  (PA1003) : Invalid parameterized value 'GW2AR-18'(DEVICE) specified for instance 'u_pll/rpll_inst'
 Processing netlist completed
-Reading constraint file: "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\FPGA_MSXtR.cst"
+Reading constraint file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\src\FPGA_MSXtR.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -23,10 +24,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.power.html" completed
-Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.pin.html" completed
-Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.rpt.html" completed
-Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.rpt.txt" completed
-Generate file "D:\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.tr.html" completed
-Wed Apr  8 06:01:31 2026
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.power.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.pin.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.rpt.html" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.rpt.txt" completed
+Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_000\impl\pnr\FPGA_MSXtR.tr.html" completed
+Fri Jul 24 06:31:16 2026
 

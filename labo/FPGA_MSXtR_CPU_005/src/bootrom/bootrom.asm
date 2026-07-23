@@ -110,10 +110,10 @@ wait_release_button:
 
 				ld		e, 0
 				call	set_config_rom_address
-				ld		a, FPGA_CONFIG_ROM_BURST_READ
-				out		[CROM_COMMAND], a
 				ld		l, 0
 	dump_loop:
+				ld		a, FPGA_CONFIG_ROM_SINGLE_READ
+				out		[CROM_COMMAND], a
 				in		a, [CROM_DATA]
 				call	put_hex8
 				ld		a, ' '

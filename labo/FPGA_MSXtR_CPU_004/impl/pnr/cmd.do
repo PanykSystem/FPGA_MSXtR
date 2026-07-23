@@ -1,5 +1,5 @@
 -d C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\gwsynthesis\FPGA_MSXtR.vg
--p GW2AR-18-QFN88-8
+-p GW2AR-18C-QFN88-8
 -pn GW2AR-LV18QN88C8/I7
 -cst C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\src\FPGA_MSXtR.cst
 -cfg C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_004\impl\pnr\device.cfg
@@ -9,9 +9,8 @@
 -ph
 -timing
 -cst_error
--convert_sdp32_36_to_sdp16_18
 -place_option 0
--route_option 1
+-route_option 0
 -clock_route_order 0
 -correct_hold 1
 -route_maxfan 23

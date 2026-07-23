@@ -14,6 +14,9 @@ Compiling module 'uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\la
 Compiling module 'ip_uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\uart\ip_uart.v":27)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\uart\ip_uart.v":69)
 NOTE  (EX0101) : Current top module is "fpga_msxtr"
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\gowin_rpll\gowin_rpll.v":39)
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\gowin_rpll\gowin_rpll2.v":38)
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\gowin_rpll\gowin_rpll3.v":38)
 [5%] Running netlist conversion ...
 WARN  (CV0018) : Input button[1] is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\FPGA_MSXtR.v":27)
 WARN  (CV0016) : Input vdp_si_clk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\FPGA_MSXtR.v":32)

@@ -57,7 +57,7 @@ Compiling module 's2026a'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\
 Compiling module 's2026a_cpu_select'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\s2026a\s2026a_cpu_select.v":34)
 Compiling module 'extio_a'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\extio\extio.v":66)
 Compiling module 'ip_spi_rom'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\spi_rom\ip_spi_rom.v":27)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\spi_rom\ip_spi_rom.v":439)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\spi_rom\ip_spi_rom.v":436)
 Compiling module 'bootrom'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\bootrom\bootrom.v":34)
 Compiling module 'rom'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\bootrom\rom.v":34)
 Compiling module 'Gowin_SP'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\gowin_sp\gowin_sp.v":9)
@@ -65,6 +65,8 @@ Compiling module 'uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\la
 Compiling module 'ip_uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\uart\ip_uart.v":27)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\uart\ip_uart.v":74)
 NOTE  (EX0101) : Current top module is "fpga_msxtr"
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\gowin_rpll\gowin_rpll.v":38)
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\gowin_rpll\gowin_rpll2.v":38)
 WARN  (EX0211) : The output port "fpga_so_clk" of module "fpga_msxtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":30)
 WARN  (EX0211) : The output port "fpga_so[1]" of module "fpga_msxtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":31)
 WARN  (EX0211) : The output port "fpga_so[0]" of module "fpga_msxtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":31)

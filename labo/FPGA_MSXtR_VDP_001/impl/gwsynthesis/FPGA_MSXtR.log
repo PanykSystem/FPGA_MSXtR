@@ -23,12 +23,12 @@ Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\lab
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_rpll\gowin_rpll2.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_rpll\gowin_rpll3.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_sp\gowin_sp.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\uart\ip_uart.v'
-Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\uart\uart.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\s2026a\s2026a.v'
 Undeclared symbol 'kanji1_en', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\s2026a\s2026a.v":242)
 Undeclared symbol 'kanji2_en', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\s2026a\s2026a.v":243)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\s2026a\s2026a_cpu_select.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\uart\ip_uart.v'
+Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\uart\uart.v'
 Compiling module 'fpga_msxtr'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\FPGA_MSXtR.v":24)
 Compiling module 'Gowin_rPLL'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_rpll\gowin_rpll.v":10)
 Compiling module 'Gowin_rPLL2'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_rpll\gowin_rpll2.v":9)
@@ -53,6 +53,9 @@ Compiling module 'uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\la
 Compiling module 'ip_uart'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\uart\ip_uart.v":27)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\uart\ip_uart.v":69)
 NOTE  (EX0101) : Current top module is "fpga_msxtr"
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_rpll\gowin_rpll.v":39)
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_rpll\gowin_rpll2.v":38)
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\gowin_rpll\gowin_rpll3.v":38)
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input vdp_si_clk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\FPGA_MSXtR.v":32)
 WARN  (CV0016) : Input vdp_si is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_001\src\FPGA_MSXtR.v":33)

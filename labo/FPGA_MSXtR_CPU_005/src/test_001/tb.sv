@@ -90,6 +90,16 @@ module tb;
 		.O_sdram_dqm		( O_sdram_dqm		)
 	);
 
+	W25Q32JVxxIM u_config_rom (
+		.CSn				( flash_spi_cs_n	),
+		.CLK				( flash_spi_clk		),
+		.DIO				( flash_spi_di		),
+		.DO					( flash_spi_do		),
+		.WPn				( flash_spi_wp_n	),
+		.HOLDn				( flash_spi_hold_n	),
+		.RESETn				( reset_n			)
+	);
+
 	always #(CLK14M_PERIOD_PS / 2.0) begin
 		clk14m <= ~clk14m;
 	end

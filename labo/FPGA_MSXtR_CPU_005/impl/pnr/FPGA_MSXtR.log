@@ -1,5 +1,7 @@
 Reading netlist file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\gwsynthesis\FPGA_MSXtR.vg"
 Parsing netlist file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\gwsynthesis\FPGA_MSXtR.vg" completed
+WARN  (PA1003) : Invalid parameterized value 'GW2AR-18'(DEVICE) specified for instance 'u_pll/rpll_inst'
+WARN  (PA1003) : Invalid parameterized value 'GW2AR-18'(DEVICE) specified for instance 'u_pll2/rpll_inst'
 Processing netlist completed
 Reading constraint file: "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.cst"
 Physical Constraint parsed completed
@@ -28,5 +30,5 @@ Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MS
 Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.rpt.html" completed
 Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.rpt.txt" completed
 Generate file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\impl\pnr\FPGA_MSXtR.tr.html" completed
-Wed Jul 22 06:56:47 2026
+Fri Jul 24 06:39:02 2026
 

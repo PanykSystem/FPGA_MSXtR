@@ -108,6 +108,8 @@ Compiling module 'ip_debugger'("C:\Users\hra\Documents\github\HRA_product\FPGA_M
 WARN  (EX1998) : Net 'clk215m' does not have a driver("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\FPGA_MSXtR.v":74)
 WARN  (EX1998) : Net 'clk85m_n' does not have a driver("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\FPGA_MSXtR.v":374)
 NOTE  (EX0101) : Current top module is "fpga_msxtr"
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\gowin_rpll\gowin_rpll.v":39)
+WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\gowin_rpll\gowin_rpll2.v":38)
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input vdp_si_clk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\FPGA_MSXtR.v":32)
 WARN  (CV0016) : Input vdp_si is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_002\src\FPGA_MSXtR.v":33)

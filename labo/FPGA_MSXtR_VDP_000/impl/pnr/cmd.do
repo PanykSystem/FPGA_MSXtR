@@ -1,5 +1,5 @@
 -d C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\impl\gwsynthesis\FPGA_MSXtR.vg
--p GW2AR-18-QFN88-8
+-p GW2AR-18C-QFN88-8
 -pn GW2AR-LV18QN88C8/I7
 -cst C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\src\FPGA_MSXtR.cst
 -cfg C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_000\impl\pnr\device.cfg

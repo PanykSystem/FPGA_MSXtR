@@ -177,8 +177,13 @@ module extio_a (
 						end
 						4'd1: begin
 							//	41h: device enable
-							if( ff_crom_en || ff_erom_en ) begin
-								ff_rdata		<= ~8'd01;
+							if( ff_crom_en ) begin
+								ff_rdata		<= ~8'd02;
+								ff_rdata_en		<= 1'b1;
+								ff_bus_ready	<= 1'b0;
+							end
+							else if( ff_erom_en ) begin
+								ff_rdata		<= ~8'd03;
 								ff_rdata_en		<= 1'b1;
 								ff_bus_ready	<= 1'b0;
 							end

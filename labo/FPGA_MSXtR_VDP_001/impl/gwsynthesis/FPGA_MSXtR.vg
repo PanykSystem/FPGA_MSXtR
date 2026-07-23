@@ -1,7 +1,7 @@
 //
 //Written by GowinSynthesis
-//Tool Version "V1.9.11.02 (64-bit)"
-//Tue Apr 21 07:06:13 2026
+//Tool Version "V1.9.12.03 (64-bit)"
+//Fri Jul 24 06:41:55 2026
 
 //Source file index table:
 //file0 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/FPGA_MSXtR.v"
@@ -16,10 +16,10 @@
 //file9 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_rpll/gowin_rpll2.v"
 //file10 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_rpll/gowin_rpll3.v"
 //file11 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/gowin_sp/gowin_sp.v"
-//file12 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/uart/ip_uart.v"
-//file13 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/uart/uart.v"
-//file14 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/s2026a/s2026a.v"
-//file15 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/s2026a/s2026a_cpu_select.v"
+//file12 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/s2026a/s2026a.v"
+//file13 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/s2026a/s2026a_cpu_select.v"
+//file14 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/uart/ip_uart.v"
+//file15 "\C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_VDP_001/src/uart/uart.v"
 `timescale 100 ps/100 ps
 module Gowin_rPLL (
   clk14m_d,
@@ -2195,7 +2195,7 @@ defparam n282_s16.INIT=4'h1;
     .COUT(w_addsub_l_1_3),
     .I0(busa[0]),
     .I1(w_busb_l[0]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_carry_l) 
 );
 defparam w_addsub_l_1_s.ALU_MODE=0;
@@ -2204,7 +2204,7 @@ defparam w_addsub_l_1_s.ALU_MODE=0;
     .COUT(w_addsub_l_2_3),
     .I0(busa[1]),
     .I1(w_busb_l[1]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_l_1_3) 
 );
 defparam w_addsub_l_2_s.ALU_MODE=0;
@@ -2213,7 +2213,7 @@ defparam w_addsub_l_2_s.ALU_MODE=0;
     .COUT(w_addsub_l_3_3),
     .I0(busa[2]),
     .I1(w_busb_l[2]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_l_2_3) 
 );
 defparam w_addsub_l_3_s.ALU_MODE=0;
@@ -2222,7 +2222,7 @@ defparam w_addsub_l_3_s.ALU_MODE=0;
     .COUT(w_addsub_l[5]),
     .I0(busa[3]),
     .I1(w_busb_l[3]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_l_3_3) 
 );
 defparam w_addsub_l_4_s.ALU_MODE=0;
@@ -2231,7 +2231,7 @@ defparam w_addsub_l_4_s.ALU_MODE=0;
     .COUT(w_addsub_m_1_3),
     .I0(busa[4]),
     .I1(w_busb_m[0]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_l[5]) 
 );
 defparam w_addsub_m_1_s.ALU_MODE=0;
@@ -2240,7 +2240,7 @@ defparam w_addsub_m_1_s.ALU_MODE=0;
     .COUT(w_addsub_m_2_3),
     .I0(busa[5]),
     .I1(w_busb_m[1]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_m_1_3) 
 );
 defparam w_addsub_m_2_s.ALU_MODE=0;
@@ -2249,7 +2249,7 @@ defparam w_addsub_m_2_s.ALU_MODE=0;
     .COUT(w_addsub_m[4]),
     .I0(busa[6]),
     .I1(w_busb_m[2]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_m_2_3) 
 );
 defparam w_addsub_m_3_s.ALU_MODE=0;
@@ -2258,7 +2258,7 @@ defparam w_addsub_m_3_s.ALU_MODE=0;
     .COUT(w_addsub_s_1_5),
     .I0(busa[0]),
     .I1(busb[0]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_l[5]) 
 );
 defparam w_addsub_s_1_s1.ALU_MODE=1;
@@ -2267,7 +2267,7 @@ defparam w_addsub_s_1_s1.ALU_MODE=1;
     .COUT(w_addsub_s_2_5),
     .I0(busa[1]),
     .I1(busb[1]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_s_1_5) 
 );
 defparam w_addsub_s_2_s1.ALU_MODE=1;
@@ -2276,7 +2276,7 @@ defparam w_addsub_s_2_s1.ALU_MODE=1;
     .COUT(w_addsub_s_3_5),
     .I0(busa[2]),
     .I1(busb[2]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_s_2_5) 
 );
 defparam w_addsub_s_3_s1.ALU_MODE=1;
@@ -2285,7 +2285,7 @@ defparam w_addsub_s_3_s1.ALU_MODE=1;
     .COUT(w_addsub_s_4_2_COUT),
     .I0(busa[3]),
     .I1(busb[3]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(w_addsub_s_3_5) 
 );
 defparam w_addsub_s_4_s1.ALU_MODE=1;
@@ -7172,7 +7172,7 @@ wire xy_ind_6;
 wire incdecz_6;
 wire halt_ff_6;
 wire inte_ff2_6;
-wire pc_0_8;
+wire pc_0_7;
 wire acc_7_7;
 wire f_7_7;
 wire sp_15_7;
@@ -7465,7 +7465,7 @@ wire f_6_8;
 wire xy_ind_7;
 wire incdecz_7;
 wire inte_ff2_7;
-wire pc_0_9;
+wire pc_0_8;
 wire f_7_8;
 wire sp_15_8;
 wire f_5_10;
@@ -9660,14 +9660,14 @@ defparam halt_ff_s2.INIT=4'h8;
     .I2(w_z80_active) 
 );
 defparam inte_ff2_s2.INIT=8'hD0;
-  LUT4 pc_0_s4 (
-    .F(pc_0_8),
+  LUT4 pc_0_s3 (
+    .F(pc_0_7),
     .I0(n1134_10),
-    .I1(pc_0_9),
+    .I1(pc_0_8),
     .I2(btr_r),
     .I3(pc_14_6) 
 );
-defparam pc_0_s4.INIT=16'h7F00;
+defparam pc_0_s3.INIT=16'h7F00;
   LUT4 acc_7_s3 (
     .F(acc_7_7),
     .I0(n1321_12),
@@ -10088,7 +10088,7 @@ defparam n154_s3.INIT=16'h4000;
     .I0(btr_r),
     .I1(pc[15]),
     .I2(n289_7),
-    .I3(pc_0_9) 
+    .I3(pc_0_8) 
 );
 defparam n289_s1.INIT=16'hD700;
   LUT4 n289_s2 (
@@ -10119,7 +10119,7 @@ defparam n290_s1.INIT=16'h0A03;
     .F(n290_5),
     .I0(n290_8),
     .I1(n290_9),
-    .I2(pc_0_9) 
+    .I2(pc_0_8) 
 );
 defparam n290_s2.INIT=8'hD0;
   LUT2 n290_s3 (
@@ -10146,7 +10146,7 @@ defparam n291_s1.INIT=16'h0503;
 defparam n291_s3.INIT=16'h807F;
   LUT4 n291_s4 (
     .F(n291_7),
-    .I0(pc_0_9),
+    .I0(pc_0_8),
     .I1(n291_10),
     .I2(n1134_10),
     .I3(n289_8) 
@@ -10173,7 +10173,7 @@ defparam n292_s2.INIT=16'h5CCC;
     .I0(n292_12),
     .I1(n154_8),
     .I2(n292_13),
-    .I3(pc_0_9) 
+    .I3(pc_0_8) 
 );
 defparam n292_s3.INIT=16'h4F00;
   LUT2 n293_s1 (
@@ -10241,7 +10241,7 @@ defparam n296_s1.INIT=16'h0C05;
   LUT3 n296_s3 (
     .F(n296_6),
     .I0(n296_8),
-    .I1(pc_0_9),
+    .I1(pc_0_8),
     .I2(n1134_10) 
 );
 defparam n296_s3.INIT=8'hB0;
@@ -10294,7 +10294,7 @@ defparam n299_s2.INIT=16'hEF00;
   LUT3 n299_s3 (
     .F(n299_6),
     .I0(n299_8),
-    .I1(pc_0_9),
+    .I1(pc_0_8),
     .I2(n1134_10) 
 );
 defparam n299_s3.INIT=8'hE0;
@@ -10819,7 +10819,7 @@ defparam n1121_s5.INIT=16'h5300;
     .I0(n299_21),
     .I1(n720_2),
     .I2(n1121_10),
-    .I3(pc_0_9) 
+    .I3(pc_0_8) 
 );
 defparam n1121_s6.INIT=16'h77F0;
   LUT4 n1297_s5 (
@@ -11359,7 +11359,7 @@ defparam regaddra_2_s3.INIT=16'h3335;
     .I0(n2064_15),
     .I1(n90_4),
     .I2(n1134_8),
-    .I3(pc_0_9) 
+    .I3(pc_0_8) 
 );
 defparam regaddra_2_s4.INIT=16'h00BF;
   LUT4 regaddra_1_s1 (
@@ -11414,7 +11414,7 @@ defparam regdih_7_s1.INIT=4'h4;
 defparam regdih_7_s2.INIT=16'h030A;
   LUT4 regdih_7_s3 (
     .F(regdih_7_6),
-    .I0(pc_0_9),
+    .I0(pc_0_8),
     .I1(n90_4),
     .I2(n2064_15),
     .I3(n1134_8) 
@@ -11825,7 +11825,7 @@ defparam n2047_s3.INIT=8'h80;
     .I0(n3430_5),
     .I1(n3430_8),
     .I2(n3430_4),
-    .I3(pc_0_9) 
+    .I3(pc_0_8) 
 );
 defparam pc_14_s3.INIT=16'h7F00;
   LUT4 ff_a_12_s3 (
@@ -11840,7 +11840,7 @@ defparam ff_a_12_s3.INIT=16'h1000;
     .F(ir_7_7),
     .I0(n1138_7),
     .I1(tstates_Z_1_7),
-    .I2(pc_0_9),
+    .I2(pc_0_8),
     .I3(w_z80_active) 
 );
 defparam ir_7_s3.INIT=16'h8000;
@@ -11885,18 +11885,18 @@ defparam incdecz_s3.INIT=8'h80;
   LUT4 inte_ff2_s3 (
     .F(inte_ff2_7),
     .I0(n2632_9),
-    .I1(pc_0_9),
+    .I1(pc_0_8),
     .I2(n2632_10),
     .I3(n2047_7) 
 );
 defparam inte_ff2_s3.INIT=16'h8000;
-  LUT3 pc_0_s5 (
-    .F(pc_0_9),
+  LUT3 pc_0_s4 (
+    .F(pc_0_8),
     .I0(w_t_state[0]),
     .I1(w_t_state[2]),
     .I2(w_t_state[1]) 
 );
-defparam pc_0_s5.INIT=8'h10;
+defparam pc_0_s4.INIT=8'h10;
   LUT4 f_7_s4 (
     .F(f_7_8),
     .I0(f_6_7),
@@ -12454,7 +12454,7 @@ defparam n299_s6.INIT=8'h87;
     .I0(btr_r),
     .I1(pc[5]),
     .I2(n299_14),
-    .I3(pc_0_9) 
+    .I3(pc_0_8) 
 );
 defparam n299_s8.INIT=16'h7D00;
   LUT4 n300_s3 (
@@ -14008,7 +14008,7 @@ defparam xy_ind_s4.INIT=4'h8;
     .F(tmpaddr_15_9),
     .I0(n1321_10),
     .I1(n1289_10),
-    .I2(pc_0_9),
+    .I2(pc_0_8),
     .I3(n2632_10) 
 );
 defparam tmpaddr_15_s5.INIT=16'h8000;
@@ -17220,7 +17220,7 @@ defparam n3349_s2.INIT=8'h20;
     .Q(pc[0]),
     .D(n1121_7),
     .CLK(clk42m),
-    .CE(pc_0_8),
+    .CE(pc_0_7),
     .RESET(n24_11) 
 );
   DFFRE ff_a_12_s0 (
@@ -18811,7 +18811,7 @@ defparam \id16[15]_1_s .ALU_MODE=2;
     .COUT(n900_2),
     .I0(regbusc[0]),
     .I1(ff_di_reg[0]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(GND) 
 );
 defparam n900_s.ALU_MODE=0;
@@ -18820,7 +18820,7 @@ defparam n900_s.ALU_MODE=0;
     .COUT(n899_2),
     .I0(regbusc[1]),
     .I1(ff_di_reg[1]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n900_2) 
 );
 defparam n899_s.ALU_MODE=0;
@@ -18829,7 +18829,7 @@ defparam n899_s.ALU_MODE=0;
     .COUT(n898_2),
     .I0(regbusc[2]),
     .I1(ff_di_reg[2]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n899_2) 
 );
 defparam n898_s.ALU_MODE=0;
@@ -18838,7 +18838,7 @@ defparam n898_s.ALU_MODE=0;
     .COUT(n897_2),
     .I0(regbusc[3]),
     .I1(ff_di_reg[3]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n898_2) 
 );
 defparam n897_s.ALU_MODE=0;
@@ -18847,7 +18847,7 @@ defparam n897_s.ALU_MODE=0;
     .COUT(n896_2),
     .I0(regbusc[4]),
     .I1(ff_di_reg[4]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n897_2) 
 );
 defparam n896_s.ALU_MODE=0;
@@ -18856,7 +18856,7 @@ defparam n896_s.ALU_MODE=0;
     .COUT(n895_2),
     .I0(regbusc[5]),
     .I1(ff_di_reg[5]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n896_2) 
 );
 defparam n895_s.ALU_MODE=0;
@@ -18865,7 +18865,7 @@ defparam n895_s.ALU_MODE=0;
     .COUT(n894_2),
     .I0(regbusc[6]),
     .I1(ff_di_reg[6]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n895_2) 
 );
 defparam n894_s.ALU_MODE=0;
@@ -18874,7 +18874,7 @@ defparam n894_s.ALU_MODE=0;
     .COUT(n893_2),
     .I0(regbusc[7]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n894_2) 
 );
 defparam n893_s.ALU_MODE=0;
@@ -18883,7 +18883,7 @@ defparam n893_s.ALU_MODE=0;
     .COUT(n892_2),
     .I0(regbusc[8]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n893_2) 
 );
 defparam n892_s.ALU_MODE=0;
@@ -18892,7 +18892,7 @@ defparam n892_s.ALU_MODE=0;
     .COUT(n891_2),
     .I0(regbusc[9]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n892_2) 
 );
 defparam n891_s.ALU_MODE=0;
@@ -18901,7 +18901,7 @@ defparam n891_s.ALU_MODE=0;
     .COUT(n890_2),
     .I0(regbusc[10]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n891_2) 
 );
 defparam n890_s.ALU_MODE=0;
@@ -18910,7 +18910,7 @@ defparam n890_s.ALU_MODE=0;
     .COUT(n889_2),
     .I0(regbusc[11]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n890_2) 
 );
 defparam n889_s.ALU_MODE=0;
@@ -18919,7 +18919,7 @@ defparam n889_s.ALU_MODE=0;
     .COUT(n888_2),
     .I0(regbusc[12]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n889_2) 
 );
 defparam n888_s.ALU_MODE=0;
@@ -18928,7 +18928,7 @@ defparam n888_s.ALU_MODE=0;
     .COUT(n887_2),
     .I0(regbusc[13]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n888_2) 
 );
 defparam n887_s.ALU_MODE=0;
@@ -18937,7 +18937,7 @@ defparam n887_s.ALU_MODE=0;
     .COUT(n886_2),
     .I0(regbusc[14]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n887_2) 
 );
 defparam n886_s.ALU_MODE=0;
@@ -18946,7 +18946,7 @@ defparam n886_s.ALU_MODE=0;
     .COUT(n885_0_COUT),
     .I0(regbusc[15]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n886_2) 
 );
 defparam n885_s.ALU_MODE=0;
@@ -18955,7 +18955,7 @@ defparam n885_s.ALU_MODE=0;
     .COUT(n720_3),
     .I0(pc[0]),
     .I1(ff_di_reg[0]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(GND) 
 );
 defparam n720_s.ALU_MODE=0;
@@ -18964,7 +18964,7 @@ defparam n720_s.ALU_MODE=0;
     .COUT(n719_3),
     .I0(pc[1]),
     .I1(ff_di_reg[1]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n720_3) 
 );
 defparam n719_s.ALU_MODE=0;
@@ -18973,7 +18973,7 @@ defparam n719_s.ALU_MODE=0;
     .COUT(n718_3),
     .I0(pc[2]),
     .I1(ff_di_reg[2]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n719_3) 
 );
 defparam n718_s.ALU_MODE=0;
@@ -18982,7 +18982,7 @@ defparam n718_s.ALU_MODE=0;
     .COUT(n717_3),
     .I0(pc[3]),
     .I1(ff_di_reg[3]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n718_3) 
 );
 defparam n717_s.ALU_MODE=0;
@@ -18991,7 +18991,7 @@ defparam n717_s.ALU_MODE=0;
     .COUT(n716_3),
     .I0(pc[4]),
     .I1(ff_di_reg[4]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n717_3) 
 );
 defparam n716_s.ALU_MODE=0;
@@ -19000,7 +19000,7 @@ defparam n716_s.ALU_MODE=0;
     .COUT(n715_3),
     .I0(pc[5]),
     .I1(ff_di_reg[5]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n716_3) 
 );
 defparam n715_s.ALU_MODE=0;
@@ -19009,7 +19009,7 @@ defparam n715_s.ALU_MODE=0;
     .COUT(n714_3),
     .I0(pc[6]),
     .I1(ff_di_reg[6]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n715_3) 
 );
 defparam n714_s.ALU_MODE=0;
@@ -19018,7 +19018,7 @@ defparam n714_s.ALU_MODE=0;
     .COUT(n713_3),
     .I0(pc[7]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n714_3) 
 );
 defparam n713_s.ALU_MODE=0;
@@ -19027,7 +19027,7 @@ defparam n713_s.ALU_MODE=0;
     .COUT(n712_3),
     .I0(pc[8]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n713_3) 
 );
 defparam n712_s.ALU_MODE=0;
@@ -19036,7 +19036,7 @@ defparam n712_s.ALU_MODE=0;
     .COUT(n711_3),
     .I0(pc[9]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n712_3) 
 );
 defparam n711_s.ALU_MODE=0;
@@ -19045,7 +19045,7 @@ defparam n711_s.ALU_MODE=0;
     .COUT(n710_3),
     .I0(pc[10]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n711_3) 
 );
 defparam n710_s.ALU_MODE=0;
@@ -19054,7 +19054,7 @@ defparam n710_s.ALU_MODE=0;
     .COUT(n709_3),
     .I0(pc[11]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n710_3) 
 );
 defparam n709_s.ALU_MODE=0;
@@ -19063,7 +19063,7 @@ defparam n709_s.ALU_MODE=0;
     .COUT(n708_3),
     .I0(pc[12]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n709_3) 
 );
 defparam n708_s.ALU_MODE=0;
@@ -19072,7 +19072,7 @@ defparam n708_s.ALU_MODE=0;
     .COUT(n707_3),
     .I0(pc[13]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n708_3) 
 );
 defparam n707_s.ALU_MODE=0;
@@ -19081,7 +19081,7 @@ defparam n707_s.ALU_MODE=0;
     .COUT(n706_3),
     .I0(pc[14]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n707_3) 
 );
 defparam n706_s.ALU_MODE=0;
@@ -19090,7 +19090,7 @@ defparam n706_s.ALU_MODE=0;
     .COUT(n705_0_COUT),
     .I0(pc[15]),
     .I1(ff_di_reg[7]),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n706_3) 
 );
 defparam n705_s.ALU_MODE=0;
@@ -24939,7 +24939,7 @@ defparam ff_reset_cnt_0_s1.INIT=1'b0;
     .COUT(n60_3),
     .I0(ff_counter[1]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(ff_counter[0]) 
 );
 defparam n60_s.ALU_MODE=0;
@@ -24948,7 +24948,7 @@ defparam n60_s.ALU_MODE=0;
     .COUT(n59_3),
     .I0(ff_counter[2]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n60_3) 
 );
 defparam n59_s.ALU_MODE=0;
@@ -24957,7 +24957,7 @@ defparam n59_s.ALU_MODE=0;
     .COUT(n58_3),
     .I0(ff_counter[3]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n59_3) 
 );
 defparam n58_s.ALU_MODE=0;
@@ -24966,7 +24966,7 @@ defparam n58_s.ALU_MODE=0;
     .COUT(n57_3),
     .I0(ff_counter[4]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n58_3) 
 );
 defparam n57_s.ALU_MODE=0;
@@ -24975,7 +24975,7 @@ defparam n57_s.ALU_MODE=0;
     .COUT(n56_3),
     .I0(ff_counter[5]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n57_3) 
 );
 defparam n56_s.ALU_MODE=0;
@@ -24984,7 +24984,7 @@ defparam n56_s.ALU_MODE=0;
     .COUT(n55_3),
     .I0(ff_counter[6]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n56_3) 
 );
 defparam n55_s.ALU_MODE=0;
@@ -24993,7 +24993,7 @@ defparam n55_s.ALU_MODE=0;
     .COUT(n54_3),
     .I0(ff_counter[7]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n55_3) 
 );
 defparam n54_s.ALU_MODE=0;
@@ -25002,7 +25002,7 @@ defparam n54_s.ALU_MODE=0;
     .COUT(n53_3),
     .I0(ff_counter[8]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n54_3) 
 );
 defparam n53_s.ALU_MODE=0;
@@ -25011,7 +25011,7 @@ defparam n53_s.ALU_MODE=0;
     .COUT(n52_3),
     .I0(ff_counter[9]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n53_3) 
 );
 defparam n52_s.ALU_MODE=0;
@@ -25020,7 +25020,7 @@ defparam n52_s.ALU_MODE=0;
     .COUT(n51_3),
     .I0(ff_counter[10]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n52_3) 
 );
 defparam n51_s.ALU_MODE=0;
@@ -25029,7 +25029,7 @@ defparam n51_s.ALU_MODE=0;
     .COUT(n50_3),
     .I0(ff_counter[11]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n51_3) 
 );
 defparam n50_s.ALU_MODE=0;
@@ -25038,7 +25038,7 @@ defparam n50_s.ALU_MODE=0;
     .COUT(n49_3),
     .I0(ff_counter[12]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n50_3) 
 );
 defparam n49_s.ALU_MODE=0;
@@ -25047,7 +25047,7 @@ defparam n49_s.ALU_MODE=0;
     .COUT(n48_3),
     .I0(ff_counter[13]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n49_3) 
 );
 defparam n48_s.ALU_MODE=0;
@@ -25056,7 +25056,7 @@ defparam n48_s.ALU_MODE=0;
     .COUT(n47_3),
     .I0(ff_counter[14]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n48_3) 
 );
 defparam n47_s.ALU_MODE=0;
@@ -25065,7 +25065,7 @@ defparam n47_s.ALU_MODE=0;
     .COUT(n46_3),
     .I0(ff_counter[15]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n47_3) 
 );
 defparam n46_s.ALU_MODE=0;
@@ -25074,7 +25074,7 @@ defparam n46_s.ALU_MODE=0;
     .COUT(n45_3),
     .I0(ff_counter[16]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n46_3) 
 );
 defparam n45_s.ALU_MODE=0;
@@ -25083,7 +25083,7 @@ defparam n45_s.ALU_MODE=0;
     .COUT(n44_3),
     .I0(ff_counter[17]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n45_3) 
 );
 defparam n44_s.ALU_MODE=0;
@@ -25092,7 +25092,7 @@ defparam n44_s.ALU_MODE=0;
     .COUT(n43_3),
     .I0(ff_counter[18]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n44_3) 
 );
 defparam n43_s.ALU_MODE=0;
@@ -25101,7 +25101,7 @@ defparam n43_s.ALU_MODE=0;
     .COUT(n42_3),
     .I0(ff_counter[19]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n43_3) 
 );
 defparam n42_s.ALU_MODE=0;
@@ -25110,7 +25110,7 @@ defparam n42_s.ALU_MODE=0;
     .COUT(n41_3),
     .I0(ff_counter[20]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n42_3) 
 );
 defparam n41_s.ALU_MODE=0;
@@ -25119,7 +25119,7 @@ defparam n41_s.ALU_MODE=0;
     .COUT(n40_3),
     .I0(ff_counter[21]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n41_3) 
 );
 defparam n40_s.ALU_MODE=0;
@@ -25128,7 +25128,7 @@ defparam n40_s.ALU_MODE=0;
     .COUT(n39_3),
     .I0(ff_counter[22]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n40_3) 
 );
 defparam n39_s.ALU_MODE=0;
@@ -25137,7 +25137,7 @@ defparam n39_s.ALU_MODE=0;
     .COUT(n38_3),
     .I0(ff_counter[23]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n39_3) 
 );
 defparam n38_s.ALU_MODE=0;
@@ -25146,7 +25146,7 @@ defparam n38_s.ALU_MODE=0;
     .COUT(n37_0_COUT),
     .I0(ff_counter[24]),
     .I1(VCC),
-    .I3(GND),
+    .I3(VCC),
     .CIN(n38_3) 
 );
 defparam n37_s.ALU_MODE=0;
