@@ -163,7 +163,7 @@
                 "SubInsts": [
                     {
                         "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/bootrom/bootrom.v",
-                        "InstLine": 61,
+                        "InstLine": 62,
                         "InstName": "u_rom",
                         "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/bootrom/rom.v",
                         "ModuleLine": 34,
@@ -171,11 +171,11 @@
                     },
                     {
                         "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/bootrom/bootrom.v",
-                        "InstLine": 74,
+                        "InstLine": 76,
                         "InstName": "u_ram",
-                        "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/gowin_sp/gowin_sp.v",
-                        "ModuleLine": 9,
-                        "ModuleName": "Gowin_SP"
+                        "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/bootrom/ram.v",
+                        "ModuleLine": 34,
+                        "ModuleName": "ip_ram"
                     }
                 ]
             },

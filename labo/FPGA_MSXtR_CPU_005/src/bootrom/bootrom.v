@@ -58,6 +58,7 @@ module bootrom (
 	assign w_re = (bus_address[12] == 1'b1) ? (bus_valid & ~bus_write) : 1'b0;
 	assign w_we = (bus_address[12] == 1'b1) ? (bus_valid &  bus_write) : 1'b0;
 
+	//	4KB
 	rom u_rom (
 		.reset_n		(reset_n			),
 		.clk			(clk				),
@@ -71,14 +72,15 @@ module bootrom (
 	
 	);
 
-	Gowin_SP u_ram (
+	//	2KB
+	ip_ram u_ram (
 		.reset			( !reset_n						),
 		.clk			( clk							),
 		.ce				( w_ram_cs						),
 		.wre			( w_we							),
 		.dout			( w_ram_q						),
 		.oce			( w_re							),
-		.ad				( { bus_address[9:0], 1'b0 }	),
+		.ad				( bus_address[10:0]				),
 		.din			( bus_wdata						)
 	);
 

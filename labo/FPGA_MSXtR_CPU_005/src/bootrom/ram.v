@@ -31,7 +31,7 @@
 //
 // ----------------------------------------------------------------------------
 
-module Gowin_SP (
+module ip_ram (
 	output	[7:0]	dout,
 	input			clk,
 	input			oce,

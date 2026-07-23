@@ -1,5 +1,5 @@
 {
-    "Device": "GW2AR-18",
+    "Device": "GW2AR-18C",
     "Files": [
         {
             "Path": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/FPGA_MSXtR.v",
@@ -82,10 +82,6 @@
             "Type": "verilog"
         },
         {
-            "Path": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/gowin_sp/gowin_sp.v",
-            "Type": "verilog"
-        },
-        {
             "Path": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/s2026a/s2026a.v",
             "Type": "verilog"
         },
@@ -107,6 +103,10 @@
         },
         {
             "Path": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/uart/uart.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/bootrom/ram.v",
             "Type": "verilog"
         }
     ],

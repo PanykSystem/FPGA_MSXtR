@@ -7,6 +7,7 @@
     <FileList>
         <File path="src/FPGA_MSXtR.v" type="file.verilog" enable="1"/>
         <File path="src/bootrom/bootrom.v" type="file.verilog" enable="1"/>
+        <File path="src/bootrom/ram.v" type="file.verilog" enable="1"/>
         <File path="src/bootrom/rom.v" type="file.verilog" enable="1"/>
         <File path="src/cr800/cr800.v" type="file.verilog" enable="1"/>
         <File path="src/cr800/cr800_alu.v" type="file.verilog" enable="1"/>
@@ -25,7 +26,6 @@
         <File path="src/gowin_rpll/gowin_rpll.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_rpll/gowin_rpll2.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_rpll/gowin_rpll3.v" type="file.verilog" enable="1"/>
-        <File path="src/gowin_sp/gowin_sp.v" type="file.verilog" enable="1"/>
         <File path="src/s2026a/s2026a.v" type="file.verilog" enable="1"/>
         <File path="src/s2026a/s2026a_cpu_select.v" type="file.verilog" enable="1"/>
         <File path="src/sdram/ip_sdram_tangnano20k_c.v" type="file.verilog" enable="1"/>
