@@ -143,7 +143,8 @@ module cr800_inst (
 		if( !reset_n ) begin
 			ff_dinst <= 8'd0;
 		end
-		else if( w_rd ) begin
+		else if( w_rd && (w_m_cycle == 3'd1) && (w_t_state == 3'd2) ) begin
+			// Latch opcode only on instruction fetch timing (M1/T2).
 			ff_dinst <= rdata;
 		end
 	end

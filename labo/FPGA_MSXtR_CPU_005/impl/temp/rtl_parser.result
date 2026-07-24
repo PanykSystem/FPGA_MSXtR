@@ -33,7 +33,7 @@
                 "SubInsts": [
                     {
                         "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_inst.v",
-                        "InstLine": 116,
+                        "InstLine": 120,
                         "InstName": "u_cz80",
                         "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
                         "ModuleLine": 63,
@@ -41,7 +41,7 @@
                         "SubInsts": [
                             {
                                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
-                                "InstLine": 262,
+                                "InstLine": 237,
                                 "InstName": "u_mcode",
                                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_mcode.v",
                                 "ModuleLine": 63,
@@ -49,7 +49,7 @@
                             },
                             {
                                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
-                                "InstLine": 338,
+                                "InstLine": 296,
                                 "InstName": "u_alu",
                                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_alu.v",
                                 "ModuleLine": 63,
@@ -57,7 +57,7 @@
                             },
                             {
                                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
-                                "InstLine": 1013,
+                                "InstLine": 784,
                                 "InstName": "u_regs",
                                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_reg.v",
                                 "ModuleLine": 55,
@@ -77,7 +77,7 @@
                 "SubInsts": [
                     {
                         "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_inst.v",
-                        "InstLine": 116,
+                        "InstLine": 120,
                         "InstName": "u_cz80",
                         "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
                         "ModuleLine": 63,
@@ -85,7 +85,7 @@
                         "SubInsts": [
                             {
                                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
-                                "InstLine": 262,
+                                "InstLine": 237,
                                 "InstName": "u_mcode",
                                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_mcode.v",
                                 "ModuleLine": 63,
@@ -93,7 +93,7 @@
                             },
                             {
                                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
-                                "InstLine": 338,
+                                "InstLine": 296,
                                 "InstName": "u_alu",
                                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_alu.v",
                                 "ModuleLine": 63,
@@ -101,7 +101,7 @@
                             },
                             {
                                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80.v",
-                                "InstLine": 1013,
+                                "InstLine": 784,
                                 "InstName": "u_regs",
                                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_CPU_005/src/cz80/cz80_reg.v",
                                 "ModuleLine": 55,

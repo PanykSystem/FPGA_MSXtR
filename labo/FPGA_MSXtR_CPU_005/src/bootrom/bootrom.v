@@ -53,10 +53,10 @@ module bootrom (
 	reg				ff_is_ram;
 	reg 			ff_q_en;
 
-	assign w_ram_cs = (bus_address[12] == 1'b1) ? bootrom_cs : 1'b0;
 	assign w_rom_cs = (bus_address[12] != 1'b1) ? bootrom_cs : 1'b0;
-	assign w_re = (bus_address[12] == 1'b1) ? (bus_valid & ~bus_write) : 1'b0;
-	assign w_we = (bus_address[12] == 1'b1) ? (bus_valid &  bus_write) : 1'b0;
+	assign w_ram_cs = (bus_address[12] == 1'b1) ? bootrom_cs : 1'b0;
+	assign w_re     = (bus_address[12] == 1'b1) ? (bus_valid & ~bus_write) : 1'b0;
+	assign w_we     = (bus_address[12] == 1'b1) ? (bus_valid &  bus_write) : 1'b0;
 
 	//	4KB
 	rom u_rom (

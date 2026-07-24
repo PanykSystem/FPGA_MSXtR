@@ -604,7 +604,7 @@ module fpga_msxtr (
 		.bus_rdata_en			( w_bus_crom_rdata_en		),
 		.srom0_cs_n				( 							),
 		.srom1_cs_n				( flash_spi_cs_n			),
-		.srom_clk				( flash_spi_ck				),
+		.srom_clk				( flash_spi_clk				),
 		.srom_hold_n			( flash_spi_hold_n			),
 		.srom_wp_n				( flash_spi_wp_n			),
 		.srom_do				( flash_spi_do				),

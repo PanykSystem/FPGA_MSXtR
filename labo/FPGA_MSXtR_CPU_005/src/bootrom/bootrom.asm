@@ -108,7 +108,8 @@ wait_release_button:
 				ld		de, s_dump_process
 				call	puts
 
-				ld		e, 0
+				ld		hl, 0x0000				; 下位 16bit
+				ld		e, 0x00					; 上位 8bit
 				call	set_config_rom_address
 				ld		l, 0
 	dump_loop:

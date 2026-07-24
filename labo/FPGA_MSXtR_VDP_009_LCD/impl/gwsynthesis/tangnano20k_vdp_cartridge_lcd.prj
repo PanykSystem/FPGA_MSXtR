@@ -46,11 +46,19 @@
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_style" value="auto"/>
         <Option type="global_freq" value="100.000"/>
         <Option type="looplimit" value="400000"/>
+        <Option type="map_option" value="1"/>
+        <Option type="max_fanout" value="1000"/>
+        <Option type="netlist_hierarchy" value="1"/>
+        <Option type="opt_goal" value="auto"/>
         <Option type="output_file" value="C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_009_LCD\impl\gwsynthesis\tangnano20k_vdp_cartridge_lcd.vg"/>
         <Option type="print_all_synthesis_warning" value="1"/>
         <Option type="ram_rw_check" value="0"/>
+        <Option type="ram_style" value="auto"/>
+        <Option type="rom_style" value="auto"/>
+        <Option type="shift_reg" value="auto"/>
         <Option type="top_module" value="tangnano20k_vdp_cartridge_lcd"/>
         <Option type="vcc" value="1.0"/>
         <Option type="verilog_language" value="verilog-2001"/>
