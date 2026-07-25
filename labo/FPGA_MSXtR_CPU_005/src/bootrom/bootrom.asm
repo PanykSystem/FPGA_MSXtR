@@ -169,8 +169,20 @@ wait_release_button:
 				inc		l
 				jr		nz, byte_write_loop
 
+				ld		a, FPGA_CONFIG_ROM_ACCESS_END
+				out		[CROM_COMMAND], a
 				ld		de, s_ok
 				call	puts
+
+				ld		a, FPGA_CONFIG_ROM_READ_STATUS
+				out		[CROM_COMMAND], a
+	status_check_loop1:
+				in		a, [CROM_DATA]
+				and		a, 1
+				jp		nz, status_check_loop1
+				ld		a, FPGA_CONFIG_ROM_ACCESS_END
+				out		[CROM_COMMAND], a
+
 				inc		h
 				jr		nz, write_loop
 
@@ -195,6 +207,8 @@ wait_release_button:
 				inc		l
 				jr		nz, byte_verify_loop
 
+				ld		a, FPGA_CONFIG_ROM_ACCESS_END
+				out		[CROM_COMMAND], a
 				ld		de, s_ok
 				call	puts
 				inc		h
@@ -229,6 +243,8 @@ set_config_rom_address::
 ; ----------------------------------------------------------------------------
 				scope	set_config_rom_write_enable
 set_config_rom_write_enable::
+				ld		de, s_set_write_enable
+				call	puts
 				ld		a, FPGA_CONFIG_ROM_WRITE_ENABLE
 				out		[CROM_COMMAND], a
 				; 書き込み許可モードに切り替わるのを待つ
@@ -361,6 +377,8 @@ s_erase_process:
 				db		"Erase:", 0x0D, 0x0A, 0
 s_block_erase_done:
 				db		"-Erase 0x40", 0
+s_set_write_enable:
+				db		"Set Write Enable:", 0x0D, 0x0A, 0
 s_write_process:
 				db		"Write:", 0x0D, 0x0A, 0
 s_write_block:
