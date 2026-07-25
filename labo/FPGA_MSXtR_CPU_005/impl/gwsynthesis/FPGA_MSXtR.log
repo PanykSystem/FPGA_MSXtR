@@ -1,7 +1,6 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v'
-Undeclared symbol 'srom_spi_ck', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":631)
 Undeclared symbol 'vdp_so_clk', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":705)
 Undeclared symbol 'vdp_so', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":706)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\bootrom\bootrom.v'
@@ -66,7 +65,6 @@ WARN  (EX0206) : Instance "rpll_inst" 's parameter "DEVICE" value invalid("C:\Us
 WARN  (EX0211) : The output port "fpga_so_clk" of module "fpga_msxtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":30)
 WARN  (EX0211) : The output port "fpga_so[1]" of module "fpga_msxtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":31)
 WARN  (EX0211) : The output port "fpga_so[0]" of module "fpga_msxtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":31)
-WARN  (EX0211) : The output port "srom_spi_clk" of module "fpga_msxtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":37)
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input fpga_si_clk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":32)
 WARN  (CV0016) : Input fpga_si is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_CPU_005\src\FPGA_MSXtR.v":33)

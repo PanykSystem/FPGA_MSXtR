@@ -38,8 +38,14 @@ BUTTON								:= 0x10
 
 EXTIO_MANUFACTURE					:= 0x40
 EXTIO_DEVICE						:= 0x41
-CROM_COMMAND						:= 0x42
-CROM_DATA							:= 0x43
+SROM_COMMAND						:= 0x42
+SROM_DATA							:= 0x43
+
+MANUFACTURE_ID						:= 64			; MSX System for MSX2++ or later
+
+DEVICE_CONFIG_ROM_VDP				:= 1
+DEVICE_CONFIG_ROM_CPU				:= 2
+DEVICE_SERIAL_ROM					:= 3
 
 S2026_REG_IDX						:= 0xE4
 S2026_REG_VAL						:= 0xE5
@@ -85,7 +91,7 @@ wait_release_button:
 				ld		a, 6
 				out		[S2026_REG_IDX], a
 				in		a, [S2026_REG_VAL]
-				and		a, 0b0010_0000			; bit5: 0=R800, 1=Z80
+				and		a, 0b0010_0000				; bit5: 0=R800, 1=Z80
 				jr		z, r800_message
 				ld		de, s_z80_message
 				jr		skip
@@ -94,28 +100,65 @@ wait_release_button:
 	skip:
 				call	puts
 
-				; ConfigROM へのアクセスポートを出現させる
-				ld		a, 0x40
+				; Manufacture ID 選択
+				ld		a, MANUFACTURE_ID			; FPGA MSXtR System ID
 				out		[EXTIO_MANUFACTURE], a
-				ld		a, 0x02					; CPU side ConfigROM
+
+				; ConfigROM へのアクセスポートを出現させる
+				ld		de, s_config_rom
+				call	puts
+				ld		a, DEVICE_CONFIG_ROM_CPU	; CPU side ConfigROM (8MB)
 				out		[EXTIO_DEVICE], a
 				ld		a, FPGA_CONFIG_ROM_SELECT_SROM
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				ld		a, 1
-				out		[CROM_DATA], a
+				out		[SROM_DATA], a
+				ld		e, 0x40						; 書き込みテストの対象となるアドレスの bit23-bit16
+				exx
+				call	serial_rom_test
 
+				; SerialROM0 へのアクセスポートを出現させる
+				ld		de, s_serial_rom0
+				call	puts
+				ld		a, DEVICE_SERIAL_ROM		; SerialROM
+				out		[EXTIO_DEVICE], a
+				ld		a, FPGA_CONFIG_ROM_SELECT_SROM
+				out		[SROM_COMMAND], a
+				ld		a, 0						; SerialROM #0 (4MB)
+				out		[SROM_DATA], a
+				ld		e, 0x00						; 書き込みテストの対象となるアドレスの bit23-bit16
+				exx
+				call	serial_rom_test
+
+				; SerialROM1 へのアクセスポートを出現させる
+				ld		de, s_serial_rom1
+				call	puts
+				ld		a, DEVICE_SERIAL_ROM		; SerialROM
+				out		[EXTIO_DEVICE], a
+				ld		a, FPGA_CONFIG_ROM_SELECT_SROM
+				out		[SROM_COMMAND], a
+				ld		a, 1						; SerialROM #1 (4MB)
+				out		[SROM_DATA], a
+				ld		e, 0x00						; 書き込みテストの対象となるアドレスの bit23-bit16
+				exx
+				call	serial_rom_test
+
+				jp		change_cpu
+
+				scope	serial_rom_test
+serial_rom_test::
 				; 000000h - 0000FFh をダンプする
 				ld		de, s_dump_process
 				call	puts
 
-				ld		hl, 0x0000				; 下位 16bit
-				ld		e, 0x00					; 上位 8bit
-				call	set_config_rom_address
+				ld		hl, 0x0000					; 下位 16bit
+				ld		e, 0x00						; 上位 8bit
+				call	set_serial_rom_address
 				ld		l, 0
 	dump_loop:
 				ld		a, FPGA_CONFIG_ROM_SINGLE_READ
-				out		[CROM_COMMAND], a
-				in		a, [CROM_DATA]
+				out		[SROM_COMMAND], a
+				in		a, [SROM_DATA]
 				call	put_hex8
 				ld		a, ' '
 				out		[UART], a
@@ -129,21 +172,24 @@ wait_release_button:
 				or		a, a
 				jr		nz, dump_loop
 				ld		a, FPGA_CONFIG_ROM_ACCESS_END
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 
 				; 400000h - 40FFFFh に FF 以外があれば消去する
 				ld		de, s_erase_process
 				call	puts
 
-				ld		hl, 0x0000				; 下位 16bit
-				ld		e, 0x40					; 上位 8bit
-				call	set_config_rom_address
+				exx
+				push	de
+				exx
+				pop		de
+				ld		hl, 0x0000					; 下位 16bit
+				call	set_serial_rom_address
 	erase_check_loop:
 				ld		a, FPGA_CONFIG_ROM_SINGLE_READ
-				out		[CROM_COMMAND], a
-				in		a, [CROM_DATA]
+				out		[SROM_COMMAND], a
+				in		a, [SROM_DATA]
 				inc		a						; 0xFF か？
-				call	nz, config_rom_block_erase
+				call	nz, serial_rom_block_erase
 				inc		hl
 				ld		a, h
 				or		a, l
@@ -154,34 +200,41 @@ wait_release_button:
 				call	puts
 
 				ld		hl, 0x0000				; 下位 16bit
-				ld		c, CROM_DATA
+				ld		c, SROM_DATA
 	write_loop:
 				ld		de, s_write_block
 				call	puts
+				exx
+				ld		a, e
+				exx
+				call	put_hex8
 				call	put_hex
-				ld		e, 0x40					; 上位 8bit
-				call	set_config_rom_address
-				call	set_config_rom_write_enable
+				exx
+				push	de
+				exx
+				pop		de
+				call	set_serial_rom_address
+				call	set_serial_rom_write_enable
 				ld		a, FPGA_CONFIG_ROM_BURST_WRITE
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 	byte_write_loop:
 				out		[c], l
 				inc		l
 				jr		nz, byte_write_loop
 
 				ld		a, FPGA_CONFIG_ROM_ACCESS_END
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				ld		de, s_ok
 				call	puts
 
 				ld		a, FPGA_CONFIG_ROM_READ_STATUS
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 	status_check_loop1:
-				in		a, [CROM_DATA]
+				in		a, [SROM_DATA]
 				and		a, 1
 				jp		nz, status_check_loop1
 				ld		a, FPGA_CONFIG_ROM_ACCESS_END
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 
 				inc		h
 				jr		nz, write_loop
@@ -191,15 +244,22 @@ wait_release_button:
 				call	puts
 
 				ld		hl, 0x0000				; 下位 16bit
-				ld		c, CROM_DATA
+				ld		c, SROM_DATA
 	verify_loop:
 				ld		de, s_verify_block
 				call	puts
+				exx
+				ld		a, e
+				exx
+				call	put_hex8
 				call	put_hex
-				ld		e, 0x40					; 上位 8bit
-				call	set_config_rom_address
+				exx
+				push	de
+				exx
+				pop		de
+				call	set_serial_rom_address
 				ld		a, FPGA_CONFIG_ROM_BURST_READ
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 	byte_verify_loop:
 				in		a, [c]
 				cp		l
@@ -208,7 +268,7 @@ wait_release_button:
 				jr		nz, byte_verify_loop
 
 				ld		a, FPGA_CONFIG_ROM_ACCESS_END
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				ld		de, s_ok
 				call	puts
 				inc		h
@@ -220,77 +280,90 @@ wait_release_button:
 	finish:
 				ld		de, s_finish
 				call	puts
-				jp		change_cpu
+				ret
+				endscope
 
 ; ----------------------------------------------------------------------------
 ;	ConfigROM のアクセスアドレスをセットする
 ; ----------------------------------------------------------------------------
-				scope	set_config_rom_address
-set_config_rom_address::
+				scope	set_serial_rom_address
+set_serial_rom_address::
 				ld		a, FPGA_CONFIG_ROM_SET_ADDRESS
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				ld		a, l
-				out		[CROM_DATA], a
+				out		[SROM_DATA], a
 				ld		a, h
-				out		[CROM_DATA], a
+				out		[SROM_DATA], a
 				ld		a, e
-				out		[CROM_DATA], a
+				out		[SROM_DATA], a
 				ret
 				endscope
 
 ; ----------------------------------------------------------------------------
 ;	ConfigROM に書き込み許可フラグを設定する
 ; ----------------------------------------------------------------------------
-				scope	set_config_rom_write_enable
-set_config_rom_write_enable::
+				scope	set_serial_rom_write_enable
+set_serial_rom_write_enable::
 				ld		de, s_set_write_enable
 				call	puts
 				ld		a, FPGA_CONFIG_ROM_WRITE_ENABLE
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				; 書き込み許可モードに切り替わるのを待つ
 				ld		a, FPGA_CONFIG_ROM_READ_STATUS
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 	wait_write_enable:
-				in		a, [CROM_DATA]
+				in		a, [SROM_DATA]
 				and		a, 2						; bit1: 1=WRITE_ENABLE, 0=WRITE_DISABLE
 				jr		z, wait_write_enable
 				ld		a, FPGA_CONFIG_ROM_ACCESS_END
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				ret
 				endscope
 
 ; ----------------------------------------------------------------------------
 ;	ConfigROM の指定のアドレスを消去する
 ; ----------------------------------------------------------------------------
-				scope	config_rom_block_erase
-config_rom_block_erase::
+				scope	serial_rom_block_erase
+serial_rom_block_erase::
 				; 対象アドレスをセットする
-				call	set_config_rom_address
+				exx
+				push	de
+				exx
+				pop		de
+				call	set_serial_rom_address
 				; 消去許可コマンド
-				call	set_config_rom_write_enable
+				call	set_serial_rom_write_enable
 				; ブロック消去コマンド
 				ld		a, FPGA_CONFIG_ROM_BLOCK_ERASE
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				; ブロック消去コマンドが完了するのを待つ
 				ld		a, FPGA_CONFIG_ROM_READ_STATUS
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 	wait_erase:
-				in		a, [CROM_DATA]
+				in		a, [SROM_DATA]
 				and		a, 1						; bit0: 1=BUSY, 0=READY
 				jr		nz, wait_erase
 				ld		a, FPGA_CONFIG_ROM_ACCESS_END
-				out		[CROM_COMMAND], a
+				out		[SROM_COMMAND], a
 				; 消去したアドレスを表示する
 				push	hl
 				ld		de, s_block_erase_done
 				call	puts
+				exx
+				ld		a, e
+				exx
+				call	put_hex8
 				call	put_hex
 				ld		de, crlf
 				call	puts
 				pop		hl
 				; 次のアドレスをセットする
 				inc		hl
-				call	set_config_rom_address
+				exx
+				push	de
+				exx
+				pop		de
+				call	set_serial_rom_address
 				dec		hl
 				ret
 				endscope
@@ -371,22 +444,28 @@ s_z80_message:
 				db		"[Z80]", 0x0D, 0x0A, 0
 s_r800_message:
 				db		"[R800]", 0x0D, 0x0A, 0
+s_config_rom:
+				db		"ConfigROM (CPU Side)", 0x0D, 0x0A, 0
+s_serial_rom0:
+				db		"SerialROM0 (BIOS)", 0x0D, 0x0A, 0
+s_serial_rom1:
+				db		"SerialROM1 (ExtROM)", 0x0D, 0x0A, 0
 s_dump_process:
 				db		"Dump:", 0x0D, 0x0A, 0
 s_erase_process:
 				db		"Erase:", 0x0D, 0x0A, 0
 s_block_erase_done:
-				db		"-Erase 0x40", 0
+				db		"-Erase 0x", 0
 s_set_write_enable:
 				db		"Set Write Enable:", 0x0D, 0x0A, 0
 s_write_process:
 				db		"Write:", 0x0D, 0x0A, 0
 s_write_block:
-				db		"-Write 0x40", 0
+				db		"-Write 0x", 0
 s_verify_process:
 				db		"Verify:", 0x0D, 0x0A, 0
 s_verify_block:
-				db		"-Verify 0x40", 0
+				db		"-Verify 0x", 0
 crlf:
 				db		0x0D, 0x0A, 0
 s_ok:
@@ -394,4 +473,4 @@ s_ok:
 s_fail:
 				db		"-NG", 0x0D, 0x0A, 0
 s_finish:
-				db		"FIN", 0x0D, 0x0A, 0
+				db		"Finish!", 0x0D, 0x0A, 0x0D, 0x0A, 0

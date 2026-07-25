@@ -100,6 +100,26 @@ module tb;
 		.RESETn				( reset_n			)
 	);
 
+	W25Q32JVxxIM u_serial_rom0 (
+		.CSn				( srom0_spi_cs_n	),
+		.CLK				( srom_spi_clk		),
+		.DIO				( srom_spi_di		),
+		.DO					( srom_spi_do		),
+		.WPn				( srom_spi_wp_n		),
+		.HOLDn				( srom_spi_hold_n	),
+		.RESETn				( reset_n			)
+	);
+
+	W25Q32JVxxIM u_serial_rom1 (
+		.CSn				( srom1_spi_cs_n	),
+		.CLK				( srom_spi_clk		),
+		.DIO				( srom_spi_di		),
+		.DO					( srom_spi_do		),
+		.WPn				( srom_spi_wp_n		),
+		.HOLDn				( srom_spi_hold_n	),
+		.RESETn				( reset_n			)
+	);
+
 	always #(CLK14M_PERIOD_PS / 2.0) begin
 		clk14m <= ~clk14m;
 	end
