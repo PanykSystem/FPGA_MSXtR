@@ -101,6 +101,7 @@ module s2026a_cpu_select (
 	wire			w_read_valid;
 	wire			w_write_valid;
 	reg				ff_read_valid;
+	reg				ff_read_wait;
 	wire			w_valid;
 	reg 			ff_enable;
 	wire 			w_wait_p;
@@ -208,6 +209,18 @@ module s2026a_cpu_select (
 		end
 	end
 
+	always @( posedge clk ) begin
+		if( !reset_n ) begin
+			ff_read_wait	<= 1'b0;
+		end
+		else if( rdata_en ) begin
+			ff_read_wait	<= 1'b0;
+		end
+		else if( !ff_bus_valid && !ff_request && ff_read_valid ) begin
+			ff_read_wait	<= 1'b1;
+		end
+	end
+
 	// ---------------------------------------------------------
 	//	CPU data bus tristate
 	// ---------------------------------------------------------
@@ -308,7 +321,7 @@ module s2026a_cpu_select (
 	// ---------------------------------------------------------
 	//	Output assignments
 	// ---------------------------------------------------------
-	assign w_wait_p			= cpu_pause | (ff_bus_valid & ~bus_ready);
+	assign w_wait_p			= cpu_pause | (ff_bus_valid & ~bus_ready) | ff_read_wait;
 	assign z80_active		= ff_z80_active  & enable_z80  & ~w_wait_p;
 	assign r800_active		= ff_r800_active & enable_r800 & ~w_wait_p;
 	assign processor_mode	= ff_processor_mode;
