@@ -143,7 +143,7 @@ module cz80_inst (
 		.stop			( 					)
 	);
 
-	always @( negedge clk ) begin
+	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_dinst <= 8'd0;
 		end
@@ -152,11 +152,11 @@ module cz80_inst (
 		end
 	end
 
-	always @( negedge clk ) begin
+	always @( posedge clk ) begin
 		ff_wait_n			<= ~wait_p;
 	end
 
-	always @( negedge clk ) begin
+	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_di_reg <= 8'd0;
 		end
@@ -169,7 +169,7 @@ module cz80_inst (
 		ff_ireq_inhibit		<= ~w_iorq;
 	end
 
-	always @( negedge clk ) begin
+	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_wr_n_i <= 1'b1;
 		end
@@ -203,7 +203,7 @@ module cz80_inst (
 		end
 	end
 
-	always @( negedge clk ) begin
+	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_mreq_inhibit <= 1'b0;
 		end
@@ -215,7 +215,7 @@ module cz80_inst (
 		end
 	end
 
-	always @( negedge clk ) begin
+	always @( posedge clk ) begin
 		if( !reset_n ) begin
 			ff_rd <= 1'b0;
 			ff_iorq_n_i <= 1'b1;
