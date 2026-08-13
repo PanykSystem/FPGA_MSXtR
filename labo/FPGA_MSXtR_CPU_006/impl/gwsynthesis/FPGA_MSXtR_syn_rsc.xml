@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="fpga_msxtr" Register="33" Alu="4" Lut="16" T_Register="1190(33)" T_Alu="181(4)" T_Lut="4387(16)" T_Bsram="3(0)">
+<Module name="fpga_msxtr" Register="33" Alu="4" Lut="16" T_Register="1210(33)" T_Alu="181(4)" T_Lut="4627(16)" T_Bsram="1(0)">
  <SubModule name="u_pll"/>
  <SubModule name="u_pll2"/>
- <SubModule name="u_z80" Register="22" Lut="45" T_Register="354(22)" T_Alu="81(0)" T_Lut="1727(45)">
-  <SubModule name="u_cz80" Register="204" Alu="70" Lut="1148" T_Register="332(204)" T_Alu="81(70)" T_Lut="1682(1148)">
-   <SubModule name="u_mcode" Lut="213" T_Lut="213(213)"/>
+ <SubModule name="u_z80" Register="22" Lut="49" T_Register="357(22)" T_Alu="81(0)" T_Lut="1750(49)">
+  <SubModule name="u_cz80" Register="207" Alu="70" Lut="1160" T_Register="335(207)" T_Alu="81(70)" T_Lut="1701(1160)">
+   <SubModule name="u_mcode" Lut="224" T_Lut="224(224)"/>
    <SubModule name="u_alu" Alu="11" Lut="11" T_Alu="11(11)" T_Lut="11(11)"/>
-   <SubModule name="u_regs" Register="128" Lut="310" T_Register="128(128)" T_Lut="310(310)"/>
+   <SubModule name="u_regs" Register="128" Lut="306" T_Register="128(128)" T_Lut="306(306)"/>
   </SubModule>
  </SubModule>
- <SubModule name="u_r800" Register="22" Lut="49" T_Register="354(22)" T_Alu="81(0)" T_Lut="1700(49)">
-  <SubModule name="u_cz80" Register="204" Alu="70" Lut="1117" T_Register="332(204)" T_Alu="81(70)" T_Lut="1651(1117)">
-   <SubModule name="u_mcode" Lut="218" T_Lut="218(218)"/>
+ <SubModule name="u_r800" Register="22" Lut="48" T_Register="357(22)" T_Alu="81(0)" T_Lut="1792(48)">
+  <SubModule name="u_cz80" Register="207" Alu="70" Lut="1208" T_Register="335(207)" T_Alu="81(70)" T_Lut="1744(1208)">
+   <SubModule name="u_mcode" Lut="217" T_Lut="217(217)"/>
    <SubModule name="u_alu" Alu="11" Lut="11" T_Alu="11(11)" T_Lut="11(11)"/>
-   <SubModule name="u_regs" Register="128" Lut="305" T_Register="128(128)" T_Lut="305(305)"/>
+   <SubModule name="u_regs" Register="128" Lut="308" T_Register="128(128)" T_Lut="308(308)"/>
   </SubModule>
  </SubModule>
- <SubModule name="u_s2026a" Register="45" Alu="15" Lut="99" T_Register="102(45)" T_Alu="15(15)" T_Lut="151(99)">
-  <SubModule name="u_cpu_select" Register="57" Lut="52" T_Register="57(57)" T_Lut="52(52)"/>
+ <SubModule name="u_s2026a" Register="45" Alu="15" Lut="104" T_Register="108(45)" T_Alu="15(15)" T_Lut="166(104)">
+  <SubModule name="u_cpu_select" Register="63" Lut="62" T_Register="63(63)" T_Lut="62(62)"/>
  </SubModule>
- <SubModule name="u_extio" Register="9" Lut="22" T_Register="9(9)" T_Lut="22(22)"/>
- <SubModule name="u_config_rom" Register="139" Lut="361" T_Register="139(139)" T_Lut="361(361)"/>
- <SubModule name="u_ext_rom" Register="140" Lut="349" T_Register="140(140)" T_Lut="349(349)"/>
- <SubModule name="u_bootrom" Register="2" Lut="3" T_Register="13(2)" T_Lut="16(3)" T_Bsram="3(0)">
-  <SubModule name="u_rom" Lut="1" Bsram="2" T_Lut="1(1)" T_Bsram="2(2)"/>
+ <SubModule name="u_extio" Register="9" Lut="20" T_Register="9(9)" T_Lut="20(20)"/>
+ <SubModule name="u_config_rom" Register="139" Lut="373" T_Register="139(139)" T_Lut="373(373)"/>
+ <SubModule name="u_ext_rom" Register="140" Lut="352" T_Register="140(140)" T_Lut="352(352)"/>
+ <SubModule name="u_bootrom" Register="2" Lut="3" T_Register="21(2)" T_Lut="113(3)" T_Bsram="1(0)">
+  <SubModule name="u_rom" Register="8" Lut="98" T_Register="8(8)" T_Lut="98(98)"/>
   <SubModule name="u_ram" Register="11" Lut="12" Bsram="1" T_Register="11(11)" T_Lut="12(12)" T_Bsram="1(1)"/>
  </SubModule>
  <SubModule name="u_uart" Register="20" Lut="9" T_Register="46(20)" T_Lut="45(9)">
