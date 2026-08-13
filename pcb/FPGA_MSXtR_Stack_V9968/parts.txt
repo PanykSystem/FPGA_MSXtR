@@ -1,10 +1,8 @@
-R4, R5 ....... 3.3Kohm
-R2 ........... 10Kohm
-Q1, Q2, Q3 ... TO236AB (MOSFET Nch)
-U1 ........... CLOCK 14.318180MHz
-C3 ........... 15pF
-C1 ........... N/A
-C2-C9 ........ 0.1uF
-U2 ........... TangNano20K
-J1, J2 ....... 2x20 Stacking Connector : https://akizukidenshi.com/catalog/g/g110702/
-SW1, SW2 ..... Slide Switch            : https://akizukidenshi.com/catalog/g/g115703/)
+Part#          Manufacture    Size           Name         Note                      JLCPCB Part#   URL
+U1             SJK            SMD3225-4P     -            CLOCK 14.318180MHz        C252335        https://jlcpcb.com/partdetail/247510-3N14318G33YC/C252335
+U2             Sipeed         -              -            TangNano20K               -
+C1             -              1210           -            100uF                     C49066
+C2             -              0402           -            0.1uF                     C1525
+C3             -              0805           -            15pF                      C63339
+J1, J2         -              2.54mm pitch   -            2x20 Stacking Connector   -              https://akizukidenshi.com/catalog/g/g110702/
+SW1, SW2       -              -              -            Slide Switch              -              https://akizukidenshi.com/catalog/g/g115703/
