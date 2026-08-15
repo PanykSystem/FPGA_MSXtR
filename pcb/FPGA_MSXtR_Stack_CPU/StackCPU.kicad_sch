@@ -10832,7 +10832,7 @@
 	)
 	(wire
 		(pts
-			(xy 393.7 31.75) (xy 391.16 31.75)
+			(xy 394.97 31.75) (xy 391.16 31.75)
 		)
 		(stroke
 			(width 0)
@@ -10999,6 +10999,16 @@
 			(type default)
 		)
 		(uuid "27af590b-5486-4d80-a5bc-856f2d86a4d9")
+	)
+	(wire
+		(pts
+			(xy 377.19 31.75) (xy 381 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28e48151-ea8c-4d50-b2ac-7ec1d00c794e")
 	)
 	(wire
 		(pts
@@ -14992,7 +15002,7 @@
 	)
 	(wire
 		(pts
-			(xy 393.7 35.56) (xy 393.7 31.75)
+			(xy 394.97 35.56) (xy 394.97 31.75)
 		)
 		(stroke
 			(width 0)
@@ -20100,7 +20110,7 @@
 	)
 	(global_label "RESET_BUTTON"
 		(shape output)
-		(at 381 31.75 180)
+		(at 377.19 31.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20110,7 +20120,7 @@
 		)
 		(uuid "e90e806e-1163-42c1-904b-acdb938a5455")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 364.1054 31.75 0)
+			(at 360.2954 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20828,7 +20838,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "My Parts:DipSW4(C129043)"
 			(at 309.88 36.83 0)
 			(effects
 				(font
@@ -21735,7 +21745,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "MCU_RaspberryPi_and_Boards:RPi_Pico_SMD_TH"
+		(property "Footprint" "My Parts:RaspberryPiPico2W"
 			(at 238.76 58.42 0)
 			(effects
 				(font
@@ -28485,7 +28495,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 393.7 35.56 0)
+		(at 394.97 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28494,7 +28504,7 @@
 		(fields_autoplaced yes)
 		(uuid "c56d79e0-ac4c-4343-9fad-d432a9bd4b24")
 		(property "Reference" "#PWR09"
-			(at 393.7 41.91 0)
+			(at 394.97 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28503,7 +28513,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 393.7 40.64 0)
+			(at 394.97 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28511,7 +28521,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 393.7 35.56 0)
+			(at 394.97 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28520,7 +28530,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 393.7 35.56 0)
+			(at 394.97 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28529,7 +28539,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 393.7 35.56 0)
+			(at 394.97 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
