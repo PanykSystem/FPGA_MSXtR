@@ -1,4 +1,4 @@
-27834519494890152
+27843453125975562
 0-My_Parts
 BF@JJY_Coil
 
@@ -76174,6 +76174,20 @@ CUI_SJ-3523-audio-jack
 3
 3
 My Parts
+Capacitor(C453487)
+
+
+0
+2
+2
+My Parts
+DCDC_MAU108
+
+
+0
+5
+5
+My Parts
 DGG48
 
 SN74LVC16245ADGGR 
@@ -76250,6 +76264,13 @@ DSUB-15-L77HDE15SD1CH4F
 0
 17
 16
+My Parts
+DipSW4(C129043)
+
+
+0
+8
+8
 My Parts
 FFC 40pin
 
@@ -76537,6 +76558,20 @@ stamp-s3,esp32-s3
 0
 31
 31
+My Parts
+SideSW (C2906286)
+
+
+0
+4
+2
+My Parts
+Slide SW(C7431058)
+
+
+0
+3
+3
 My Parts
 Slide Switch
 
