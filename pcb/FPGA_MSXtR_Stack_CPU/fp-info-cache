@@ -1,4 +1,4 @@
-27845240004541507
+27850600561399082
 0-My_Parts
 BF@JJY_Coil
 
@@ -60157,6 +60157,13 @@ Converter_DCDC
 0
 0
 0
+Converter_DCDC
+名称未設定_1
+
+
+0
+0
+0
 Crystal
 Crystal_AT310_D3.0mm_L10.0mm_Horizontal
 AT310, Crystal, with length tolerance, length 10.5mm, width 3.0mm, THT, https://www.cinetech.com.tw/upload/2011/04/20110401165201.pdf
@@ -76573,6 +76580,13 @@ SideSW (C2906286)
 4
 2
 My Parts
+SideSW(C963235)
+
+
+0
+4
+2
+My Parts
 Slide SW(C7431058)
 
 
@@ -76600,6 +76614,13 @@ Switch3p
 0
 3
 3
+My Parts
+TSOP-13.4mm_8mm
+
+
+0
+32
+32
 My Parts
 TXS0108ERWR
 
