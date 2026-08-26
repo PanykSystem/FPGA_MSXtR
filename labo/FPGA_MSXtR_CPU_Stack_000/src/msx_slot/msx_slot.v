@@ -77,14 +77,14 @@ module msx_slot (
 	output			slot_merq_n,
 	inout	[7:0]	slot_d,
 	//	Device interface
-	input	[15:0]	device_address,			//	Z80 address
-	input			device_io,				//	1: I/O access, 0: Memory access
-	input			device_write,			//	0: read, 1: write
-	input			device_valid,
-	output			device_ready,
-	input	[7:0]	device_wdata,
-	output	[7:0]	device_rdata,
-	output			device_rdata_en
+	output	[15:0]	device_address,			//	Z80 address
+	output			device_io,				//	1: I/O access, 0: Memory access
+	output			device_write,			//	0: read, 1: write
+	output			device_valid,
+	input			device_ready,
+	output	[7:0]	device_wdata,
+	input	[7:0]	device_rdata,
+	input			device_rdata_en
 );
 	localparam		c_timing_start			= 8'd0;
 	localparam		c_timing_command		= 8'd31;
@@ -124,7 +124,6 @@ module msx_slot (
 	reg	[7:0]		ff_slot_rdata;
 	reg				ff_slot_read_done;
 	reg	[7:0]		ff_primary_slot_215m;
-	reg	[7:0]		ff_secondary_slot_215m;
 	reg				ff_m1_wait_active;
 	reg	[5:0]		ff_m1_wait_count;
 	reg				ff_m1_wait_done;
@@ -147,21 +146,59 @@ module msx_slot (
 	wire				w_write_active;
 	wire	[1:0]		w_page;
 	wire	[1:0]		w_selected_slot;
-	wire	[1:0]		w_selected_secondary_slot;
-	wire				w_rom0_sel;
-	wire	[4:0]		w_rom0_bank;
 	wire				w_cs1;
 	wire				w_cs2;
 	wire				w_cs12;
 	wire				w_rom0_ce;
 	wire				w_rom1_ce;
 	wire	[18:0]		w_slot_address;
+	wire				w_slot_valid;
+	wire				w_slot_ready;
+	wire	[18:0]		w_rom_address;
+	wire				w_rom_address_en;
+	wire				w_rom0_ce_n;
+	wire				w_rom1_ce_n;
 
-	assign w_accept			= bus_valid & ~ff_bus_busy;
+	// ---------------------------------------------------------
+	//	Address decoder
+	// ---------------------------------------------------------
+	msx_slot_decode u_decode (
+		.reset_n			( reset_n			),
+		.clk_42m			( clk_42m			),
+		.clk_215m			( clk_215m			),
+		.bus_address		( bus_address		),
+		.bus_io				( bus_io			),
+		.bus_write			( bus_write			),
+		.bus_valid			( bus_valid			),
+		.bus_ready			( bus_ready			),
+		.bus_wdata			( bus_wdata			),
+		.bus_rdata			( bus_rdata			),
+		.bus_rdata_en		( bus_rdata_en		),
+		.primary_slot		( primary_slot		),
+		.secondary_slot0	( secondary_slot0	),
+		.secondary_slot3	( secondary_slot3	),
+		.high_speed_mode	( high_speed_mode	),
+		.device_address		( device_address	),
+		.device_io			( device_io			),
+		.device_write		( device_write		),
+		.device_valid		( device_valid		),
+		.device_ready		( device_ready		),
+		.device_wdata		( device_wdata		),
+		.device_rdata		( device_rdata		),
+		.device_rdata_en	( device_rdata_en	),
+		.slot_valid			( w_slot_valid		),
+		.slot_ready			( w_slot_ready		),
+		.slot_rdata			( ff_bus_rdata		),
+		.slot_rdata_en		( ff_bus_rdata_en	),
+		.rom_address		( w_rom_address		),
+		.rom_address_en		( w_rom_address_en	),
+		.rom0_ce_n			( w_rom0_ce_n		),
+		.rom1_ce_n			( w_rom1_ce_n		)
+	);
+
+	assign w_accept			= w_slot_valid & ~ff_bus_busy;
 	assign w_done_event_42m	= ff_done_toggle_sync1 ^ ff_done_toggle_sync2;
-	assign bus_ready		= ~ff_bus_busy;
-	assign bus_rdata		= ff_bus_rdata;
-	assign bus_rdata_en		= ff_bus_rdata_en;
+	assign w_slot_ready		= ~ff_bus_busy;
 	assign int_n			= slot_int_n;
 
 	always @( posedge clk_42m ) begin
@@ -226,15 +263,13 @@ module msx_slot (
 		end
 	end
 
-	//	clk_42m ドメインの primary_slot / secondary_slot を clk_215m で受ける
+	//	clk_42m ドメインの primary_slot を clk_215m で受ける
 	always @( posedge clk_215m ) begin
 		if( !reset_n ) begin
 			ff_primary_slot_215m	<= 8'd0;
-			ff_secondary_slot_215m	<= 8'd0;
 		end
 		else begin
 			ff_primary_slot_215m	<= primary_slot;
-			ff_secondary_slot_215m	<= secondary_slot;
 		end
 	end
 
@@ -375,22 +410,11 @@ module msx_slot (
 	assign w_cs1			= w_read_active & w_real_access_memory & (w_page == 2'd1);
 	assign w_cs2			= w_read_active & w_real_access_memory & (w_page == 2'd2);
 	assign w_cs12			= w_cs1 | w_cs2;
-	//	SLOT#0(任意の拡張スロット) と SLOT#3-1/3-2 page1 は内部 FlashROM(ROM0) にマッピングされる
-	assign w_selected_secondary_slot	= (w_page == 2'd0) ? ff_secondary_slot_215m[1:0] :
-										  (w_page == 2'd1) ? ff_secondary_slot_215m[3:2] :
-										  (w_page == 2'd2) ? ff_secondary_slot_215m[5:4] :
-															  ff_secondary_slot_215m[7:6];
-	assign w_rom0_sel		= (w_selected_slot == 2'd0) ||
-							  ((w_selected_slot == 2'd3) & (w_selected_secondary_slot == 2'd1)) ||
-							  ((w_selected_slot == 2'd3) & (w_selected_secondary_slot == 2'd2) & (w_page == 2'd1));
-	//	SLOT#0-x は32KB(page0/1のみ)を bank 0-7 にマッピングする
-	assign w_rom0_bank		= (w_selected_slot == 2'd0) ? { 2'd0, w_selected_secondary_slot, w_page[0] } :
-							  ((w_selected_slot == 2'd3) & (w_selected_secondary_slot == 2'd1)) ? (5'd8 + { 3'd0, w_page }) :
-							  5'd12;	//	SLOT#3-2 page1 (DiskROM): バンク切替レジスタは未実装のため BANK#0 固定
-	assign w_rom0_ce		= w_select_active & w_real_access_memory & w_rom0_sel;
-	assign w_rom1_ce		= 1'b0;		//	漢字ROM(ROM1)は未対応
+	//	ROM の選択とアドレスは msx_slot_decode が生成する
+	assign w_rom0_ce		= w_select_active & ~ff_req_refresh_215m & ~w_rom0_ce_n;
+	assign w_rom1_ce		= w_select_active & ~ff_req_refresh_215m & ~w_rom1_ce_n;
 	assign w_slot_address	= ff_req_refresh_215m ? { 11'd0, ff_refresh_addr } :
-							  w_rom0_sel ? { w_rom0_bank, ff_req_address_215m[13:0] } : { 3'd0, ff_req_address_215m };
+							  w_rom_address_en ? w_rom_address : { 3'd0, ff_req_address_215m };
 
 	assign slot_m1_n		= (w_command_active & ff_req_m1_215m) ? 1'b0 : 1'b1;
 	assign slot_oe_n		= 1'b0;
