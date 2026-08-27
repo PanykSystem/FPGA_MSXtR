@@ -33,6 +33,8 @@
 #define SPI0_TX_PIN	  7
 #define SPI0_INTR_PIN 3
 #define SPI0_BAUDRATE (70 * 1000 * 1000)	// 70 MHz
+#define FPGA_INIT_COMMAND 0xFF
+#define FPGA_INIT_READY   0x64
 
 // ---------------------------------------------------------
 void fpga_access_begin( void ) {
@@ -46,6 +48,9 @@ void fpga_access_end( void ) {
 
 // ---------------------------------------------------------
 void fpga_io_init( void ) {
+	uint8_t cmd;
+	uint8_t data;
+
 	spi_init( SPI0_PORT, SPI0_BAUDRATE );
 	spi_set_format( SPI0_PORT, 8, SPI_CPOL_0, SPI_CPHA_0, SPI_MSB_FIRST );
 	gpio_set_function( SPI0_RX_PIN,	GPIO_FUNC_SPI );
@@ -58,6 +63,13 @@ void fpga_io_init( void ) {
 	// INTR は入力
 	gpio_init( SPI0_INTR_PIN );
 	gpio_set_dir( SPI0_INTR_PIN, GPIO_IN );
+
+	do {
+		cmd = FPGA_INIT_COMMAND;
+		gpio_put( SPI0_CSN_PIN, 0 );
+		spi_write_read_blocking( SPI0_PORT, &cmd, &data, 1 );
+		gpio_put( SPI0_CSN_PIN, 1 );
+	} while( data != FPGA_INIT_READY );
 }
 
 // ---------------------------------------------------------
@@ -87,6 +99,63 @@ uint8_t fpga_inport( uint8_t io_address ) {
 	cmd = 0x02;
 	spi_write_blocking( SPI0_PORT, &cmd, 1 );
 	cmd = io_address;
+	spi_write_blocking( SPI0_PORT, &cmd, 1 );
+
+	// INTR ピンが 1 になるまで待つ（50ms タイムアウト）
+	timeout_time = make_timeout_time_ms( 50 );
+	intr_ready = false;
+
+	while( !time_reached( timeout_time ) ) {
+		if( gpio_get( SPI0_INTR_PIN ) ) {
+			intr_ready = true;
+			break;
+		}
+	}
+
+	// タイムアウトした場合は CSn = 1, 0xAA を返す
+	if( !intr_ready ) {
+		gpio_put( SPI0_CSN_PIN, 1 );
+		return 0xAA;
+	}
+
+	dummy = 0x00;
+	spi_write_read_blocking( SPI0_PORT, &dummy, &data, 1 );
+
+	gpio_put( SPI0_CSN_PIN, 1 );
+	return data;
+}
+
+// ---------------------------------------------------------
+void fpga_poke( uint16_t io_address, uint8_t data ) {
+	uint8_t buf;
+
+	gpio_put( SPI0_CSN_PIN, 0 );
+	buf = 0x03;
+	spi_write_blocking( SPI0_PORT, &buf, 1 );
+	buf = (uint8_t)(io_address & 0x00FF);
+	spi_write_blocking( SPI0_PORT, &buf, 1 );
+	buf = (uint8_t)((io_address & 0xFF00) >> 8);
+	spi_write_blocking( SPI0_PORT, &buf, 1 );
+	buf = data;
+	spi_write_blocking( SPI0_PORT, &buf, 1 );
+	gpio_put( SPI0_CSN_PIN, 1 );
+}
+
+// ---------------------------------------------------------
+uint8_t fpga_peek( uint16_t io_address ) {
+	uint8_t cmd;
+	uint8_t dummy;
+	uint8_t data;
+	absolute_time_t timeout_time;
+	bool intr_ready;
+
+	gpio_put( SPI0_CSN_PIN, 0 );
+
+	cmd = 0x04;
+	spi_write_blocking( SPI0_PORT, &cmd, 1 );
+	cmd = (uint8_t)(io_address & 0x00FF);
+	spi_write_blocking( SPI0_PORT, &cmd, 1 );
+	cmd = (uint8_t)((io_address & 0xFF00) >> 8);
 	spi_write_blocking( SPI0_PORT, &cmd, 1 );
 
 	// INTR ピンが 1 になるまで待つ（50ms タイムアウト）

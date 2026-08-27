@@ -53,19 +53,20 @@ static char hex_to_char(uint8_t value) {
 }
 
 // ---------------------------------------------------------
-static void dump_vdp_config_rom(void) {
+static void dump_boot_rom(void) {
 	char s_line[16 * 3 + 1];
 	char *p_dest;
+	uint16_t address;
 	int i, j;
 	uint8_t rom_data;
 
-	printf( "Dump ConfigROM\r\n" );
-	fpga_config_rom_set_address_vdp( 0 );
+	printf( "Dump BootROM\r\n" );
 	for( i = 0; i < 16; i++ ) {
-		printf( "%02d: ", i );
+		address = (uint16_t)(i * 16);
+		printf( "%04X: ", address );
 		p_dest = s_line;
 		for( j = 0; j < 16; j++ ) {
-			rom_data = fpga_config_rom_read_vdp();
+			rom_data = fpga_peek( address + j );
 			*p_dest++ = hex_to_char( rom_data >> 4 );
 			*p_dest++ = hex_to_char( rom_data & 0x0F );
 			if( j != 15 ) {
@@ -316,10 +317,10 @@ int main(void) {
 	//vdp_set_screen1_message();
 	while (true) {
 		//	Menuボタンが押されたかどうかを確認する
-//		if( (prev_mat11 & 0x01) && !(keymatrix[11] & 0x01) ) {
-//			//	MENUキーが押されたタイミングなら、ConfigROM のダンプ処理を実行する
-//			dump_vdp_config_rom();
-//		}
+		if( (prev_mat11 & 0x01) && !(keymatrix[11] & 0x01) ) {
+			//	MENUキーが押されたタイミングなら、ConfigROM のダンプ処理を実行する
+			dump_boot_rom();
+		}
 //		if( (prev_mat00 & 0x02) && !(keymatrix[0] & 0x02) ) {
 //			//	1キーが押されたタイミングなら、VDP のステータスレジスタを表示する
 //			dump_vdp_status();
@@ -335,23 +336,23 @@ int main(void) {
 		prev_mat00 = keymatrix[0];
 		prev_mat11 = keymatrix[11];
 
-		for( i = 0; i < 12; i++ ) {
-			matrix = keymatrix[i];
-			p_src = s_keymatrix[i];
-			p_dest = s_keyline;
-			for( j = 0; j < 8; j++ ) {
-				if( (matrix & (0x80 >> j)) == 0 ) {
-					memcpy( p_dest, "[**]", 4 );
-				}
-				else {
-					memcpy( p_dest, p_src, 4 );
-				}
-				p_src += 4;
-				p_dest += 4;
-			}
-			//vdp_set_vram_address( 0x1800 + i * 32 + 64);
-			printf( "%s\r\n", (uint8_t*)s_keyline, 32 );
-		}
+//		for( i = 0; i < 12; i++ ) {
+//			matrix = keymatrix[i];
+//			p_src = s_keymatrix[i];
+//			p_dest = s_keyline;
+//			for( j = 0; j < 8; j++ ) {
+//				if( (matrix & (0x80 >> j)) == 0 ) {
+//					memcpy( p_dest, "[**]", 4 );
+//				}
+//				else {
+//					memcpy( p_dest, p_src, 4 );
+//				}
+//				p_src += 4;
+//				p_dest += 4;
+//			}
+//			//vdp_set_vram_address( 0x1800 + i * 32 + 64);
+//			printf( "%s\r\n", (uint8_t*)s_keyline, 32 );
+//		}
 
 		sleep_ms(10);
 	}

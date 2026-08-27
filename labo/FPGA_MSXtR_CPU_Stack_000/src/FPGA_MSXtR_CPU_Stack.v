@@ -35,8 +35,8 @@ module fpga_msxtr_cpu_stack (
 	output			sram_ce1_n,				//	L3
 	output			sram_ce2_n,				//	J1
 	output			sram_ce3_n,				//	J2
-	output			sram_sclk,				//	F1
-	inout	[3:0]	sram_sio				//	[3:0] D1,E1,C2,A1
+	output			sram_sclk,				//	F2
+	inout	[3:0]	sram_sio,				//	[3:0] D1,E1,A1,F1
 	//	slot
 	output			slot_m1_n,				//	B2
 	output			slot_oe_n,				//	C2
@@ -136,6 +136,15 @@ module fpga_msxtr_cpu_stack (
 	wire	[7:0]	w_bus_wdata;
 	wire	[15:0]	w_bus_address;
 
+	wire			w_bus_ctrl_io;
+	wire			w_bus_ctrl_write;
+	wire			w_bus_ctrl_valid;
+	wire			w_bus_ctrl_ready;
+	wire	[7:0]	w_bus_ctrl_wdata;
+	wire	[15:0]	w_bus_ctrl_address;
+	wire	[7:0]	w_bus_ctrl_rdata;
+	wire			w_bus_ctrl_rdata_en;
+
 	wire			w_bus_bootrom_cs;
 	wire	[7:0]	w_bus_bootrom_rdata;
 	wire			w_bus_bootrom_rdata_en;
@@ -180,8 +189,8 @@ module fpga_msxtr_cpu_stack (
 	// --------------------------------------------------------------------
     Gowin_PLL your_instance_name(
         .clkin			( clk_28m			),		//	28.63636MHz
-        .clkout0		( clk_215m			),		//	214.7727MHz
-        .clkout1		( clk_42m			),		//	42.95454MHz
+        .clkout0		( clk215m			),		//	214.7727MHz
+        .clkout1		( clk42m			),		//	42.95454MHz
         .mdclk			( clk_50m			) 		//	50.00000MHz
 	);
 
@@ -230,69 +239,69 @@ module fpga_msxtr_cpu_stack (
 
 	always @( posedge clk42m ) begin
 		if( !w_msx_reset_pre_n ) begin
-			ff_z80_pre_reset_n			<= 1'b0;
-			ff_r800_pre_reset_n			<= 1'b0;
-			ff_s2026_pre_reset_n		<= 1'b0;
-			ff_extio_pre_reset_n		<= 1'b0;
-			ff_config_rom_pre_reset_n	<= 1'b0;
-			ff_ext_rom_pre_reset_n		<= 1'b0;
+//			ff_z80_pre_reset_n			<= 1'b0;
+//			ff_r800_pre_reset_n			<= 1'b0;
+//			ff_s2026_pre_reset_n		<= 1'b0;
+//			ff_extio_pre_reset_n		<= 1'b0;
+//			ff_config_rom_pre_reset_n	<= 1'b0;
+//			ff_ext_rom_pre_reset_n		<= 1'b0;
 			ff_bootrom_pre_reset_n		<= 1'b0;
-			ff_uart_pre_reset_n			<= 1'b0;
+//			ff_uart_pre_reset_n			<= 1'b0;
 		end
 		else begin
-			ff_z80_pre_reset_n			<= 1'b1;
-			ff_r800_pre_reset_n			<= 1'b1;
-			ff_s2026_pre_reset_n		<= 1'b1;
-			ff_extio_pre_reset_n		<= 1'b1;
-			ff_config_rom_pre_reset_n	<= 1'b1;
-			ff_ext_rom_pre_reset_n		<= 1'b1;
+//			ff_z80_pre_reset_n			<= 1'b1;
+//			ff_r800_pre_reset_n			<= 1'b1;
+//			ff_s2026_pre_reset_n		<= 1'b1;
+//			ff_extio_pre_reset_n		<= 1'b1;
+//			ff_config_rom_pre_reset_n	<= 1'b1;
+//			ff_ext_rom_pre_reset_n		<= 1'b1;
 			ff_bootrom_pre_reset_n		<= 1'b1;
-			ff_uart_pre_reset_n			<= 1'b1;
+//			ff_uart_pre_reset_n			<= 1'b1;
 		end
 	end
 
 	always @( posedge clk42m ) begin
-		if( !ff_z80_pre_reset_n ) begin
-			ff_z80_reset_n <= 1'b0;
-		end
-		else begin
-			ff_z80_reset_n <= 1'b1;
-		end
-
-		if( !ff_r800_pre_reset_n ) begin
-			ff_r800_reset_n <= 1'b0;
-		end
-		else begin
-			ff_r800_reset_n <= 1'b1;
-		end
-
-		if( !ff_s2026_pre_reset_n ) begin
-			ff_s2026_reset_n <= 1'b0;
-		end
-		else begin
-			ff_s2026_reset_n <= 1'b1;
-		end
-
-		if( !ff_extio_pre_reset_n ) begin
-			ff_extio_reset_n <= 1'b0;
-		end
-		else begin
-			ff_extio_reset_n <= 1'b1;
-		end
-
-		if( !ff_config_rom_pre_reset_n ) begin
-			ff_config_rom_reset_n <= 1'b0;
-		end
-		else begin
-			ff_config_rom_reset_n <= 1'b1;
-		end
-
-		if( !ff_ext_rom_pre_reset_n ) begin
-			ff_ext_rom_reset_n <= 1'b0;
-		end
-		else begin
-			ff_ext_rom_reset_n <= 1'b1;
-		end
+//		if( !ff_z80_pre_reset_n ) begin
+//			ff_z80_reset_n <= 1'b0;
+//		end
+//		else begin
+//			ff_z80_reset_n <= 1'b1;
+//		end
+//
+//		if( !ff_r800_pre_reset_n ) begin
+//			ff_r800_reset_n <= 1'b0;
+//		end
+//		else begin
+//			ff_r800_reset_n <= 1'b1;
+//		end
+//
+//		if( !ff_s2026_pre_reset_n ) begin
+//			ff_s2026_reset_n <= 1'b0;
+//		end
+//		else begin
+//			ff_s2026_reset_n <= 1'b1;
+//		end
+//
+//		if( !ff_extio_pre_reset_n ) begin
+//			ff_extio_reset_n <= 1'b0;
+//		end
+//		else begin
+//			ff_extio_reset_n <= 1'b1;
+//		end
+//
+//		if( !ff_config_rom_pre_reset_n ) begin
+//			ff_config_rom_reset_n <= 1'b0;
+//		end
+//		else begin
+//			ff_config_rom_reset_n <= 1'b1;
+//		end
+//
+//		if( !ff_ext_rom_pre_reset_n ) begin
+//			ff_ext_rom_reset_n <= 1'b0;
+//		end
+//		else begin
+//			ff_ext_rom_reset_n <= 1'b1;
+//		end
 
 		if( !ff_bootrom_pre_reset_n ) begin
 			ff_bootrom_reset_n <= 1'b0;
@@ -301,226 +310,240 @@ module fpga_msxtr_cpu_stack (
 			ff_bootrom_reset_n <= 1'b1;
 		end
 
-		if( !ff_uart_pre_reset_n ) begin
-			ff_uart_reset_n <= 1'b0;
-		end
-		else begin
-			ff_uart_reset_n <= 1'b1;
-		end
+//		if( !ff_uart_pre_reset_n ) begin
+//			ff_uart_reset_n <= 1'b0;
+//		end
+//		else begin
+//			ff_uart_reset_n <= 1'b1;
+//		end
 	end
 
 	assign w_msx_reset_pre_n		= (ff_reset_cnt[4:2] != 3'b000  ) ? 1'b1: 1'b0;
 	assign w_msx_reset_n			= (ff_reset_cnt      == 5'b11111) ? 1'b1: 1'b0;
 
 	// --------------------------------------------------------------------
-	//	Button
+	//	Controller connection
 	// --------------------------------------------------------------------
-	always @( posedge clk27m ) begin
-		ff_button_d0 <= button;
-		ff_button_d1 <= ff_button_d0;
-	end
-
-	// --------------------------------------------------------------------
-	//	Z80 core
-	// --------------------------------------------------------------------
-
-	//	Legasy compatible CPU core
-	cz80_inst u_z80 (
-		.reset_n				( ff_z80_reset_n			),
-		.clk					( clk42m					),
-		.enable					( w_z80_active				),
-		.wait_p					( 1'b0						),
-		.int_p					( w_int_p					),
-		.nmi_n					( 1'b1						),
-		.busrq					( 1'b0						),
-		.m1						( w_z80_m1					),
-		.mreq					( w_z80_mreq				),
-		.iorq					( w_z80_iorq				),
-		.rd						( w_z80_rd					),
-		.wr						( w_z80_wr					),
-		.rfsh					( w_z80_rfsh				),
-		.halt_n					( 							),
-		.busak					( 							),
-		.a						( w_z80_a					),
-		.wdata					( w_z80_wdata				),
-		.rdata					( w_z80_rdata				)
-	);
-
-	//	Highspeed CPU core
-	cz80_inst u_r800 (
-		.reset_n				( ff_r800_reset_n			),
-		.clk					( clk42m					),
-		.enable					( w_r800_active				),
-		.wait_p					( 1'b0						),
-		.int_p					( w_int_p					),
-		.nmi_n					( 1'b1						),
-		.busrq					( 1'b0						),
-		.m1						( w_r800_m1					),
-		.mreq					( w_r800_mreq				),
-		.iorq					( w_r800_iorq				),
-		.rd						( w_r800_rd					),
-		.wr						( w_r800_wr					),
-		.rfsh					( w_r800_rfsh				),
-		.halt_n					( 							),
-		.busak					( 							),
-		.a						( w_r800_a					),
-		.wdata					( w_r800_wdata				),
-		.rdata					( w_r800_rdata				)
-	);
-
-	assign w_int_p			= 1'b0;
-
-	// --------------------------------------------------------------------
-	//	System Controller
-	// --------------------------------------------------------------------
-	s2026 u_s2026 (
-		.reset_n				( ff_s2026_reset_n			),
-		.clk					( clk42m					),
-		.enable_z80				( w_3_579m					),
-		.enable_r800			( w_21m						),
-		.z80_m1					( w_z80_m1					),
-		.z80_mreq				( w_z80_mreq				),
-		.z80_iorq				( w_z80_iorq				),
-		.z80_rd					( w_z80_rd					),
-		.z80_wr					( w_z80_wr					),
-		.z80_a					( w_z80_a					),
-		.z80_wdata				( w_z80_wdata				),
-		.z80_rdata				( w_z80_rdata				),
-		.r800_m1				( w_r800_m1					),
-		.r800_mreq				( w_r800_mreq				),
-		.r800_iorq				( w_r800_iorq				),
-		.r800_rd				( w_r800_rd					),
-		.r800_wr				( w_r800_wr					),
-		.r800_a					( w_r800_a					),
-		.r800_wdata				( w_r800_wdata				),
-		.r800_rdata				( w_r800_rdata				),
-		.bus_bootrom_cs			( w_bus_bootrom_cs			),
-		.bus_bootrom_rdata		( w_bus_bootrom_rdata		),
-		.bus_bootrom_rdata_en	( w_bus_bootrom_rdata_en	),
-		.bus_bootrom_ready		( w_bus_bootrom_ready		),
-		.bus_ppi_cs				( w_bus_ppi_cs				),
-		.bus_ppi_rdata			( w_bus_ppi_rdata			),
-		.bus_ppi_rdata_en		( w_bus_ppi_rdata_en		),
-		.bus_ppi_ready			( w_bus_ppi_ready			),
-		.bus_uart_cs			( w_bus_uart_cs				),
-		.bus_uart_rdata			( w_bus_uart_rdata			),
-		.bus_uart_rdata_en		( w_bus_uart_rdata_en		),
-		.bus_uart_ready			( w_bus_uart_ready			),
-		.bus_extio_cs			( w_bus_extio_cs			),
-		.bus_extio_rdata		( w_bus_extio_rdata			),
-		.bus_extio_rdata_en		( w_bus_extio_rdata_en		),
-		.bus_extio_ready		( w_bus_extio_ready			),
-		.bus_m1					( w_bus_m1					),
-		.bus_io					( w_bus_io					),
-		.bus_write				( w_bus_write				),
-		.bus_valid				( w_bus_valid				),
-		.bus_wdata				( w_bus_wdata				),
-		.bus_address			( w_bus_address				),
-		.z80_active				( w_z80_active				),
-		.r800_active			( w_r800_active				),
-		.processor_mode			( w_processor_mode			)		//	0: R800, 1: Z80
-	);
-
-	// --------------------------------------------------------------------
-	//	PPI
-	// --------------------------------------------------------------------
-	ppi u_ppi (
-		.clk					( clk42m					),
+	ip_spi u_controller_spi (
 		.reset_n				( w_msx_reset_n				),
-		.bus_cs					( w_bus_ppi_cs				),
-		.bus_address			( w_bus_address[1:0]		),
-		.bus_io					( w_bus_io					),
-		.bus_write				( w_bus_write				),
-		.bus_wdata				( w_bus_wdata				),
-		.bus_valid				( w_bus_valid				),
-		.bus_ready				( w_bus_ppi_ready			),
-		.bus_rdata				( w_bus_ppi_rdata			),
-		.bus_rdata_en			( w_bus_ppi_rdata_en		),
-		.primary_slot			( w_primary_slot			),
-		.keyboard_caps_led		( w_keyboard_caps_led		),
-		.one_bit_sound			( w_one_bit_sound			),
-		.keyboard_matrix_row	( w_keyboard_matrix_row		),
-		.keyboard_matrix		( w_keyboard_matrix			),
-		.keyboard_matrix_valid	( w_keyboard_matrix_valid	)
-	);
-
-	// --------------------------------------------------------------------
-	//	Extended I/O
-	// --------------------------------------------------------------------
-	extio_a u_extio (
-		.reset_n				( ff_extio_reset_n			),
-		.clk					( clk42m					),
-		.bus_cs					( w_bus_extio_cs			),
-		.bus_address			( w_bus_address[3:0]		),
-		.bus_write				( w_bus_write				),
-		.bus_valid				( w_bus_valid				),
-		.bus_ready				( w_bus_extio_ready			),
-		.bus_wdata				( w_bus_wdata				),
-		.bus_rdata				( w_bus_extio_rdata			),
-		.bus_rdata_en			( w_bus_extio_rdata_en		),
-		.bus_crom_cs			( w_bus_crom_cs				),
-		.bus_crom_rdata			( w_bus_crom_rdata			),
-		.bus_crom_rdata_en		( w_bus_crom_rdata_en		),
-		.bus_erom_cs			( w_bus_erom_cs				),
-		.bus_erom_rdata			( w_bus_erom_rdata			),
-		.bus_erom_rdata_en		( w_bus_erom_rdata_en		)
-	);
-
-	// --------------------------------------------------------------------
-	//	config SPI ROM
-	// --------------------------------------------------------------------
-	ip_spi_rom u_config_rom (
-		.reset					( ~ff_config_rom_reset_n	),
 		.clk					( clk42m					),
 		.clk_serial				( clk215m					),
-		.bus_cs					( w_bus_crom_cs				),
-		.bus_address			( w_bus_address[0]			),
-		.bus_write				( w_bus_write				),
-		.bus_valid				( w_bus_valid				),
-		.bus_ready				( w_bus_crom_ready			),
-		.bus_wdata				( w_bus_wdata				),
-		.bus_rdata				( w_bus_crom_rdata			),
-		.bus_rdata_en			( w_bus_crom_rdata_en		),
-		.srom0_cs_n				( 							),
-		.srom1_cs_n				( flash_spi_cs_n			),
-		.srom_clk				( flash_spi_clk				),
-		.srom_hold_n			( flash_spi_hold_n			),
-		.srom_wp_n				( flash_spi_wp_n			),
-		.srom_do				( flash_spi_do				),
-		.srom_di				( flash_spi_di				)
+		.bus_io					( w_bus_ctrl_io				),
+		.bus_write				( w_bus_ctrl_write			),
+		.bus_valid				( w_bus_ctrl_valid			),
+		.bus_ready				( w_bus_ctrl_ready			),
+		.bus_wdata				( w_bus_ctrl_wdata			),
+		.bus_address			( w_bus_ctrl_address		),
+		.bus_rdata				( w_bus_ctrl_rdata			),
+		.bus_rdata_en			( w_bus_ctrl_rdata_en		),
+		.spi_cs_n				( mcu_cs_n					),
+		.spi_clk				( mcu_sclk					),
+		.spi_mosi				( mcu_mosi					),
+		.spi_miso				( mcu_miso					),
+		.spi_intr				( mcu_intr					)
 	);
 
+//	// --------------------------------------------------------------------
+//	//	Z80 core
+//	// --------------------------------------------------------------------
+//
+//	//	Legasy compatible CPU core
+//	cz80_inst u_z80 (
+//		.reset_n				( ff_z80_reset_n			),
+//		.clk					( clk42m					),
+//		.enable					( w_z80_active				),
+//		.wait_p					( 1'b0						),
+//		.int_p					( w_int_p					),
+//		.nmi_n					( 1'b1						),
+//		.busrq					( 1'b0						),
+//		.m1						( w_z80_m1					),
+//		.mreq					( w_z80_mreq				),
+//		.iorq					( w_z80_iorq				),
+//		.rd						( w_z80_rd					),
+//		.wr						( w_z80_wr					),
+//		.rfsh					( w_z80_rfsh				),
+//		.halt_n					( 							),
+//		.busak					( 							),
+//		.a						( w_z80_a					),
+//		.wdata					( w_z80_wdata				),
+//		.rdata					( w_z80_rdata				)
+//	);
+//
+//	//	Highspeed CPU core
+//	cz80_inst u_r800 (
+//		.reset_n				( ff_r800_reset_n			),
+//		.clk					( clk42m					),
+//		.enable					( w_r800_active				),
+//		.wait_p					( 1'b0						),
+//		.int_p					( w_int_p					),
+//		.nmi_n					( 1'b1						),
+//		.busrq					( 1'b0						),
+//		.m1						( w_r800_m1					),
+//		.mreq					( w_r800_mreq				),
+//		.iorq					( w_r800_iorq				),
+//		.rd						( w_r800_rd					),
+//		.wr						( w_r800_wr					),
+//		.rfsh					( w_r800_rfsh				),
+//		.halt_n					( 							),
+//		.busak					( 							),
+//		.a						( w_r800_a					),
+//		.wdata					( w_r800_wdata				),
+//		.rdata					( w_r800_rdata				)
+//	);
+//
+//	assign w_int_p			= 1'b0;
+//
+//	// --------------------------------------------------------------------
+//	//	System Controller
+//	// --------------------------------------------------------------------
+//	s2026 u_s2026 (
+//		.reset_n				( ff_s2026_reset_n			),
+//		.clk					( clk42m					),
+//		.enable_z80				( w_3_579m					),
+//		.enable_r800			( w_21m						),
+//		.z80_m1					( w_z80_m1					),
+//		.z80_mreq				( w_z80_mreq				),
+//		.z80_iorq				( w_z80_iorq				),
+//		.z80_rd					( w_z80_rd					),
+//		.z80_wr					( w_z80_wr					),
+//		.z80_a					( w_z80_a					),
+//		.z80_wdata				( w_z80_wdata				),
+//		.z80_rdata				( w_z80_rdata				),
+//		.r800_m1				( w_r800_m1					),
+//		.r800_mreq				( w_r800_mreq				),
+//		.r800_iorq				( w_r800_iorq				),
+//		.r800_rd				( w_r800_rd					),
+//		.r800_wr				( w_r800_wr					),
+//		.r800_a					( w_r800_a					),
+//		.r800_wdata				( w_r800_wdata				),
+//		.r800_rdata				( w_r800_rdata				),
+//		.bus_bootrom_cs			( w_bus_bootrom_cs			),
+//		.bus_bootrom_rdata		( w_bus_bootrom_rdata		),
+//		.bus_bootrom_rdata_en	( w_bus_bootrom_rdata_en	),
+//		.bus_bootrom_ready		( w_bus_bootrom_ready		),
+//		.bus_ppi_cs				( w_bus_ppi_cs				),
+//		.bus_ppi_rdata			( w_bus_ppi_rdata			),
+//		.bus_ppi_rdata_en		( w_bus_ppi_rdata_en		),
+//		.bus_ppi_ready			( w_bus_ppi_ready			),
+//		.bus_uart_cs			( w_bus_uart_cs				),
+//		.bus_uart_rdata			( w_bus_uart_rdata			),
+//		.bus_uart_rdata_en		( w_bus_uart_rdata_en		),
+//		.bus_uart_ready			( w_bus_uart_ready			),
+//		.bus_extio_cs			( w_bus_extio_cs			),
+//		.bus_extio_rdata		( w_bus_extio_rdata			),
+//		.bus_extio_rdata_en		( w_bus_extio_rdata_en		),
+//		.bus_extio_ready		( w_bus_extio_ready			),
+//		.bus_m1					( w_bus_m1					),
+//		.bus_io					( w_bus_io					),
+//		.bus_write				( w_bus_write				),
+//		.bus_valid				( w_bus_valid				),
+//		.bus_wdata				( w_bus_wdata				),
+//		.bus_address			( w_bus_address				),
+//		.z80_active				( w_z80_active				),
+//		.r800_active			( w_r800_active				),
+//		.processor_mode			( w_processor_mode			)		//	0: R800, 1: Z80
+//	);
+//
+//	// --------------------------------------------------------------------
+//	//	PPI
+//	// --------------------------------------------------------------------
+//	ppi u_ppi (
+//		.clk					( clk42m					),
+//		.reset_n				( w_msx_reset_n				),
+//		.bus_cs					( w_bus_ppi_cs				),
+//		.bus_address			( w_bus_address[1:0]		),
+//		.bus_io					( w_bus_io					),
+//		.bus_write				( w_bus_write				),
+//		.bus_wdata				( w_bus_wdata				),
+//		.bus_valid				( w_bus_valid				),
+//		.bus_ready				( w_bus_ppi_ready			),
+//		.bus_rdata				( w_bus_ppi_rdata			),
+//		.bus_rdata_en			( w_bus_ppi_rdata_en		),
+//		.primary_slot			( w_primary_slot			),
+//		.keyboard_caps_led		( w_keyboard_caps_led		),
+//		.one_bit_sound			( w_one_bit_sound			),
+//		.keyboard_matrix_row	( w_keyboard_matrix_row		),
+//		.keyboard_matrix		( w_keyboard_matrix			),
+//		.keyboard_matrix_valid	( w_keyboard_matrix_valid	)
+//	);
+//
+//	// --------------------------------------------------------------------
+//	//	Extended I/O
+//	// --------------------------------------------------------------------
+//	extio_a u_extio (
+//		.reset_n				( ff_extio_reset_n			),
+//		.clk					( clk42m					),
+//		.bus_cs					( w_bus_extio_cs			),
+//		.bus_address			( w_bus_address[3:0]		),
+//		.bus_write				( w_bus_write				),
+//		.bus_valid				( w_bus_valid				),
+//		.bus_ready				( w_bus_extio_ready			),
+//		.bus_wdata				( w_bus_wdata				),
+//		.bus_rdata				( w_bus_extio_rdata			),
+//		.bus_rdata_en			( w_bus_extio_rdata_en		),
+//		.bus_crom_cs			( w_bus_crom_cs				),
+//		.bus_crom_rdata			( w_bus_crom_rdata			),
+//		.bus_crom_rdata_en		( w_bus_crom_rdata_en		),
+//		.bus_erom_cs			( w_bus_erom_cs				),
+//		.bus_erom_rdata			( w_bus_erom_rdata			),
+//		.bus_erom_rdata_en		( w_bus_erom_rdata_en		)
+//	);
+//
+//	// --------------------------------------------------------------------
+//	//	config SPI ROM
+//	// --------------------------------------------------------------------
+//	ip_spi_rom u_config_rom (
+//		.reset					( ~ff_config_rom_reset_n	),
+//		.clk					( clk42m					),
+//		.clk_serial				( clk215m					),
+//		.bus_cs					( w_bus_crom_cs				),
+//		.bus_address			( w_bus_address[0]			),
+//		.bus_write				( w_bus_write				),
+//		.bus_valid				( w_bus_valid				),
+//		.bus_ready				( w_bus_crom_ready			),
+//		.bus_wdata				( w_bus_wdata				),
+//		.bus_rdata				( w_bus_crom_rdata			),
+//		.bus_rdata_en			( w_bus_crom_rdata_en		),
+//		.srom0_cs_n				( 							),
+//		.srom1_cs_n				( flash_spi_cs_n			),
+//		.srom_clk				( flash_spi_clk				),
+//		.srom_hold_n			( flash_spi_hold_n			),
+//		.srom_wp_n				( flash_spi_wp_n			),
+//		.srom_do				( flash_spi_do				),
+//		.srom_di				( flash_spi_di				)
+//	);
+//
 	// --------------------------------------------------------------------
 	//	BOOT ROM
 	// --------------------------------------------------------------------
 	bootrom u_bootrom (
 		.reset_n				( ff_bootrom_reset_n		),
 		.clk					( clk42m					),
-		.bootrom_cs				( w_bus_bootrom_cs			),
-		.bus_write				( w_bus_write				),
-		.bus_valid				( w_bus_valid				),
-		.bus_wdata				( w_bus_wdata				),
-		.bus_address			( w_bus_address				),
-		.bus_rdata				( w_bus_bootrom_rdata		),
-		.bus_rdata_en			( w_bus_bootrom_rdata_en	),
-		.bus_ready				( w_bus_bootrom_ready		)
+		.bootrom_cs				( ~w_bus_ctrl_io			),
+		.bus_write				( w_bus_ctrl_write			),
+		.bus_valid				( w_bus_ctrl_valid			),
+		.bus_wdata				( w_bus_ctrl_wdata			),
+		.bus_address			( w_bus_ctrl_address		),
+		.bus_rdata				( w_bus_ctrl_rdata			),
+		.bus_rdata_en			( w_bus_ctrl_rdata_en		),
+		.bus_ready				( w_bus_ctrl_ready			)
 	);
 
-	// --------------------------------------------------------------------
-	//	UART
-	// --------------------------------------------------------------------
-	uart u_uart (
-		.reset_n				( ff_uart_reset_n			),
-		.clk					( clk42m					),
-		.clk_uart				( clk27m					),
-		.bus_uart_cs			( w_bus_uart_cs				),
-		.bus_valid				( w_bus_valid				),
-		.bus_write				( w_bus_write				),
-		.bus_ready				( w_bus_uart_ready			),
-		.bus_wdata				( w_bus_wdata				),
-		.bus_rdata				( w_bus_uart_rdata			),
-		.bus_rdata_en			( w_bus_uart_rdata_en		),
-		.uart_tx				( uart_tx					),
-		.button					( ff_button_d1				)
-	);
+//	// --------------------------------------------------------------------
+//	//	UART
+//	// --------------------------------------------------------------------
+//	uart u_uart (
+//		.reset_n				( ff_uart_reset_n			),
+//		.clk					( clk42m					),
+//		.clk_uart				( clk27m					),
+//		.bus_uart_cs			( w_bus_uart_cs				),
+//		.bus_valid				( w_bus_valid				),
+//		.bus_write				( w_bus_write				),
+//		.bus_ready				( w_bus_uart_ready			),
+//		.bus_wdata				( w_bus_wdata				),
+//		.bus_rdata				( w_bus_uart_rdata			),
+//		.bus_rdata_en			( w_bus_uart_rdata_en		),
+//		.uart_tx				( uart_tx					),
+//		.button					( ff_button_d1				)
+//	);
 endmodule

@@ -69,7 +69,6 @@ module bootrom (
 		.bus_address	(bus_address[11:0]	),
 		.bus_rdata		(w_rom_q			),
 		.bus_rdata_en	(w_rom_q_en			)
-	
 	);
 
 	//	2KB

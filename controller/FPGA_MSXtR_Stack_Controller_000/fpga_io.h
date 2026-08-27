@@ -42,5 +42,7 @@
 void fpga_io_init( void );
 void fpga_outport( uint8_t io_address, uint8_t data );
 uint8_t fpga_inport( uint8_t io_address );
+void fpga_poke( uint16_t io_address, uint8_t data );
+uint8_t fpga_peek( uint16_t io_address );
 
 #endif
