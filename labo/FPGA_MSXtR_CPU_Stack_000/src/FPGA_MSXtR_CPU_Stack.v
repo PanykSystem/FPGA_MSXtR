@@ -85,6 +85,7 @@ module fpga_msxtr_cpu_stack (
 
 	reg				ff_z80_pre_reset_n = 1'b0;				/* synthesis syn_preserve = 1 */
 	reg				ff_r800_pre_reset_n = 1'b0;				/* synthesis syn_preserve = 1 */
+	reg				ff_spi_pre_reset_n = 1'b0;				/* synthesis syn_preserve = 1 */
 	reg				ff_s2026_pre_reset_n = 1'b0;			/* synthesis syn_preserve = 1 */
 	reg				ff_extio_pre_reset_n = 1'b0;			/* synthesis syn_preserve = 1 */
 	reg				ff_config_rom_pre_reset_n = 1'b0;		/* synthesis syn_preserve = 1 */
@@ -93,6 +94,7 @@ module fpga_msxtr_cpu_stack (
 	reg				ff_uart_pre_reset_n = 1'b0;				/* synthesis syn_preserve = 1 */
 	reg				ff_z80_reset_n = 1'b0;					/* synthesis syn_preserve = 1 */
 	reg				ff_r800_reset_n = 1'b0;					/* synthesis syn_preserve = 1 */
+	reg				ff_spi_reset_n = 1'b0;					/* synthesis syn_preserve = 1 */
 	reg				ff_s2026_reset_n = 1'b0;				/* synthesis syn_preserve = 1 */
 	reg				ff_extio_reset_n = 1'b0;				/* synthesis syn_preserve = 1 */
 	reg				ff_config_rom_reset_n = 1'b0;			/* synthesis syn_preserve = 1 */
@@ -241,6 +243,7 @@ module fpga_msxtr_cpu_stack (
 		if( !w_msx_reset_pre_n ) begin
 //			ff_z80_pre_reset_n			<= 1'b0;
 //			ff_r800_pre_reset_n			<= 1'b0;
+			ff_spi_pre_reset_n			<= 1'b0;
 //			ff_s2026_pre_reset_n		<= 1'b0;
 //			ff_extio_pre_reset_n		<= 1'b0;
 //			ff_config_rom_pre_reset_n	<= 1'b0;
@@ -251,6 +254,7 @@ module fpga_msxtr_cpu_stack (
 		else begin
 //			ff_z80_pre_reset_n			<= 1'b1;
 //			ff_r800_pre_reset_n			<= 1'b1;
+			ff_spi_pre_reset_n			<= 1'b1;
 //			ff_s2026_pre_reset_n		<= 1'b1;
 //			ff_extio_pre_reset_n		<= 1'b1;
 //			ff_config_rom_pre_reset_n	<= 1'b1;
@@ -275,6 +279,13 @@ module fpga_msxtr_cpu_stack (
 //			ff_r800_reset_n <= 1'b1;
 //		end
 //
+		if( !ff_spi_pre_reset_n ) begin
+			ff_spi_reset_n <= 1'b0;
+		end
+		else begin
+			ff_spi_reset_n <= 1'b1;
+		end
+
 //		if( !ff_s2026_pre_reset_n ) begin
 //			ff_s2026_reset_n <= 1'b0;
 //		end
@@ -325,7 +336,7 @@ module fpga_msxtr_cpu_stack (
 	//	Controller connection
 	// --------------------------------------------------------------------
 	ip_spi u_controller_spi (
-		.reset_n				( w_msx_reset_n				),
+		.reset_n				( ff_spi_reset_n			),
 		.clk					( clk42m					),
 		.clk_serial				( clk215m					),
 		.bus_io					( w_bus_ctrl_io				),
