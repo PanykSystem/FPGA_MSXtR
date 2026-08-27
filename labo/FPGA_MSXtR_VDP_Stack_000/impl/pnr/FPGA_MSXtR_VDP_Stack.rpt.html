@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Aug 28 00:01:50 2026
+<td>Fri Aug 28 06:32:46 2026
 </td>
 </tr>
 <tr>
@@ -98,23 +98,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td class="label">Place & Route Process</td>
 <td>Running placement:
    Placement Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-   Placement Phase 1: CPU time = 0h 0m 0.366s, Elapsed time = 0h 0m 0.366s
-   Placement Phase 2: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
-   Placement Phase 3: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
-   Total Placement: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
+   Placement Phase 1: CPU time = 0h 0m 0.39s, Elapsed time = 0h 0m 0.391s
+   Placement Phase 2: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
+   Placement Phase 3: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
+   Total Placement: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0.006s, Elapsed time = 0h 0m 0.006s
-   Routing Phase 1: CPU time = 0h 0m 0.4s, Elapsed time = 0h 0m 0.4s
-   Routing Phase 2: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
+   Routing Phase 0: CPU time = 0h 0m 0.007s, Elapsed time = 0h 0m 0.007s
+   Routing Phase 1: CPU time = 0h 0m 0.41s, Elapsed time = 0h 0m 0.41s
+   Routing Phase 2: CPU time = 0h 0m 10s, Elapsed time = 0h 0m 10s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
+   Total Routing: CPU time = 0h 0m 10s, Elapsed time = 0h 0m 10s
 Generate output files:
    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s, Peak memory usage = 538MB</td>
+<td>CPU time = 0h 0m 24s, Elapsed time = 0h 0m 24s, Peak memory usage = 545MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>6950/20736</td>
+<td>6929/20736</td>
 <td>34%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>6854(6009 LUT, 845 ALU, 0 ROM16)</td>
+<td>6833(5988 LUT, 845 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>4149/15552</td>
+<td>4150/15552</td>
 <td>27%</td>
 </tr>
 <tr>
@@ -164,18 +164,18 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as FF</td>
-<td>71/363</td>
+<td>70/363</td>
 <td>20%</td>
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>5529/10368</td>
+<td>5498/10368</td>
 <td>54%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
-<td>39/66</td>
-<td>60%</td>
+<td>43/66</td>
+<td>66%</td>
 </tr>
 <tr>
 <td class="label">I/O Buf</td>
@@ -232,7 +232,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">bank 3</td>
-<td>6/17</td><td>36%</td>
+<td>10/17</td><td>59%</td>
 </tr>
 <tr>
 <td class="label">bank 4</td>
@@ -324,17 +324,17 @@ Generate output files:
 <td> -</td>
 </tr>
 <tr>
-<td class="label">u_v9958/n72_5</td>
+<td class="label">u_v9968/n72_5</td>
 <td>LW</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">u_v9958/w_h_count[0]</td>
+<td class="label">u_v9968/w_h_count[0]</td>
 <td>LW</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">u_v9958/u_command/ff_start</td>
+<td class="label">u_v9968/u_command/ff_start</td>
 <td>LW</td>
 <td> -</td>
 </tr>
@@ -714,7 +714,83 @@ Generate output files:
 <td>3.3</td>
 </tr>
 <tr>
-<td class="label">slot_wait</td>
+<td class="label">audio_en</td>
+<td>-</td>
+<td>51/3</td>
+<td>Y</td>
+<td>in</td>
+<td>IOR45[A]</td>
+<td>RPLL2_T_in</td>
+<td>LVTTL33</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">audio_bclk</td>
+<td>-</td>
+<td>56/3</td>
+<td>Y</td>
+<td>in</td>
+<td>IOR36[A]</td>
+<td>SO/D1</td>
+<td>LVTTL33</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">audio_lrclk</td>
+<td>-</td>
+<td>55/3</td>
+<td>Y</td>
+<td>in</td>
+<td>IOR36[B]</td>
+<td>SSPI_CS_N/D0</td>
+<td>LVTTL33</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">audio_sdata</td>
+<td>-</td>
+<td>54/3</td>
+<td>Y</td>
+<td>in</td>
+<td>IOR38[A]</td>
+<td>DIN/CLKHOLD_N</td>
+<td>LVTTL33</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">slot_wait_n</td>
 <td>-</td>
 <td>72/1</td>
 <td>Y</td>
@@ -723,7 +799,7 @@ Generate output files:
 <td>-</td>
 <td>LVTTL33</td>
 <td>8</td>
-<td>UP</td>
+<td>DOWN</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -733,7 +809,7 @@ Generate output files:
 <td>3.3</td>
 </tr>
 <tr>
-<td class="label">slot_intr</td>
+<td class="label">slot_int_n</td>
 <td>-</td>
 <td>71/1</td>
 <td>Y</td>
@@ -742,7 +818,7 @@ Generate output files:
 <td>-</td>
 <td>LVTTL33</td>
 <td>8</td>
-<td>DOWN</td>
+<td>UP</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -2401,13 +2477,13 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">72/1</td>
-<td>slot_wait</td>
+<td>slot_wait_n</td>
 <td>out</td>
 <td>IOT40[B]</td>
 <td>-</td>
 <td>LVTTL33</td>
 <td>8</td>
-<td>UP</td>
+<td>DOWN</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -2418,13 +2494,13 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">71/1</td>
-<td>slot_intr</td>
+<td>slot_int_n</td>
 <td>out</td>
 <td>IOT44[A]</td>
 <td>-</td>
 <td>LVTTL33</td>
 <td>8</td>
-<td>DOWN</td>
+<td>UP</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -4067,52 +4143,52 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">56/3</td>
-<td>-</td>
+<td>audio_bclk</td>
 <td>in</td>
 <td>IOR36[A]</td>
 <td>SO/D1</td>
-<td>LVCMOS33</td>
+<td>LVTTL33</td>
 <td>NA</td>
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
 <td class="label">55/3</td>
-<td>-</td>
+<td>audio_lrclk</td>
 <td>in</td>
 <td>IOR36[B]</td>
 <td>SSPI_CS_N/D0</td>
-<td>LVCMOS33</td>
+<td>LVTTL33</td>
 <td>NA</td>
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
 <td class="label">54/3</td>
-<td>-</td>
+<td>audio_sdata</td>
 <td>in</td>
 <td>IOR38[A]</td>
 <td>DIN/CLKHOLD_N</td>
-<td>LVCMOS33</td>
+<td>LVTTL33</td>
 <td>NA</td>
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>
@@ -4186,18 +4262,18 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">51/3</td>
-<td>-</td>
+<td>audio_en</td>
 <td>in</td>
 <td>IOR45[A]</td>
 <td>RPLL2_T_in</td>
-<td>LVCMOS33</td>
+<td>LVTTL33</td>
 <td>NA</td>
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>

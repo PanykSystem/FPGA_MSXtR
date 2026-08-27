@@ -28,8 +28,8 @@ module FPGA_MSXtR_VDP_Stack (
 	input			slot_iorq_n,	//	PIN18
 	input			slot_rd_n,		//	PIN15
 	input			slot_wr_n,		//	PIN16
-	output			slot_wait,		//	PIN72
-	output			slot_intr,		//	PIN71
+	output			slot_wait_n,	//	PIN72
+	output			slot_int_n,		//	PIN71
 	output			slot_data_dir,	//	PIN19
 	input	[7:0]	slot_a,			//	PIN17, 49, 48, 41, 42, 76, 31, 30
 	inout	[7:0]	slot_d,			//	PIN73, 74, 75, 85, 77, 27, 28, 29
@@ -37,7 +37,11 @@ module FPGA_MSXtR_VDP_Stack (
 	input	[1:0]	dipsw,			//	PIN52, 53
 	output			ws2812_led,		//	PIN79
 	input	[1:0]	button,			//	PIN87, 88	KEY2, KEY1
-
+	//	Audio input
+	input			audio_en,		//	PIN51
+	input			audio_bclk,		//	PIN56
+	input			audio_lrclk,	//	PIN55
+	input			audio_sdata,	//	PIN54
 	//	HDMI
 	output			tmds_clk_p,		//	(PIN33/34)
 	output			tmds_clk_n,		//	dummy
@@ -179,7 +183,7 @@ module FPGA_MSXtR_VDP_Stack (
 		.p_slot_rd_n		( slot_rd_n					),
 		.p_slot_address		( slot_a					),
 		.p_slot_data		( slot_d					),
-		.p_slot_int			( slot_intr					),
+		.p_slot_int_n		( slot_int_n				),
 		.p_slot_data_dir	( slot_data_dir				),
 		.int_n				( w_int_n					),
 		.bus_address		( w_bus_address				),
@@ -198,9 +202,9 @@ module FPGA_MSXtR_VDP_Stack (
 	assign w_bus_ready		= w_bus_vdp_ready;
 
 	// --------------------------------------------------------------------
-	//	V9958 clone
+	//	V9968 core
 	// --------------------------------------------------------------------
-	vdp u_v9958 (
+	vdp u_v9968 (
 		.reset_n			( reset_n3					),
 		.clk				( clk85m					),
 		.initial_busy		( w_sdram_init_busy			),
@@ -291,7 +295,7 @@ module FPGA_MSXtR_VDP_Stack (
 	);
 
 	// --------------------------------------------------------------------
-	//	Debug�p LED
+	//	Debug LED
 	// --------------------------------------------------------------------
 	ip_ws2812_led u_led (
 		.reset_n			( reset_n					),
