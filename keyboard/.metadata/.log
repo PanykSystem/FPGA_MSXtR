@@ -1070,3 +1070,39 @@ COM17
 
 !ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-17 10:51:50.217
 !MESSAGE port: 
+!SESSION 2026-08-29 07:32:55.135 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\MSXtR_Portable_Keyboard\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-08-29 07:33:09.323
+!MESSAGE Log4j2 initialized with config file C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\keyboard\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-08-29 07:33:19.930
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-08-29 07:33:22.646
+!MESSAGE Indexed 'MSXtR_Portable_Keyboard' (21 sources, 86 headers) in 2.27 sec: 5,341 declarations; 30,996 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-08-29 07:33:34.224
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM5
+COM3
+COM12
+COM13
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-08-29 07:33:34.224
+!MESSAGE port: COM5
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-08-29 07:33:34.224
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-08-29 07:33:34.224
+!MESSAGE port: COM12
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-08-29 07:33:34.224
+!MESSAGE port: COM13

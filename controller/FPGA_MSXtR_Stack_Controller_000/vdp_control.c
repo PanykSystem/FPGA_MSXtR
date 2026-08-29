@@ -169,7 +169,6 @@ void vdp_write_register(uint8_t reg, uint8_t data) {
 
 	// 1回目: アドレス 0x99 にデータを送る
 	fpga_outport( 0x99, data );
-	sleep_us(10);
 	// 2回目: アドレス 0x99 にレジスタ番号 | 0x80 を送る
 	fpga_outport( 0x99, reg | 0x80 );
 }
@@ -189,7 +188,6 @@ void vdp_set_vram_address(uint16_t addr) {
 	uint8_t buf;
 
 	fpga_outport( 0x99, addr & 0xFF );	//	アドレス下位 8bit
-	sleep_us(10);
 	fpga_outport( 0x99, 0x40 + ((addr >> 8) & 0x3F) );	//	アドレス上位 8bit
 }
 
@@ -200,7 +198,6 @@ void vdp_write_vram(uint8_t* data, uint16_t size) {
 
 	for (int i = 0; i < size; i++) {
 		fpga_outport( 0x98, data[i] );
-		sleep_us(10);
 	}
 }
 
@@ -212,7 +209,6 @@ void vdp_fill_vram(uint16_t addr, uint8_t value, uint16_t size) {
 	vdp_set_vram_address(addr);
 	for (int i = 0; i < size; i++) {
 		fpga_outport( 0x98, value );
-		sleep_us(10);
 	}
 }
 

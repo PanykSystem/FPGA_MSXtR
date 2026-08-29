@@ -9,7 +9,6 @@ Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\lab
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\ram\ip_ram.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\sdram\ip_sdram_tangnano20k_c.v'
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\FPGA_MSXtR_VDP_Stack.v'
-Undeclared symbol 'slot_wait', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\FPGA_MSXtR_VDP_Stack.v":127)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\v9968\vdp.v'
 Undeclared symbol 'w_vram_interleave', assumed default net type 'wire'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\v9968\vdp.v":343)
 Analyzing Verilog file 'C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\v9968\vdp_color_palette.v'
@@ -73,7 +72,6 @@ WARN  (EX3791) : Expression size 32 truncated to fit in target size 15("C:\Users
 Compiling module 'ip_ws2812_led'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\ws2812_led\ip_ws2812_led.v":57)
 Compiling module 'ip_debugger'("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\debugger\ip_debugger.v":57)
 NOTE  (EX0101) : Current top module is "FPGA_MSXtR_VDP_Stack"
-WARN  (EX0211) : The output port "slot_wait_n" of module "FPGA_MSXtR_VDP_Stack" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\FPGA_MSXtR_VDP_Stack.v":31)
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input clk is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\FPGA_MSXtR_VDP_Stack.v":25)
 WARN  (CV0018) : Input button[1] is unused("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_VDP_Stack_000\src\FPGA_MSXtR_VDP_Stack.v":39)

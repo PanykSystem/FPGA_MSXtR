@@ -104,8 +104,7 @@ module msx_slot (
 	reg				ff_done_toggle_sync0;
 	reg				ff_done_toggle_sync1;
 	reg				ff_done_toggle_sync2;
-	reg	[7:0]		ff_bus_rdata;
-	reg				ff_bus_rdata_en;
+	reg				ff_read_captured;
 
 	reg				ff_req_toggle_sync0;
 	reg				ff_req_toggle_sync1;
@@ -123,6 +122,8 @@ module msx_slot (
 	reg				ff_slot_clock;
 	reg	[7:0]		ff_slot_rdata;
 	reg				ff_slot_read_done;
+	reg	[7:0]		ff_device_rdata;
+	reg				ff_device_rdata_pending;
 	reg	[7:0]		ff_primary_slot_215m;
 	reg				ff_m1_wait_active;
 	reg	[5:0]		ff_m1_wait_count;
@@ -158,6 +159,9 @@ module msx_slot (
 	wire				w_rom_address_en;
 	wire				w_rom0_ce_n;
 	wire				w_rom1_ce_n;
+	wire				w_device_rdata_ready;
+	wire				w_take_device_rdata;
+	wire				w_take_slot_rdata;
 
 	// ---------------------------------------------------------
 	//	Address decoder
@@ -172,8 +176,6 @@ module msx_slot (
 		.bus_valid			( bus_valid			),
 		.bus_ready			( bus_ready			),
 		.bus_wdata			( bus_wdata			),
-		.bus_rdata			( bus_rdata			),
-		.bus_rdata_en		( bus_rdata_en		),
 		.primary_slot		( primary_slot		),
 		.secondary_slot0	( secondary_slot0	),
 		.secondary_slot3	( secondary_slot3	),
@@ -188,14 +190,20 @@ module msx_slot (
 		.device_rdata_en	( device_rdata_en	),
 		.slot_valid			( w_slot_valid		),
 		.slot_ready			( w_slot_ready		),
-		.slot_rdata			( ff_bus_rdata		),
-		.slot_rdata_en		( ff_bus_rdata_en	),
 		.rom_address		( w_rom_address		),
 		.rom_address_en		( w_rom_address_en	),
 		.rom0_ce_n			( w_rom0_ce_n		),
 		.rom1_ce_n			( w_rom1_ce_n		)
 	);
 
+	assign bus_rdata		= w_take_device_rdata ? (device_rdata_en ? device_rdata : ff_device_rdata) : ff_slot_rdata;
+	assign bus_rdata_en		= w_take_device_rdata | w_take_slot_rdata;
+	//	device_rdata_en と slot 自体のリードラッチ(ff_slot_read_done)を毎クロック監視し、
+	//	先に成立した方を 1回だけ取り込む(同時なら device_rdata_en 優先)。
+	//	device の答えは同クロックでそのまま返し、早く来た場合はラッチして後続クロックで返す。
+	assign w_device_rdata_ready	= device_rdata_en | ff_device_rdata_pending;
+	assign w_take_device_rdata	= ff_bus_busy & ~ff_req_write & ~ff_read_captured & w_device_rdata_ready;
+	assign w_take_slot_rdata	= ff_bus_busy & ~ff_req_write & ~ff_read_captured & ~w_device_rdata_ready & ff_slot_read_done;
 	assign w_accept			= w_slot_valid & ~ff_bus_busy;
 	assign w_done_event_42m	= ff_done_toggle_sync1 ^ ff_done_toggle_sync2;
 	assign w_slot_ready		= ~ff_bus_busy;
@@ -230,18 +238,39 @@ module msx_slot (
 			ff_done_toggle_sync0	<= 1'b0;
 			ff_done_toggle_sync1	<= 1'b0;
 			ff_done_toggle_sync2	<= 1'b0;
-			ff_bus_rdata			<= 8'd0;
-			ff_bus_rdata_en			<= 1'b0;
+			ff_read_captured		<= 1'b0;
 		end
 		else begin
 			ff_done_toggle_sync0	<= ff_done_toggle;
 			ff_done_toggle_sync1	<= ff_done_toggle_sync0;
 			ff_done_toggle_sync2	<= ff_done_toggle_sync1;
-			ff_bus_rdata_en			<= 1'b0;
-			if( w_done_event_42m && !ff_req_write ) begin
-				ff_bus_rdata		<= ff_slot_rdata;
-				ff_bus_rdata_en		<= 1'b1;
+			if( w_accept ) begin
+				ff_read_captured	<= 1'b0;
 			end
+			else if( w_take_device_rdata | w_take_slot_rdata ) begin
+				ff_read_captured	<= 1'b1;
+			end
+		end
+	end
+
+	always @( posedge clk_42m ) begin
+		if( !reset_n ) begin
+			ff_device_rdata			<= 8'd0;
+			ff_device_rdata_pending	<= 1'b0;
+		end
+		else if( w_accept ) begin
+			ff_device_rdata			<= device_rdata;
+			ff_device_rdata_pending	<= device_rdata_en & ~bus_write;
+		end
+		else if( w_take_device_rdata ) begin
+			ff_device_rdata_pending	<= 1'b0;
+		end
+		else if( device_rdata_en & ff_bus_busy & ~ff_req_write & ~ff_read_captured ) begin
+			ff_device_rdata			<= device_rdata;
+			ff_device_rdata_pending	<= 1'b1;
+		end
+		else if( !ff_bus_busy ) begin
+			ff_device_rdata_pending	<= 1'b0;
 		end
 	end
 

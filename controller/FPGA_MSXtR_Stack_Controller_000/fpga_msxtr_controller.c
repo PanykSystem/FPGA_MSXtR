@@ -4,7 +4,7 @@
 #include "pico/multicore.h"
 #include "hardware/i2c.h"
 #include "ff.h"
-#include "hw_config.h"
+#include "sdcard.h"
 #include "keyboard.h"
 #include "vdp_control.h"
 #include "fpga_config.h"
@@ -17,8 +17,8 @@
 #define I2C_BAUDRATE (400 * 1000)  // 400 kHz (Fast mode)
 #define I2C_ADDR	 0x08
 
-// SPI1 (SDカード) -- ピン設定は hw_config.c で管理
-// RX=8, CSN=9, SCK=10, TX=11, BAUDRATE=12.5MHz (no-OS-FatFS ライブラリが初期化)
+// SPI1 (SDカード) -- ピン設定・初期化は sdcard.c で管理
+// RX=8, CSN=9, SCK=10, TX=11, BAUDRATE=12.5MHz
 
 static uint8_t keymatrix[KEYBOARD_KEY_MATRIX_SIZE];
 
@@ -98,6 +98,34 @@ static void detect_config_rom_controller( void ) {
 	else {
 		printf( "ConfigROM Controller: NOT FOUND (0x%02X)\r\n", controller );
 	}
+}
+
+// ---------------------------------------------------------
+static void test_ppi_port_a_readback( void ) {
+	uint8_t original_data;
+	uint8_t write_data;
+	uint8_t read_data;
+	int fail_count;
+
+	fail_count = 0;
+	original_data = fpga_inport( 0xA8 );
+	printf( "PPI Port A readback test start (original=0x%02X)\r\n", original_data );
+
+	for( int i = 0; i < 256; i++ ) {
+		write_data = (uint8_t)i;
+		fpga_outport( 0xA8, write_data );
+		read_data = fpga_inport( 0xA8 );
+		if( read_data == write_data ) {
+			printf( "A8 test OK: write=0x%02X read=0x%02X\r\n", write_data, read_data );
+		}
+		else {
+			printf( "A8 test NG: write=0x%02X read=0x%02X\r\n", write_data, read_data );
+			fail_count++;
+		}
+	}
+
+	fpga_outport( 0xA8, original_data );
+	printf( "PPI Port A readback test end: fail=%d\r\n", fail_count );
 }
 
 // ---------------------------------------------------------
@@ -278,7 +306,7 @@ static void dir_sd_root(void) {
 // Core 1: I2C通信（キーボード）+ printf
 static void core1_entry(void) {
 	keyboard_init(I2C_PORT, I2C_ADDR);
-	sd_init_driver();  // SPI1 + SDカードドライバ初期化
+	sdcard_init_and_mount();  // SPI1 + SDカードドライバ初期化
 
 	uint8_t led_state  = 0;
 
@@ -289,6 +317,16 @@ static void core1_entry(void) {
 		led_state++;
 		sleep_ms(10);
 	}
+}
+
+// ---------------------------------------------------------
+static void sdcard_access( void ) {
+
+	if( !sdcard_init_and_mount() ) {
+		printf("Failed: mount the SD card.\n");
+		return;
+	}
+	dir_sd_root();
 }
 
 // ---------------------------------------------------------
@@ -309,7 +347,7 @@ int main(void) {
 	multicore_launch_core1(core1_entry);
 
 	// FPGAが起動するまでは取りこぼすのでしばらく待つ
-	sleep_ms(5000);
+	sleep_ms(6000);
 
 	//	VDPに対して初期化処理を行う
 	//vdp_set_screen1();
@@ -321,14 +359,14 @@ int main(void) {
 			//	MENUキーが押されたタイミングなら、ConfigROM のダンプ処理を実行する
 			dump_boot_rom();
 		}
-//		if( (prev_mat00 & 0x02) && !(keymatrix[0] & 0x02) ) {
-//			//	1キーが押されたタイミングなら、VDP のステータスレジスタを表示する
-//			dump_vdp_status();
-//		}
-//		if( (prev_mat00 & 0x04) && !(keymatrix[0] & 0x04) ) {
-//			//	2キーが押されたタイミングなら、ConfigROM コントローラを検出する
-//			detect_config_rom_controller();
-//		}
+		if( (prev_mat00 & 0x02) && !(keymatrix[0] & 0x02) ) {
+			//	1キーが押されたタイミングなら、VDP のステータスレジスタを表示する
+			sdcard_access();
+		}
+		if( (prev_mat00 & 0x04) && !(keymatrix[0] & 0x04) ) {
+			//	2キーが押されたタイミングなら、PPI Port A の書き戻しテストを実行する
+			test_ppi_port_a_readback();
+		}
 //		if( (prev_mat00 & 0x08) && !(keymatrix[0] & 0x08) ) {
 //			//	3キーが押されたタイミングなら、ConfigROM にダミーデータを書き込む
 //			write_and_verify_dummy_data();
@@ -336,24 +374,23 @@ int main(void) {
 		prev_mat00 = keymatrix[0];
 		prev_mat11 = keymatrix[11];
 
-//		for( i = 0; i < 12; i++ ) {
-//			matrix = keymatrix[i];
-//			p_src = s_keymatrix[i];
-//			p_dest = s_keyline;
-//			for( j = 0; j < 8; j++ ) {
-//				if( (matrix & (0x80 >> j)) == 0 ) {
-//					memcpy( p_dest, "[**]", 4 );
-//				}
-//				else {
-//					memcpy( p_dest, p_src, 4 );
-//				}
-//				p_src += 4;
-//				p_dest += 4;
-//			}
-//			//vdp_set_vram_address( 0x1800 + i * 32 + 64);
-//			printf( "%s\r\n", (uint8_t*)s_keyline, 32 );
-//		}
-
+		for( i = 0; i < 12; i++ ) {
+			matrix = keymatrix[i];
+			p_src = s_keymatrix[i];
+			p_dest = s_keyline;
+			for( j = 0; j < 8; j++ ) {
+				if( (matrix & (0x80 >> j)) == 0 ) {
+					memcpy( p_dest, "[**]", 4 );
+				}
+				else {
+					memcpy( p_dest, p_src, 4 );
+				}
+				p_src += 4;
+				p_dest += 4;
+			}
+			vdp_set_vram_address( 0x1800 + i * 32 + 64 );
+			vdp_write_vram( s_keyline, 32 );
+		}
 		sleep_ms(10);
 	}
 	return 0;

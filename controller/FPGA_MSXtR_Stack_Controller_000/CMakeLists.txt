@@ -10,33 +10,6 @@ project(fpga_msxtr_controller)
 pico_sdk_init()
 
 # ----------------------------------------------------------------
-# FatFS / SDカードライブラリ (no-OS-FatFS-SD-SPI-RPi-Pico)
-# デフォルトブランチは master、最新リリースタグ v1.0.8 を使用
-# ディレクトリ構造: <repo>/FatFs_SPI/CMakeLists.txt
-include(FetchContent)
-FetchContent_Declare(
-    no_os_fatfs
-    GIT_REPOSITORY https://github.com/carlk3/no-OS-FatFS-SD-SPI-RPi-Pico.git
-    GIT_TAG        v1.0.8
-    GIT_SHALLOW    TRUE
-    SOURCE_SUBDIR  FatFs_SPI
-)
-FetchContent_MakeAvailable(no_os_fatfs)
-
-# rp2350 (Pico2/Pico2W) には hardware RTC がないため対処する。
-# (1) rtc.c をスタブに置き換え
-# (2) FatFs_SPI の INTERFACE_LINK_LIBRARIES から hardware_rtc を削除
-FetchContent_GetProperties(no_os_fatfs)
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/rtc_stub.c
-    ${no_os_fatfs_SOURCE_DIR}/FatFs_SPI/src/rtc.c
-    COPYONLY
-)
-get_target_property(_fatfs_libs FatFs_SPI INTERFACE_LINK_LIBRARIES)
-list(REMOVE_ITEM _fatfs_libs "hardware_rtc")
-set_target_properties(FatFs_SPI PROPERTIES INTERFACE_LINK_LIBRARIES "${_fatfs_libs}")
-
-# ----------------------------------------------------------------
 # Additional sections specific to the fpga_msxtr_controller
 add_executable(fpga_msxtr_controller
     fpga_msxtr_controller.c
@@ -45,7 +18,13 @@ add_executable(fpga_msxtr_controller
     fpga_uart.c
     fpga_config.c
     keyboard.c
-    hw_config.c
+    sdcard.c
+    ${PICO_SDK_PATH}/lib/tinyusb/lib/fatfs/source/ff.c
+    ${PICO_SDK_PATH}/lib/tinyusb/lib/fatfs/source/ffunicode.c
+)
+
+target_include_directories(fpga_msxtr_controller PRIVATE
+    ${PICO_SDK_PATH}/lib/tinyusb/lib/fatfs/source
 )
 
 # Add pico_stdlib library which aggregates commonly used features
@@ -54,7 +33,6 @@ target_link_libraries(fpga_msxtr_controller
     hardware_i2c
     hardware_spi
     pico_multicore
-    FatFs_SPI
 )
 
 # enable usb output, disable uart output

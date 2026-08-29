@@ -1,7 +1,7 @@
-//
-// bootrom.v
-//   BOOT ROM
-//   Revision 1.00
+// -----------------------------------------------------------------------------
+// address_decode.v
+// device_* bus address decoder (chip select generation)
+// Revision 1.00
 //
 // Copyright (c) 2026 Takayuki Hara.
 // All rights reserved.
@@ -31,77 +31,15 @@
 //
 // ----------------------------------------------------------------------------
 
-module ip_ram (
-	output	[7:0]	dout,
-	input			clk,
-	input			oce,
-	input			ce,
-	input			reset,
-	input			wre, 
-	input	[10:0]	ad,
-	input	[7:0]	din
+module address_decode (
+	input	[15:0]	device_address,		//	Z80 address
+	input			device_io,			//	1: I/O access, 0: Memory access
+	//	chip select outputs
+	output			bootrom_cs,
+	output			ppi_cs
 );
-	wire	[23:0]	unused_dout;
-	wire			gw_gnd;
-
-	assign gw_gnd = 1'b0;
-
-	SP u_ram (
-		.DO		({ unused_dout, dout }),
-		.CLK	(clk),
-		.OCE	(oce),
-		.CE		(ce),
-		.RESET	(reset),
-		.WRE	(wre),
-		.BLKSEL	({ gw_gnd, gw_gnd, gw_gnd }),
-		.AD		({ ad, gw_gnd, gw_gnd, gw_gnd }),
-		.DI		({ 24'd0, din })
-	);
-
-	defparam u_ram.READ_MODE = 1'b1;
-	defparam u_ram.WRITE_MODE = 2'b00;
-	defparam u_ram.BIT_WIDTH = 8;
-	defparam u_ram.BLK_SEL = 3'b000;
-	defparam u_ram.RESET_MODE = "SYNC";
+	//	Memory access -> BOOT ROM (temporary: whole memory space)
+	assign bootrom_cs	= ~device_io;
+	//	I/O A8h-ABh -> i8255 PPI (primary_slot / keyboard / cassette / command)
+	assign ppi_cs		= device_io & ( device_address[7:2] == 6'b101010 );
 endmodule
-
-// synthesis translate_off
-// synopsys translate_off
-module SP (
-	output	[31:0]	DO,
-	input			CLK,
-	input			OCE,
-	input			CE,
-	input			RESET,
-	input			WRE,
-	input	[2:0]	BLKSEL,
-	input	[13:0]	AD,
-	input	[31:0]	DI
-);
-	//	Gowin SP primitive parameters, declared so the top-level defparam
-	//	statements resolve during simulation with this behavioral model.
-	parameter		READ_MODE	= 1'b0;
-	parameter		WRITE_MODE	= 2'b00;
-	parameter		BIT_WIDTH	= 32;
-	parameter		BLK_SEL		= 3'b000;
-	parameter		RESET_MODE	= "SYNC";
-
-	reg		[7:0]	sim_ram[0:2047];
-	reg		[7:0]	sim_dout;
-
-	always @( posedge CLK ) begin
-		if( RESET ) begin
-			sim_dout <= 8'd0;
-		end
-		else if( CE && WRE ) begin
-			sim_ram[ AD[13:3] ] <= DI[7:0];
-		end
-		else if( CE && OCE ) begin
-			sim_dout <= sim_ram[ AD[13:3] ];
-		end
-	end
-
-	assign DO = { 24'd0, sim_dout };
-endmodule
-// synopsys translate_on
-// synthesis translate_on

@@ -14,7 +14,8 @@ module tb;
 	wire	[7:0]	bus_rdata;
 	wire			bus_rdata_en;
 	reg	[7:0]	primary_slot;
-	reg	[7:0]	secondary_slot;
+	reg	[7:0]	secondary_slot0;
+	reg	[7:0]	secondary_slot3;
 	reg			high_speed_mode;
 	wire			int_n;
 	wire			slot_m1_n;
@@ -41,6 +42,14 @@ module tb;
 	wire			slot_iorq_n;
 	wire			slot_merq_n;
 	wire	[7:0]	slot_d;
+	wire	[15:0]	device_address;
+	wire			device_io;
+	wire			device_write;
+	wire			device_valid;
+	reg			device_ready;
+	wire	[7:0]	device_wdata;
+	reg	[7:0]	device_rdata;
+	reg			device_rdata_en;
 	reg			slot_d_drive;
 	reg	[7:0]	slot_d_rdata;
 	reg	[18:0]	frozen_a;
@@ -57,6 +66,7 @@ module tb;
 	real		m1_time_start;
 	real		m1_time_normal;
 	real		m1_time_highspeed;
+	reg			read_timeout;
 
 	assign slot_d = slot_d_drive ? slot_d_rdata : 8'hzz;
 
@@ -74,7 +84,8 @@ module tb;
 		.bus_rdata				( bus_rdata			),
 		.bus_rdata_en			( bus_rdata_en		),
 		.primary_slot			( primary_slot		),
-		.secondary_slot			( secondary_slot	),
+		.secondary_slot0		( secondary_slot0	),
+		.secondary_slot3		( secondary_slot3	),
 		.high_speed_mode		( high_speed_mode	),
 		.int_n					( int_n				),
 		.slot_m1_n				( slot_m1_n			),
@@ -100,7 +111,15 @@ module tb;
 		.slot_rfsh_n			( slot_rfsh_n		),
 		.slot_iorq_n			( slot_iorq_n		),
 		.slot_merq_n			( slot_merq_n		),
-		.slot_d					( slot_d			)
+		.slot_d					( slot_d			),
+		.device_address			( device_address	),
+		.device_io				( device_io		),
+		.device_write			( device_write		),
+		.device_valid			( device_valid		),
+		.device_ready			( device_ready		),
+		.device_wdata			( device_wdata		),
+		.device_rdata			( device_rdata		),
+		.device_rdata_en		( device_rdata_en	)
 	);
 
 	initial begin
@@ -153,6 +172,35 @@ module tb;
 		end
 	endtask
 
+	task wait_rdata_en_checked;
+		output		timeout;
+		integer		wait_count;
+		begin
+			wait_count = 0;
+			while( (bus_rdata_en == 1'b0) && (wait_count < 20000) ) begin
+				@( posedge clk_42m );
+				wait_count = wait_count + 1;
+			end
+			timeout = (bus_rdata_en == 1'b0);
+		end
+	endtask
+
+	task device_read_response;
+		input	integer		delay_count;
+		input	[7:0]		data;
+		integer				wait_count;
+		begin
+			@( posedge device_valid );
+			for( wait_count = 0; wait_count < delay_count; wait_count = wait_count + 1 ) begin
+				@( posedge clk_42m );
+			end
+			device_rdata	= data;
+			device_rdata_en	= 1'b1;
+			@( posedge clk_42m );
+			device_rdata_en	= 1'b0;
+		end
+	endtask
+
 	initial begin
 		reset_n				= 1'b0;
 		bus_m1				= 1'b0;
@@ -162,10 +210,14 @@ module tb;
 		bus_valid			= 1'b0;
 		bus_wdata			= 8'd0;
 		primary_slot		= 8'he4;	//	page0->slot0, page1->slot1, page2->slot2, page3->slot3
-		secondary_slot		= 8'h00;
+		secondary_slot0		= 8'h00;
+		secondary_slot3		= 8'h00;
 		high_speed_mode		= 1'b0;
 		slot_int_n			= 1'b1;
 		slot_wait_n			= 1'b1;
+		device_ready		= 1'b1;
+		device_rdata		= 8'h00;
+		device_rdata_en		= 1'b0;
 		slot_busdir			= 1'b0;
 		slot_d_drive		= 1'b0;
 		slot_d_rdata		= 8'h00;
@@ -189,6 +241,46 @@ module tb;
 			clock_t_prev	= $realtime;
 		end
 
+		//	device_* がすぐに read 応答を返す場合、slot 側の読み出し完了より先に device データを返すことを確認
+		slot_d_drive	= 1'b1;
+		slot_d_rdata	= 8'h11;
+		fork
+			device_read_response( 0, 8'hc1 );
+			issue_access( 1'b0, 1'b0, 1'b0, 16'h2000, 8'h00 );
+		join
+		wait_rdata_en_checked( read_timeout );
+		check( !read_timeout, "device immediate read did not return bus_rdata_en" );
+		check( bus_rdata == 8'hc1, "device immediate read data mismatch" );
+		$display( "PASS: device immediate read data = 0x%02X", bus_rdata );
+		wait_ready();
+		slot_d_drive	= 1'b0;
+
+		//	device_* が少し遅れて read 応答を返す場合も、slot 側より先なら device データを返すことを確認
+		slot_d_drive	= 1'b1;
+		slot_d_rdata	= 8'h22;
+		fork
+			device_read_response( 8, 8'hd2 );
+			issue_access( 1'b0, 1'b0, 1'b0, 16'h2001, 8'h00 );
+		join
+		wait_rdata_en_checked( read_timeout );
+		check( !read_timeout, "device delayed read did not return bus_rdata_en" );
+		check( bus_rdata == 8'hd2, "device delayed read data mismatch" );
+		$display( "PASS: device delayed read data = 0x%02X", bus_rdata );
+		wait_ready();
+		slot_d_drive	= 1'b0;
+
+		//	device_* が応答しない場合は、slot read sample のデータを返すことを確認
+		device_rdata_en	= 1'b0;
+		slot_d_drive	= 1'b1;
+		slot_d_rdata	= 8'he3;
+		issue_access( 1'b0, 1'b0, 1'b0, 16'h2002, 8'h00 );
+		wait_rdata_en_checked( read_timeout );
+		check( !read_timeout, "slot fallback read did not return bus_rdata_en" );
+		check( bus_rdata == 8'he3, "slot fallback read data mismatch" );
+		$display( "PASS: slot fallback read data = 0x%02X", bus_rdata );
+		wait_ready();
+		slot_d_drive	= 1'b0;
+
 		slot_d_drive	= 1'b1;
 		slot_d_rdata	= 8'ha5;
 		issue_access( 1'b0, 1'b0, 1'b0, 16'h4000, 8'h00 );
@@ -206,7 +298,8 @@ module tb;
 
 		//	SLOT#0/SLOT#3 の ROM マッピング(readme.md の ROM マップに準拠)
 		primary_slot	= 8'h00;		//	全ページを SLOT#0 に
-		secondary_slot	= 8'h00;		//	全ページを SLOT#0-0 に
+		secondary_slot0	= 8'h00;		//	全ページを SLOT#0-0 に
+		secondary_slot3	= 8'h00;
 		slot_d_drive	= 1'b1;
 		slot_d_rdata	= 8'hd1;
 		issue_access( 1'b0, 1'b0, 1'b0, 16'h0000, 8'h00 );
@@ -224,7 +317,7 @@ module tb;
 		check( slot_a == 19'h04000, "SLOT#0-0 page1 (MAIN-ROM後半) address mismatch" );
 		wait_ready();
 
-		secondary_slot	= 8'b00_00_00_01;	//	page0 のみ SLOT#0-1 に
+		secondary_slot0	= 8'b00_00_00_01;	//	page0 のみ SLOT#0-1 に
 		issue_access( 1'b0, 1'b0, 1'b0, 16'h0000, 8'h00 );
 		@( negedge slot_rd_n );
 		check( slot_rom0_ce_n == 1'b0, "SLOT#0-1 page0 did not assert ROM0 CE" );
@@ -233,7 +326,7 @@ module tb;
 		slot_d_drive	= 1'b0;
 
 		primary_slot	= 8'b00_00_11_00;	//	page1 のみ SLOT#3 に
-		secondary_slot	= 8'b00_00_01_00;	//	page1 の SLOT#3-1
+		secondary_slot3	= 8'b00_00_01_00;	//	page1 の SLOT#3-1
 		slot_d_drive	= 1'b1;
 		slot_d_rdata	= 8'he2;
 		issue_access( 1'b0, 1'b0, 1'b0, 16'h4000, 8'h00 );
@@ -247,7 +340,8 @@ module tb;
 
 		//	元のリモートスロット構成に戻す
 		primary_slot	= 8'he4;
-		secondary_slot	= 8'h00;
+		secondary_slot0	= 8'h00;
+		secondary_slot3	= 8'h00;
 
 		//	bus_io=1 write
 		issue_access( 1'b0, 1'b1, 1'b1, 16'h00a8, 8'hc3 );

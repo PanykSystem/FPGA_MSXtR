@@ -124,7 +124,7 @@ module FPGA_MSXtR_VDP_Stack (
 	wire	[7:0]	w_blue;
 	wire			w_int_n;
 
-	assign slot_wait		= w_sdram_init_busy;
+	assign slot_wait_n		= ~w_sdram_init_busy;
 	assign oe_n				= 1'b0;
 
 	always @( posedge clk85m ) begin

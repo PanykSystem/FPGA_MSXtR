@@ -42,8 +42,6 @@ module msx_slot_decode (
 	input			bus_valid,
 	output			bus_ready,
 	input	[7:0]	bus_wdata,
-	output	[7:0]	bus_rdata,
-	output			bus_rdata_en,
 	input	[7:0]	primary_slot,
 	input	[7:0]	secondary_slot0,
 	input	[7:0]	secondary_slot3,
@@ -60,8 +58,6 @@ module msx_slot_decode (
 	//	MSX slot access interface
 	output			slot_valid,
 	input			slot_ready,
-	input	[7:0]	slot_rdata,
-	input			slot_rdata_en,
 	//	flash ROM interface
 	output	[18:0]	rom_address,
 	output			rom_address_en,
@@ -124,17 +120,18 @@ module msx_slot_decode (
 	assign w_internal_sel	= w_kanji_port &  bus_write;
 	assign w_rom_sel		= w_rom0_sel | w_rom1_sel;
 
-	//	ROM アクセスはスロット信号へ、それ以外は device_* へ振り分ける
-	assign slot_valid		= bus_valid &  w_rom_sel;
-	assign device_valid		= bus_valid & ~w_rom_sel & ~w_internal_sel;
+	//	内部レジスタアクセス以外は、slot_* (MSXスロットタイミング) と device_* (内蔵デバイス) の
+	//	両方へ同時にアクセス要求を出す。どちらが先に応答するかは msx_slot 側の読み出しラッチで調停する。
+	//	bus_valid は受理されるまで(slot_ready=1 の間)複数クロック保持され得るため、device_valid は
+	//	slot 側の受理と同じ 1 クロックだけのパルスにして、device_* へ多重に要求を出さないようにする。
+	assign slot_valid		= bus_valid & ~w_internal_sel;
+	assign device_valid		= bus_valid & ~w_internal_sel & slot_ready;
 	assign device_address	= bus_address;
 	assign device_io		= bus_io;
 	assign device_write		= bus_write;
 	assign device_wdata		= bus_wdata;
 
-	assign bus_ready		= w_rom_sel ? slot_ready : ( w_internal_sel ? 1'b1 : device_ready );
-	assign bus_rdata		= slot_rdata_en ? slot_rdata : device_rdata;
-	assign bus_rdata_en		= slot_rdata_en | device_rdata_en;
+	assign bus_ready		= w_internal_sel ? 1'b1 : ( slot_ready & device_ready );
 
 	assign rom_address		= ff_rom_address;
 	assign rom_address_en	= ff_rom_address_en;

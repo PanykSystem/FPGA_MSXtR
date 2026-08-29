@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Thu Aug 27 21:45:46 2026
+<td>Sat Aug 29 15:26:45 2026
 </td>
 </tr>
 <tr>
@@ -97,24 +97,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 0.05s, Elapsed time = 0h 0m 0.049s
-   Placement Phase 1: CPU time = 0h 0m 0.178s, Elapsed time = 0h 0m 0.179s
-   Placement Phase 2: CPU time = 0h 0m 0.021s, Elapsed time = 0h 0m 0.021s
-   Placement Phase 3: CPU time = 0h 0m 0.261s, Elapsed time = 0h 0m 0.26s
-   Total Placement: CPU time = 0h 0m 0.51s, Elapsed time = 0h 0m 0.509s
+   Placement Phase 0: CPU time = 0h 0m 0.088s, Elapsed time = 0h 0m 0.087s
+   Placement Phase 1: CPU time = 0h 0m 0.195s, Elapsed time = 0h 0m 0.195s
+   Placement Phase 2: CPU time = 0h 0m 0.06s, Elapsed time = 0h 0m 0.061s
+   Placement Phase 3: CPU time = 0h 0m 0.32s, Elapsed time = 0h 0m 0.321s
+   Total Placement: CPU time = 0h 0m 0.663s, Elapsed time = 0h 0m 0.664s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Routing Phase 1: CPU time = 0h 0m 0.624s, Elapsed time = 0h 0m 0.624s
-   Routing Phase 2: CPU time = 0h 0m 0.021s, Elapsed time = 0h 0m 0.02s
+   Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
+   Routing Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+   Routing Phase 2: CPU time = 0h 0m 0.026s, Elapsed time = 0h 0m 0.026s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 0.645s, Elapsed time = 0h 0m 0.644s
+   Total Routing: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 Generate output files:
    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s, Peak memory usage = 707MB</td>
+<td>CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s, Peak memory usage = 665MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>394/23040</td>
-<td>2%</td>
+<td>683/23040</td>
+<td>3%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>394(370 LUT, 24 ALU, 0 ROM16)</td>
+<td>683(630 LUT, 53 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -144,8 +144,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>197/23280</td>
-<td><1%</td>
+<td>404/23280</td>
+<td>2%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as Latch</td>
@@ -154,8 +154,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>195/23040</td>
-<td><1%</td>
+<td>393/23040</td>
+<td>2%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as Latch</td>
@@ -164,13 +164,13 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as FF</td>
-<td>2/240</td>
-<td><1%</td>
+<td>11/240</td>
+<td>5%</td>
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>247/11520</td>
-<td>3%</td>
+<td>462/11520</td>
+<td>5%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
@@ -179,12 +179,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">I/O Buf</td>
-<td>56</td>
+<td>66</td>
 <td>-</td>
 </tr>
 <tr>
 <td class="label"> &nbsp &nbsp --Input Buf</td>
-<td>5</td>
+<td>7</td>
 <td>-</td>
 </tr>
 <tr>
@@ -194,7 +194,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label"> &nbsp &nbsp --Inout Buf</td>
-<td>0</td>
+<td>8</td>
 <td>-</td>
 </tr>
 <tr>
@@ -261,8 +261,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">LW</td>
-<td>1/8</td>
-<td>13%</td>
+<td>2/8</td>
+<td>25%</td>
 </tr>
 <tr>
 <td class="label">GCLK_PIN</td>
@@ -291,15 +291,20 @@ Generate output files:
 <tr>
 <td class="label">clk215m</td>
 <td>PRIMARY</td>
-<td> BR</td>
+<td> TR TL BR BL</td>
 </tr>
 <tr>
 <td class="label">clk42m</td>
 <td>PRIMARY</td>
-<td> BR BL</td>
+<td> TR TL BR BL</td>
 </tr>
 <tr>
-<td class="label">n59_12</td>
+<td class="label">n59_13</td>
+<td>LW</td>
+<td> -</td>
+</tr>
+<tr>
+<td class="label">ff_spi_reset_n</td>
 <td>LW</td>
 <td> -</td>
 </tr>
