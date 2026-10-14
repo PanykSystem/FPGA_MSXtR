@@ -93,7 +93,7 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "y8960_address_decode" instantiated to "u_y8960_address_decode" is swept in optimizing("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_SND_Cart_000\src\y8960_cartridge_tangprimer25k.v":209)
+WARN  (NL0002) : The module "y8960_address_decode" instantiated to "u_y8960_address_decode" is swept in optimizing("C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_SND_Cart_000\src\y8960_cartridge_tangprimer25k.v":205)
 [95%] Generate netlist file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_SND_Cart_000\impl\gwsynthesis\Y8960_Cartridge_TangPrimer25K.vg" completed
 [100%] Generate report file "C:\Users\hra\Documents\github\HRA_product\FPGA_MSXtR\labo\FPGA_MSXtR_SND_Cart_000\impl\gwsynthesis\Y8960_Cartridge_TangPrimer25K_syn.rpt.html" completed
 GowinSynthesis finish

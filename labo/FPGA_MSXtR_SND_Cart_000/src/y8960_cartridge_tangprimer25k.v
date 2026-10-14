@@ -115,8 +115,8 @@ module y8960cartridge_tangprimer25k (
 	wire	[11:0]	w_ssg_sound_out0;
 	wire	[11:0]	w_ssg_sound_out1;
 
-	reg		[3:0]	ff_divider;
-	reg				ff_enable;
+	reg		[3:0]	ff_divider = 4'd0;
+	reg				ff_enable = 1'b0;
 	wire			w_int_n;
 	wire	[3:0]	w_led;
 	reg		[23:0]	ff_sound_l;
@@ -141,11 +141,7 @@ module y8960cartridge_tangprimer25k (
 
 	// ---------------------------------------------------------
 	always @( posedge clk_42m ) begin
-		if( !w_reset_n ) begin
-			ff_divider	<= 4'd0;
-			ff_enable	<= 1'b0;
-		end
-		else if( ff_divider == 4'd11 ) begin
+		if( ff_divider == 4'd11 ) begin
 			ff_divider	<= 4'd0;
 			ff_enable	<= 1'b1;				//	3.579545MHz
 		end
@@ -256,7 +252,7 @@ module y8960cartridge_tangprimer25k (
 	//	The raw sum only fills the lower ~19 bits of the 24bit field,
 	//	so a left shift is applied to raise the output volume.
 	// ---------------------------------------------------------
-	localparam			c_mix_gain_shift	= 6;						//	x64 (about +36dB)
+	localparam			c_mix_gain_shift	= 7;						//	x128 (about +42.1dB)
 	localparam			c_mix_ext_bits		= c_mix_gain_shift + 1;		//	guard bit for the overflow check
 	localparam			c_mix_ext_width		= 24 + c_mix_ext_bits;
 

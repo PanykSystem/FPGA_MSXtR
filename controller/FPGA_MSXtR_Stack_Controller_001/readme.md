@@ -25,7 +25,10 @@ MENUキーはkeyboard matrixの転送先だけを切り替える。CPU/Picoの�
 2: BIOS update
 3: ExtROM update
 4: KanjiROM update
+5: KanjiROM glyph test
 ```
+
+Pico-local modeで5キーを押すと、JIS1 `3441h` (漢) のD8=`A1h`/D9=`16h`に対応するSerialROM物理アドレス`0B420h`から32byteを読み、OpenMSXの漢字ROM配列と同じく先頭8byte/次の8byteを上半分の左右byte、その次の8byte/最後の8byteを下半分の左右byteとして、各8bitの0/1表記で16行表示する。この診断はPicoのSerialROM直接readを使用するため、CPUのD8h/D9hアクセス待ちや`msx_slot`のタイミングは経由しない。ROM内容・アドレスの確認用であり、CPU read timeoutの合否判定には使わない。
 
 ## BIOS / ExtROM更新
 

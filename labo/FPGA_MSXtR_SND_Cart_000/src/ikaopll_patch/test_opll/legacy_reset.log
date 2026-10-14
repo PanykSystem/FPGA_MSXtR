@@ -1,0 +1,35 @@
+# vsim -c -lib src/ikaopll_patch/test_opll/work -t 1ps -l src/ikaopll_patch/test_opll/legacy_reset.log tb "+legacy_reset" -do "run -all; quit -f" 
+# Start time: 18:37:08 on Oct 10,2026
+# Loading sv_std.std
+# Loading src/ikaopll_patch/test_opll/work.tb
+# Loading src/ikaopll_patch/test_opll/work.msx_slot
+# Loading src/ikaopll_patch/test_opll/work.y8960_address_decode
+# Loading src/ikaopll_patch/test_opll/work.dual_opll
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_timinggen
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_reg
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_rw_synchronizer
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_d9reg
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_sr
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_instrom
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_lfo
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_pg
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_eg
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_op
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_logsinrom
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_exprom
+# Loading src/ikaopll_patch/test_opll/work.IKAOPLL_dac
+# run -all
+# WRITE port=007c data=30
+# WRITE port=007d data=10
+# WRITE port=007c data=10
+# WRITE port=007d data=80
+# WRITE port=007c data=20
+# WRITE port=007d data=15
+# OPLL addr=xx samples=0 accepted=6 sound=xxxx
+# ** Fatal: OPLL tone not generated through cartridge slot
+#    Time: 2737111080 ps  Scope: tb File: src/ikaopll_patch/test_opll/tb.sv Line: 104
+# ** Note: $finish    : src/ikaopll_patch/test_opll/tb.sv(104)
+#    Time: 2737111080 ps  Iteration: 1  Instance: /tb
+# End time: 18:37:10 on Oct 10,2026, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 0

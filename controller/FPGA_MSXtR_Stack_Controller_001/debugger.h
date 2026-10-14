@@ -36,6 +36,7 @@
 void dump_slot( void );
 void dump_cpu_ram( void );
 void dump_fpga_debug_signal( void );
+void test_kanji_rom_glyph( void );
 void dir_sd_root( void );
 void sdcard_access( void );
 void test_rtc( void );

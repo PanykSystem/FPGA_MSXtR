@@ -203,6 +203,7 @@ static void print_local_key_menu( void ) {
 	printf( "2: BIOS update\r\n" );
 	printf( "3: ExtROM update\r\n" );
 	printf( "4: KanjiROM update\r\n" );
+	printf( "5: KanjiROM glyph test\r\n" );
 }
 
 // ---------------------------------------------------------
@@ -251,6 +252,7 @@ int main(void) {
 			else if( key_press( 0, 2 ) ) run_with_pico_bus( write_flashrom_images );
 			else if( key_press( 0, 3 ) ) run_with_pico_bus( write_extrom_image );
 			else if( key_press( 0, 4 ) ) run_with_pico_bus( write_kanji_rom_image );
+			else if( key_press( 0, 5 ) ) run_with_pico_bus( test_kanji_rom_glyph );
 		}
 		else {
 			if( key_press( 0, 3 ) ) dump_fpga_debug_signal();

@@ -166,6 +166,35 @@ void dump_fpga_debug_signal( void ) {
 	}
 }
 
+static void print_binary_byte( uint8_t value ) {
+	for( int bit = 7; bit >= 0; bit-- ) {
+		putchar( (value & (1u << bit)) ? '1' : '0' );
+	}
+}
+
+void test_kanji_rom_glyph( void ) {
+	uint8_t glyph[32];
+	const uint32_t jis1_han_address = 0x0B420u;
+	if( fpga_get_bus_owner() != BUS_OWNER_PICO ) {
+		printf( "Kanji test requires Pico bus ownership\r\n" );
+		return;
+	}
+	printf( "JIS1 3441h D8=A1 D9=16 (Kanji): SerialROM physical address %05lXh\r\n",
+			(unsigned long)jis1_han_address );
+	if( !fpga_serialrom_read( jis1_han_address, glyph, sizeof(glyph) ) ) {
+		printf( "Kanji ROM read failed\r\n" );
+		return;
+	}
+	printf( "Left half     Right half\r\n" );
+	for( size_t row = 0; row < 16; row++ ) {
+		size_t left_index = row < 8 ? row : row + 8;
+		print_binary_byte( glyph[left_index] );
+		printf( "  " );
+		print_binary_byte( glyph[left_index + 8] );
+		printf( "\r\n" );
+	}
+}
+
 // ---------------------------------------------------------------
 // ファイルサイズをカンマ区切り文字列に変換
 // 例: 1234567 -> "1,234,567"

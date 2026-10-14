@@ -9,7 +9,7 @@
         "SubInsts": [
             {
                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_cartridge_tangprimer25k.v",
-                "InstLine": 158,
+                "InstLine": 154,
                 "InstName": "u_pll",
                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/gowin_pll/gowin_pll.v",
                 "ModuleLine": 1,
@@ -35,7 +35,7 @@
             },
             {
                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_cartridge_tangprimer25k.v",
-                "InstLine": 165,
+                "InstLine": 161,
                 "InstName": "u_div4",
                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/gowin_clkdiv/gowin_clkdiv.v",
                 "ModuleLine": 11,
@@ -43,7 +43,7 @@
             },
             {
                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_cartridge_tangprimer25k.v",
-                "InstLine": 172,
+                "InstLine": 168,
                 "InstName": "u_msx_slot",
                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/msx_slot/msx_slot.v",
                 "ModuleLine": 58,
@@ -51,7 +51,7 @@
             },
             {
                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_cartridge_tangprimer25k.v",
-                "InstLine": 195,
+                "InstLine": 191,
                 "InstName": "u_y8960_address_decode",
                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_address_decode/y8960_address_decode.v",
                 "ModuleLine": 63,
@@ -59,7 +59,7 @@
             },
             {
                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_cartridge_tangprimer25k.v",
-                "InstLine": 214,
+                "InstLine": 210,
                 "InstName": "u_dual_opll",
                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/ikaopll_patch/opll.v",
                 "ModuleLine": 7,
@@ -685,7 +685,7 @@
             },
             {
                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_cartridge_tangprimer25k.v",
-                "InstLine": 231,
+                "InstLine": 227,
                 "InstName": "u_dual_ssg",
                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/ssg/dual_ssg.v",
                 "ModuleLine": 48,
@@ -711,7 +711,7 @@
             },
             {
                 "InstFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/y8960_cartridge_tangprimer25k.v",
-                "InstLine": 318,
+                "InstLine": 314,
                 "InstName": "u_i2s",
                 "ModuleFile": "C:/Users/hra/Documents/github/HRA_product/FPGA_MSXtR/labo/FPGA_MSXtR_SND_Cart_000/src/i2s_audio/i2s_audio.v",
                 "ModuleLine": 58,
